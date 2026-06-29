@@ -1,0 +1,28 @@
+{
+  "name": "setivir",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Setivir — an experimental AI-music project promoting Belarusian culture",
+  "scripts": {
+    "link-assets": "node scripts/link-assets.mjs",
+    "predev": "node scripts/link-assets.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/link-assets.mjs",
+    "build": "tsc --noEmit && vite build",
+    "build:pages": "VITE_BASE=/setivir/ npm run build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7"
+  }
+}

@@ -1,0 +1,178 @@
+.bar {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(12px, 2.4vh, 22px);
+  transform: translateX(-50%);
+  z-index: 60;
+  width: min(640px, calc(100vw - 24px));
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom, 0));
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-bar);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  animation: rise 0.28s var(--ease);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.coverBtn {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toggle {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  transition: background 0.16s var(--ease), transform 0.16s var(--ease);
+}
+
+.toggle:hover {
+  background: var(--red);
+}
+
+.toggle:active {
+  transform: scale(0.94);
+}
+
+.toggleIcon {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.seekWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.time {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--ink-soft);
+  flex: none;
+  width: 34px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Range slider ── */
+.seek {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1 1 auto;
+  min-width: 60px;
+  height: 18px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.seek::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 3px;
+  background: var(--line-strong);
+}
+
+.seek::-moz-range-track {
+  height: 3px;
+  border-radius: 3px;
+  background: var(--line-strong);
+}
+
+.seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: var(--shadow-sm);
+}
+
+.seek::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border: none;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.seek:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Stack the seek bar under the track info on narrow screens. */
+@media (max-width: 540px) {
+  .bar {
+    flex-wrap: wrap;
+    gap: 10px 12px;
+  }
+  .seekWrap {
+    flex-basis: 100%;
+    order: 3;
+  }
+  .title {
+    font-size: 1.05rem;
+  }
+}

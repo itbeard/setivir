@@ -1,0 +1,79 @@
+.outro {
+  text-align: center;
+  background: var(--paper-2);
+}
+
+.inner {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ornament {
+  color: var(--red);
+  margin-bottom: clamp(20px, 4vh, 36px);
+  width: 200px;
+  max-width: 70vw;
+  height: auto;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-title);
+  line-height: 1.05;
+}
+
+.text {
+  margin-top: 14px;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: clamp(22px, 4vh, 36px);
+  padding: 12px 26px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: var(--fs-body);
+  text-decoration: none;
+  color: var(--ink);
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.link:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.arrow {
+  font-size: 0.9em;
+}
+
+.top {
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color 0.15s var(--ease);
+}
+
+.top:hover {
+  color: var(--red);
+}
+
+.credit {
+  margin-top: clamp(28px, 6vh, 56px);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+}

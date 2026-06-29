@@ -1,0 +1,108 @@
+.hero {
+  text-align: center;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: clamp(14px, 3vh, 28px);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-hero);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+}
+
+.ornament {
+  color: var(--red);
+  margin: clamp(16px, 3vh, 28px) 0 clamp(20px, 3.4vh, 34px);
+  width: 220px;
+  max-width: 70vw;
+  height: auto;
+}
+
+.intro {
+  font-size: var(--fs-lead);
+  line-height: 1.62;
+  color: var(--ink);
+  max-width: 54ch;
+}
+
+.listen {
+  margin-top: 16px;
+  font-size: var(--fs-body);
+  color: var(--ink-soft);
+}
+
+.enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: clamp(24px, 4vh, 40px);
+  padding: 12px 26px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: var(--fs-body);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  transition: color 0.2s var(--ease), background 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.enter:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.enterChevron {
+  width: 8px;
+  height: 8px;
+  border-right: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
+.scrollHint {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(16px, 3vh, 30px);
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  animation: fade 2.6s ease-in-out infinite;
+  transition: opacity 0.3s var(--ease);
+}
+
+/* Hidden while the mini-player occupies the bottom-center zone. */
+.scrollHintHidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
