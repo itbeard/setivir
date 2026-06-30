@@ -4,8 +4,10 @@ import type { Song } from '../types'
  * ─────────────────────────────────────────────────────────────────────────
  *  ПЕСЬНІ / SONGS
  * ─────────────────────────────────────────────────────────────────────────
- *  Парадак у масіве = парадак на старонцы (1 — самая старая, зьверху).
- *  The array order is the page order (1 = oldest, shown first).
+ *  Масіў — у храналагічным парадку (1 = самая старая). На старонцы трэкі
+ *  паказваюцца ад навейшых да старэйшых (разварот робіцца ў App.tsx).
+ *  The array is chronological (1 = oldest); the page shows newest-first
+ *  (reversed in App.tsx). Append new songs here with the next id.
  *
  *  Як запоўніць карткі / How to fill a card — дадайце поля ў `overrides`:
  *
@@ -13,8 +15,8 @@ import type { Song } from '../types'
  *        date: 'Сакавік 2025 / March 2025',
  *        model: 'Suno v4',
  *        lyricsAuthor: { be: 'Янка Купала', en: 'Yanka Kupala' },
- *        description: { be: '…', en: '…' },
- *        history:     { be: '…', en: '…' },
+ *        // Blank lines split the description into justified paragraphs.
+ *        description: { be: 'Апісаньне.\n\nГісторыя.', en: 'Description.\n\nStory.' },
  *        // `en` lyrics are a translation with the approximate meaning of the original.
  *        lyrics:      { be: '…', en: '…' },
  *        stylePrompt:  'ethnic belarusian folk, female vocal, …',
@@ -48,10 +50,6 @@ function song(
       be: '[Апісаньне — дадаць з Instagram]',
       en: '[Description — add from Instagram]',
     },
-    history: {
-      be: '[Гісторыя зьяўленьня — дадаць]',
-      en: '[The story behind the song — add]',
-    },
     lyrics: {
       be: '[Тэкст песьні — дадаць]',
       en: '[Lyrics — add a meaning-approximate translation]',
@@ -68,12 +66,12 @@ export const songs: Song[] = [
     model: 'Suno v4.5+',
     lyricsAuthor: { be: 'Аляксей Картыннік', en: 'Aliaksei Kartynnik' },
     description: {
-      be: 'Гэты трэк — ода-заклік да беларускай ідэнтычнасьці, што спалучае хвацкі рэп-флоў з адсылкамі да паэтаў, сьвятых і паўстанцаў, каб прасачыць жывую повязь ад фальклору да сучаснасьці.',
-      en: 'This track is a rallying ode to Belarusian identity, fusing a hard-hitting rap flow with references to poets, saints, and rebels to trace a living lineage from folklore to the present.',
-    },
-    history: {
-      be: 'Першапачаткова трэк павінен быў стаць дыялогам паміж беларускамоўным і расейскамоўным беларусамі, але ідэя трансфармавалася ў выніковы трэк.',
-      en: 'Initially the track was meant to be a dialogue between a Belarusian-speaking and a Russian-speaking Belarusian, but the idea transformed into the final track.',
+      be: `Гэты трэк — ода-заклік да беларускай ідэнтычнасьці, што спалучае хвацкі рэп-флоў з адсылкамі да паэтаў, сьвятых і паўстанцаў, каб прасачыць жывую повязь ад фальклору да сучаснасьці.
+
+Першапачаткова трэк павінен быў стаць дыялогам паміж беларускамоўным і расейскамоўным беларусамі, але ідэя трансфармавалася ў выніковы трэк.`,
+      en: `This track is a rallying ode to Belarusian identity, fusing a hard-hitting rap flow with references to poets, saints, and rebels to trace a living lineage from folklore to the present.
+
+Initially the track was meant to be a dialogue between a Belarusian-speaking and a Russian-speaking Belarusian, but the idea transformed into the final track.`,
     },
     lyrics: {
       be: `[Куплет]
@@ -296,11 +294,11 @@ You’ll grasp what it is to be called a worthy Belarusian.
   // ⚠ ёсьць дублікат "14. Dvaccaty.mp3" — выкарыстоўваецца новы файл
   song(14, 'dvaccaty', 'Дваццаты', 'Dvaccaty', 'jpg', '14. Setivir - Dvaccaty.mp3'),
   song(15, 'a-chto-tam-idzie', 'А хто там ідзе', 'A chto tam idzie', 'jpg', '15. Setivir - A chto tam idzie.mp3'),
-  song(16, 'belarusian-rave', 'Беларускі рэйв', 'Belarusian Rave', 'jpg', '16. Setivir - Belarusian rave.mp3'),
-  song(17, 'veczar-toj', 'Вечар той', 'Veczar Toj', 'jpg', '17. Setivir - Veczar Toj.mp3'),
+  song(16, 'veczar-toj', 'Вечар той', 'Veczar Toj', 'jpg', '17. Setivir - Veczar Toj.mp3'),
+  song(17, 'belarusian-rave', 'Беларускі рэйв', 'Belarusian Rave', 'jpg', '16. Setivir - Belarusian rave.mp3'),
   song(18, 'shto-kashtuje', 'Што каштуе', 'Što Kaštuje', 'jpg', '18. Setivir - Što Kaštuje.mp3'),
-  song(19, 'mova-nanova', 'Мова Нанова', 'Mova Nanova', 'png', '19. Setivir - Mova Nanova.mp3'),
-  song(20, 'mova-maci', 'Мова-Маці', 'Mova-Maci', 'png', '20. Setivir - Mova-Maci.mp3'),
+  song(19, 'mova-maci', 'Мова-Маці', 'Mova-Maci', 'png', '20. Setivir - Mova-Maci.mp3'),
+  song(20, 'mova-nanova', 'Мова Нанова', 'Mova Nanova', 'png', '19. Setivir - Mova Nanova.mp3'),
 ]
 
 /** True when a text field is still an unfilled "[…]" placeholder. */

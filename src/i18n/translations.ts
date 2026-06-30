@@ -17,10 +17,6 @@ At its core, the project is a contemporary reimagining of Belarusian poetic and 
 
 Through Setivir, I seek to reveal Belarusian culture in a new context, expand the presence of Belarusian-language music in the contemporary cultural space, and show that heritage can not only be preserved, but also take on new forms of life.`,
   },
-  'hero.listen': {
-    be: 'Слухайце па чарзе, чытайце гісторыі — і знаёмцеся з праектам.',
-    en: 'Listen track by track, read the stories — and get to know the project.',
-  },
   'hero.scroll': {
     be: 'Пракруціце ўніз',
     en: 'Scroll down',

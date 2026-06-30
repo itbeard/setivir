@@ -20,9 +20,9 @@ export function ProgressNav({
   return (
     <nav className={styles.rail} aria-label={t('a11y.openMenu')}>
       <ul className={styles.list}>
-        {songs.map((s) => {
-          // Songs occupy section indices 1..N (intro is 0).
-          const active = activeIndex === s.id
+        {songs.map((s, i) => {
+          // Songs occupy section indices 1..N (intro is 0), in render order.
+          const active = activeIndex === i + 1
           return (
             <li key={s.id}>
               <button

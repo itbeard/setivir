@@ -23,10 +23,11 @@ export interface Song {
   model: string
   /** Author of the lyrics (poet / folk / the artist). */
   lyricsAuthor: Localized
-  /** Short description of the song (sourced from Instagram). */
+  /**
+   * Description of the song: what it is plus the story behind it. Blank lines
+   * separate paragraphs (rendered justified, like the hero intro).
+   */
   description: Localized
-  /** The story of how the track came to be. */
-  history: Localized
   /**
    * The song lyrics, shown under a cut. `be` is the original; `en` is a
    * translation that conveys the approximate meaning of the original.

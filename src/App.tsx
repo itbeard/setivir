@@ -11,14 +11,20 @@ import { SongScreen } from './components/SongScreen'
 import { Outro } from './components/Outro'
 import { MiniPlayer } from './components/MiniPlayer'
 
+// The data file stays in chronological order (id 1 = oldest); the page shows
+// newest first, so render a recency-sorted copy.
+const displaySongs = [...songs].sort((a, b) => b.id - a.id)
+
 function Shell() {
   const { lang, t } = useI18n()
   useKeyboardNav()
   const activeIndex = useActiveSection()
   const total = songs.length
 
-  // Songs occupy section indices 1..total (intro is 0, outro is last).
-  const activeSong = activeIndex >= 1 && activeIndex <= total ? activeIndex : null
+  // Songs occupy section indices 1..total (intro is 0, outro is last). The page
+  // is newest-first, so map the active section back to its track number.
+  const activeSong =
+    activeIndex >= 1 && activeIndex <= total ? displaySongs[activeIndex - 1].id : null
 
   useEffect(() => {
     document.title =
@@ -33,10 +39,10 @@ function Shell() {
         {t('a11y.skip')}
       </a>
       <TopBar activeSong={activeSong} total={total} />
-      <ProgressNav songs={songs} activeIndex={activeIndex} />
+      <ProgressNav songs={displaySongs} activeIndex={activeIndex} />
       <main id="main-content">
         <Hero />
-        {songs.map((song) => (
+        {displaySongs.map((song) => (
           <SongScreen key={song.id} song={song} total={total} />
         ))}
         <Outro />

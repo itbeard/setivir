@@ -88,6 +88,8 @@
 .text {
   max-width: 56ch;
   margin-bottom: clamp(16px, 2.6vh, 26px);
+  text-align: justify;
+  text-align-last: left;
 }
 
 .description {
@@ -96,11 +98,9 @@
   color: var(--ink);
 }
 
-.history {
-  margin-top: 12px;
-  font-size: var(--fs-body);
-  line-height: 1.65;
-  color: var(--ink-soft);
+/* Blank lines in the source become separate paragraphs; space them out. */
+.text p + p {
+  margin-top: clamp(12px, 1.8vh, 20px);
 }
 
 .prompts {

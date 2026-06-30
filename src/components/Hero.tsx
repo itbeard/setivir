@@ -24,7 +24,6 @@ export function Hero() {
               <p key={i}>{para.trim()}</p>
             ))}
         </div>
-        <p className={styles.listen}>{t('hero.listen')}</p>
         <button type="button" className={styles.enter} onClick={goNext}>
           {t('hero.enter')}
           <span className={styles.enterChevron} aria-hidden="true" />

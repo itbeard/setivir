@@ -21,7 +21,7 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
   const trackActive = current !== null
   const title = loc(song.title)
   const description = loc(song.description)
-  const history = loc(song.history)
+  const descPlaceholder = isPlaceholder(description)
   const lyrics = loc(song.lyrics)
 
   return (
@@ -57,12 +57,11 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
         <Ornament className={styles.ornament} />
 
         <div className={styles.text}>
-          <p className={cx(styles.description, isPlaceholder(description) && 'is-placeholder')}>
-            {description}
-          </p>
-          <p className={cx(styles.history, isPlaceholder(history) && 'is-placeholder')}>
-            {history}
-          </p>
+          {description.split(/\n\s*\n/).map((para, i) => (
+            <p key={i} className={cx(styles.description, descPlaceholder && 'is-placeholder')}>
+              {para.trim()}
+            </p>
+          ))}
         </div>
 
         <SongMeta song={song} />
