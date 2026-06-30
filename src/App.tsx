@@ -23,8 +23,8 @@ function Shell() {
   useEffect(() => {
     document.title =
       lang === 'be'
-        ? 'Setivir — беларуская ШІ-музыка'
-        : 'Setivir — Belarusian AI music'
+        ? 'Setivir — Музыка Тутэйшых'
+        : 'Setivir — Songs of the Tuteyshya'
   }, [lang])
 
   return (
