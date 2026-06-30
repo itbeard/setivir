@@ -27,6 +27,11 @@ export interface Song {
   description: Localized
   /** The story of how the track came to be. */
   history: Localized
+  /**
+   * The song lyrics, shown under a cut. `be` is the original; `en` is a
+   * translation that conveys the approximate meaning of the original.
+   */
+  lyrics: Localized
   /** The style prompt used for generation (shown under a cut). */
   stylePrompt: string
   /** The lyrics prompt used for generation (shown under a cut). */

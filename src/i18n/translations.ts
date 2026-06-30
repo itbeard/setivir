@@ -2,8 +2,8 @@ import type { Localized } from '../types'
 
 export const ui = {
   'site.tagline': {
-    be: 'Беларуская музыка праз штучны інтэлект',
-    en: 'Belarusian music through artificial intelligence',
+    be: 'Музыка Тутэйшых',
+    en: 'Songs of the Tuteyshya',
   },
   'hero.intro': {
     be: 'Setivir — экспэрымэнтальны музычны праект, у якім песьні ствараюцца з дапамогай штучнага інтэлекту. Галоўная мэта — прасоўваньне беларускай культуры і беларускамоўнай музыкі. Тэкстамі служаць вершы знакамітых беларускіх пісьменьнікаў, фальклорныя творы і ўласныя аўтарскія тэксты.',
@@ -72,6 +72,14 @@ export const ui = {
   'prompt.lyrics': {
     be: 'Промпт тэксту',
     en: 'Lyrics prompt',
+  },
+  'lyrics.label': {
+    be: 'Тэкст песьні',
+    en: 'Lyrics',
+  },
+  'lyrics.translationNote': {
+    be: 'Пераклад, набліжаны па сэнсе да арыгіналу.',
+    en: 'A translation that conveys the approximate meaning of the original.',
   },
   'a11y.skip': {
     be: 'Перайсьці да зьместу',

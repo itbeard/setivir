@@ -20,7 +20,7 @@
 }
 
 .wordmark {
-  font-family: var(--font-display);
+  font-family: var(--font-brand);
   font-weight: 600;
   font-size: var(--fs-hero);
   line-height: 0.92;

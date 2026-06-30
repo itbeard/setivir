@@ -42,6 +42,15 @@
   margin-bottom: -2px;
 }
 
+.note {
+  margin: 0 0 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
 .body {
   margin: 0 0 12px;
   padding: 12px 14px;

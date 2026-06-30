@@ -16,12 +16,13 @@ function pad2(n: number): string {
 }
 
 export function SongScreen({ song, total }: { song: Song; total: number }) {
-  const { t, loc } = useI18n()
+  const { t, loc, lang } = useI18n()
   const { current } = usePlayer()
   const trackActive = current !== null
   const title = loc(song.title)
   const description = loc(song.description)
   const history = loc(song.history)
+  const lyrics = loc(song.lyrics)
 
   return (
     <section
@@ -67,6 +68,15 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
         <SongMeta song={song} />
 
         <div className={styles.prompts}>
+          <PromptDisclosure
+            label={t('lyrics.label')}
+            content={lyrics}
+            note={
+              lang === 'en' && !isPlaceholder(lyrics)
+                ? t('lyrics.translationNote')
+                : undefined
+            }
+          />
           <PromptDisclosure label={t('prompt.style')} content={song.stylePrompt} />
           <PromptDisclosure label={t('prompt.lyrics')} content={song.lyricsPrompt} />
         </div>
