@@ -1,0 +1,24 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 3.4vw, 22px);
+  margin-top: clamp(14px, 2.4vh, 22px);
+  /* Sets the icon size — each glyph is sized in `em`. */
+  font-size: clamp(20px, 1rem + 0.6vw, 23px);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  color: var(--ink-soft);
+  border-radius: 999px;
+  transition: color 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+.link:hover {
+  color: var(--red);
+  transform: translateY(-2px);
+}

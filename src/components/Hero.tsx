@@ -3,6 +3,7 @@ import { useI18n } from '../i18n/I18nContext'
 import { usePlayer } from '../audio/PlayerContext'
 import { cx } from '../lib/cx'
 import { Ornament } from './Ornament'
+import { SocialLinks } from './SocialLinks'
 import styles from './Hero.module.css'
 
 export function Hero() {
@@ -14,6 +15,7 @@ export function Hero() {
       <div className={styles.inner}>
         <p className={styles.kicker}>{t('site.tagline')}</p>
         <h1 className={styles.wordmark}>Setivir</h1>
+        <SocialLinks />
         <Ornament className={styles.ornament} />
         <div className={styles.intro}>
           {t('hero.intro')

@@ -25,6 +25,10 @@ Through Setivir, I seek to reveal Belarusian culture in a new context, expand th
     be: 'Пракруціце ўніз',
     en: 'Scroll down',
   },
+  'social.aria': {
+    be: 'Слухаць і сачыць за Setivir',
+    en: 'Listen to and follow Setivir',
+  },
   'hero.enter': {
     be: 'Слухаць',
     en: 'Start listening',
