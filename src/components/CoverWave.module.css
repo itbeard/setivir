@@ -1,0 +1,49 @@
+/* Sits behind the cover frame; the rippling rings show beyond its edges. */
+.aura {
+  --level: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+
+.aura.playing {
+  opacity: 1;
+}
+
+/* Soft radial bloom that brightens on the beat. */
+.glow {
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--red) 32%, transparent) 0%,
+    transparent 70%
+  );
+  opacity: calc(0.38 + var(--level) * 0.55);
+  filter: blur(7px);
+}
+
+/* Rippling sound-wave contours — larger than the cover so they halo it. */
+.viz {
+  position: absolute;
+  inset: -40%;
+  overflow: visible;
+  /* Subtle whole-halo swell on the beat (per-ring shape is driven in JS). */
+  transform: scale(calc(1 + var(--level) * 0.08));
+}
+
+.viz path {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 1.7px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: calc(0.5 + var(--level) * 0.45);
+}

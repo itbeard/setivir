@@ -23,6 +23,8 @@ interface PlayerValue {
   close: () => void
   seek: (seconds: number) => void
   isCurrent: (song: Song) => boolean
+  /** The live frequency analyser, for beat-reactive visuals. Null until first play. */
+  getAnalyser: () => AnalyserNode | null
 }
 
 const PlayerContext = createContext<PlayerValue | null>(null)
@@ -34,6 +36,10 @@ function isAbortError(err: unknown): boolean {
 
 export function PlayerProvider({ children }: { children: ReactNode }) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  // Web Audio graph for the beat-reactive cover visual, built lazily on first play.
+  const audioCtxRef = useRef<AudioContext | null>(null)
+  const analyserRef = useRef<AnalyserNode | null>(null)
+  const sourceRef = useRef<MediaElementAudioSourceNode | null>(null)
   const [current, setCurrent] = useState<Song | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
@@ -74,8 +80,48 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       audio.removeEventListener('ended', onEnded)
       audio.removeEventListener('error', onError)
       audioRef.current = null
+      if (audioCtxRef.current && audioCtxRef.current.state !== 'closed') {
+        void audioCtxRef.current.close()
+      }
+      audioCtxRef.current = null
+      analyserRef.current = null
+      sourceRef.current = null
     }
   }, [])
+
+  // Wire the shared <audio> element into a Web Audio analyser the first time the
+  // user presses play (an AudioContext can only start from a user gesture), then
+  // resume it on every subsequent play. Routing audio through the graph keeps the
+  // sound audible while exposing live frequency data for the visualiser.
+  const ensureAudio = useCallback(() => {
+    const audio = audioRef.current
+    if (!audio) return null
+    if (!audioCtxRef.current) {
+      try {
+        const Ctx =
+          window.AudioContext ??
+          (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
+        if (!Ctx) return null
+        const ctx = new Ctx()
+        const source = ctx.createMediaElementSource(audio)
+        const analyser = ctx.createAnalyser()
+        analyser.fftSize = 256
+        analyser.smoothingTimeConstant = 0.82
+        source.connect(analyser)
+        analyser.connect(ctx.destination)
+        audioCtxRef.current = ctx
+        sourceRef.current = source
+        analyserRef.current = analyser
+      } catch {
+        return null
+      }
+    }
+    const ctx = audioCtxRef.current
+    if (ctx && ctx.state === 'suspended') void ctx.resume()
+    return ctx
+  }, [])
+
+  const getAnalyser = useCallback(() => analyserRef.current, [])
 
   // Toggle a root class so the layout can reserve space for the mini-player.
   useEffect(() => {
@@ -107,6 +153,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       const sameTrack = current?.id === song.id
       if (sameTrack) {
         if (audio.paused) {
+          ensureAudio()
           void audio.play().catch((err) => {
           // Switching src aborts the prior play() — that's not a real failure.
           if (!isAbortError(err)) setIsPlaying(false)
@@ -118,6 +165,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       }
 
       // Switch to a new track.
+      ensureAudio()
       audio.src = assetUrl(song.audio)
       audio.currentTime = 0
       setCurrent(song)
@@ -125,7 +173,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       setDuration(0)
       void audio.play().catch(() => setIsPlaying(false))
     },
-    [current],
+    [current, ensureAudio],
   )
 
   const seek = useCallback((seconds: number) => {
@@ -141,8 +189,11 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   )
 
   const value = useMemo<PlayerValue>(
-    () => ({ current, isPlaying, currentTime, duration, toggle, pause, close, seek, isCurrent }),
-    [current, isPlaying, currentTime, duration, toggle, pause, close, seek, isCurrent],
+    () => ({
+      current, isPlaying, currentTime, duration,
+      toggle, pause, close, seek, isCurrent, getAnalyser,
+    }),
+    [current, isPlaying, currentTime, duration, toggle, pause, close, seek, isCurrent, getAnalyser],
   )
 
   return <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>

@@ -9,6 +9,7 @@ import { PlayButton } from './PlayButton'
 import { SongMeta } from './SongMeta'
 import { PromptDisclosure } from './PromptDisclosure'
 import { Ornament } from './Ornament'
+import { CoverWave } from './CoverWave'
 import styles from './SongScreen.module.css'
 
 function pad2(n: number): string {
@@ -17,8 +18,9 @@ function pad2(n: number): string {
 
 export function SongScreen({ song, total }: { song: Song; total: number }) {
   const { t, loc, lang } = useI18n()
-  const { current } = usePlayer()
+  const { current, isCurrent, isPlaying } = usePlayer()
   const trackActive = current !== null
+  const isThisTrack = isCurrent(song)
   const title = loc(song.title)
   const description = loc(song.description)
   const descPlaceholder = isPlaceholder(description)
@@ -39,6 +41,7 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
         </div>
 
         <div className={styles.coverWrap}>
+          {isThisTrack && <CoverWave playing={isPlaying} />}
           <div className={styles.frame}>
             <img
               className={styles.cover}
