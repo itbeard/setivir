@@ -60,3 +60,15 @@ export function goNext(): void {
 export function goPrev(): void {
   scrollToIndex(currentIndex() - 1)
 }
+
+/**
+ * Scroll to the section right after the one that contains `el`. Used by on-page
+ * "next" buttons: anchoring to the button's own section (rather than the
+ * scroll-probe `currentIndex`) means a tall section can't make us skip a track.
+ */
+export function goNextFrom(el: HTMLElement | null): void {
+  const sections = getSections()
+  const section = el?.closest<HTMLElement>(SELECTOR) ?? null
+  const idx = section ? sections.indexOf(section) : currentIndex()
+  scrollToIndex(idx + 1)
+}

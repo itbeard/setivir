@@ -24,6 +24,16 @@ const BIN_HI = 80 // highest bin — spread log-wise so the WHOLE spectrum shows
 const MIN_H = 1.6 // resting bar height
 const SCALE = 15 // how far a full-loudness bar reaches out
 
+// Taper bars toward the vertical axis so the halo stays clear of the track
+// number above and the title below — fullest at the sides (left/right), nearly
+// nothing at the very top/bottom.
+const EDGE_FLOOR = 0.07
+const ENV = Array.from({ length: N }, (_, i) => {
+  const a = START + (i / N) * TAU
+  return EDGE_FLOOR + (1 - EDGE_FLOOR) * Math.abs(Math.cos(a)) ** 1.25
+})
+const REST = Float32Array.from(ENV, (e) => MIN_H * e) // resting heights
+
 /** Build the multi-bar path for the given per-bar heights. */
 function barsPath(heights: ArrayLike<number>): string {
   let d = ''
@@ -55,12 +65,12 @@ export function CoverWave({ playing }: { playing: boolean }) {
     const analyser = playing ? getAnalyser() : null
     if (!playing || reduce || !analyser) {
       root.style.setProperty('--level', '0')
-      path.setAttribute('d', barsPath(new Float32Array(N).fill(MIN_H)))
+      path.setAttribute('d', barsPath(REST))
       return
     }
 
     const bins = new Uint8Array(analyser.frequencyBinCount)
-    const heights = new Float32Array(N).fill(MIN_H) // eased per-bar heights
+    const heights = REST.slice() // eased per-bar heights
     let level = 0
     let raf = 0
 
@@ -85,7 +95,7 @@ export function CoverWave({ playing }: { playing: boolean }) {
         const f = binF - i0
         const v = bins[i0] * (1 - f) + (bins[i0 + 1] ?? bins[i0]) * f
         const mag = Math.min(1, (v / 255) * (0.7 + 1.7 * t)) ** 1.15
-        const tgt = MIN_H + mag * SCALE
+        const tgt = (MIN_H + mag * SCALE) * ENV[i]
         // Fast rise, slower fall — bars jump on a hit and ease back down.
         heights[i] += (tgt - heights[i]) * (tgt > heights[i] ? 0.55 : 0.16)
       }

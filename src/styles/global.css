@@ -52,6 +52,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* The cover visualiser can briefly extend past the viewport on a beat; clip
+     it horizontally so it never adds page width (which would jitter the fixed
+     mini-player). `clip` (not hidden) leaves the vertical scroll/snap intact. */
+  overflow-x: clip;
 }
 
 img {

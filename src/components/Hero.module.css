@@ -85,35 +85,3 @@
   transform: rotate(45deg);
   margin-top: -3px;
 }
-
-.scrollHint {
-  position: absolute;
-  left: 50%;
-  bottom: clamp(16px, 3vh, 30px);
-  transform: translateX(-50%);
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  animation: fade 2.6s ease-in-out infinite;
-  transition: opacity 0.3s var(--ease);
-}
-
-/* Hidden while the mini-player occupies the bottom-center zone. */
-.scrollHintHidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-@keyframes fade {
-
-  0%,
-  100% {
-    opacity: 0.4;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}

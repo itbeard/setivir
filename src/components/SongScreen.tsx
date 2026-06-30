@@ -2,7 +2,7 @@ import type { Song } from '../types'
 import { isPlaceholder } from '../data/songs'
 import { assetUrl } from '../lib/assets'
 import { cx } from '../lib/cx'
-import { goNext } from '../lib/nav'
+import { goNextFrom } from '../lib/nav'
 import { usePlayer } from '../audio/PlayerContext'
 import { useI18n } from '../i18n/I18nContext'
 import { PlayButton } from './PlayButton'
@@ -87,7 +87,7 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
       <button
         type="button"
         className={cx(styles.next, trackActive && styles.nextLifted)}
-        onClick={goNext}
+        onClick={(e) => goNextFrom(e.currentTarget)}
         aria-label={t('card.nextSong')}
       >
         <span className={styles.nextChevron} aria-hidden="true" />
