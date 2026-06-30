@@ -40,6 +40,15 @@
   line-height: 1.62;
   color: var(--ink);
   max-width: 54ch;
+  text-align: justify;
+  /* keep the short closing line of each paragraph centred with the rest of
+     the hero rather than ragged-left */
+  text-align-last: left;
+}
+
+/* Blank lines in the source become separate paragraphs; space them out. */
+.intro p+p {
+  margin-top: clamp(20px, 1.8vh, 20px);
 }
 
 .listen {
@@ -98,10 +107,12 @@
 }
 
 @keyframes fade {
+
   0%,
   100% {
     opacity: 0.4;
   }
+
   50% {
     opacity: 1;
   }

@@ -15,7 +15,13 @@ export function Hero() {
         <p className={styles.kicker}>{t('site.tagline')}</p>
         <h1 className={styles.wordmark}>Setivir</h1>
         <Ornament className={styles.ornament} />
-        <p className={styles.intro}>{t('hero.intro')}</p>
+        <div className={styles.intro}>
+          {t('hero.intro')
+            .split(/\n\s*\n/)
+            .map((para, i) => (
+              <p key={i}>{para.trim()}</p>
+            ))}
+        </div>
         <p className={styles.listen}>{t('hero.listen')}</p>
         <button type="button" className={styles.enter} onClick={goNext}>
           {t('hero.enter')}
