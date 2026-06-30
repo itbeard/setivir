@@ -18,6 +18,20 @@ export function PauseIcon() {
   )
 }
 
+export function CloseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">
+      <path
+        d="M6 6l12 12M18 6 6 18"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+      />
+    </svg>
+  )
+}
+
 /* ── Brand glyphs (single-path, monochrome — fill follows `currentColor`).
    Paths are the official simple-icons marks. ── */
 function BrandIcon({ d }: { d: string }) {

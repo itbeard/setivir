@@ -19,6 +19,8 @@ interface PlayerValue {
   /** Play this song, or toggle play/pause if it is already the current one. */
   toggle: (song: Song) => void
   pause: () => void
+  /** Stop playback and dismiss the mini-player entirely. */
+  close: () => void
   seek: (seconds: number) => void
   isCurrent: (song: Song) => boolean
 }
@@ -84,6 +86,19 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     audioRef.current?.pause()
   }, [])
 
+  const close = useCallback(() => {
+    const audio = audioRef.current
+    if (audio) {
+      audio.pause()
+      audio.removeAttribute('src')
+      audio.load() // fully unload the source so nothing keeps buffering
+    }
+    setCurrent(null)
+    setIsPlaying(false)
+    setCurrentTime(0)
+    setDuration(0)
+  }, [])
+
   const toggle = useCallback(
     (song: Song) => {
       const audio = audioRef.current
@@ -126,8 +141,8 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   )
 
   const value = useMemo<PlayerValue>(
-    () => ({ current, isPlaying, currentTime, duration, toggle, pause, seek, isCurrent }),
-    [current, isPlaying, currentTime, duration, toggle, pause, seek, isCurrent],
+    () => ({ current, isPlaying, currentTime, duration, toggle, pause, close, seek, isCurrent }),
+    [current, isPlaying, currentTime, duration, toggle, pause, close, seek, isCurrent],
   )
 
   return <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>

@@ -3,11 +3,11 @@ import { usePlayer, formatTime } from '../audio/PlayerContext'
 import { useI18n } from '../i18n/I18nContext'
 import { assetUrl } from '../lib/assets'
 import { scrollToId } from '../lib/nav'
-import { PlayIcon, PauseIcon } from './icons'
+import { PlayIcon, PauseIcon, CloseIcon } from './icons'
 import styles from './MiniPlayer.module.css'
 
 export function MiniPlayer() {
-  const { current, isPlaying, currentTime, duration, toggle, seek } = usePlayer()
+  const { current, isPlaying, currentTime, duration, toggle, seek, close } = usePlayer()
   const { t, loc } = useI18n()
 
   // While the user drags the slider, drive it from local state so incoming
@@ -69,6 +69,15 @@ export function MiniPlayer() {
         />
         <span className={styles.time}>{formatTime(duration)}</span>
       </div>
+
+      <button
+        type="button"
+        className={styles.close}
+        onClick={close}
+        aria-label={t('player.close')}
+      >
+        <CloseIcon />
+      </button>
     </div>
   )
 }

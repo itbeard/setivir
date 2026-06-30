@@ -53,6 +53,10 @@ Through Setivir, I seek to reveal Belarusian culture in a new context, expand th
     be: 'Цяпер грае',
     en: 'Now playing',
   },
+  'player.close': {
+    be: 'Зачыніць плэер',
+    en: 'Close player',
+  },
   'player.seek': {
     be: 'Перамотка',
     en: 'Seek',

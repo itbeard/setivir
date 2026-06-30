@@ -97,6 +97,28 @@
   line-height: 0;
 }
 
+.close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--ink-faint);
+  font-size: 16px;
+  transition: color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.close:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.close:active {
+  transform: scale(0.92);
+}
+
 .seekWrap {
   display: flex;
   align-items: center;
