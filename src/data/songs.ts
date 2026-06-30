@@ -60,7 +60,7 @@ export const songs: Song[] = [
   song(1, 'rodny-flou', 'Родны Флоў', 'Rodny Fłoŭ', 'jpg', '1. Setivir - Rodny Flou.mp3', {
     date: '08/17/2025',
     model: 'Suno v4.5+',
-    lyricsAuthor: { be: 'Аляксей Карытннік', en: 'Aliaksiej Karytnnik' },
+    lyricsAuthor: { be: 'Аляксей Картыннік', en: 'Aliaksei Kartynnik' },
     description: {
       be: 'Гэты трэк — ода-заклік да беларускай ідэнтычнасьці, што спалучае хвацкі рэп-флоў з адсылкамі да паэтаў, сьвятых і паўстанцаў, каб прасачыць жывую повязь ад фальклору да сучаснасьці.',
       en: 'This track is a rallying ode to Belarusian identity, fusing a hard-hitting rap flow with references to poets, saints, and rebels to trace a living lineage from folklore to the present.',
