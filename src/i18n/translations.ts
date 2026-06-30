@@ -66,8 +66,8 @@ Through Setivir, I seek to reveal Belarusian culture in a new context, expand th
     en: 'Lyrics by',
   },
   'meta.date': {
-    be: 'Дата',
-    en: 'Date',
+    be: 'Апублікавана',
+    en: 'Released',
   },
   'meta.song': {
     be: 'Песьня',
