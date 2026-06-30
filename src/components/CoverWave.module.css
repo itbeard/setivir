@@ -32,13 +32,14 @@
   filter: blur(7px);
 }
 
-/* Rippling sound-wave contours — larger than the cover so they halo it. */
+/* Radial bars — larger than the cover so they halo it. The bars themselves
+   react to the beat (their length is set per-frame in JS); the container is left
+   untransformed so its box never changes size — a per-frame box transform here
+   was jittering the fixed mini-player on mobile. */
 .viz {
   position: absolute;
   inset: -40%;
   overflow: visible;
-  /* Subtle whole-halo swell on the beat (per-ring shape is driven in JS). */
-  transform: scale(calc(1 + var(--level) * 0.08));
 }
 
 .viz path {

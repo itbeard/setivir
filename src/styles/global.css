@@ -127,6 +127,10 @@ html.has-track {
   align-items: center;
   padding: calc(var(--topbar-h) + var(--pad-y)) var(--pad-x)
     calc(var(--pad-y) + var(--player-reserve));
+  /* Bound the section's scroll overflow so the cover visualiser (absolutely
+     positioned, animating every frame) can't grow the page and make the fixed
+     mini-player drift on mobile. `clip` doesn't create a scroll container. */
+  overflow: clip;
 }
 
 /* Keyboard skip link — off-screen until focused */

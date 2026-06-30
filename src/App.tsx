@@ -38,7 +38,7 @@ function Shell() {
       <a className="skip-link" href="#main-content">
         {t('a11y.skip')}
       </a>
-      <TopBar activeSong={activeSong} total={total} />
+      <TopBar activeSong={activeSong} total={total} songs={displaySongs} />
       <ProgressNav songs={displaySongs} activeIndex={activeIndex} />
       <main id="main-content">
         <Hero />

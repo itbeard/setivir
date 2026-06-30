@@ -3,6 +3,9 @@
   left: 50%;
   bottom: clamp(12px, 2.4vh, 22px);
   transform: translateX(-50%);
+  /* Keep the bar on its own compositor layer so background repaints (the
+     beat-reactive cover visual) can't jitter it. */
+  will-change: transform;
   z-index: 60;
   width: min(640px, calc(100vw - 24px));
   display: flex;
