@@ -3,7 +3,9 @@
   --level: 0;
   position: absolute;
   inset: 0;
-  z-index: 0;
+  /* Behind the cover *and* behind the song text (which is non-positioned, so a
+     positioned sibling would otherwise paint on top of it). */
+  z-index: -1;
   display: grid;
   place-items: center;
   pointer-events: none;
