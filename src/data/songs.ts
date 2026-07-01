@@ -291,7 +291,136 @@ You’ll grasp what it is to be called a worthy Belarusian.
   // ⚠ exact filename contains a Cyrillic "с" in "noс"
   song(10, 'cichaja-noc', 'Ціхая ноч', 'Cichaja noč', 'jpg', '10. Setivir - Cichaja noс.mp3'),
   song(11, 'khto-ya', 'Хто я', 'Khto ya', 'jpg', '11. Setivir - Khto ya.mp3'),
-  song(12, 'dzed-baradzed', 'Дзед-барадзед', 'Dzed-baradzed', 'jpg', '12. Setivir - Dzed-baradzed.mp3'),
+  song(12, 'dzed-baradzed', 'Дзед-барадзед', 'Dzied-Baradzied', 'jpg', '12. Setivir - Dzed-baradzed.mp3', {
+    date: '09/12/2025',
+    model: 'Suno v5',
+    lyricsAuthor: { be: 'Артур Вольскі', en: 'Artur Volski' },
+    description: {
+      be: `«Дзед-Барадзед» — беларуская касьмічная прог-рокавая вандроўка ў духу Pink Floyd: павольная, атмасфэрная касьмічная адысэя пра адвечнага апекуна чалавецтва, добрага «дзеда з барадой», які са зораў сочыць за кожным дзіцём. Шматслойныя гітары, лунаючыя сынтэзатары і прасторныя барабаны ствараюць мэдытатыўны, кінэматаграфічны гукавы ландшафт, нібы ты плывеш праз галяктыкі разам са сваім найстарэйшым сябрам, а беларускі тэкст «Дзеда-Барадзеда» ціха задае адно і тое ж простае, вечнае пытаньне: хто мы ў гэтым бязьмежным сусьвеце?`,
+      en: `"Dzied-Baradzied" is a Belarusian cosmic progressive rock journey in the spirit of Pink Floyd — a slow, atmospheric space odyssey about a timeless guardian of humanity, a kind "grandfather with a beard" who watches over every child from the stars. Layered guitars, floating synths and spacious drums build a meditative, cinematic soundscape that feels like drifting through galaxies with your oldest friend, while the Belarusian lyrics of Dzied-Baradzied ("Grandpa Long-Beard") quietly ask the same simple, eternal question: who are we in this vast universe?`,
+    },
+    lyrics: {
+      be: `Я хаджу па белым свеце
+І гляджу, як вы жывяце.
+Калі трэба — памагу,
+Бо я ўсё рабіць магу.
+
+З вамі побач буду ўсюды,
+Трэба цуды — зробім цуды,
+Трэба казка — раз, два, тры —
+Вось і казка вам, сябры!
+
+Хто я? Дзед-Барадзед,
+Абышоў белы свет,
+А цяпер у ціхі час
+Завітаў да вас.
+
+Я хаджу па белым свеце —
+Ваш найлепшы сябар, дзеці.
+І вядома нават мне,
+Што вы бачыце ўва сне.
+
+Хто я? Дзед-Барадзед,
+Абышоў белы свет,
+А цяпер у ціхі час
+Завітаў да вас.
+
+Хто я? Дзед-Барадзед,
+Абышоў белы свет,
+А цяпер у ціхі час
+Завітаў да вас.
+
+Я хаджу па белым свеце
+І гляджу, як вы жывяце.
+Калі трэба — памагу,
+Бо я ўсё рабіць магу.
+
+Хто я? Дзед-Барадзед,
+Абышоў белы свет...`,
+      en: `[Verse 1]
+I walk around the wide world,
+And I watch how you all live.
+If you need it – I will help,
+Because I can do anything.
+
+[Chorus]
+Who am I? I’m Grandpa Long-Beard,
+I have walked around the wide world,
+And now, in this quiet hour,
+I have come to you.
+
+[Verse 2]
+I’ll be beside you everywhere,
+Need miracles? — we’ll make miracles,
+Need a fairy tale? — one, two, three —
+Here’s a fairy tale for you, my friends!
+
+[Verse 3]
+I walk around the wide world —
+I’m your best friend, children.
+And I even know
+What you see inside your dreams.
+
+[Verse 4]
+I walk around the wide world,
+And I watch how you all live.
+If you need it — I will help,
+Because I can do anything.`,
+    },
+    stylePrompt:
+      'A spacious, psychedelic progressive rock track: slow to mid-tempo live drums, warm, rounded bass and smooth, echo-drenched electric guitars playing long, bending notes and melodic, emotional solos, Airy analog-style synth pads, cosmic sound effects and distant vocal harmonies create a dreamy, introspective atmosphere, with long builds, extended instrumental sections and smooth dynamic shifts that feel like a continuous journey rather than a simple verse-chorus song',
+    lyricsPrompt: `[Verse 0]
+Я хаджу па белым сьвете
+I гляджу, як вы жывете.
+Калi трэба памагу,
+Бо я ўсё рабiць магу.
+
+[Verse 1]
+З вамі побаcz буду ўсюды,
+Трэба цуды – зробім цуды,
+
+[BassDrop]
+Трэба казка – раз, два, тры –
+Вось і казка вам, сябры!
+
+[Chorus]
+Хто я? Дьзьед-барадьзед,
+Абышоў белы сьвет,
+А тяпер у ціхі czас
+Завітаў да вас.
+
+[Verse 2]
+Я хаджу па белым свете –
+Ваш найлепшы сябар, дьзьеці.
+
+[BassDrop]
+І вядома нават мне,
+Што вы баczыте ўва сне.
+
+[Chorus]
+Хто я? Дьзьед-барадьзед,
+Абышоў белы сьвет,
+А тяпер у ціхі czас
+Завітаў да вас.
+
+[Chorus]
+Хто я? Дьзьед-барадьзед,
+Абышоў белы сьвет,
+А тяпер у ціхі czас
+Завітаў да вас.
+
+[Verse 3]
+Я хаджу па белым сьвете
+І гляджу, як вы жывете.
+
+[BassDrop]
+Калі трэба – памагу,
+Бо я ўсё рабіць магу.
+
+[Chorus]
+Хто я? Дьзьед-барадьзед,
+Абышоў белы сьвет,`,
+  }),
   // ⚠ праверце пераклад назвы / verify title
   song(13, 'zviaz-piarscionka', 'Зьвяз пярсьцёнка', 'Zviaz piarscionka', 'jpg', '13. Setivir - Zviaz piarscionka.mp3'),
   // ⚠ ёсьць дублікат "14. Dvaccaty.mp3" — выкарыстоўваецца новы файл
@@ -402,31 +531,25 @@ and then twenty knocked at our door.`,
       en: `This song reinterprets Yanka Kupala’s iconic poem “A chto tam idzie” as a brutal digital attack, where the weight of historical grievance is amplified by distorted bass and aggressive electro rhythms. Track available on all streaming platforms.`,
     },
     lyrics: {
-      be: `А хто там, а хто там у агромністай такой грамадзе?
-— Беларусы.
+      be: `А хто там ідзе, а хто там ідзе
+У агромністай такой грамадзе?
 — Беларусы.
 
 А што яны нясуць на худых плячах,
-На руках у крыві, на нагах у лапцях?
-— Сваю крыўду.
+На руках ў крыві, на нагах у лапцях?
 — Сваю крыўду.
 
 А куды ж нясуць гэту крыўду ўсю,
 А куды ж нясуць на паказ сваю?
-— На свет цэлы!
-— На свет цэлы!
+— На свет цэлы.
 
 А хто гэта іх, не адзін мільён,
-Крыўду несці навучыў, разбудзіў іх сон?!
+Крыўду несць наўчыў, разбудзіў іх сон?
 — Бяда, гора.
-Глухім?
 
-— Людзьмі звацца!
-— Людзьмі звацца!
-— Людзьмі звацца!
-
-Беларусы...
-Сваю крыўду...`,
+А чаго ж, чаго захацелась ім,
+Пагарджаным век, ім, сляпым, глухім?
+— Людзьмі звацца.`,
       en: `And who goes there, and who goes there,
 In such a vast and massive throng?
 — Belarusians.
