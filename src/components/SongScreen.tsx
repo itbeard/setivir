@@ -9,6 +9,7 @@ import { PlayButton } from './PlayButton'
 import { SongMeta } from './SongMeta'
 import { PromptDisclosure } from './PromptDisclosure'
 import { CoverWave } from './CoverWave'
+import { Markdown } from '../lib/markdown'
 import styles from './SongScreen.module.css'
 
 function pad2(n: number): string {
@@ -60,11 +61,10 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
         <SongMeta song={song} />
 
         <div className={styles.text}>
-          {description.split(/\n\s*\n/).map((para, i) => (
-            <p key={i} className={cx(styles.description, descPlaceholder && 'is-placeholder')}>
-              {para.trim()}
-            </p>
-          ))}
+          <Markdown
+            text={description}
+            paragraphClassName={cx(styles.description, descPlaceholder && 'is-placeholder')}
+          />
         </div>
 
         <div className={styles.prompts}>

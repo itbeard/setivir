@@ -98,6 +98,26 @@
   margin-top: clamp(12px, 1.8vh, 20px);
 }
 
+/* Inline Markdown in the description (**bold**, *italic*, [links](…)). */
+.text strong {
+  font-weight: 700;
+}
+
+.text em {
+  font-style: italic;
+}
+
+.text a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.text a:hover {
+  color: var(--red-deep);
+}
+
 .prompts {
   width: 100%;
   max-width: 56ch;
