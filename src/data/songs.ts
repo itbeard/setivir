@@ -299,7 +299,88 @@ You’ll grasp what it is to be called a worthy Belarusian.
   song(15, 'a-chto-tam-idzie', 'А хто там ідзе', 'A chto tam idzie', 'jpg', '15. Setivir - A chto tam idzie.mp3'),
   song(16, 'veczar-toj', 'Вечар той', 'Veczar Toj', 'jpg', '17. Setivir - Veczar Toj.mp3'),
   song(17, 'belarusian-rave', 'Беларускі рэйв', 'Belarusian Rave', 'jpg', '16. Setivir - Belarusian rave.mp3'),
-  song(18, 'shto-kashtuje', 'Што каштуе', 'Što Kaštuje', 'jpg', '18. Setivir - Što Kaštuje.mp3'),
+  song(18, 'shto-kashtuje', 'Што каштуе', 'Što Kaštuje', 'jpg', '18. Setivir - Što Kaštuje.mp3', {
+    date: '25/04/2026',
+    model: 'Suno v5.5',
+    lyricsAuthor: { be: 'Фальклёрны твор', en: 'Traditional folk song' },
+    lyrics: {
+      be: `Бацька едзе па лучыну
+А сын едзе па дзяўчыну
+Бацька едзе з лучынаю
+А сын едзе з дзяўчынаю
+
+Пытаецца бацька ў сына
+Што каштуе та дзяўчына
+
+Што каштуе — трэба даць
+Гаспадыня будзе ў хаце!
+
+Людзі маюць што казаць
+Я маю каго кахаць
+Людзі маюць, што рабіць
+А я маю і з кім жыць
+
+Бацька едзе па лучыну...`,
+      en: `Father rides for kindling wood,
+And the son rides for a girl.
+Father rides with the kindling,
+And the son rides with the girl.
+
+The father asks the son:
+"What does that girl cost?"
+
+Whatever she costs — we must give it,
+A mistress of the house will be at home!
+
+People have things to say,
+But I have someone to love.
+People have things to do,
+And I have someone to live with.
+
+Father rides for kindling wood...`,
+    },
+    stylePrompt:
+      'deep dubstep, folktronic, 132 BPM, whispered ritual vocals, slow cello solo, deep sub-bass, half-time kick, sparse tom hits, resonant bathroom reverb, ceramic slap delay, tape saturation, wide stereo synths, folk vocal sampling, minor key drones, bleak cinematic, ceremonial urgency',
+    lyricsPrompt: `[Verse 1]
+Батька едьзе па луczыну
+А сын едьзе па дьзяўчыну
+Батька едьзе з лучыною
+А сын едьзе з дьзяўчыною
+
+[Pre-Chorus: Fast rhythmic percussion, rising electronic tension]
+Пытаецца батька ў сына
+Што каштуе та дзяўчына
+Што каштуе та дзяўчына!
+
+[Drop: Heavy Dubstep Bass]
+Што каштуе – трэба даті
+Гаспадыня будзе ў хате!
+Што каштуе – трэба даті
+Гаспадыня будзе ў хате!
+
+[Verse 2: Hard electronic beat]
+Людзі маюць што казаті
+Я маю каго кахаті
+Людзі маюць, што рабіті
+А я маю і з кім жыті
+
+[Bridge: Half-time beat, heavy wobble bass, atmospheric]
+Людзі маюць што казаці
+Людзі маюць што казаці
+Я маю каго кахаці!
+
+[Chorus: Intense Dubstep Drop, Layered Vocals]
+Што каштуе – трэба даті
+Гаспадыня будзе ў хате!
+Што каштуе – трэба даті
+Гаспадыня будзе ў хате!
+А я маю і з кім жыті!
+
+[Outro: Bass fades out]
+Батька едьзе...
+Сын едьзе...
+[End]`,
+  }),
   song(19, 'mova-maci', 'Мова-Маці', 'Mova-Maci', 'png', '20. Setivir - Mova-Maci.mp3', {
     date: '04/06/2026',
     model: 'Suno v5.5',
