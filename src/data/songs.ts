@@ -2332,6 +2332,14 @@ The village was burning...`,
     date: '25/04/2026',
     model: 'Suno v5.5',
     lyricsAuthor: { be: 'Фальклёрны твор', en: 'Traditional folk song' },
+    description: {
+      be: `«Беларускі рэйв» — тэхна-вэрсія таго самага народнага твору, што і «Што каштуе»: жартоўная гісторыя пра бацьку, сына і дзяўчыну, за якую варта аддаць любы кошт. Практычны бацька пытаецца, «што каштуе тая дзяўчына», а сын адказвае, што галоўнае — не тое, што кажуць людзі, а тое, што ў яго ёсьць каго кахаць і з кім жыць.
+
+Тут фальклорны тэкст пакладзены на dark techno і industrial minimal: жорсткі кік, драйвавы бас, кіслотная лінія і речытатыўны, амаль заклінальны спеў з прыпевам «пытаньне–адказ». Народная показка ператвараецца ў начны танцпол, а «Што каштуе — трэба даць» гучыць ужо не як гандаль, а як калектыўны выкрык.`,
+      en: `“Belarusian Rave” is the techno version of the same folk piece as “Što Kaštuje”: a playful tale of a father, a son, and a girl worth any price. A down-to-earth father asks “what that girl costs,” and the son replies that what matters is not what people say, but that he has someone to love and someone to live with.
+
+Here the folk text is set to dark techno and industrial minimal: a hard kick, a driving bassline, an acid line, and a chant-like, almost incantatory delivery with a call-and-response refrain. The folk anecdote turns into a nocturnal dancefloor, and “Whatever she costs — we must give it” sounds no longer like bargaining but like a collective shout.`,
+    },
     lyrics: {
       be: `Бацька едзе па лучыну
 А сын едзе па дзяўчыну
@@ -2398,6 +2406,14 @@ Father rides for kindling wood...`,
     date: '25/04/2026',
     model: 'Suno v5.5',
     lyricsAuthor: { be: 'Фальклёрны твор', en: 'Traditional folk song' },
+    description: {
+      be: `«Што каштуе» — сучасная электронная адаптацыя беларускага народнага жартоўнага твору пра каханьне і выбар. Зямны, практычны бацька пытаецца ў сына, «што каштуе тая дзяўчына», а сын адказвае, што за каханую трэба аддаць любы кошт: галоўнае — не тое, што кажуць людзі, а тое, што ў яго ёсьць каго кахаць і з кім жыць.
+
+У гэтай вэрсіі старая песьня гучыць як цёмны рытуал: глыбокі саб-бас, half-time біт, шэпт, павольнае віяланчэлевае сола і фолктроніка ператвараюць вясельны сюжэт ва ўрачыстую, амаль абрадавую дзею. Дабстэп-дроп «Што каштуе — трэба даць» падае як прысяга.`,
+      en: `“Što Kaštuje” (“What Does It Cost”) is a modern electronic adaptation of a playful Belarusian folk song about love and choice. A down-to-earth, practical father asks his son “what that girl costs,” and the son answers that a beloved is worth any price: what matters is not what people say, but that he has someone to love and someone to live with.
+
+In this version the old song sounds like a dark ritual: deep sub-bass, a half-time beat, whispers, a slow cello solo, and folktronic textures turn a wedding scene into a solemn, almost ceremonial rite. The dubstep drop “Whatever she costs — we must give it” lands like a vow.`,
+    },
     lyrics: {
       be: `Бацька едзе па лучыну
 А сын едзе па дзяўчыну
