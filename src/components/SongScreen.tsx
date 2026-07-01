@@ -8,7 +8,6 @@ import { useI18n } from '../i18n/I18nContext'
 import { PlayButton } from './PlayButton'
 import { SongMeta } from './SongMeta'
 import { PromptDisclosure } from './PromptDisclosure'
-import { Ornament } from './Ornament'
 import { CoverWave } from './CoverWave'
 import styles from './SongScreen.module.css'
 
@@ -57,7 +56,8 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
         </div>
 
         <h2 className={styles.title}>{title}</h2>
-        <Ornament className={styles.ornament} />
+
+        <SongMeta song={song} />
 
         <div className={styles.text}>
           {description.split(/\n\s*\n/).map((para, i) => (
@@ -66,8 +66,6 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
             </p>
           ))}
         </div>
-
-        <SongMeta song={song} />
 
         <div className={styles.prompts}>
           <PromptDisclosure
