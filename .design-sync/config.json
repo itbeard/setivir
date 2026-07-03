@@ -1,0 +1,46 @@
+{
+  "projectId": "d122d0d4-1cca-47b3-969f-da9667365ef8",
+  "shape": "package",
+  "pkg": "setivir",
+  "globalName": "Setivir",
+  "entry": "./.design-sync/ds-entry.tsx",
+  "tsconfig": ".design-sync/tsconfig.esbuild.json",
+  "extraFonts": "src/styles/global.css",
+  "readmeHeader": ".design-sync/conventions.md",
+  "provider": {
+    "component": "I18nProvider",
+    "inner": { "component": "PlayerProvider" }
+  },
+  "overrides": {
+    "MiniPlayer": { "cardMode": "single", "viewport": "760x220" },
+    "SongScreen": { "cardMode": "single", "viewport": "920x1200" },
+    "Hero": { "cardMode": "single", "viewport": "1000x860" },
+    "Outro": { "cardMode": "single", "viewport": "1000x820" },
+    "TopBar": { "cardMode": "single", "viewport": "1000x170" },
+    "ProgressNav": { "cardMode": "single", "viewport": "1100x820" }
+  },
+  "componentSrcMap": {
+    "Hero": "src/components/Hero.tsx",
+    "TopBar": "src/components/TopBar.tsx",
+    "ProgressNav": "src/components/ProgressNav.tsx",
+    "SongScreen": "src/components/SongScreen.tsx",
+    "SongMeta": "src/components/SongMeta.tsx",
+    "PlayButton": "src/components/PlayButton.tsx",
+    "MiniPlayer": "src/components/MiniPlayer.tsx",
+    "CoverWave": "src/components/CoverWave.tsx",
+    "PromptDisclosure": "src/components/PromptDisclosure.tsx",
+    "SocialLinks": "src/components/SocialLinks.tsx",
+    "Outro": "src/components/Outro.tsx",
+    "Ornament": "src/components/Ornament.tsx"
+  },
+  "dtsPropsFor": {
+    "PlayButton": "  /** The song this button plays / pauses. */\n  song: { id: number; slug: string; title: { be: string; en: string }; audio: string; cover: string; date: string; model: string; lyricsAuthor: { be: string; en: string }; description: { be: string; en: string }; lyrics: { be: string; en: string }; stylePrompt: string; lyricsPrompt: string };\n  /** Larger dock-sized variant (used on the song card). */\n  large?: boolean;",
+    "SongMeta": "  /** The song whose author / model / date rows are shown. */\n  song: { id: number; slug: string; title: { be: string; en: string }; audio: string; cover: string; date: string; model: string; lyricsAuthor: { be: string; en: string }; description: { be: string; en: string }; lyrics: { be: string; en: string }; stylePrompt: string; lyricsPrompt: string };",
+    "SongScreen": "  /** The song rendered on this full-screen card. */\n  song: { id: number; slug: string; title: { be: string; en: string }; audio: string; cover: string; date: string; model: string; lyricsAuthor: { be: string; en: string }; description: { be: string; en: string }; lyrics: { be: string; en: string }; stylePrompt: string; lyricsPrompt: string };\n  /** Total number of songs (shown as \"№ NN / total\"). */\n  total: number;",
+    "ProgressNav": "  /** The songs, in page order, rendered as a vertical tick rail. */\n  songs: Array<{ id: number; slug: string; title: { be: string; en: string }; audio: string; cover: string; date: string; model: string; lyricsAuthor: { be: string; en: string }; description: { be: string; en: string }; lyrics: { be: string; en: string }; stylePrompt: string; lyricsPrompt: string }>;\n  /** Active section index (0 = intro, 1..N = songs); highlights the matching tick. */\n  activeIndex: number;",
+    "TopBar": "  /** Track number of the song currently in view, or null on the intro/outro. */\n  activeSong: number | null;\n  /** Total number of songs. */\n  total: number;\n  /** All songs, for the quick-nav dropdown. */\n  songs: Array<{ id: number; slug: string; title: { be: string; en: string }; audio: string; cover: string; date: string; model: string; lyricsAuthor: { be: string; en: string }; description: { be: string; en: string }; lyrics: { be: string; en: string }; stylePrompt: string; lyricsPrompt: string }>;",
+    "CoverWave": "  /** When true, animate the radial spectrum from the live audio analyser; otherwise show the resting bars. */\n  playing: boolean;",
+    "PromptDisclosure": "  /** Summary label shown on the collapsed disclosure. */\n  label: string;\n  /** The revealed body text (lyrics or a generation prompt). */\n  content: string;\n  /** Optional caption shown above the content (e.g. a translation disclaimer). */\n  note?: string;",
+    "Ornament": "  /** Class applied to the SVG (colour follows the parent's `color`). */\n  className?: string;"
+  }
+}
