@@ -1,18 +1,21 @@
 import { useEffect } from 'react'
 import { getSections, goNext, goPrev, scrollToIndex } from '../lib/nav'
+import { isDialogOpen } from './useModalDialog'
 
 /**
  * Global keyboard navigation between sections:
- *   Space / ↓ / PageDown → next     ↑ / PageUp → previous
- *   Home → first          End → last
+ *   Space / ↓ / PageDown / j → next     ↑ / PageUp / k → previous
+ *   Home → first                        End → last
  *
  * Keys are ignored while the user is interacting with form controls, links,
- * buttons (so Space still activates them) or an open <summary>.
+ * buttons (so Space still activates them), an open <summary>, or while a
+ * modal dialog (song sheet, lightbox) is up.
  */
 export function useKeyboardNav(): void {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return
+      if (isDialogOpen()) return
 
       const target = e.target as HTMLElement | null
       const tag = target?.tagName
@@ -33,11 +36,13 @@ export function useKeyboardNav(): void {
         case ' ':
         case 'PageDown':
         case 'ArrowDown':
+        case 'j':
           e.preventDefault()
           goNext()
           break
         case 'PageUp':
         case 'ArrowUp':
+        case 'k':
           e.preventDefault()
           goPrev()
           break

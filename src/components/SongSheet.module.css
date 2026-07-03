@@ -1,0 +1,254 @@
+/* Full-width bottom sheet replacing the anchored dropdown on ≤1024px. */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+  background: color-mix(in srgb, var(--ink) 34%, transparent);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  animation: svFadeIn 0.25s var(--ease) both;
+}
+
+.overlay.closing .backdrop {
+  animation: svFadeOut 0.2s var(--ease) both;
+}
+
+.panel {
+  position: relative;
+  pointer-events: auto;
+  width: 100%;
+  max-width: 560px;
+  margin: auto auto 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-bottom: none;
+  border-radius: 18px 18px 0 0;
+  box-shadow: var(--shadow-bar);
+  padding: 0 14px calc(14px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  max-height: min(78svh, 620px);
+  animation: svSheetUp 0.3s var(--ease) both;
+}
+
+.overlay.closing .panel {
+  animation: svSheetDown 0.22s var(--ease) both;
+}
+
+@keyframes svSheetUp {
+  from {
+    transform: translateY(28px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes svSheetDown {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(32px);
+    opacity: 0;
+  }
+}
+
+@keyframes svFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes svFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Grab handle doubles as a close button. */
+.handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0 12px;
+}
+
+.handleBar {
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--line-strong);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 10px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.headTitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.headCounter {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--red);
+}
+
+.list {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0 6px;
+}
+
+.rowWrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 54px;
+  padding: 13px 12px;
+  border-radius: 10px;
+  text-align: left;
+  transition: background 0.15s var(--ease);
+}
+
+.row:hover {
+  background: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+
+.rowActive,
+.rowActive:hover {
+  background: var(--red-tint);
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.rowActive .num {
+  color: var(--red);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ink);
+}
+
+.rowActive .title {
+  color: var(--red-deep);
+}
+
+.mark {
+  color: var(--red);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.markPlaying {
+  animation: svPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes svPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--ink-faint);
+  text-decoration: none;
+  font-size: 17px;
+  transition: color 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.download:hover {
+  color: var(--red);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.foot {
+  display: flex;
+  gap: 10px;
+  padding: 10px 6px 0;
+  border-top: 1px solid var(--line);
+}
+
+.jump {
+  flex: 1;
+  padding: 13px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+
+.jump:hover {
+  color: var(--red);
+  border-color: var(--red);
+}

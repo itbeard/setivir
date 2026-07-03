@@ -1,11 +1,17 @@
-import { useEffect } from 'react'
+import { Fragment, useEffect, useRef } from 'react'
 import { songs } from './data/songs'
 import { I18nProvider, useI18n } from './i18n/I18nContext'
-import { PlayerProvider } from './audio/PlayerContext'
+import { PlayerProvider, usePlayer } from './audio/PlayerContext'
 import { useActiveSection } from './hooks/useActiveSection'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
+import { useRevealSections } from './hooks/useRevealSections'
+import { getSections } from './lib/nav'
+import { settings } from './settings'
 import { TopBar } from './components/TopBar'
 import { ProgressNav } from './components/ProgressNav'
+import { ScrollProgress } from './components/ScrollProgress'
+import { PaperGrain } from './components/PaperGrain'
+import { OrnamentDivider } from './components/OrnamentDivider'
 import { Hero } from './components/Hero'
 import { SongScreen } from './components/SongScreen'
 import { Outro } from './components/Outro'
@@ -16,9 +22,11 @@ import { MiniPlayer } from './components/MiniPlayer'
 const displaySongs = [...songs].sort((a, b) => b.id - a.id)
 
 function Shell() {
-  const { lang, t } = useI18n()
+  const { lang, t, loc } = useI18n()
+  const { current, isPlaying } = usePlayer()
   useKeyboardNav()
   const activeIndex = useActiveSection()
+  const animOn = useRevealSections(settings.entranceAnim)
   const total = songs.length
 
   // Songs occupy section indices 1..total (intro is 0, outro is last). The page
@@ -26,25 +34,67 @@ function Shell() {
   const activeSong =
     activeIndex >= 1 && activeIndex <= total ? displaySongs[activeIndex - 1].id : null
 
+  // Tab title: base site title, or "▶ {track} — Setivir" while playing.
   useEffect(() => {
-    document.title =
+    const base =
       lang === 'be'
         ? 'Setivir — Музыка Тутэйшых'
         : 'Setivir — Songs of the Tuteyshya'
-  }, [lang])
+    document.title =
+      isPlaying && current ? `▶ ${loc(current.title)} — Setivir` : base
+  }, [lang, isPlaying, current, loc])
+
+  // Honor an incoming #hash deep link once the sections exist.
+  useEffect(() => {
+    const hash = decodeURIComponent(window.location.hash.slice(1))
+    if (!hash) return
+    const el = document.getElementById(hash)
+    if (!el) return
+    const raf = requestAnimationFrame(() => {
+      el.scrollIntoView({ behavior: 'auto', block: 'start' })
+    })
+    return () => cancelAnimationFrame(raf)
+  }, [])
+
+  // Keep location.hash in sync with the active section (deep links). Skip the
+  // initial render so an incoming hash isn't clobbered before the jump above.
+  const hashSyncedRef = useRef(false)
+  useEffect(() => {
+    if (!hashSyncedRef.current) {
+      hashSyncedRef.current = true
+      return
+    }
+    const id = getSections()[activeIndex]?.id
+    if (!id) return
+    try {
+      window.history.replaceState(null, '', `#${id}`)
+    } catch {
+      /* sandboxed iframe etc. */
+    }
+  }, [activeIndex])
 
   return (
     <>
       <a className="skip-link" href="#main-content">
         {t('a11y.skip')}
       </a>
+      <ScrollProgress />
+      {settings.paperGrain && <PaperGrain />}
       <TopBar activeSong={activeSong} total={total} songs={displaySongs} />
       <ProgressNav songs={displaySongs} activeIndex={activeIndex} />
-      <main id="main-content">
+      <main id="main-content" data-anim={animOn ? 'on' : undefined}>
         <Hero />
-        {displaySongs.map((song) => (
-          <SongScreen key={song.id} song={song} total={total} />
+        {displaySongs.map((song, i) => (
+          <Fragment key={song.id}>
+            {settings.ornamentDividers && <OrnamentDivider />}
+            <SongScreen
+              song={song}
+              total={total}
+              alt={settings.altSongBg && i % 2 === 1}
+            />
+          </Fragment>
         ))}
+        {settings.ornamentDividers && <OrnamentDivider />}
         <Outro />
       </main>
       <MiniPlayer />
@@ -55,7 +105,7 @@ function Shell() {
 export default function App() {
   return (
     <I18nProvider>
-      <PlayerProvider>
+      <PlayerProvider playlist={displaySongs}>
         <Shell />
       </PlayerProvider>
     </I18nProvider>

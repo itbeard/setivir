@@ -10,7 +10,7 @@ export function Hero() {
 
   return (
     <section id="intro" data-section data-kind="intro" className={cx('section', styles.hero)}>
-      <div className={styles.inner}>
+      <div className={styles.inner} data-anim-stack>
         <p className={styles.kicker}>{t('site.tagline')}</p>
         <h1 className={styles.wordmark}>Setivir</h1>
         <SocialLinks />

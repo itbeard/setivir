@@ -10,6 +10,7 @@ import {
 } from 'react'
 import type { Song } from '../types'
 import { assetUrl } from '../lib/assets'
+import { useI18n } from '../i18n/I18nContext'
 
 interface PlayerValue {
   current: Song | null
@@ -23,6 +24,9 @@ interface PlayerValue {
   close: () => void
   seek: (seconds: number) => void
   isCurrent: (song: Song) => boolean
+  /** Play the neighbouring track in playlist order (page order). */
+  playNext: () => void
+  playPrev: () => void
   /** The live frequency analyser, for beat-reactive visuals. Null until first play. */
   getAnalyser: () => AnalyserNode | null
 }
@@ -34,7 +38,15 @@ function isAbortError(err: unknown): boolean {
   return err instanceof DOMException && err.name === 'AbortError'
 }
 
-export function PlayerProvider({ children }: { children: ReactNode }) {
+export function PlayerProvider({
+  playlist,
+  children,
+}: {
+  /** Ordered playlist (page order) used for auto-advance and prev/next. */
+  playlist?: Song[]
+  children: ReactNode
+}) {
+  const { t, loc } = useI18n()
   const audioRef = useRef<HTMLAudioElement | null>(null)
   // Web Audio graph for the beat-reactive cover visual, built lazily on first play.
   const audioCtxRef = useRef<AudioContext | null>(null)
@@ -44,6 +56,11 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
+  // Screen-reader announcement for track changes (aria-live region below).
+  const [announce, setAnnounce] = useState('')
+  // The mount-once <audio> effect reaches the latest advance logic through
+  // this ref, so `ended` can move down the playlist without re-binding.
+  const advanceRef = useRef<() => boolean>(() => false)
 
   // Create the single shared <audio> element once.
   useEffect(() => {
@@ -56,6 +73,8 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     const onPlay = () => setIsPlaying(true)
     const onPause = () => setIsPlaying(false)
     const onEnded = () => {
+      // Auto-advance through the playlist; stop only after the last track.
+      if (advanceRef.current()) return
       setIsPlaying(false)
       audio.currentTime = 0
       setCurrentTime(0)
@@ -188,15 +207,120 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     [current],
   )
 
+  const neighbor = useCallback(
+    (dir: 1 | -1): Song | null => {
+      if (!current || !playlist?.length) return null
+      const idx = playlist.findIndex((s) => s.id === current.id)
+      if (idx < 0) return null
+      return playlist[idx + dir] ?? null
+    },
+    [current, playlist],
+  )
+
+  const playNext = useCallback(() => {
+    const next = neighbor(1)
+    if (next) toggle(next)
+  }, [neighbor, toggle])
+
+  const playPrev = useCallback(() => {
+    const prev = neighbor(-1)
+    if (prev) toggle(prev)
+  }, [neighbor, toggle])
+
+  useEffect(() => {
+    advanceRef.current = () => {
+      const next = neighbor(1)
+      if (!next) return false
+      toggle(next)
+      return true
+    }
+  }, [neighbor, toggle])
+
+  // ── Media Session: lock-screen / hardware controls ──
+  // Safari implements the API only partially, so every call is guarded.
+  useEffect(() => {
+    if (!('mediaSession' in navigator)) return
+    const ms = navigator.mediaSession
+    if (!current) {
+      try {
+        ms.metadata = null
+        ms.playbackState = 'none'
+      } catch {
+        /* unsupported */
+      }
+      return
+    }
+    try {
+      const cover = new URL(assetUrl(current.cover), window.location.href).href
+      const type = current.cover.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg'
+      ms.metadata = new MediaMetadata({
+        title: loc(current.title),
+        artist: 'Setivir',
+        album: 'Setivir',
+        artwork: [{ src: cover, sizes: '512x512', type }],
+      })
+    } catch {
+      /* unsupported */
+    }
+    const set = (action: MediaSessionAction, handler: MediaSessionActionHandler) => {
+      try {
+        ms.setActionHandler(action, handler)
+      } catch {
+        /* unsupported action */
+      }
+    }
+    set('play', () => toggle(current))
+    set('pause', () => pause())
+    set('nexttrack', () => playNext())
+    set('previoustrack', () => playPrev())
+    set('seekto', (d) => {
+      if (d.seekTime != null) seek(d.seekTime)
+    })
+  }, [current, loc, toggle, pause, playNext, playPrev, seek])
+
+  useEffect(() => {
+    if (!('mediaSession' in navigator)) return
+    try {
+      navigator.mediaSession.playbackState = current
+        ? isPlaying
+          ? 'playing'
+          : 'paused'
+        : 'none'
+    } catch {
+      /* unsupported */
+    }
+  }, [current, isPlaying])
+
+  // Announce track changes to screen readers ("Цяпер грае: …").
+  const announcedIdRef = useRef<number | null>(null)
+  useEffect(() => {
+    if (!current) {
+      announcedIdRef.current = null
+      setAnnounce('')
+      return
+    }
+    if (isPlaying && announcedIdRef.current !== current.id) {
+      announcedIdRef.current = current.id
+      setAnnounce(`${t('player.nowPlaying')}: ${loc(current.title)}`)
+    }
+  }, [current, isPlaying, t, loc])
+
   const value = useMemo<PlayerValue>(
     () => ({
       current, isPlaying, currentTime, duration,
-      toggle, pause, close, seek, isCurrent, getAnalyser,
+      toggle, pause, close, seek, isCurrent, playNext, playPrev, getAnalyser,
     }),
-    [current, isPlaying, currentTime, duration, toggle, pause, close, seek, isCurrent, getAnalyser],
+    [current, isPlaying, currentTime, duration, toggle, pause, close, seek, isCurrent, playNext, playPrev, getAnalyser],
   )
 
-  return <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>
+  return (
+    <PlayerContext.Provider value={value}>
+      {children}
+      <div className="visually-hidden" aria-live="polite">
+        {announce}
+      </div>
+    </PlayerContext.Provider>
+  )
 }
 
 // eslint-disable-next-line react-refresh/only-export-components

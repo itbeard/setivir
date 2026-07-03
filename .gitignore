@@ -28,3 +28,15 @@ pnpm-debug.log*
 # generated asset symlinks (recreated from ../songs and ../thumbnails)
 public/songs
 public/thumbnails
+
+# design-sync (claude.ai/design) — staged scripts, build output, machine state.
+# The durable inputs under .design-sync/ (config.json, NOTES.md, conventions.md,
+# ds-entry.tsx, base.css, shims/, tsconfig.esbuild.json, previews/, overrides/)
+# ARE committed; only the generated/staged paths below are ignored.
+.ds-sync/
+ds-bundle/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules
+
+.tmp

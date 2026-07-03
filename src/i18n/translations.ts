@@ -121,6 +121,30 @@ Through Setivir, I seek to reveal Belarusian culture in a new context, expand th
     be: 'Сьпіс песень',
     en: 'Song list',
   },
+  'song.download': {
+    be: 'Спампаваць аўдыё',
+    en: 'Download audio',
+  },
+  'song.downloadShort': {
+    be: 'Спампаваць',
+    en: 'Download',
+  },
+  'song.viewCover': {
+    be: 'Павялічыць вокладку',
+    en: 'Enlarge cover',
+  },
+  'sheet.intro': {
+    be: 'Уступ',
+    en: 'Intro',
+  },
+  'sheet.outro': {
+    be: 'Фінал',
+    en: 'Finale',
+  },
+  'dialog.close': {
+    be: 'Зачыніць',
+    en: 'Close',
+  },
 } satisfies Record<string, Localized>
 
 export type UiKey = keyof typeof ui

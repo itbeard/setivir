@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Song } from '../types'
-import { scrollToId, scrollToIndex } from '../lib/nav'
+import { scrollToIndex } from '../lib/nav'
 import { useI18n } from '../i18n/I18nContext'
 import { cx } from '../lib/cx'
+import { SongSheet } from './SongSheet'
 import styles from './TopBar.module.css'
 
 function pad2(n: number): string {
@@ -18,29 +19,13 @@ export function TopBar({
   total: number
   songs: Song[]
 }) {
-  const { lang, setLang, t, loc } = useI18n()
-  const [menuOpen, setMenuOpen] = useState(false)
-  const menuRef = useRef<HTMLDivElement | null>(null)
-
-  // Close the quick-nav on outside tap / Escape, and whenever it would hide.
-  useEffect(() => {
-    if (!menuOpen) return
-    const onPointer = (e: PointerEvent) => {
-      if (!menuRef.current?.contains(e.target as Node)) setMenuOpen(false)
-    }
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMenuOpen(false)
-    }
-    document.addEventListener('pointerdown', onPointer)
-    document.addEventListener('keydown', onKey)
-    return () => {
-      document.removeEventListener('pointerdown', onPointer)
-      document.removeEventListener('keydown', onKey)
-    }
-  }, [menuOpen])
+  const { lang, setLang, t } = useI18n()
+  // The counter opens a full-width bottom sheet (the counter itself only
+  // renders on ≤1024px screens — the dot rail covers wide viewports).
+  const [sheetOpen, setSheetOpen] = useState(false)
 
   useEffect(() => {
-    if (activeSong === null) setMenuOpen(false)
+    if (activeSong === null) setSheetOpen(false)
   }, [activeSong])
 
   return (
@@ -55,45 +40,29 @@ export function TopBar({
       </button>
 
       {activeSong !== null && (
-        <div className={styles.counterWrap} ref={menuRef}>
+        <div className={styles.counterWrap}>
           <button
             type="button"
             className={styles.counter}
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-haspopup="menu"
-            aria-expanded={menuOpen}
+            onClick={() => setSheetOpen(true)}
+            aria-haspopup="dialog"
+            aria-expanded={sheetOpen}
             aria-label={t('a11y.openMenu')}
           >
             {pad2(activeSong)}
             <i className={styles.counterTotal}> / {pad2(total)}</i>
-            <span className={cx(styles.caret, menuOpen && styles.caretOpen)} aria-hidden="true" />
+            <span className={styles.caret} aria-hidden="true" />
           </button>
-
-          {menuOpen && (
-            <ul className={styles.menu} role="menu" aria-label={t('a11y.openMenu')}>
-              {songs.map((s) => {
-                const active = s.id === activeSong
-                return (
-                  <li key={s.id} role="none">
-                    <button
-                      type="button"
-                      role="menuitem"
-                      className={cx(styles.menuItem, active && styles.menuItemActive)}
-                      onClick={() => {
-                        scrollToId(`song-${s.slug}`)
-                        setMenuOpen(false)
-                      }}
-                      aria-current={active ? 'true' : undefined}
-                    >
-                      <span className={styles.menuNum}>{pad2(s.id)}</span>
-                      <span className={styles.menuTitle}>{loc(s.title)}</span>
-                    </button>
-                  </li>
-                )
-              })}
-            </ul>
-          )}
         </div>
+      )}
+
+      {sheetOpen && (
+        <SongSheet
+          songs={songs}
+          activeSong={activeSong}
+          total={total}
+          onClose={() => setSheetOpen(false)}
+        />
       )}
 
       <div className={styles.langs} role="group" aria-label={lang === 'be' ? 'Мова' : 'Language'}>

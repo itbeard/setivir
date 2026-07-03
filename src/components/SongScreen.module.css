@@ -1,5 +1,12 @@
 .screen {
   text-align: center;
+  /* Contain the decorative pseudo-layers (folio numeral, mural, print-stack). */
+  isolation: isolate;
+}
+
+/* Gallery rhythm: every 2nd song sits on --paper-2 (set via the alt prop). */
+.altRow {
+  background: var(--paper-2);
 }
 
 .card {
@@ -8,6 +15,63 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Above the decorative margin layers (z-index 0). */
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Giant folio numeral in the left desktop margin (art layer) ── */
+@media (min-width: 1240px) {
+  .screen[data-num]::before {
+    content: attr(data-num);
+    position: absolute;
+    left: clamp(10px, 2.6vw, 56px);
+    top: 50%;
+    font-family: var(--font-brand);
+    font-weight: 600;
+    font-size: clamp(150px, 24vh, 280px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--red-tint);
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    animation: svNumFloat 16s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes svNumFloat {
+  from {
+    transform: translateY(calc(-50% - 10px));
+  }
+  to {
+    transform: translateY(calc(-50% + 10px));
+  }
+}
+
+/* ── Lyric mural: first lyric line, vertical and very faint, right margin ── */
+@media (min-width: 1240px) {
+  .screen[data-mural]::after {
+    content: attr(data-mural);
+    position: absolute;
+    right: clamp(52px, 5vw, 110px);
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    max-height: 74svh;
+    overflow: hidden;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(26px, 4vh, 40px);
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: color-mix(in srgb, var(--ink) 11%, transparent);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+  }
 }
 
 .index {
@@ -36,6 +100,28 @@
   margin-bottom: 40px;
 }
 
+/* Print-stack: two skewed blank cards peeking out behind the frame. They sit
+   below the CoverWave aura (z-index -1) in the section's stacking context. */
+.coverWrap::before,
+.coverWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.coverWrap::before {
+  transform: rotate(-2.2deg) translate(-7px, 7px);
+}
+
+.coverWrap::after {
+  transform: rotate(1.7deg) translate(8px, 5px);
+  z-index: -3;
+}
+
 .frame {
   position: relative;
   --frame-pad: clamp(10px, 2vw, 16px);
@@ -54,6 +140,14 @@
   border: 1px solid var(--line-strong);
   border-radius: 1px;
   pointer-events: none;
+}
+
+/* The cover invites the lightbox. */
+.zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  cursor: zoom-in;
 }
 
 .cover {
@@ -85,6 +179,15 @@
   margin-bottom: clamp(16px, 2.6vh, 26px);
   text-align: justify;
   text-align-last: left;
+  text-wrap: pretty;
+}
+
+/* Justified text opens rivers on narrow phone columns — go ragged-right. */
+@media (max-width: 640px) {
+  .text {
+    text-align: left;
+    text-align-last: auto;
+  }
 }
 
 .description {
@@ -125,6 +228,34 @@
   margin-top: clamp(6px, 1.4vh, 14px);
 }
 
+/* Audio-download row, styled like a disclosure summary in the same stack. */
+.download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 2px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.15s var(--ease);
+}
+
+.download:hover {
+  color: var(--red);
+}
+
+/* ≥44px touch target on touch devices */
+@media (pointer: coarse) {
+  .download {
+    padding: 14px 2px;
+  }
+}
+
 /* ── Down-to-next affordance, pinned to the bottom of each screen ── */
 .next {
   position: absolute;
@@ -140,9 +271,18 @@
   border: 1px solid var(--line-strong);
   color: var(--ink-soft);
   background: color-mix(in srgb, var(--paper) 70%, transparent);
-  transition: color 0.18s var(--ease), border-color 0.18s var(--ease),
-    transform 0.18s var(--ease);
+  transition: opacity 0.25s var(--ease), color 0.18s var(--ease),
+    border-color 0.18s var(--ease), transform 0.18s var(--ease);
   animation: nudge 2.2s var(--ease) infinite;
+}
+
+/* On short phone screens the chevron yields to the docked mini-player —
+   scroll, keyboard and the song sheet still provide forward navigation. */
+@media (max-width: 640px) {
+  :global(html.has-track) .next {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .next:hover {

@@ -22,3 +22,10 @@
   color: var(--red);
   transform: translateY(-2px);
 }
+
+/* ≥44px touch target on touch devices */
+@media (pointer: coarse) {
+  .link {
+    padding: 10px;
+  }
+}
