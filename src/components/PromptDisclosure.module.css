@@ -64,3 +64,10 @@
   word-break: break-word;
   overflow-wrap: anywhere;
 }
+
+/* ≥44px touch target on touch devices */
+@media (pointer: coarse) {
+  .summary {
+    padding: 14px 2px;
+  }
+}

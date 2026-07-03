@@ -44,6 +44,15 @@
   /* keep the short closing line of each paragraph centred with the rest of
      the hero rather than ragged-left */
   text-align-last: left;
+  text-wrap: pretty;
+}
+
+/* Justified text opens rivers on narrow phone columns — go ragged-right. */
+@media (max-width: 640px) {
+  .intro {
+    text-align: left;
+    text-align-last: auto;
+  }
 }
 
 /* Blank lines in the source become separate paragraphs; space them out. */

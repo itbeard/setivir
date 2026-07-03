@@ -31,12 +31,43 @@
 }
 
 .tick {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
   width: 100%;
   padding: 2px 0;
+}
+
+/* Song-title plaque, fading in to the left of the tick on hover/focus. */
+.tick::after {
+  content: attr(title);
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translate(8px, -50%);
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 6px 13px;
+  box-shadow: var(--shadow-sm);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+.tick:hover::after,
+.tick:focus-visible::after {
+  opacity: 1;
+  transform: translate(0, -50%);
 }
 
 .line {
@@ -49,7 +80,7 @@
 
 .num {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   color: var(--ink-faint);
   opacity: 0;
@@ -78,4 +109,20 @@
   opacity: 1;
   transform: none;
   color: var(--red);
+}
+
+/* Now-playing pulse on the tick line. */
+.tick.playing .line {
+  background: var(--red);
+  animation: svPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes svPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }

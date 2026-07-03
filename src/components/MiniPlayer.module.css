@@ -57,8 +57,8 @@
 
 .label {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
+  font-size: 0.64rem;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--ink-faint);
 }
@@ -132,7 +132,7 @@
 
 .time {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   color: var(--ink-soft);
   flex: none;
   width: 34px;
@@ -187,17 +187,40 @@
   opacity: 0.6;
 }
 
-/* Stack the seek bar under the track info on narrow screens. */
+/* Single-row mobile bar: the seek slider is pinned onto the bar's top seam
+   instead of wrapping to a second line; times are hidden — the slider itself
+   is the affordance. */
 @media (max-width: 540px) {
   .bar {
-    flex-wrap: wrap;
-    gap: 10px 12px;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 13px 14px;
+    padding-bottom: max(13px, env(safe-area-inset-bottom, 0px));
   }
   .seekWrap {
-    flex-basis: 100%;
-    order: 3;
+    position: absolute;
+    top: -9px;
+    left: 18px;
+    right: 18px;
+    flex-basis: auto;
+    order: 0;
+    gap: 0;
+  }
+  .time {
+    display: none;
+  }
+  .seek {
+    height: 20px;
+  }
+  .toggle {
+    width: 46px;
+    height: 46px;
+  }
+  .close {
+    width: 40px;
+    height: 40px;
   }
   .title {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
   }
 }

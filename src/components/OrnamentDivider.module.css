@@ -1,0 +1,14 @@
+/* Zero-height seam between sections; the ornament straddles the border. */
+.seam {
+  height: 0;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  color: var(--line-strong);
+}
+
+.inner {
+  transform: translateY(-7px);
+}

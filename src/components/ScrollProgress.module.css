@@ -1,0 +1,18 @@
+/* Hairline scroll-progress bar pinned to the very top edge. */
+.track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 72;
+  pointer-events: none;
+}
+
+.fill {
+  height: 100%;
+  width: 100%;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left center;
+}

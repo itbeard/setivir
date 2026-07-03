@@ -1,14 +1,17 @@
+import { useState } from 'react'
 import type { Song } from '../types'
 import { isPlaceholder } from '../data/songs'
-import { assetUrl } from '../lib/assets'
+import { assetUrl, downloadName } from '../lib/assets'
 import { cx } from '../lib/cx'
 import { goNextFrom } from '../lib/nav'
 import { usePlayer } from '../audio/PlayerContext'
 import { useI18n } from '../i18n/I18nContext'
+import { settings } from '../settings'
 import { PlayButton } from './PlayButton'
 import { SongMeta } from './SongMeta'
 import { PromptDisclosure } from './PromptDisclosure'
 import { CoverWave } from './CoverWave'
+import { Lightbox } from './Lightbox'
 import { Markdown } from '../lib/markdown'
 import styles from './SongScreen.module.css'
 
@@ -16,9 +19,26 @@ function pad2(n: number): string {
   return n.toString().padStart(2, '0')
 }
 
-export function SongScreen({ song, total }: { song: Song; total: number }) {
+/** First line of the original lyrics, for the margin mural (art layer). */
+function muralLine(song: Song): string | undefined {
+  if (!settings.lyricsMural || isPlaceholder(song.lyrics.be)) return undefined
+  const line = (song.lyrics.be.split('\n')[0] ?? '').replace(/[,.…]+\s*$/, '').trim()
+  return line || undefined
+}
+
+export function SongScreen({
+  song,
+  total,
+  alt = false,
+}: {
+  song: Song
+  total: number
+  /** Gallery rhythm: every 2nd rendered song sits on --paper-2. */
+  alt?: boolean
+}) {
   const { t, loc, lang } = useI18n()
   const { current, isCurrent, isPlaying } = usePlayer()
+  const [lightboxOpen, setLightboxOpen] = useState(false)
   const trackActive = current !== null
   const isThisTrack = isCurrent(song)
   const title = loc(song.title)
@@ -31,10 +51,12 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
       id={`song-${song.slug}`}
       data-section
       data-kind="song"
-      className={cx('section', styles.screen)}
+      data-num={settings.marginNumeral ? pad2(song.id) : undefined}
+      data-mural={muralLine(song)}
+      className={cx('section', styles.screen, alt && styles.altRow)}
       aria-label={`${t('meta.song')} ${song.id}: ${title}`}
     >
-      <article className={styles.card}>
+      <article className={styles.card} data-anim-stack>
         <div className={styles.index}>
           <span className={styles.num}>№&nbsp;{pad2(song.id)}</span>
           <span className={styles.total}>/ {pad2(total)}</span>
@@ -43,13 +65,20 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
         <div className={styles.coverWrap}>
           {isThisTrack && <CoverWave playing={isPlaying} />}
           <div className={styles.frame}>
-            <img
-              className={styles.cover}
-              src={assetUrl(song.cover)}
-              alt={title}
-              loading="lazy"
-              decoding="async"
-            />
+            <button
+              type="button"
+              className={styles.zoom}
+              onClick={() => setLightboxOpen(true)}
+              aria-label={`${t('song.viewCover')} — ${title}`}
+            >
+              <img
+                className={styles.cover}
+                src={assetUrl(song.cover)}
+                alt={title}
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
           </div>
           <div className={styles.playDock}>
             <PlayButton song={song} large />
@@ -79,6 +108,14 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
           />
           <PromptDisclosure label={t('prompt.style')} content={song.stylePrompt} />
           <PromptDisclosure label={t('prompt.lyrics')} content={song.lyricsPrompt} />
+          <a
+            className={styles.download}
+            href={assetUrl(song.audio)}
+            download={downloadName(song.title.be, song.audio)}
+          >
+            <span>{t('song.download')}</span>
+            <span aria-hidden="true">⤓</span>
+          </a>
         </div>
       </article>
 
@@ -90,6 +127,8 @@ export function SongScreen({ song, total }: { song: Song; total: number }) {
       >
         <span className={styles.nextChevron} aria-hidden="true" />
       </button>
+
+      {lightboxOpen && <Lightbox song={song} onClose={() => setLightboxOpen(false)} />}
     </section>
   )
 }

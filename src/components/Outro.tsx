@@ -10,7 +10,7 @@ export function Outro() {
 
   return (
     <section id="outro" data-section data-kind="outro" className={cx('section', styles.outro)}>
-      <div className={styles.inner}>
+      <div className={styles.inner} data-anim-stack>
         <Ornament className={styles.ornament} />
         <h2 className={styles.heading}>{t('outro.heading')}</h2>
         <p className={styles.text}>{t('outro.text')}</p>
