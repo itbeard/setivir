@@ -33,6 +33,28 @@ export function SpinnerIcon() {
   )
 }
 
+export function DownloadIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">
+      <path
+        d="M12 3.5v10.8m0 0 4.4-4.4M12 14.3 7.6 9.9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <path
+        d="M4.8 20.5h14.4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+      />
+    </svg>
+  )
+}
+
 export function CloseIcon() {
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">

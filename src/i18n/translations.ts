@@ -125,10 +125,6 @@ Through Setivir, I seek to reveal Belarusian culture in a new context, expand th
     be: 'Сьпіс песень',
     en: 'Song list',
   },
-  'song.download': {
-    be: 'Спампаваць аўдыё',
-    en: 'Download audio',
-  },
   'song.downloadShort': {
     be: 'Спампаваць',
     en: 'Download',

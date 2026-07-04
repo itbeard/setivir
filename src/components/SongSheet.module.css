@@ -135,18 +135,12 @@
   padding: 8px 0 6px;
 }
 
-.rowWrap {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
 .row {
   display: grid;
   grid-template-columns: 34px 1fr auto;
   align-items: center;
   gap: 12px;
-  flex: 1 1 auto;
+  width: 100%;
   min-width: 0;
   min-height: 54px;
   padding: 13px 12px;
@@ -207,25 +201,6 @@
   50% {
     opacity: 0.3;
   }
-}
-
-.download {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: var(--ink-faint);
-  text-decoration: none;
-  font-size: 17px;
-  transition: color 0.15s var(--ease), background 0.15s var(--ease);
-}
-
-.download:hover {
-  color: var(--red);
-  background: color-mix(in srgb, var(--ink) 6%, transparent);
 }
 
 .foot {

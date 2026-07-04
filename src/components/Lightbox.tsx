@@ -4,6 +4,7 @@ import type { Song } from '../types'
 import { assetUrl, downloadName } from '../lib/assets'
 import { useI18n } from '../i18n/I18nContext'
 import { useModalDialog } from '../hooks/useModalDialog'
+import { DownloadIcon } from './icons'
 import styles from './Lightbox.module.css'
 
 function pad2(n: number): string {
@@ -46,7 +47,7 @@ export function Lightbox({ song, onClose }: { song: Song; onClose: () => void })
             href={assetUrl(song.audio)}
             download={downloadName(song.title.be, song.audio)}
           >
-            <span aria-hidden="true">⤓</span> {t('song.downloadShort')}
+            <DownloadIcon /> {t('song.downloadShort')}
           </a>
         </figcaption>
         <button

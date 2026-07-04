@@ -165,6 +165,39 @@
   transform: translate(-50%, 50%);
 }
 
+/* Quiet audio-download control in the frame's bottom-right corner — a small
+   sibling of the play dock, straddling the same edge. */
+.coverDownload {
+  position: absolute;
+  right: clamp(8px, 2.4vw, 16px);
+  bottom: 0;
+  transform: translateY(50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  color: var(--ink-soft);
+  font-size: 14px;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease),
+    transform 0.18s var(--ease);
+}
+
+.coverDownload:hover {
+  color: var(--red);
+  border-color: var(--red);
+  transform: translateY(50%) scale(1.06);
+}
+
+.coverDownload:active {
+  transform: translateY(50%) scale(0.96);
+}
+
 .title {
   font-family: var(--font-brand);
   font-weight: 500;
@@ -226,34 +259,6 @@
   max-width: 56ch;
   text-align: left;
   margin-top: clamp(6px, 1.4vh, 14px);
-}
-
-/* Audio-download row, styled like a disclosure summary in the same stack. */
-.download {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 12px 2px;
-  border-top: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: var(--fs-meta);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.15s var(--ease);
-}
-
-.download:hover {
-  color: var(--red);
-}
-
-/* ≥44px touch target on touch devices */
-@media (pointer: coarse) {
-  .download {
-    padding: 14px 2px;
-  }
 }
 
 /* ── Down-to-next affordance, pinned to the bottom of each screen ── */

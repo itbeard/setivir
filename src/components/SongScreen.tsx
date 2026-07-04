@@ -12,6 +12,7 @@ import { SongMeta } from './SongMeta'
 import { PromptDisclosure } from './PromptDisclosure'
 import { CoverWave } from './CoverWave'
 import { Lightbox } from './Lightbox'
+import { DownloadIcon } from './icons'
 import { Markdown } from '../lib/markdown'
 import styles from './SongScreen.module.css'
 
@@ -83,6 +84,14 @@ export function SongScreen({
           <div className={styles.playDock}>
             <PlayButton song={song} large />
           </div>
+          <a
+            className={styles.coverDownload}
+            href={assetUrl(song.audio)}
+            download={downloadName(song.title.be, song.audio)}
+            aria-label={`${t('song.downloadShort')} — ${title}`}
+          >
+            <DownloadIcon />
+          </a>
         </div>
 
         <h2 className={styles.title}>{title}</h2>
@@ -108,14 +117,6 @@ export function SongScreen({
           />
           <PromptDisclosure label={t('prompt.style')} content={song.stylePrompt} />
           <PromptDisclosure label={t('prompt.lyrics')} content={song.lyricsPrompt} />
-          <a
-            className={styles.download}
-            href={assetUrl(song.audio)}
-            download={downloadName(song.title.be, song.audio)}
-          >
-            <span>{t('song.download')}</span>
-            <span aria-hidden="true">⤓</span>
-          </a>
         </div>
       </article>
 

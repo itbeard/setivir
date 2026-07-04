@@ -11,4 +11,5 @@
 
 .inner {
   transform: translateY(-7px);
+  margin-top: 10px;
 }

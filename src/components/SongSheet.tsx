@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { Song } from '../types'
-import { assetUrl, downloadName } from '../lib/assets'
 import { getSections, scrollToId, scrollToIndex } from '../lib/nav'
 import { useI18n } from '../i18n/I18nContext'
 import { usePlayer } from '../audio/PlayerContext'
@@ -88,31 +87,22 @@ export function SongSheet({
             const active = s.id === activeSong
             const playing = current?.id === s.id && isPlaying
             return (
-              <div key={s.id} className={styles.rowWrap}>
-                <button
-                  type="button"
-                  className={cx(styles.row, active && styles.rowActive)}
-                  onClick={() => goTo(s.slug)}
-                  aria-current={active ? 'true' : undefined}
+              <button
+                key={s.id}
+                type="button"
+                className={cx(styles.row, active && styles.rowActive)}
+                onClick={() => goTo(s.slug)}
+                aria-current={active ? 'true' : undefined}
+              >
+                <span className={styles.num}>{pad2(s.id)}</span>
+                <span className={styles.title}>{loc(s.title)}</span>
+                <span
+                  className={cx(styles.mark, playing && styles.markPlaying)}
+                  aria-hidden="true"
                 >
-                  <span className={styles.num}>{pad2(s.id)}</span>
-                  <span className={styles.title}>{loc(s.title)}</span>
-                  <span
-                    className={cx(styles.mark, playing && styles.markPlaying)}
-                    aria-hidden="true"
-                  >
-                    {playing ? '●' : active ? '◆' : ''}
-                  </span>
-                </button>
-                <a
-                  className={styles.download}
-                  href={assetUrl(s.audio)}
-                  download={downloadName(s.title.be, s.audio)}
-                  aria-label={`${t('song.downloadShort')} ${loc(s.title)}`}
-                >
-                  ⤓
-                </a>
-              </div>
+                  {playing ? '●' : active ? '◆' : ''}
+                </span>
+              </button>
             )
           })}
         </div>
