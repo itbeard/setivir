@@ -163,6 +163,8 @@
   left: 50%;
   bottom: 0;
   transform: translate(-50%, 50%);
+  /* Above over-the-art visualizer layers (OrionViz's night sky, z-index 1). */
+  z-index: 2;
 }
 
 /* Quiet corner controls on the frame's bottom edge — small siblings of the
@@ -171,6 +173,8 @@
   position: absolute;
   bottom: 0;
   transform: translateY(50%);
+  /* Above over-the-art visualizer layers, like the play dock. */
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;

@@ -20,11 +20,11 @@ Suno v4.5+
 
 ## be
 
-Фальклёрны твор
+Народная
 
 ## en
 
-Traditional folk song
+Folk song
 
 # Апісаньне / Description
 

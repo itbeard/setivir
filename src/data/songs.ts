@@ -31,7 +31,7 @@ import { parseSongMarkdown } from '../lib/songMarkdown'
  * ў components/visualizers/registry.ts); безь яго — іскры па змаўчаньні.
  */
 const ASSETS: Record<string, { ext: string; audio: string; viz?: string }> = {
-  'rodny-flou': { ext: 'jpg', audio: "1. Setivir - Rodny Flou.mp3" },
+  'rodny-flou': { ext: 'jpg', audio: "1. Setivir - Rodny Flou.mp3", viz: 'bars' },
   'muzhyk-belarus': { ext: 'png', audio: "2. Setivir - Muzjik-Belarus.mp3" },
   'laceli': { ext: 'jpg', audio: "3. Setivir - Laceli.mp3" },
   'rano-rano': { ext: 'jpg', audio: "4. Setivir - Rano-rano.mp3" },
@@ -46,7 +46,7 @@ const ASSETS: Record<string, { ext: string; audio: string; viz?: string }> = {
   'zviaz-piarscionka': { ext: 'jpg', audio: "13. Setivir - Zviaz piarscionka.mp3" },
   'dvaccaty': { ext: 'jpg', audio: "14. Setivir - Dvaccaty.mp3" },
   'a-chto-tam-idzie': { ext: 'jpg', audio: "15. Setivir - A chto tam idzie.mp3" },
-  'veczar-toj': { ext: 'jpg', audio: "17. Setivir - Veczar Toj.mp3" },
+  'veczar-toj': { ext: 'jpg', audio: "17. Setivir - Veczar Toj.mp3", viz: 'orion' },
   'belarusian-rave': { ext: 'jpg', audio: "16. Setivir - Belarusian rave.mp3" },
   'shto-kashtuje': { ext: 'jpg', audio: "18. Setivir - Što Kaštuje.mp3" },
   'mova-maci': { ext: 'png', audio: "20. Setivir - Mova-Maci.mp3" },

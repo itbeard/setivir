@@ -2,6 +2,7 @@ import type { CoverVizComponent } from './types'
 import { EmbersViz } from './EmbersViz'
 import { LightningViz } from './LightningViz'
 import { BarsViz } from './BarsViz'
+import { OrionViz } from './OrionViz'
 
 /**
  * Рэестр візуалізатараў вокладкі / cover visualizer registry.
@@ -15,6 +16,7 @@ export const VISUALIZERS: Record<string, CoverVizComponent> = {
   embers: EmbersViz,
   lightning: LightningViz,
   bars: BarsViz,
+  orion: OrionViz,
 }
 
 export const DEFAULT_VISUALIZER = 'embers'
