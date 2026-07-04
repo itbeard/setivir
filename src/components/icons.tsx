@@ -55,6 +55,21 @@ export function DownloadIcon() {
   )
 }
 
+export function LinkIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">
+      <path
+        d="M10.6 13.4a4.2 4.2 0 0 0 5.94 0l3.2-3.2a4.2 4.2 0 0 0-5.94-5.94l-1.7 1.7M13.4 10.6a4.2 4.2 0 0 0-5.94 0l-3.2 3.2a4.2 4.2 0 0 0 5.94 5.94l1.7-1.7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  )
+}
+
 export function CloseIcon() {
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">

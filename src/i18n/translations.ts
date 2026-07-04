@@ -129,6 +129,14 @@ Through Setivir, I seek to reveal Belarusian culture in a new context, expand th
     be: 'Спампаваць',
     en: 'Download',
   },
+  'song.copyLink': {
+    be: 'Скапіяваць спасылку',
+    en: 'Copy link',
+  },
+  'song.linkCopied': {
+    be: 'Спасылка скапіявана',
+    en: 'Link copied',
+  },
   'song.viewCover': {
     be: 'Павялічыць вокладку',
     en: 'Enlarge cover',

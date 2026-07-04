@@ -165,11 +165,10 @@
   transform: translate(-50%, 50%);
 }
 
-/* Quiet audio-download control in the frame's bottom-right corner — a small
-   sibling of the play dock, straddling the same edge. */
-.coverDownload {
+/* Quiet corner controls on the frame's bottom edge — small siblings of the
+   play dock: download bottom-right, copy-link bottom-left. */
+.coverAction {
   position: absolute;
-  right: clamp(8px, 2.4vw, 16px);
   bottom: 0;
   transform: translateY(50%);
   display: inline-flex;
@@ -188,14 +187,57 @@
     transform 0.18s var(--ease);
 }
 
-.coverDownload:hover {
+.coverAction:hover {
   color: var(--red);
   border-color: var(--red);
   transform: translateY(50%) scale(1.06);
 }
 
-.coverDownload:active {
+.coverAction:active {
   transform: translateY(50%) scale(0.96);
+}
+
+.coverDownload {
+  right: clamp(8px, 2.4vw, 16px);
+}
+
+.coverShare {
+  left: clamp(8px, 2.4vw, 16px);
+}
+
+/* «Link copied» notice, floating over the cover above the corner controls. */
+.copyToast {
+  position: absolute;
+  left: 50%;
+  bottom: 52px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 12px);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: var(--shadow-btn);
+  pointer-events: none;
+  z-index: 2;
+  animation: svToastIn 0.22s var(--ease) both;
+}
+
+@keyframes svToastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 .title {
