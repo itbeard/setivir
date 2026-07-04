@@ -100,6 +100,31 @@
   line-height: 0;
 }
 
+/* Buffering: spin the arc icon (delayed fade-in avoids a flash on fast starts). */
+.spinning {
+  animation:
+    svSpin 0.9s linear infinite,
+    svSpinFade 0.18s linear 0.25s backwards;
+}
+
+@keyframes svSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes svSpinFade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinning {
+    animation-duration: 2.4s, 0.18s;
+  }
+}
+
 .close {
   flex: none;
   display: inline-flex;

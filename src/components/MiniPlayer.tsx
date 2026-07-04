@@ -3,11 +3,13 @@ import { usePlayer, formatTime } from '../audio/PlayerContext'
 import { useI18n } from '../i18n/I18nContext'
 import { assetUrl } from '../lib/assets'
 import { scrollToId } from '../lib/nav'
-import { PlayIcon, PauseIcon, CloseIcon } from './icons'
+import { cx } from '../lib/cx'
+import { PlayIcon, PauseIcon, CloseIcon, SpinnerIcon } from './icons'
 import styles from './MiniPlayer.module.css'
 
 export function MiniPlayer() {
-  const { current, isPlaying, currentTime, duration, toggle, seek, close } = usePlayer()
+  const { current, isPlaying, isBuffering, currentTime, duration, toggle, seek, close } =
+    usePlayer()
   const { t, loc } = useI18n()
 
   // While the user drags the slider, drive it from local state so incoming
@@ -15,6 +17,7 @@ export function MiniPlayer() {
   const [scrub, setScrub] = useState<number | null>(null)
 
   if (!current) return null
+  const buffering = isPlaying && isBuffering
   const title = loc(current.title)
   const max = duration || 0
   const shownTime = scrub ?? currentTime
@@ -32,7 +35,9 @@ export function MiniPlayer() {
       </button>
 
       <div className={styles.info}>
-        <span className={styles.label}>{t('player.nowPlaying')}</span>
+        <span className={styles.label}>
+          {buffering ? t('player.loading') : t('player.nowPlaying')}
+        </span>
         <span className={styles.title}>{title}</span>
       </div>
 
@@ -42,8 +47,11 @@ export function MiniPlayer() {
         onClick={() => toggle(current)}
         aria-label={isPlaying ? t('player.pause') : t('player.play')}
         aria-pressed={isPlaying}
+        aria-busy={buffering || undefined}
       >
-        <span className={styles.toggleIcon}>{isPlaying ? <PauseIcon /> : <PlayIcon />}</span>
+        <span className={cx(styles.toggleIcon, buffering && styles.spinning)}>
+          {buffering ? <SpinnerIcon /> : isPlaying ? <PauseIcon /> : <PlayIcon />}
+        </span>
       </button>
 
       <div className={styles.seekWrap}>

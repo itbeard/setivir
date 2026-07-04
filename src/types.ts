@@ -15,8 +15,14 @@ export interface Song {
   title: Localized
   /** Path to the mp3, relative to the site root (see lib/assets.ts). */
   audio: string
-  /** Path to the cover image, relative to the site root. */
+  /**
+   * Path to the downsized cover (thumbnails/small/, ~800px) used in the page
+   * flow and the mini-player. Keeps first paint light so a click on play isn't
+   * stuck behind megabytes of artwork.
+   */
   cover: string
+  /** Path to the full-resolution cover, used by the lightbox. */
+  coverFull: string
   /** Free-form creation date, e.g. "2025" or "Сакавік 2025 / March 2025". */
   date: string
   /** AI model used to generate the track, e.g. "Suno v4". */

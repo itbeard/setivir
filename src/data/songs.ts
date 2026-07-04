@@ -18,6 +18,9 @@ import { parseSongMarkdown } from '../lib/songMarkdown'
  *  Каб дадаць песьню / To add a song:
  *    1. Стварыце ./songs/NN-slug.md (скапіюйце структуру існага файла).
  *    2. Дадайце радок у ASSETS ніжэй з пашырэньнем вокладкі і назвай mp3.
+ *    3. Пакладзіце вокладку ў thumbnails/NN.{jpg,png} і запусьціце
+ *       `npm run thumbs` — ён згенэруе лёгкую вэрсію ў thumbnails/small/
+ *       (яна ідзе ў стужку; арыгінал застаецца для лайтбоксу).
  *  На старонцы трэкі паказваюцца ад навейшых да старэйшых (разварот у App.tsx).
  * ─────────────────────────────────────────────────────────────────────────
  */
@@ -75,7 +78,8 @@ function buildSongs(): Song[] {
       slug,
       title: f.title,
       audio: `songs/${asset.audio}`,
-      cover: `thumbnails/${id}.${asset.ext}`,
+      cover: `thumbnails/small/${id}.jpg`,
+      coverFull: `thumbnails/${id}.${asset.ext}`,
       date: f.date,
       model: f.model,
       lyricsAuthor: f.lyricsAuthor,

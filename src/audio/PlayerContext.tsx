@@ -15,6 +15,8 @@ import { useI18n } from '../i18n/I18nContext'
 interface PlayerValue {
   current: Song | null
   isPlaying: boolean
+  /** True while the track is fetching/buffering and sound is not coming out yet. */
+  isBuffering: boolean
   currentTime: number
   duration: number
   /** Play this song, or toggle play/pause if it is already the current one. */
@@ -54,6 +56,7 @@ export function PlayerProvider({
   const sourceRef = useRef<MediaElementAudioSourceNode | null>(null)
   const [current, setCurrent] = useState<Song | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isBuffering, setIsBuffering] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   // Screen-reader announcement for track changes (aria-live region below).
@@ -71,7 +74,10 @@ export function PlayerProvider({
     const onTime = () => setCurrentTime(audio.currentTime)
     const onMeta = () => setDuration(Number.isFinite(audio.duration) ? audio.duration : 0)
     const onPlay = () => setIsPlaying(true)
-    const onPause = () => setIsPlaying(false)
+    const onPause = () => {
+      setIsPlaying(false)
+      setIsBuffering(false)
+    }
     const onEnded = () => {
       // Auto-advance through the playlist; stop only after the last track.
       if (advanceRef.current()) return
@@ -79,7 +85,17 @@ export function PlayerProvider({
       audio.currentTime = 0
       setCurrentTime(0)
     }
-    const onError = () => setIsPlaying(false)
+    const onError = () => {
+      setIsPlaying(false)
+      setIsBuffering(false)
+    }
+    // The network can't keep up (or hasn't delivered anything yet) — show a
+    // spinner instead of a frozen player. `playing` means sound is flowing again.
+    const onWaiting = () => setIsBuffering(true)
+    const onStalled = () => {
+      if (!audio.paused) setIsBuffering(true)
+    }
+    const onPlaying = () => setIsBuffering(false)
 
     audio.addEventListener('timeupdate', onTime)
     audio.addEventListener('loadedmetadata', onMeta)
@@ -88,6 +104,9 @@ export function PlayerProvider({
     audio.addEventListener('pause', onPause)
     audio.addEventListener('ended', onEnded)
     audio.addEventListener('error', onError)
+    audio.addEventListener('waiting', onWaiting)
+    audio.addEventListener('stalled', onStalled)
+    audio.addEventListener('playing', onPlaying)
 
     return () => {
       audio.pause()
@@ -98,6 +117,9 @@ export function PlayerProvider({
       audio.removeEventListener('pause', onPause)
       audio.removeEventListener('ended', onEnded)
       audio.removeEventListener('error', onError)
+      audio.removeEventListener('waiting', onWaiting)
+      audio.removeEventListener('stalled', onStalled)
+      audio.removeEventListener('playing', onPlaying)
       audioRef.current = null
       if (audioCtxRef.current && audioCtxRef.current.state !== 'closed') {
         void audioCtxRef.current.close()
@@ -160,6 +182,7 @@ export function PlayerProvider({
     }
     setCurrent(null)
     setIsPlaying(false)
+    setIsBuffering(false)
     setCurrentTime(0)
     setDuration(0)
   }, [])
@@ -183,14 +206,21 @@ export function PlayerProvider({
         return
       }
 
-      // Switch to a new track.
+      // Switch to a new track. Flag buffering right away so the UI shows a
+      // spinner during the (possibly slow) fetch instead of looking frozen.
       ensureAudio()
       audio.src = assetUrl(song.audio)
       audio.currentTime = 0
       setCurrent(song)
       setCurrentTime(0)
       setDuration(0)
-      void audio.play().catch(() => setIsPlaying(false))
+      setIsBuffering(true)
+      void audio.play().catch((err) => {
+        if (!isAbortError(err)) {
+          setIsPlaying(false)
+          setIsBuffering(false)
+        }
+      })
     },
     [current, ensureAudio],
   )
@@ -307,10 +337,10 @@ export function PlayerProvider({
 
   const value = useMemo<PlayerValue>(
     () => ({
-      current, isPlaying, currentTime, duration,
+      current, isPlaying, isBuffering, currentTime, duration,
       toggle, pause, close, seek, isCurrent, playNext, playPrev, getAnalyser,
     }),
-    [current, isPlaying, currentTime, duration, toggle, pause, close, seek, isCurrent, playNext, playPrev, getAnalyser],
+    [current, isPlaying, isBuffering, currentTime, duration, toggle, pause, close, seek, isCurrent, playNext, playPrev, getAnalyser],
   )
 
   return (

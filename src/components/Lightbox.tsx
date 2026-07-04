@@ -34,7 +34,7 @@ export function Lightbox({ song, onClose }: { song: Song; onClose: () => void })
       <div className={styles.scrim} onClick={onClose} />
       <figure className={styles.figure}>
         <div className={styles.frame}>
-          <img className={styles.img} src={assetUrl(song.cover)} alt={title} />
+          <img className={styles.img} src={assetUrl(song.coverFull)} alt={title} />
         </div>
         <figcaption className={styles.caption}>
           <span className={styles.title}>{title}</span>
