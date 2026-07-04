@@ -5,6 +5,7 @@ import { assetUrl, downloadName } from '../lib/assets'
 import { useI18n } from '../i18n/I18nContext'
 import { useModalDialog } from '../hooks/useModalDialog'
 import { useCopyTrackLink } from '../hooks/useCopyTrackLink'
+import { formatFullDate } from '../lib/date'
 import { DownloadIcon, LinkIcon } from './icons'
 import styles from './Lightbox.module.css'
 
@@ -19,7 +20,7 @@ function pad2(n: number): string {
  * never renders with an unresolved src.
  */
 export function Lightbox({ song, onClose }: { song: Song; onClose: () => void }) {
-  const { t, loc } = useI18n()
+  const { t, loc, lang } = useI18n()
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const title = loc(song.title)
   const { copied: linkCopied, copy: copyTrackLink } = useCopyTrackLink(song.slug)
@@ -47,7 +48,7 @@ export function Lightbox({ song, onClose }: { song: Song; onClose: () => void })
         <figcaption className={styles.caption}>
           <span className={styles.title}>{title}</span>
           <span className={styles.meta}>
-            № {pad2(song.id)} · {loc(song.lyricsAuthor)} · {song.date}
+            № {pad2(song.id)} · {loc(song.lyricsAuthor)} · {formatFullDate(song.date, lang)}
           </span>
           <div className={styles.actions}>
             <button

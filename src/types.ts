@@ -23,7 +23,11 @@ export interface Song {
   cover: string
   /** Path to the full-resolution cover, used by the lightbox. */
   coverFull: string
-  /** Free-form creation date, e.g. "2025" or "Сакавік 2025 / March 2025". */
+  /**
+   * Release date as `DD/MM/YYYY` (or `MM/YYYY`). Rendered as a short
+   * `Травень’25` stamp in the meta card and as a full spelled-out date in the
+   * cover lightbox; unparseable values are shown as-is.
+   */
   date: string
   /** AI model used to generate the track, e.g. "Suno v4". */
   model: string
