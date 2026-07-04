@@ -45,7 +45,7 @@ export interface Song {
   lyrics: Localized
   /**
    * Cover visualizer for this song while it plays — a key of VISUALIZERS in
-   * components/visualizers/registry.ts. Omit for the default (lightning).
+   * components/visualizers/registry.ts. Omit for the default (embers).
    */
   visualizer?: string
   /** The style prompt used for generation (shown under a cut). */

@@ -39,6 +39,10 @@ Useful handles:
   headless with `--mute-audio`.
 - Cover visualizers overflow `.coverWrap` — screenshot with a padded
   `page.screenshot({ clip })`, not an element screenshot (it clips overflow).
+- Canvas visualizers: read activity via `getImageData` (count alpha>threshold
+  pixels, sampled stride) — correlate with `--level` to prove beat sync.
+  Gotcha: a `<canvas>` is a replaced element — `inset` alone won't stretch it;
+  it needs explicit CSS width/height or it silently stays 300×150.
 - Bolt/viz activity is transient — `page.waitForFunction` on per-`<g>`
   `style.opacity` before screenshotting.
 - Themes: `newPage({ colorScheme: 'dark' })`; motion: `reducedMotion: 'reduce'`

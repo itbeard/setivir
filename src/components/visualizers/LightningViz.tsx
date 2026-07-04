@@ -2,99 +2,49 @@ import { useEffect, useRef } from 'react'
 import { usePlayer } from '../../audio/PlayerContext'
 import { cx } from '../../lib/cx'
 import type { CoverVizProps } from './types'
+import { buildRail, railOffset } from './rail'
 import styles from './LightningViz.module.css'
 
 /**
- * Электрычныя разрады вакол вокладкі — the default cover visualizer.
+ * Электрычныя разрады вакол вокладкі — an optional cover visualizer
+ * (registry key `lightning`).
  *
- * Bolts are anchored to an invisible "rail" — a rounded square running just
- * OUTSIDE the framed art — and every vertex is displaced strictly outward
- * along the rail's normal, so a bolt can never cross onto the frame. Each
- * bolt is a short jagged arc that crawls along the rail, flickers for a few
- * hundred ms and dies; new ones spawn on bass onsets (beats) plus a quiet
- * ambient trickle scaled by loudness.
+ * Every bass onset (beat) fires a volley of strikes: jagged bolts that shoot
+ * OUTWARD from the frame's edge, flash, then slowly fade (sometimes with a
+ * dimmer re-strike, like real lightning). Bolt geometry is frozen at spawn —
+ * only a small, decaying tremor animates it — so a strike reads as a strike,
+ * not as something crawling around the cover. Between beats there is almost
+ * nothing: the rhythm IS the visual.
+ *
+ * Bolt roots sit on an invisible "rail" — a rounded square just OUTSIDE the
+ * framed art — and every bolt grows outward from it, so a discharge can never
+ * cross onto the frame.
  *
  * Performance: a fixed pool of SLOTS <g> elements is rendered once; every
  * frame only rewrites their `d`/opacity via refs (no React re-render, no DOM
- * churn). One rAF loop, small typed arrays, no per-frame allocations beyond
- * the path strings.
+ * churn). One rAF loop; allocations happen only at spawn (a few per second).
  */
 
-/* ── Rail geometry ──
- * The svg spans inset:-40% of the cover wrap (see .viz in the css module), so
- * in the 100×100 viewBox the framed art occupies 22.2…77.8 — half-extent
- * ≈27.8 around the centre (50,50). The rail is a rounded square with
- * half-extent H just outside that; C keeps its corner arcs clear of the
- * frame's corners along the diagonals. */
-const H = 30.5 // rail half-extent (frame half-extent ≈ 27.8)
-const C = 5 // rail corner radius
-const EDGE = 2 * (H - C) // straight run of one side
-const ARC = (Math.PI / 2) * C // one corner arc
-const SIDE = EDGE + ARC
-const PERIM = 4 * SIDE
+/* The rail runs clearly outside the frame (half-extent 30.5 vs ≈27.8); its
+ * corner radius keeps the arcs clear of the frame's corners on the diagonals. */
+const RAIL = buildRail(30.5, 5)
 
-/** Corner-arc centre signs per side (top→right→bottom→left, clockwise). */
-const SX = [1, 1, -1, -1]
-const SY = [-1, 1, 1, -1]
-
-/**
- * Point on the rail at arc-length `s`, with its outward normal. Returns
- * viewBox coords (centre 50,50). Sides run clockwise starting at the top edge.
- */
-function railAt(s: number): [number, number, number, number] {
-  s = ((s % PERIM) + PERIM) % PERIM
-  const side = Math.floor(s / SIDE)
-  const u = s - side * SIDE
-  let x: number, y: number, nx: number, ny: number
-  if (u < EDGE) {
-    const t = u - (H - C) // −(H−C)…(H−C) along the edge
-    switch (side) {
-      case 0: x = t; y = -H; nx = 0; ny = -1; break // top, →
-      case 1: x = H; y = t; nx = 1; ny = 0; break // right, ↓
-      case 2: x = -t; y = H; nx = 0; ny = 1; break // bottom, ←
-      default: x = -H; y = -t; nx = -1; ny = 0; break // left, ↑
-    }
-  } else {
-    const ang = (side - 1) * (Math.PI / 2) + (u - EDGE) / C
-    nx = Math.cos(ang)
-    ny = Math.sin(ang)
-    x = SX[side] * (H - C) + C * nx
-    y = SY[side] * (H - C) + C * ny
-  }
-  return [50 + x, 50 + y, nx, ny]
-}
-
-/* Precomputed rail samples: x, y, nx, ny, env. `env` tapers bolt amplitude
- * toward the vertical axis so discharges stay clear of the track number above
- * the cover and the title below it — fullest at the left/right sides. */
-const RAIL_N = 256
-const RAIL = new Float32Array(RAIL_N * 5)
-for (let i = 0; i < RAIL_N; i++) {
-  const [x, y, nx, ny] = railAt((i / RAIL_N) * PERIM)
-  const phi = Math.atan2(y - 50, x - 50)
-  RAIL[i * 5] = x
-  RAIL[i * 5 + 1] = y
-  RAIL[i * 5 + 2] = nx
-  RAIL[i * 5 + 3] = ny
-  RAIL[i * 5 + 4] = 0.25 + 0.75 * Math.abs(Math.cos(phi)) ** 1.1
-}
-
-const SLOTS = 6 // hard cap on simultaneous bolts
-const MAX_VERTS = 18
-const MIN_D = 0.4 // vertices never dip below this height above the rail
+const SLOTS = 10 // hard cap on simultaneous bolts
 
 interface Bolt {
   born: number
   life: number
-  k: number // vertex count
-  amp: number // outward reach at the bolt's crest
-  s0: number // arc-length of the first vertex (crawls via vel)
-  span: number // signed arc-length covered by the bolt
-  vel: number // crawl speed, units/ms
-  shape: Float32Array // 0…1 arch profile per vertex
-  branchAt: number // vertex index of the fork, or −1
-  branchStep: number // fork segment length
-  branchRot: number // fork angle off the outward normal, radians
+  n: number // vertex count (main channel + forks)
+  px: Float32Array // frozen vertex positions, jittered slightly per frame
+  py: Float32Array
+  mv: Uint8Array // 1 → this vertex starts a new subpath (fork root)
+  restrike: number // life-fraction of the dimmer second flash, or 0
+}
+
+/** Flash envelope: near-instant strike-in, long eased fade-out. */
+function flash(u: number): number {
+  if (u <= 0 || u >= 1) return 0
+  return u < 0.06 ? u / 0.06 : (1 - (u - 0.06) / 0.94) ** 2.2
 }
 
 export function LightningViz({ playing }: CoverVizProps) {
@@ -129,36 +79,87 @@ export function LightningViz({ playing }: CoverVizProps) {
     const bolts: (Bolt | null)[] = new Array(SLOTS).fill(null)
     let level = 0 // eased loudness → glow brightness
     let slowAvg = 0 // slow-moving loudness baseline for onset detection
-    let acc = 0 // ambient spawn accumulator
+    let acc = 0 // ambient spark accumulator (tiny — beats carry the show)
     let lastBurst = 0
     let lastT = 0
     let raf = 0
 
-    const spawn = (now: number, count: number, energy: number) => {
-      for (let n = 0; n < count; n++) {
-        const slot = bolts.findIndex((b) => b === null)
-        if (slot < 0) return // pool full — drop, never pile up work
-        const span = (0.08 + 0.14 * Math.random()) * PERIM
-        const k = Math.min(MAX_VERTS, 8 + Math.round(span / 3))
-        const shape = new Float32Array(k)
-        for (let j = 0; j < k; j++) {
-          // Arched crest with per-vertex raggedness; endpoints sit on the rail.
-          const t = j / (k - 1)
-          shape[j] = Math.sin(Math.PI * t) ** 0.7 * (0.45 + 0.55 * Math.random())
+    /** One strike rooted at arc-length `s`, shooting outward from the frame. */
+    const spawnOne = (now: number, s: number, energy: number) => {
+      const slot = bolts.findIndex((b) => b === null)
+      if (slot < 0) return // pool full — drop, never pile up work
+      const o = railOffset(RAIL, s)
+      const rx = RAIL.lut[o]
+      const ry = RAIL.lut[o + 1]
+      const env = RAIL.lut[o + 4]
+      // Main channel direction: the outward normal, slightly tilted.
+      const tilt = (Math.random() - 0.5) * 0.7
+      const cos = Math.cos(tilt)
+      const sin = Math.sin(tilt)
+      const dx = RAIL.lut[o + 2] * cos - RAIL.lut[o + 3] * sin
+      const dy = RAIL.lut[o + 2] * sin + RAIL.lut[o + 3] * cos
+      const perpX = -dy
+      const perpY = dx
+      // Reach scales with beat strength, tapered near the top/bottom.
+      const L = Math.max(1.4, Math.min(12, (4.5 + 9 * energy) * env * (0.7 + 0.6 * Math.random())))
+      const k = Math.max(4, 4 + Math.round(L * 0.7))
+
+      const cap = k + 2 * 5 // main channel + up to two 5-vertex forks
+      const px = new Float32Array(cap)
+      const py = new Float32Array(cap)
+      const mv = new Uint8Array(cap)
+      let n = 0
+      // Jagged main channel: advance outward, lateral random walk sideways.
+      let lat = 0
+      for (let j = 0; j < k; j++) {
+        const dist = L * (j / (k - 1)) ** 0.92
+        if (j > 0 && j < k - 1) {
+          lat += (Math.random() - 0.5) * (1.6 * (L / k))
+          const cl = Math.min(2.5, dist * 0.6) // stay outward-pointing
+          lat = Math.max(-cl, Math.min(cl, lat))
         }
-        bolts[slot] = {
-          born: now,
-          life: 160 + Math.random() * 240,
-          k,
-          amp: Math.min(10.5, (3 + 8 * energy) * (0.75 + 0.5 * Math.random())),
-          s0: Math.random() * PERIM,
-          span: Math.random() < 0.5 ? span : -span,
-          vel: (Math.random() < 0.5 ? -1 : 1) * (0.025 + 0.045 * Math.random()),
-          shape,
-          branchAt: Math.random() < 0.6 ? 2 + Math.floor(Math.random() * (k - 4)) : -1,
-          branchStep: 1.2 + Math.random() * 1.4,
-          branchRot: (Math.random() < 0.5 ? -1 : 1) * (0.5 + Math.random() * 0.5),
+        mv[n] = j === 0 ? 1 : 0
+        px[n] = rx + dx * dist + perpX * lat
+        py[n] = ry + dy * dist + perpY * lat
+        n++
+      }
+      // Forks peeling off the middle of the channel, shorter and steeper.
+      const forks = L > 5 ? 1 + (Math.random() < 0.4 ? 1 : 0) : 0
+      for (let f = 0; f < forks; f++) {
+        const jb = 1 + Math.floor((0.25 + 0.4 * Math.random()) * (k - 2))
+        const rot = (Math.random() < 0.5 ? -1 : 1) * (0.45 + 0.45 * Math.random())
+        const fc = Math.cos(rot)
+        const fs = Math.sin(rot)
+        const fdx = dx * fc - dy * fs
+        const fdy = dx * fs + dy * fc
+        const Lb = L * (0.3 + 0.3 * Math.random())
+        const kb = 3 + Math.round(Lb * 0.5)
+        for (let m = 0; m < kb && n < cap; m++) {
+          const dist = Lb * (m / (kb - 1))
+          mv[n] = m === 0 ? 1 : 0
+          px[n] = px[jb] + fdx * dist + (m > 0 ? (Math.random() - 0.5) * 1.1 : 0)
+          py[n] = py[jb] + fdy * dist + (m > 0 ? (Math.random() - 0.5) * 1.1 : 0)
+          n++
         }
+      }
+
+      bolts[slot] = {
+        born: now,
+        life: 450 + Math.random() * 450, // slow, dying-out fade
+        n,
+        px,
+        py,
+        mv,
+        restrike: Math.random() < 0.35 ? 0.25 + 0.35 * Math.random() : 0,
+      }
+    }
+
+    /** A beat fires several strikes spread around the perimeter at once. */
+    const volley = (now: number, count: number, energy: number) => {
+      const base = Math.random()
+      for (let i = 0; i < count; i++) {
+        const s = (((base + i / count + (Math.random() - 0.5) * 0.12) % 1) + 1) % 1
+        spawnOne(now, s * RAIL.perim, energy * (0.75 + 0.5 * Math.random()))
       }
     }
 
@@ -175,16 +176,18 @@ export function LightningViz({ playing }: CoverVizProps) {
       root.style.setProperty('--level', level.toFixed(3))
       slowAvg += (bass - slowAvg) * 0.04
 
-      // A bass jump over the running baseline is a beat → burst of bolts.
-      if (bass - slowAvg > 0.16 && now - lastBurst > 90) {
+      // A bass jump over the running baseline is a beat → volley of strikes,
+      // its size and reach scaled by how hard the beat hits.
+      const flux = bass - slowAvg
+      if (flux > 0.11 && now - lastBurst > 140) {
         lastBurst = now
-        spawn(now, bass > 0.55 ? 3 : 2, bass)
+        volley(now, 2 + Math.round(3 * Math.min(1, flux * 3.2)), bass)
       }
-      // Ambient trickle so quiet passages still spark now and then.
-      acc += dt * (0.0005 + 0.0045 * level * level)
+      // Rare tiny sparks so loud sustained passages aren't fully static.
+      acc += dt * 0.0009 * level * level
       while (acc >= 1) {
         acc -= 1
-        spawn(now, 1, Math.max(0.25, level))
+        spawnOne(now, Math.random() * RAIL.perim, 0.15 + 0.25 * level)
       }
 
       for (let slot = 0; slot < SLOTS; slot++) {
@@ -197,49 +200,23 @@ export function LightningViz({ playing }: CoverVizProps) {
           g.style.opacity = '0'
           continue
         }
-        b.s0 += b.vel * dt
 
+        // Frozen strike with a small tremor that stills as the bolt dies.
+        const jit = 0.12 + 0.4 * (1 - t)
         let d = ''
-        let bx = 0
-        let by = 0
-        let bnx = 0
-        let bny = 0
-        for (let j = 0; j < b.k; j++) {
-          const st = b.s0 + (b.span * j) / (b.k - 1)
-          const idx = ((Math.round((st / PERIM) * RAIL_N) % RAIL_N) + RAIL_N) % RAIL_N
-          const o = idx * 5
-          // Outward-only displacement: arch × side-taper + flicker, floored at
-          // MIN_D — the bolt can approach the rail but never cross inside it.
-          const flick = (Math.random() - 0.5) * 1.5 * (0.4 + 0.6 * b.shape[j])
-          const disp = Math.max(MIN_D * b.shape[j], b.amp * b.shape[j] * RAIL[o + 4] + flick)
-          const x = RAIL[o] + RAIL[o + 2] * disp
-          const y = RAIL[o + 1] + RAIL[o + 3] * disp
-          d += `${j === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`
-          if (j === b.branchAt) {
-            bx = x
-            by = y
-            bnx = RAIL[o + 2]
-            bny = RAIL[o + 3]
-          }
+        for (let i = 0; i < b.n; i++) {
+          const x = b.px[i] + (Math.random() - 0.5) * jit
+          const y = b.py[i] + (Math.random() - 0.5) * jit
+          d += `${b.mv[i] ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`
         }
-        if (b.branchAt >= 0) {
-          // Short fork peeling off a middle vertex, also strictly outward.
-          const cos = Math.cos(b.branchRot)
-          const sin = Math.sin(b.branchRot)
-          const dx = bnx * cos - bny * sin
-          const dy = bnx * sin + bny * cos
-          d += `M${bx.toFixed(2)},${by.toFixed(2)}`
-          for (let m = 1; m <= 3; m++) {
-            const fx = bx + dx * b.branchStep * m + (Math.random() - 0.5) * 1.2
-            const fy = by + dy * b.branchStep * m + (Math.random() - 0.5) * 1.2
-            d += `L${fx.toFixed(2)},${fy.toFixed(2)}`
-          }
-        }
-
         for (const p of paths[slot]) p.setAttribute('d', d)
-        // Fast strike-in, eased fade-out, per-frame electric flicker.
-        const env = Math.min(1, t / 0.12) * Math.min(1, (1 - t) / 0.88)
-        g.style.opacity = (env * (0.82 + 0.18 * Math.random())).toFixed(3)
+
+        // Flash → long fade; sometimes a dimmer re-strike partway through.
+        let e = flash(t)
+        if (b.restrike > 0 && t >= b.restrike) {
+          e = Math.max(e, 0.65 * flash((t - b.restrike) / (1 - b.restrike)))
+        }
+        g.style.opacity = (e * (0.88 + 0.12 * Math.random())).toFixed(3)
       }
     }
 

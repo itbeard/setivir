@@ -1,0 +1,46 @@
+/* Sits behind the cover frame; sparks fly out from behind its edges. */
+.aura {
+  --level: 0;
+  position: absolute;
+  inset: 0;
+  /* Behind the cover *and* behind the song text (which is non-positioned, so a
+     positioned sibling would otherwise paint on top of it). */
+  z-index: -1;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+
+.aura.playing {
+  opacity: 1;
+}
+
+/* Soft radial bloom that brightens on the beat — the warmth of the fire. */
+.glow {
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--red) 32%, transparent) 0%,
+    transparent 70%
+  );
+  opacity: calc(0.38 + var(--level) * 0.55);
+  filter: blur(7px);
+}
+
+/* Spark canvas — larger than the cover so embers drift around it. The
+   container is left untransformed so its box never changes size (a per-frame
+   box transform here was jittering the fixed mini-player on mobile). */
+.viz {
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  /* A canvas is a replaced element: `inset` alone does not stretch it — its
+     display size must be set explicitly (the backing store tracks it in JS). */
+  width: 180%;
+  height: 180%;
+}

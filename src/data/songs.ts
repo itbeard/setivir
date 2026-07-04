@@ -28,7 +28,7 @@ import { parseSongMarkdown } from '../lib/songMarkdown'
 /**
  * Тэхнічная плюмбага па-за markdown: пашырэньне вокладкі + назва аўдыёфайла.
  * Апцыянальнае `viz` выбірае візуалізатар вокладкі для песьні (ключ рэестру
- * ў components/visualizers/registry.ts); безь яго — молніі па змаўчаньні.
+ * ў components/visualizers/registry.ts); безь яго — іскры па змаўчаньні.
  */
 const ASSETS: Record<string, { ext: string; audio: string; viz?: string }> = {
   'rodny-flou': { ext: 'jpg', audio: "1. Setivir - Rodny Flou.mp3" },

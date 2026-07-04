@@ -19,7 +19,7 @@ const LINKS = [
   { label: 'Instagram', href: 'https://www.instagram.com/iamsetivir/', Icon: InstagramIcon },
   { label: 'YouTube', href: 'https://www.youtube.com/@ciomnylos/releases', Icon: YouTubeIcon },
   { label: 'YouTube Music', href: 'https://music.youtube.com/@ciomnylos', Icon: YouTubeMusicIcon },
-  { label: 'Spotify', href: 'https://open.spotify.com/artist/1sod93alm6QTbGrqQ0GzR', Icon: SpotifyIcon },
+  { label: 'Spotify', href: 'https://open.spotify.com/artist/1sod93alm6QTbGrqQ0GzRj', Icon: SpotifyIcon },
   { label: 'Apple Music', href: 'https://music.apple.com/gb/artist/setivir/1832852251', Icon: AppleMusicIcon },
 ]
 
