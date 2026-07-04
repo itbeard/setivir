@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import type { Song } from '../types'
 import { isPlaceholder } from '../data/songs'
 import { assetUrl, downloadName } from '../lib/assets'
@@ -13,6 +13,7 @@ import { PromptDisclosure } from './PromptDisclosure'
 import { CoverWave } from './CoverWave'
 import { Lightbox } from './Lightbox'
 import { DownloadIcon, LinkIcon } from './icons'
+import { useCopyTrackLink } from '../hooks/useCopyTrackLink'
 import { Markdown } from '../lib/markdown'
 import styles from './SongScreen.module.css'
 
@@ -40,30 +41,7 @@ export function SongScreen({
   const { t, loc, lang } = useI18n()
   const { current, isCurrent, isPlaying } = usePlayer()
   const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [linkCopied, setLinkCopied] = useState(false)
-  const copiedTimer = useRef<number | null>(null)
-
-  // Copy a deep link to this song (the same #song-<slug> hash App.tsx honors).
-  const copyTrackLink = async () => {
-    const { origin, pathname, search } = window.location
-    const url = `${origin}${pathname}${search}#song-${song.slug}`
-    try {
-      await navigator.clipboard.writeText(url)
-    } catch {
-      const ta = document.createElement('textarea')
-      ta.value = url
-      ta.setAttribute('readonly', '')
-      ta.style.position = 'fixed'
-      ta.style.opacity = '0'
-      document.body.appendChild(ta)
-      ta.select()
-      document.execCommand('copy')
-      ta.remove()
-    }
-    setLinkCopied(true)
-    if (copiedTimer.current !== null) window.clearTimeout(copiedTimer.current)
-    copiedTimer.current = window.setTimeout(() => setLinkCopied(false), 2200)
-  }
+  const { copied: linkCopied, copy: copyTrackLink } = useCopyTrackLink(song.slug)
   const trackActive = current !== null
   const isThisTrack = isCurrent(song)
   const title = loc(song.title)
