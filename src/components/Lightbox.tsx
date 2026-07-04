@@ -46,6 +46,7 @@ export function Lightbox({ song, onClose }: { song: Song; onClose: () => void })
             className={styles.download}
             href={assetUrl(song.audio)}
             download={downloadName(song.title.be, song.audio)}
+            title={t('song.downloadShort')}
           >
             <DownloadIcon /> {t('song.downloadShort')}
           </a>
@@ -55,6 +56,7 @@ export function Lightbox({ song, onClose }: { song: Song; onClose: () => void })
           className={styles.close}
           onClick={onClose}
           aria-label={t('dialog.close')}
+          title={t('dialog.close')}
         >
           ✕
         </button>

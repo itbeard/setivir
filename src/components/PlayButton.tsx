@@ -18,6 +18,7 @@ export function PlayButton({ song, large = false }: { song: Song; large?: boolea
       className={cx(styles.btn, large && styles.large, active && styles.active)}
       onClick={() => toggle(song)}
       aria-label={label}
+      title={active ? t('player.pause') : t('player.play')}
       aria-pressed={active}
       aria-busy={buffering || undefined}
     >

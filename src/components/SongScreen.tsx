@@ -95,6 +95,7 @@ export function SongScreen({
               className={styles.zoom}
               onClick={() => setLightboxOpen(true)}
               aria-label={`${t('song.viewCover')} — ${title}`}
+              title={t('song.viewCover')}
             >
               <img
                 className={styles.cover}
@@ -113,6 +114,7 @@ export function SongScreen({
             href={assetUrl(song.audio)}
             download={downloadName(song.title.be, song.audio)}
             aria-label={`${t('song.downloadShort')} — ${title}`}
+            title={t('song.downloadShort')}
           >
             <DownloadIcon />
           </a>
@@ -121,6 +123,7 @@ export function SongScreen({
             className={cx(styles.coverAction, styles.coverShare)}
             onClick={copyTrackLink}
             aria-label={`${t('song.copyLink')} — ${title}`}
+            title={t('song.copyLink')}
           >
             <LinkIcon />
           </button>
@@ -162,6 +165,7 @@ export function SongScreen({
         className={cx(styles.next, trackActive && styles.nextLifted)}
         onClick={(e) => goNextFrom(e.currentTarget)}
         aria-label={t('card.nextSong')}
+        title={t('card.nextSong')}
       >
         <span className={styles.nextChevron} aria-hidden="true" />
       </button>
