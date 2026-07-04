@@ -10,7 +10,7 @@ import { settings } from '../settings'
 import { PlayButton } from './PlayButton'
 import { SongMeta } from './SongMeta'
 import { PromptDisclosure } from './PromptDisclosure'
-import { CoverWave } from './CoverWave'
+import { CoverViz } from './visualizers/CoverViz'
 import { Lightbox } from './Lightbox'
 import { DownloadIcon, LinkIcon } from './icons'
 import { useCopyTrackLink } from '../hooks/useCopyTrackLink'
@@ -66,7 +66,7 @@ export function SongScreen({
         </div>
 
         <div className={styles.coverWrap}>
-          {isThisTrack && <CoverWave playing={isPlaying} />}
+          {isThisTrack && <CoverViz song={song} playing={isPlaying} />}
           <div className={styles.frame}>
             <button
               type="button"

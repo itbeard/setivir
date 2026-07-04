@@ -25,8 +25,12 @@ import { parseSongMarkdown } from '../lib/songMarkdown'
  * ─────────────────────────────────────────────────────────────────────────
  */
 
-/** Тэхнічная плюмбага па-за markdown: пашырэньне вокладкі + назва аўдыёфайла. */
-const ASSETS: Record<string, { ext: string; audio: string }> = {
+/**
+ * Тэхнічная плюмбага па-за markdown: пашырэньне вокладкі + назва аўдыёфайла.
+ * Апцыянальнае `viz` выбірае візуалізатар вокладкі для песьні (ключ рэестру
+ * ў components/visualizers/registry.ts); безь яго — молніі па змаўчаньні.
+ */
+const ASSETS: Record<string, { ext: string; audio: string; viz?: string }> = {
   'rodny-flou': { ext: 'jpg', audio: "1. Setivir - Rodny Flou.mp3" },
   'muzhyk-belarus': { ext: 'png', audio: "2. Setivir - Muzjik-Belarus.mp3" },
   'laceli': { ext: 'jpg', audio: "3. Setivir - Laceli.mp3" },
@@ -85,6 +89,7 @@ function buildSongs(): Song[] {
       lyricsAuthor: f.lyricsAuthor,
       description: f.description,
       lyrics: f.lyrics,
+      visualizer: asset.viz,
       stylePrompt: f.stylePrompt,
       lyricsPrompt: f.lyricsPrompt,
     })
