@@ -3,6 +3,7 @@ import { usePlayer } from '../../audio/PlayerContext'
 import { cx } from '../../lib/cx'
 import type { CoverVizProps } from './types'
 import { buildRail, railOffset } from './rail'
+import { createBeatTracker } from './beat'
 import styles from './EmbersViz.module.css'
 
 /**
@@ -178,13 +179,9 @@ export function EmbersViz({ playing }: CoverVizProps) {
     }
 
     const bins = new Uint8Array(analyser.frequencyBinCount)
-    const prevBass = new Uint8Array(12) // last frame's bass bins, for spectral flux
-    let level = 0 // eased loudness → glow brightness
-    let fluxAvg = 0.4 // running typical flux rate — the adaptive kick threshold
+    const beat = createBeatTracker() // shared spectral-flux kick detector
     let ambAcc = 0 // ambient trickle accumulator
-    let lastBurst = 0
     let lastT = 0
-    let startT = 0 // first-audio timestamp, seeds the baseline
     let raf = 0
 
     const step = (now: number) => {
@@ -195,38 +192,11 @@ export function EmbersViz({ playing }: CoverVizProps) {
       const T = now / 1000
 
       analyser.getByteFrequencyData(bins)
-      let sum = 0
-      let fluxSum = 0
-      for (let i = 1; i < 12; i++) {
-        sum += bins[i]
-        const d = bins[i] - prevBass[i]
-        if (d > 0) fluxSum += d // positive spectral flux: energy that ARRIVED
-        prevBass[i] = bins[i]
-      }
-      const bass = Math.min(1, (sum / 11 / 255) * 1.5)
-      // Normalised to a per-second rate so display refresh doesn't matter.
-      // The first frame's flux is bogus (prev bins were zero) — drop it, and
-      // seed the level so pressing play doesn't detonate a greeting firework.
-      const rate = startT ? fluxSum / (11 * 255) / dt : 0
-      if (!startT) {
-        startT = now
-        level = bass
-      }
-      level += (bass - level) * (bass > level ? 1 - Math.exp(-dt / 0.03) : 1 - Math.exp(-dt / 0.25))
+      // Shared spectral-flux detector (see beat.ts): adaptive per song, no
+      // greeting firework on play, kicks audible even under a dense bassline.
+      const { level, bass, kick } = beat.update(bins, dt, now)
       root.style.setProperty('--level', level.toFixed(3))
-      // Adaptive threshold: the detector compares each frame's flux with the
-      // song's own typical flux, so kicks stand out even under a dense,
-      // never-quiet bassline (where an average-level detector goes blind).
-      fluxAvg += (rate - fluxAvg) * (1 - Math.exp(-dt / 1.5))
-
-      // A sheaf fires on a genuine kick: flux clearly above the song's norm,
-      // with real bass weight behind it — never right after play, while the
-      // norm is still settling.
-      const kick = rate / (fluxAvg + 0.05)
-      if (now - startT > 500 && kick > 1.7 && bass > 0.4 && now - lastBurst > 150) {
-        lastBurst = now
-        burst(bass, Math.min(1, (kick - 1.7) / 2.2))
-      }
+      if (kick > 0) burst(bass, kick)
       // Tiny ambient trickle so the fire never looks fully dead mid-song —
       // kept sparse on purpose: the beat is what should move the picture.
       ambAcc += dtMs * (0.0015 + 0.01 * level * level)

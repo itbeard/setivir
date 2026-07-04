@@ -1,6 +1,7 @@
 /* Sits behind the cover frame; the discharges strike beyond its edges. */
 .aura {
   --level: 0;
+  --flash: 0;
   position: absolute;
   inset: 0;
   /* Behind the cover *and* behind the song text (which is non-positioned, so a
@@ -17,7 +18,8 @@
   opacity: 1;
 }
 
-/* Soft radial bloom that brightens on the beat — the "charged air". */
+/* Soft radial bloom — the "charged air". It breathes with the level and
+   FLASHES with every strike (--flash spikes on a kick and decays in JS). */
 .glow {
   position: absolute;
   width: 96%;
@@ -28,7 +30,8 @@
     color-mix(in srgb, var(--red) 32%, transparent) 0%,
     transparent 70%
   );
-  opacity: calc(0.38 + var(--level) * 0.55);
+  opacity: calc(0.3 + var(--level) * 0.4 + var(--flash) * 0.55);
+  transform: scale(calc(1 + var(--flash) * 0.05));
   filter: blur(7px);
 }
 
@@ -73,4 +76,20 @@
   stroke: var(--red-deep);
   stroke-width: 1.2px;
   opacity: 0.95;
+}
+
+/* Runners — the current racing around the frame — are slighter than strikes. */
+.runner .halo {
+  stroke-width: 4px;
+  opacity: 0.12;
+}
+
+.runner .arc {
+  stroke-width: 1.8px;
+  opacity: 0.5;
+}
+
+.runner .core {
+  stroke-width: 1px;
+  opacity: 0.8;
 }

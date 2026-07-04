@@ -3,48 +3,55 @@ import { usePlayer } from '../../audio/PlayerContext'
 import { cx } from '../../lib/cx'
 import type { CoverVizProps } from './types'
 import { buildRail, railOffset } from './rail'
+import { createBeatTracker } from './beat'
 import styles from './LightningViz.module.css'
 
 /**
- * Электрычныя разрады вакол вокладкі — an optional cover visualizer
- * (registry key `lightning`).
+ * Маланкі вакол вокладкі — a cinematic cover visualizer (registry key
+ * `lightning`, assigned per-song via `viz` in data/songs.ts).
  *
- * Every bass onset (beat) fires a volley of strikes: jagged bolts that shoot
- * OUTWARD from the frame's edge, flash, then slowly fade (sometimes with a
- * dimmer re-strike, like real lightning). Bolt geometry is frozen at spawn —
- * only a small, decaying tremor animates it — so a strike reads as a strike,
- * not as something crawling around the cover. Between beats there is almost
- * nothing: the rhythm IS the visual.
+ * Two layers of electricity:
+ * - RUNNERS: charged arcs that run around the frame along an invisible rail,
+ *   shimmering — the ever-present current. Their brightness and reach breathe
+ *   with the music's level.
+ * - STRIKES: on every kick a bolt propagates outward, drawn tip-first like a
+ *   real lightning leader (stroke-dash reveal), flashes the aura, then dies
+ *   away slowly — sometimes with a dimmer re-strike.
  *
- * Bolt roots sit on an invisible "rail" — a rounded square just OUTSIDE the
- * framed art — and every bolt grows outward from it, so a discharge can never
- * cross onto the frame.
- *
- * Performance: a fixed pool of SLOTS <g> elements is rendered once; every
- * frame only rewrites their `d`/opacity via refs (no React re-render, no DOM
- * churn). One rAF loop; allocations happen only at spawn (a few per second).
+ * All geometry is anchored to a rail OUTSIDE the framed art with strictly
+ * outward displacement, so nothing ever crosses onto the frame. Fixed pools
+ * of SVG groups rewritten via refs — no React re-render, no DOM churn; one
+ * rAF loop.
  */
 
 /* The rail runs clearly outside the frame (half-extent 30.5 vs ≈27.8); its
  * corner radius keeps the arcs clear of the frame's corners on the diagonals. */
 const RAIL = buildRail(30.5, 5)
 
-const SLOTS = 10 // hard cap on simultaneous bolts
+const RUNNERS = 3 // crawling arcs
+const STRIKES = 6 // simultaneous kick bolts cap
 
-interface Bolt {
+interface Runner {
   born: number
   life: number
-  n: number // vertex count (main channel + forks)
-  px: Float32Array // frozen vertex positions, jittered slightly per frame
-  py: Float32Array
-  mv: Uint8Array // 1 → this vertex starts a new subpath (fork root)
-  restrike: number // life-fraction of the dimmer second flash, or 0
+  s0: number // arc-length of the head (crawls via vel)
+  span: number // signed arc-length covered
+  vel: number // crawl speed, units/s
+  k: number
+  amp: number // outward reach at the crest
+  shape: Float32Array // 0…1 arch profile per vertex
 }
 
-/** Flash envelope: near-instant strike-in, long eased fade-out. */
-function flash(u: number): number {
-  if (u <= 0 || u >= 1) return 0
-  return u < 0.06 ? u / 0.06 : (1 - (u - 0.06) / 0.94) ** 2.2
+interface Strike {
+  born: number
+  life: number
+  drawMs: number // leader propagation time
+  n: number // vertex count (main channel + forks)
+  px: Float32Array // frozen geometry, jittered slightly per frame
+  py: Float32Array
+  mv: Uint8Array // 1 → new subpath (fork root)
+  dash: number // dash length covering the whole stroked path
+  restrike: number // post-draw life-fraction of the second flash, or 0
 }
 
 export function LightningViz({ playing }: CoverVizProps) {
@@ -61,6 +68,7 @@ export function LightningViz({ playing }: CoverVizProps) {
     const paths = groups.map((g) => Array.from(g.querySelectorAll('path')))
     const clear = () => {
       root.style.setProperty('--level', '0')
+      root.style.setProperty('--flash', '0')
       for (let i = 0; i < groups.length; i++) {
         groups[i].style.opacity = '0'
         for (const p of paths[i]) p.setAttribute('d', '')
@@ -76,23 +84,48 @@ export function LightningViz({ playing }: CoverVizProps) {
     }
 
     const bins = new Uint8Array(analyser.frequencyBinCount)
-    const bolts: (Bolt | null)[] = new Array(SLOTS).fill(null)
-    let level = 0 // eased loudness → glow brightness
-    let slowAvg = 0 // slow-moving loudness baseline for onset detection
-    let acc = 0 // ambient spark accumulator (tiny — beats carry the show)
-    let lastBurst = 0
+    const beat = createBeatTracker()
+    const runners: (Runner | null)[] = new Array(RUNNERS).fill(null)
+    const runnerNextAt = Array.from({ length: RUNNERS }, (_, i) => performance.now() + i * 350)
+    const strikes: (Strike | null)[] = new Array(STRIKES).fill(null)
+    let flash = 0 // aura flash on kicks, decays exponentially
     let lastT = 0
     let raf = 0
 
-    /** One strike rooted at arc-length `s`, shooting outward from the frame. */
-    const spawnOne = (now: number, s: number, energy: number) => {
-      const slot = bolts.findIndex((b) => b === null)
+    const spawnRunner = (now: number, slot: number, level: number) => {
+      const span = (0.1 + 0.09 * Math.random()) * RAIL.perim
+      const k = 9 + Math.floor(Math.random() * 6)
+      const shape = new Float32Array(k)
+      for (let j = 0; j < k; j++) {
+        const t = j / (k - 1)
+        shape[j] = Math.sin(Math.PI * t) ** 0.7 * (0.45 + 0.55 * Math.random())
+      }
+      runners[slot] = {
+        born: now,
+        life: 1300 + Math.random() * 1300,
+        s0: Math.random() * RAIL.perim,
+        span: Math.random() < 0.5 ? span : -span,
+        vel: (Math.random() < 0.5 ? -1 : 1) * (25 + 35 * Math.random()),
+        k,
+        amp: (2.4 + 2 * Math.random()) * (0.7 + 0.6 * level),
+        shape,
+      }
+    }
+
+    /** One kick bolt: jagged channel outward from the rail, plus forks. */
+    const spawnStrike = (now: number, strength: number) => {
+      const slot = strikes.findIndex((b) => b === null)
       if (slot < 0) return // pool full — drop, never pile up work
-      const o = railOffset(RAIL, s)
+      // Bias the root toward the left/right sides (one env re-roll).
+      let s = Math.random() * RAIL.perim
+      let o = railOffset(RAIL, s)
+      if (Math.random() > RAIL.lut[o + 4]) {
+        s = Math.random() * RAIL.perim
+        o = railOffset(RAIL, s)
+      }
+      const env = RAIL.lut[o + 4]
       const rx = RAIL.lut[o]
       const ry = RAIL.lut[o + 1]
-      const env = RAIL.lut[o + 4]
-      // Main channel direction: the outward normal, slightly tilted.
       const tilt = (Math.random() - 0.5) * 0.7
       const cos = Math.cos(tilt)
       const sin = Math.sin(tilt)
@@ -100,16 +133,15 @@ export function LightningViz({ playing }: CoverVizProps) {
       const dy = RAIL.lut[o + 2] * sin + RAIL.lut[o + 3] * cos
       const perpX = -dy
       const perpY = dx
-      // Reach scales with beat strength, tapered near the top/bottom.
-      const L = Math.max(1.4, Math.min(12, (4.5 + 9 * energy) * env * (0.7 + 0.6 * Math.random())))
-      const k = Math.max(4, 4 + Math.round(L * 0.7))
+      const L = Math.max(2.2, Math.min(13, (6 + 9 * strength) * env * (0.75 + 0.5 * Math.random())))
+      const k = Math.max(5, 4 + Math.round(L * 0.8))
 
-      const cap = k + 2 * 5 // main channel + up to two 5-vertex forks
+      const cap = k + 2 * 5
       const px = new Float32Array(cap)
       const py = new Float32Array(cap)
       const mv = new Uint8Array(cap)
       let n = 0
-      // Jagged main channel: advance outward, lateral random walk sideways.
+      let segLen = 0
       let lat = 0
       for (let j = 0; j < k; j++) {
         const dist = L * (j / (k - 1)) ** 0.92
@@ -121,9 +153,9 @@ export function LightningViz({ playing }: CoverVizProps) {
         mv[n] = j === 0 ? 1 : 0
         px[n] = rx + dx * dist + perpX * lat
         py[n] = ry + dy * dist + perpY * lat
+        if (j > 0) segLen += Math.hypot(px[n] - px[n - 1], py[n] - py[n - 1])
         n++
       }
-      // Forks peeling off the middle of the channel, shorter and steeper.
       const forks = L > 5 ? 1 + (Math.random() < 0.4 ? 1 : 0) : 0
       for (let f = 0; f < forks; f++) {
         const jb = 1 + Math.floor((0.25 + 0.4 * Math.random()) * (k - 2))
@@ -139,84 +171,117 @@ export function LightningViz({ playing }: CoverVizProps) {
           mv[n] = m === 0 ? 1 : 0
           px[n] = px[jb] + fdx * dist + (m > 0 ? (Math.random() - 0.5) * 1.1 : 0)
           py[n] = py[jb] + fdy * dist + (m > 0 ? (Math.random() - 0.5) * 1.1 : 0)
+          if (m > 0) segLen += Math.hypot(px[n] - px[n - 1], py[n] - py[n - 1])
           n++
         }
       }
 
-      bolts[slot] = {
+      const dash = segLen * 1.2 // margin over the per-frame jitter
+      const slotPaths = paths[RUNNERS + slot]
+      for (const p of slotPaths) p.setAttribute('stroke-dasharray', `${dash.toFixed(1)} ${dash.toFixed(1)}`)
+      strikes[slot] = {
         born: now,
-        life: 450 + Math.random() * 450, // slow, dying-out fade
+        life: 550 + Math.random() * 400,
+        drawMs: 60 + L * 6,
         n,
         px,
         py,
         mv,
+        dash,
         restrike: Math.random() < 0.35 ? 0.25 + 0.35 * Math.random() : 0,
-      }
-    }
-
-    /** A beat fires several strikes spread around the perimeter at once. */
-    const volley = (now: number, count: number, energy: number) => {
-      const base = Math.random()
-      for (let i = 0; i < count; i++) {
-        const s = (((base + i / count + (Math.random() - 0.5) * 0.12) % 1) + 1) % 1
-        spawnOne(now, s * RAIL.perim, energy * (0.75 + 0.5 * Math.random()))
       }
     }
 
     const step = (now: number) => {
       raf = requestAnimationFrame(step)
-      const dt = lastT ? Math.min(64, now - lastT) : 16
+      const dtMs = lastT ? Math.min(64, now - lastT) : 16
       lastT = now
+      const dt = dtMs / 1000
 
       analyser.getByteFrequencyData(bins)
-      let s = 0
-      for (let i = 1; i < 12; i++) s += bins[i]
-      const bass = Math.min(1, (s / 11 / 255) * 1.5)
-      level += (bass - level) * (bass > level ? 0.5 : 0.1)
+      const { level, kick } = beat.update(bins, dt, now)
       root.style.setProperty('--level', level.toFixed(3))
-      slowAvg += (bass - slowAvg) * 0.04
-
-      // A bass jump over the running baseline is a beat → volley of strikes,
-      // its size and reach scaled by how hard the beat hits.
-      const flux = bass - slowAvg
-      if (flux > 0.11 && now - lastBurst > 140) {
-        lastBurst = now
-        volley(now, 2 + Math.round(3 * Math.min(1, flux * 3.2)), bass)
+      if (kick > 0) {
+        // The aura flashes with the hit; bolt count and reach follow it.
+        flash = Math.max(flash, 0.4 + 0.6 * kick)
+        const count = 1 + Math.round(2 * kick)
+        for (let i = 0; i < count; i++) spawnStrike(now, kick * (0.75 + 0.5 * Math.random()))
       }
-      // Rare tiny sparks so loud sustained passages aren't fully static.
-      acc += dt * 0.0009 * level * level
-      while (acc >= 1) {
-        acc -= 1
-        spawnOne(now, Math.random() * RAIL.perim, 0.15 + 0.25 * level)
-      }
+      flash *= Math.exp(-dt / 0.18)
+      root.style.setProperty('--flash', flash < 0.01 ? '0' : flash.toFixed(3))
 
-      for (let slot = 0; slot < SLOTS; slot++) {
-        const b = bolts[slot]
+      // ── runners: the current that races around the frame ──
+      for (let slot = 0; slot < RUNNERS; slot++) {
+        const r = runners[slot]
         const g = groups[slot]
-        if (!b) continue
-        const t = (now - b.born) / b.life
+        if (!r) {
+          if (now >= runnerNextAt[slot]) spawnRunner(now, slot, level)
+          continue
+        }
+        const t = (now - r.born) / r.life
         if (t >= 1) {
-          bolts[slot] = null
+          runners[slot] = null
+          runnerNextAt[slot] = now + 150 + Math.random() * 500
           g.style.opacity = '0'
           continue
         }
+        r.s0 += r.vel * dt
+        let d = ''
+        for (let j = 0; j < r.k; j++) {
+          const o = railOffset(RAIL, r.s0 + (r.span * j) / (r.k - 1))
+          const flick = (Math.random() - 0.5) * 1.2 * (0.4 + 0.6 * r.shape[j])
+          const disp = Math.max(
+            0.35 * r.shape[j],
+            r.amp * (0.6 + 0.7 * level) * r.shape[j] * RAIL.lut[o + 4] + flick,
+          )
+          const x = RAIL.lut[o] + RAIL.lut[o + 2] * disp
+          const y = RAIL.lut[o + 1] + RAIL.lut[o + 3] * disp
+          d += `${j === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`
+        }
+        for (const p of paths[slot]) p.setAttribute('d', d)
+        const edge = Math.min(1, t / 0.15, (1 - t) / 0.3)
+        g.style.opacity = (edge * (0.35 + 0.5 * level) * (0.8 + 0.2 * Math.random())).toFixed(3)
+      }
 
-        // Frozen strike with a small tremor that stills as the bolt dies.
-        const jit = 0.12 + 0.4 * (1 - t)
+      // ── strikes: leader draw → flash → slow decay ──
+      for (let slot = 0; slot < STRIKES; slot++) {
+        const b = strikes[slot]
+        const g = groups[RUNNERS + slot]
+        if (!b) continue
+        const t = (now - b.born) / b.life
+        if (t >= 1) {
+          strikes[slot] = null
+          g.style.opacity = '0'
+          for (const p of paths[RUNNERS + slot]) p.removeAttribute('stroke-dasharray')
+          continue
+        }
+        const prog = Math.min(1, (now - b.born) / b.drawMs)
+        // Frozen bolt with a tremor that stills as it dies.
+        const u = Math.max(0, (now - b.born - b.drawMs) / (b.life - b.drawMs))
+        const jit = 0.12 + 0.3 * (1 - u)
         let d = ''
         for (let i = 0; i < b.n; i++) {
           const x = b.px[i] + (Math.random() - 0.5) * jit
           const y = b.py[i] + (Math.random() - 0.5) * jit
           d += `${b.mv[i] ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`
         }
-        for (const p of paths[slot]) p.setAttribute('d', d)
-
-        // Flash → long fade; sometimes a dimmer re-strike partway through.
-        let e = flash(t)
-        if (b.restrike > 0 && t >= b.restrike) {
-          e = Math.max(e, 0.65 * flash((t - b.restrike) / (1 - b.restrike)))
+        for (const p of paths[RUNNERS + slot]) {
+          p.setAttribute('d', d)
+          p.setAttribute('stroke-dashoffset', (b.dash * (1 - prog)).toFixed(1))
         }
-        g.style.opacity = (e * (0.88 + 0.12 * Math.random())).toFixed(3)
+        // Full bright while the leader propagates, then a long fade with an
+        // occasional dimmer re-strike.
+        let e: number
+        if (prog < 1) {
+          e = 0.3 + 0.7 * prog
+        } else {
+          e = (1 - u) ** 2
+          if (b.restrike > 0 && u >= b.restrike) {
+            e = Math.max(e, 0.6 * (1 - (u - b.restrike) / (1 - b.restrike)) ** 2)
+          }
+          e *= 0.85 + 0.15 * Math.random()
+        }
+        g.style.opacity = e.toFixed(3)
       }
     }
 
@@ -231,8 +296,15 @@ export function LightningViz({ playing }: CoverVizProps) {
     <div ref={rootRef} className={cx(styles.aura, playing && styles.playing)} aria-hidden="true">
       <span className={styles.glow} />
       <svg ref={svgRef} className={styles.viz} viewBox="0 0 100 100" aria-hidden="true">
-        {Array.from({ length: SLOTS }, (_, i) => (
-          <g key={i} className={styles.bolt}>
+        {Array.from({ length: RUNNERS }, (_, i) => (
+          <g key={`r${i}`} className={cx(styles.bolt, styles.runner)}>
+            <path className={styles.halo} />
+            <path className={styles.arc} />
+            <path className={styles.core} />
+          </g>
+        ))}
+        {Array.from({ length: STRIKES }, (_, i) => (
+          <g key={`s${i}`} className={styles.bolt}>
             <path className={styles.halo} />
             <path className={styles.arc} />
             <path className={styles.core} />
