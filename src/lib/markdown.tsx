@@ -21,9 +21,12 @@ function renderInline(text: string, keyBase: string): ReactNode[] {
   const out: ReactNode[] = []
   let last = 0
   let match: RegExpExecArray | null
-  INLINE.lastIndex = 0
+  // Fresh regex per call: renderInline recurses for nested spans (e.g. italics
+  // inside a link label), and a shared global regex would have its lastIndex
+  // clobbered by the recursion — an infinite loop on the outer scan.
+  const inline = new RegExp(INLINE.source, INLINE.flags)
 
-  while ((match = INLINE.exec(text)) !== null) {
+  while ((match = inline.exec(text)) !== null) {
     if (match.index > last) out.push(text.slice(last, match.index))
     const key = `${keyBase}-${match.index}`
 
@@ -45,7 +48,7 @@ function renderInline(text: string, keyBase: string): ReactNode[] {
         </a>,
       )
     }
-    last = INLINE.lastIndex
+    last = inline.lastIndex
   }
 
   if (last < text.length) out.push(text.slice(last))

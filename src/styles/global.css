@@ -76,6 +76,22 @@ a {
   color: inherit;
 }
 
+/* Prose links (markdown-generated <a> carry no class, unlike component links):
+   a quiet dotted underline in the accent red that turns solid on hover. */
+a:not([class]) {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color 0.18s var(--ease), text-decoration-color 0.18s var(--ease);
+}
+
+a:not([class]):hover {
+  color: var(--red);
+  text-decoration-style: solid;
+}
+
 :focus-visible {
   outline: 2px solid var(--red);
   outline-offset: 3px;
