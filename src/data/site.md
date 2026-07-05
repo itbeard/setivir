@@ -2,19 +2,28 @@
 
 ## be
 
-Вітаю вас, я Аляксей Картыннік, і Setivir — гэта мой эксперыментальны музычны праект, які я ствараю ў суаўтарстве са штучным інтэлектам.
+Вітаю вас! Мяне клічуць Аляксеем Картыньнікам, і Setivir — гэта мой эксперыментальны музычны праект, які я ствараю ў суаўтарстве са штучным інтэлектам.
 
-У аснове праекта — сучаснае пераасэнсаваньне беларускай паэтычнай і музычнай спадчыны: твораў знакамітых беларускіх аўтараў, фальклорных песень, а таксама маіх уласных тэкстаў. Для мяне кожная кампазіцыя — гэта спроба дыялогу паміж традыцыяй і новымі тэхналогіямі, паміж жывой культурнай памяццю і мовай сучаснага гуку.
+Дзесяць гадоў свайго дзяцінства я правёў у народных калектывах мястэчка Ракаў, што пад Мінскам. Менавіта адтуль я маю прагу да пашырэньня беларусчыны і беларускае культуры.
 
-Праз Setivir я імкнуся адкрываць беларускую культуру ў новым кантэксце, пашыраць прысутнасьць беларускамоўнай музыкі ў сучаснай прасторы і паказваць, што спадчына можа ня толькі захоўвацца, але і набываць новыя формы жыцця.
+У аснове праекту Setivir ляжыць сучаснае пераасэнсаваньне беларускай паэтычнай і музычнай спадчыны: твораў знакамітых беларускіх аўтараў, фальклорных песень, а часамі і маіх уласных тэкстаў. Праект адкрывае беларускую культуру ў новым кантэксце, пашырае прысутнасьць беларускамоўнай музыкі ў сучаснай прасторы і паказвае, што спадчына можа ня толькі захоўвацца, але і набываць новыя сучасныя формы жыцьця.
+
+Я не маю музычнай адукацыі і не ўмею граць на музычных інструментах. Аднак я добра разумею беларускую культуру і зьяўляюся яе носьбітам. Штучны інтэлект, прынамсьці на цяперашні момант, яшчэ не дасканала валодае ўсімі тонкасьцямі беларускае культуры і беларускае мовы. У тым ліку таму, што беларуская мова і культура мала прадстаўленыя ў інтэрнэце і ў навучальных даных для штучнага інтэлекту. Але штучны інтэлект даволі добра ўмее генераваць музыку і сьпяваць.
+
+Таму, аб’яднаўшыся ў межах праекту Setivir са штучным інтэлектам, мы спрабуем разам выбудаваць дыялог паміж традыцыяй і новымі тэхналогіямі, паміж жывой культурнай памяцьцю і мовай сучаснасьці.
 
 ## en
 
-Welcome, I am Aliaksei Kartynnik, and Setivir is my experimental music project, created in co-authorship with artificial intelligence.
+Welcome, I am [*Aliaksei Kartynnik*](https://itbeard.com), and **Setivir** is my experimental music project, which I create in collaboration with artificial intelligence.
 
-At its core, the project is a contemporary reimagining of Belarusian poetic and musical heritage: works by famous Belarusian authors, folk songs, and my own original texts. For me, each composition is an attempt to create a dialogue between tradition and new technologies, between living cultural memory and the language of contemporary sound.
+I spent ten years of my childhood in folk groups in the small town of [Rakaw](https://en.wikipedia.org/wiki/Rakaw), near Minsk city, Belarus. This is where my strong interest in promoting Belarusian language and culture comes from.
 
-Through Setivir, I seek to reveal Belarusian culture in a new context, expand the presence of Belarusian-language music in the contemporary cultural space, and show that heritage can not only be preserved, but also take on new forms of life.
+At the heart of **Setivir** is a modern reinterpretation of Belarusian poetic and musical heritage: works by well-known Belarusian authors, folk songs, and sometimes my own texts. The project presents Belarusian culture in a new context, helps Belarusian-language music become more visible in the modern cultural space, and shows that heritage can not only be preserved, but also take on new modern forms of life.
+
+I do not have a formal musical education, and I cannot play musical instruments. However, I understand Belarusian culture well and consider myself one of its bearers. Artificial intelligence, at least for now, does not yet fully master all the nuances of Belarusian culture and the Belarusian language. This is partly because Belarusian language and culture are still underrepresented on the internet and in the training data used for artificial intelligence. At the same time, artificial intelligence is already quite good at generating music and singing.
+
+That is why, by joining forces with artificial intelligence within the **Setivir** project, we are trying to build a dialogue between tradition and new technologies, between living cultural memory and the language of modernity.
+
 
 # Фінал / Outro
 
