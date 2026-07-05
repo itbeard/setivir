@@ -1,12 +1,14 @@
 import { goNextFrom } from '../lib/nav'
 import { useI18n } from '../i18n/I18nContext'
 import { cx } from '../lib/cx'
+import { Markdown } from '../lib/markdown'
+import { siteText } from '../data/site'
 import { Ornament } from './Ornament'
 import { SocialLinks } from './SocialLinks'
 import styles from './Hero.module.css'
 
 export function Hero() {
-  const { t } = useI18n()
+  const { t, loc } = useI18n()
 
   return (
     <section id="intro" data-section data-kind="intro" className={cx('section', styles.hero)}>
@@ -16,11 +18,7 @@ export function Hero() {
         <SocialLinks />
         <Ornament className={styles.ornament} />
         <div className={styles.intro}>
-          {t('hero.intro')
-            .split(/\n\s*\n/)
-            .map((para, i) => (
-              <p key={i}>{para.trim()}</p>
-            ))}
+          <Markdown text={loc(siteText.intro)} />
         </div>
         <button type="button" className={styles.enter} onClick={(e) => goNextFrom(e.currentTarget)}>
           {t('hero.enter')}

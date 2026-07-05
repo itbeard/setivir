@@ -73,30 +73,37 @@ const BILINGUAL: ReadonlySet<FieldKey> = new Set<FieldKey>([
   'lyrics',
 ])
 
-/** Resolve a `# heading` line to a field key by trying each "/"-split label. */
-function fieldFromHeading(heading: string): FieldKey | null {
-  for (const part of heading.split('/')) {
-    const key = LABEL_TO_FIELD[part.trim().toLowerCase()]
-    if (key) return key
-  }
-  return null
-}
-
 /** Collapse collected lines into a trimmed block, preserving inner newlines. */
 function block(lines: string[]): string {
   return lines.join('\n').replace(/^\n+/, '').replace(/\n+$/, '')
 }
 
 /**
- * Parse a song Markdown file into its text fields. Missing fields fall back to
- * empty strings; the caller (data/songs.ts) supplies technical fields.
+ * Generic field-per-heading parser shared by the song files and the site-level
+ * texts (data/site.md). Walks the `# heading` / `## be|en` structure and
+ * returns accessors over the collected fields: `bi()` for bilingual fields,
+ * `sc()` for scalars. Unknown headings and text before the first heading are
+ * ignored; missing fields resolve to empty strings.
  */
-export function parseSongMarkdown(raw: string): ParsedSong {
+export function parseMarkdownFields<K extends string>(
+  raw: string,
+  labelToField: Record<string, K>,
+  bilingual: ReadonlySet<K>,
+): { bi: (key: K) => Localized; sc: (key: K) => string } {
   // Buckets keyed by field; bilingual fields hold { be, en }, scalars a string.
-  const scalars: Partial<Record<FieldKey, string[]>> = {}
-  const langs: Partial<Record<FieldKey, { be: string[]; en: string[] }>> = {}
+  const scalars: Partial<Record<K, string[]>> = {}
+  const langs: Partial<Record<K, { be: string[]; en: string[] }>> = {}
 
-  let field: FieldKey | null = null
+  // Resolve a `# heading` line to a field key by trying each "/"-split label.
+  const fieldFromHeading = (heading: string): K | null => {
+    for (const part of heading.split('/')) {
+      const key = labelToField[part.trim().toLowerCase()]
+      if (key) return key
+    }
+    return null
+  }
+
+  let field: K | null = null
   let lang: 'be' | 'en' | null = null
 
   for (const line of raw.split(/\r?\n/)) {
@@ -106,9 +113,9 @@ export function parseSongMarkdown(raw: string): ParsedSong {
     if (h1) {
       field = fieldFromHeading(h1[1])
       lang = null
-      if (field && BILINGUAL.has(field) && !langs[field]) {
+      if (field && bilingual.has(field) && !langs[field]) {
         langs[field] = { be: [], en: [] }
-      } else if (field && !BILINGUAL.has(field) && !scalars[field]) {
+      } else if (field && !bilingual.has(field) && !scalars[field]) {
         scalars[field] = []
       }
       continue
@@ -124,21 +131,31 @@ export function parseSongMarkdown(raw: string): ParsedSong {
     }
 
     if (!field) continue
-    if (BILINGUAL.has(field)) {
+    if (bilingual.has(field)) {
       if (lang) langs[field]![lang].push(line)
     } else {
       scalars[field]!.push(line)
     }
   }
 
-  const bi = (key: FieldKey): Localized => {
-    const b = langs[key]
-    return { be: b ? block(b.be) : '', en: b ? block(b.en) : '' }
+  return {
+    bi: (key) => {
+      const b = langs[key]
+      return { be: b ? block(b.be) : '', en: b ? block(b.en) : '' }
+    },
+    sc: (key) => {
+      const s = scalars[key]
+      return s ? block(s) : ''
+    },
   }
-  const sc = (key: FieldKey): string => {
-    const s = scalars[key]
-    return s ? block(s) : ''
-  }
+}
+
+/**
+ * Parse a song Markdown file into its text fields. Missing fields fall back to
+ * empty strings; the caller (data/songs.ts) supplies technical fields.
+ */
+export function parseSongMarkdown(raw: string): ParsedSong {
+  const { bi, sc } = parseMarkdownFields(raw, LABEL_TO_FIELD, BILINGUAL)
 
   return {
     title: bi('title'),

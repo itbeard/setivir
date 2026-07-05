@@ -1,11 +1,13 @@
 import { scrollToIndex } from '../lib/nav'
 import { useI18n } from '../i18n/I18nContext'
 import { cx } from '../lib/cx'
+import { Markdown } from '../lib/markdown'
+import { siteText } from '../data/site'
 import { Ornament } from './Ornament'
 import styles from './Outro.module.css'
 
 export function Outro() {
-  const { t } = useI18n()
+  const { t, loc } = useI18n()
   const year = new Date().getFullYear()
 
   return (
@@ -13,7 +15,7 @@ export function Outro() {
       <div className={styles.inner} data-anim-stack>
         <Ornament className={styles.ornament} />
         <h2 className={styles.heading}>{t('outro.heading')}</h2>
-        <p className={styles.text}>{t('outro.text')}</p>
+        <Markdown text={loc(siteText.outro)} paragraphClassName={styles.text} />
 
         <a
           className={styles.link}
