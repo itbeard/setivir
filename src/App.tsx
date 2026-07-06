@@ -5,7 +5,7 @@ import { PlayerProvider, usePlayer } from './audio/PlayerContext'
 import { useActiveSection } from './hooks/useActiveSection'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
 import { useRevealSections } from './hooks/useRevealSections'
-import { getSections } from './lib/nav'
+import { getSections, scrollToId } from './lib/nav'
 import { settings } from './settings'
 import { TopBar } from './components/TopBar'
 import { ProgressNav } from './components/ProgressNav'
@@ -43,6 +43,18 @@ function Shell() {
     document.title =
       isPlaying && current ? `▶ ${loc(current.title)} — Setivir` : base
   }, [lang, isPlaying, current, loc])
+
+  // When playback moves from one track to another (auto-advance after a song
+  // ends, mini-player prev/next, lock-screen controls), bring the new song's
+  // screen into view. Starting playback from silence doesn't scroll — the
+  // listener pressed play on the screen they're already looking at.
+  const prevTrackIdRef = useRef<number | null>(null)
+  useEffect(() => {
+    const prevId = prevTrackIdRef.current
+    prevTrackIdRef.current = current?.id ?? null
+    if (!current || prevId === null || prevId === current.id) return
+    scrollToId(`song-${current.slug}`)
+  }, [current])
 
   // Honor an incoming #hash deep link once the sections exist.
   useEffect(() => {

@@ -79,7 +79,8 @@ export function PlayerProvider({
       setIsBuffering(false)
     }
     const onEnded = () => {
-      // Auto-advance through the playlist; stop only after the last track.
+      // Auto-advance through the playlist, wrapping from the last track back
+      // to the first. Stops only if there is nowhere to go (single track).
       if (advanceRef.current()) return
       setIsPlaying(false)
       audio.currentTime = 0
@@ -259,12 +260,14 @@ export function PlayerProvider({
 
   useEffect(() => {
     advanceRef.current = () => {
-      const next = neighbor(1)
-      if (!next) return false
+      // After the last track, loop back to the first one. Toggling the same
+      // track would just resume it at its end, so bail out instead.
+      const next = neighbor(1) ?? playlist?.[0] ?? null
+      if (!next || next.id === current?.id) return false
       toggle(next)
       return true
     }
-  }, [neighbor, toggle])
+  }, [neighbor, toggle, playlist, current])
 
   // ── Media Session: lock-screen / hardware controls ──
   // Safari implements the API only partially, so every call is guarded.
