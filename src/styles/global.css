@@ -77,11 +77,12 @@ a {
 }
 
 /* Prose links (markdown-generated <a> carry no class, unlike component links):
-   a quiet dotted underline in the accent red that turns solid on hover. */
+   a quiet grey dotted underline that turns solid red on hover. Grey, not red —
+   red dots under text read as a spellcheck squiggle. */
 a:not([class]) {
   text-decoration: underline;
   text-decoration-style: dotted;
-  text-decoration-color: var(--red);
+  text-decoration-color: var(--ink-faint);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
   transition: color 0.18s var(--ease), text-decoration-color 0.18s var(--ease);
