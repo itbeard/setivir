@@ -43,14 +43,24 @@ function Shell({
   // Flipping the sort order reshuffles the sections under the visitor's feet;
   // remember the song they were on and snap back to it after the reorder.
   const keepSlugRef = useRef<string | null>(null)
+  const revealedRef = useRef<Element[]>([])
   const toggleOrder = () => {
     keepSlugRef.current =
       activeIndex >= 1 && activeIndex <= total
         ? displaySongs[activeIndex - 1].slug
         : null
+    revealedRef.current = Array.from(
+      document.querySelectorAll('[data-section].is-in'),
+    )
     onToggleOrder()
   }
   useLayoutEffect(() => {
+    // Reordering flips the alt striping, so React rewrites className and wipes
+    // the observer-added .is-in — and the observer won't re-fire for a section
+    // that never left the viewport. Restore what was already revealed.
+    revealedRef.current.forEach((el) => el.classList.add('is-in'))
+    revealedRef.current = []
+
     const slug = keepSlugRef.current
     if (!slug) return
     keepSlugRef.current = null
