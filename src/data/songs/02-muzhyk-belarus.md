@@ -30,7 +30,7 @@ Yanka Kupala
 
 ## be
 
-> «Мужык-беларус» — песьня на верш Янкі Купалы «Я мужык-беларус...»
+> **«Мужык-беларус»** — песьня на верш Янкі Купалы «Я мужык-беларус...»
 
 Гэтым разам — Купала і адзін зь ягоных самых раньніх вершаў: «Я мужык-беларус...» (1905-1907). «Мужык» тут ня лаянка, а клас: селянін. «Пан» — землеўладальнік, гаспадар. І калі герой верша заве сябе «панам сахі і касы», дык гэта горкая іронія: усё ягонае панства — драўляная саха дый каса, і болей нічога.
 
@@ -55,7 +55,7 @@ P.S. У промпце стылю вы можаце заўважыць слов�
 
 ## en
 
-"Muzhyk-Bielarus" — a song set to Yanka Kupala's poem "Ja muzhyk-bielarus..."
+**"Muzhyk-Bielarus"** — a song set to Yanka Kupala's poem "Ja muzhyk-bielarus..."
 
 > A "muzhyk" is a peasant man — more on that word in a moment. The poem's opening line, which gives the song its name, says: "I am a muzhyk, a Belarusian." And Yanka Kupala (1882–1942) is the national poet of Belarus — roughly what Shevchenko is to Ukrainians or Burns to Scots.
 
@@ -136,57 +136,51 @@ P.S. In the style prompt, you may notice the word "Russian." This little "hack" 
 
 ## en
 
-[Verse]
-I am a Belarusian muzhik—
-Lord of the plough and the scythe;
-Dark myself, a white moustache,
-Two spans of hair.
-Hunger was my father,
-It raised me and fed me;
-Misfortune was my mother,
-Work gave me strength.
+I am a muzhyk, a Belarusian,
+The pan of the sokha and the scythe;
+Dark myself, moustache white,
+My hair two hand-spans long.
+Hunger was my father —
+He raised me and he fed me;
+Misery was my mother,
+And labour gave me strength.
 
-[Verse]
-Though I endure contempt—
-I must be deaf and dumb;
+Though I endure contempt,
+I must stay deaf and mute;
 Though I feed the world with bread,
-I myself eat chaff.
-From my hard labor
-Everyone takes their use,
-Only to me for it
-There is no thanks anywhere.
+I myself eat the chaff.
+From my hard labour
+Everyone profits —
+Only I, for all of it,
+Get no thanks anywhere.
 
-[Verse]
-Look—the tall pine forest,
-No eye can pierce it;
-My axe hummed—
-The field lies flat like a pancake.
-I pulled the ard down from the rafters,
-Tightened the little mare,
-Bent my shoulders a bit—
-Turned the forest into ploughland!
+Look — a pine wood, tall,
+No eye can pierce it through;
+My axe rang out — and now
+The field lies flat as a pancake.
+I dragged the sokha from the loft,
+Hitched up my little mare,
+Bent my shoulders just a bit —
+And turned the forest into ploughland!
 
-[Bridge]
-And I sowed a patch,
-Then with my wife I reaped…
-The lord— a whole tub of wheat—
-Piled up, a lovely sight to see.
+Then I sowed my patch,
+With my wife I reaped it...
+And this pan laid up a stack
+Of wheat — a lovely sight!
 
-[Verse]
-So, folks, that’s what kind
-Of Belarusian muzhik I am!
-Bruises under my brow,
-Dark myself, a white moustache.
-Hey, if only I were not “dark,”
-If I could read books—
-I would win my fate,
-I would sing my songs!
+So there, good people — that is
+The muzhyk-Belarusian I am!
+Bruises beneath my brow,
+Dark myself, moustache white.
+Eh, had I not been dark,
+Had I known how to read —
+I would have won a better lot,
+I would have sung my little songs!
 
-[Finale]
-I would manage to say
-That I too am a human being,
-That grieving my whole life through
-Has wearied me enough.
+I would have found the words to say
+That I, too, am a human being —
+That I, too, am sick and tired
+Of toiling my whole life away.
 
 # Промпт стылю / Style prompt
 

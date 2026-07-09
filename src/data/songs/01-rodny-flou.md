@@ -30,7 +30,7 @@ Aliaksei Kartynnik
 
 ## be
 
-> «Родны Флоў» - Трэк, зь якога пачаўся Setivir
+> **«Родны Флоў»** - Трэк, зь якога пачаўся Setivir
 
 На пачатку была цяжкая музыка па-нямецку. У межах праекту [DunkelSaga](https://www.youtube.com/@dunkelsaga/) я ўжо даўно генэраваў трэкі пра самыя адметныя падзеі сусьвету «Валадара Пярсьцёнкаў». Але паралельна ўва мне сьпела зусім іншае жаданьне: напісаць свой уласны рэп-трэк па-беларуску (рэп я люблю даўно й шчыра) і выканаць яго самому.
 
@@ -44,11 +44,11 @@ Aliaksei Kartynnik
 
 Так нарадзіўся «Родны Флоў» — з жаданьня даць жыцьцё ўласнаму аўтарскаму тэксту, калі не маеш уласнага добрага голасу, а грошай на прафэсіяналаў няма. Канешне, гэта зусім не бездакорны твор: хутчэй за ўсё, вы пачуеце ў ім ШІ. Але тады я проста ня мог паверыць, што такое ўвогуле магчыма па-беларуску. І, як на мяне, трэк дагэтуль гучыць даволі годна — дакладна лепш за палову «класічнай» беларускай эстрады 😁
 
-P.S. У тэксьце схаваныя ня толькі відавочныя адсылкі да людзей, падзеяў і гісторыі. Там ёсьць адсылкі й да канкрэтных твораў Янкі Купалы, Якуба Коласа, Уладзімера Караткевіча, Васіля Быкава й Сяргея Грахоўскага. Колькі зь іх знойдзеце вы?
+P.S. У тэксьце схаваныя ня толькі відавочныя адсылкі да людзей, падзеяў і гісторыі. Там ёсьць адсылкі й да канкрэтных твораў Янкі Купалы, Якуба Коласа, Уладзімера Караткевіча, Васіля Быкава, Пятруся Броўкі й Сяргея Грахоўскага. Колькі зь іх знойдзеце вы?
 
 ## en
 
-> "Rodny Flow" — the track that started Setivir
+> **"Rodny Flow"** — the track that started Setivir
 
 *("Rodny" is Belarusian for "native" — the same word used in "rodnaja mova" (native tongue), and "rodny kraj" (native land). So the title reads, roughly, as Native Flow.)*
 
@@ -65,6 +65,25 @@ Around the same time, Google released **Veo 3** — the first genuinely decent v
 That is how "Rodny Flow" was born — out of the desire to give life to lyrics of your own when you don't have a decent voice of your own, and there's no money for professionals. Of course, it's far from a flawless piece: most likely, you will hear the AI in it. But back then, I simply couldn't believe this was possible in Belarusian at all. And if you ask me, the track still holds up — certainly better than half of Belarus's "classic" estrada, the glossy Soviet-rooted variety pop that has ruled the official stage for decades 😁
 
 P.S. The lyrics hide more than the obvious nods to people, events, and history. There are also references to specific works by Yanka Kupala and Yakub Kolas (the founding classics of modern Belarusian literature), Uladzimir Karatkievich (the novelist who gave Belarusians a romantic vision of their own past), Vasil Bykaŭ (the unflinching chronicler of World War II, and internationally the best-known Belarusian writer), and Siarhei Hrakhouski (a poet who survived Stalin's camps and lived to write about them).
+
+::: cut A few keys for readers from outside Belarus
+
+- The chorus line "from your great-grandfathers, from time out of mind" quotes the opening of Yanka Kupala's "Spadchyna" ("Heritage") — the very poem behind the guslee.bel video on the second track's page.
+- "The native corner… no strength to forget" reworks the famous opening of Yakub Kolas's verse novel "Novaja Ziamlia" ("The New Land").
+- Uladzimir Karatkievich — the beloved historical novelist; Kandrat Krapiva — classic satirist and fabulist; the Radzivils (Radziwiłł) — the mightiest magnate dynasty of the Grand Duchy of Lithuania; Francysk Skaryna — the first East Slavic book printer (1517); Vitaut — the Grand Duke at the height of the Grand Duchy of Lithuania, the medieval state Belarusians claim as their own; Euphrosyne of Polatsk — 12th-century abbess and enlightener, patron saint of Belarus.
+- Rahvalod, Rahnieda, Uladzimir, Iziaslau — a 10th-century Polatsk drama: Prince Uladzimir of Kyiv killed Rahvalod of Polatsk and took his daughter Rahnieda by force; years later, after Rahnieda tried to avenge herself, their young son Iziaslau raised a sword to shield his mother — and from him the Polatsk princely line descends.
+- Maks Korzh — the most famoust stadium-scale rapper from Luninets, Belarus, who performs in Russian.
+- The mova — literally "the language": how Belarusians refer to Belarusian when speaking it is a statement.
+- The white-red-white flag — the historical national flag of Belarus and the symbol of its democratic movement; displaying it at home today can get you arrested. One legend traces the red stripe to a wounded warrior's blood-soaked bandage raised as a banner.
+- "Why the wild thyme is fragrant" nods to "Pakhnie Chabor," a much-loved poem by Piatrus Broŭka.
+- NRM — legendary Belarusian rock band (the name stands for "Independent Republic of Dreams"); Siarhei Bashlykevich — singer-songwriter, frontman of the band Leibonik; Andrej Khadanovich — poet and translator.
+- Viktar Martsinovich — novelist ("Mova", "Paranoia").
+- Vyraj — an untranslatable Belarusian word: the mythical warm land where the birds fly away for winter. In some way it is a bit similar to "paradise" concept.
+- The "fine yellow sand" points to Vasil Bykaŭ's story "The Yellow Sand," where the road leads to the NKVD execution pits.
+- Aliaksandr Charnukha — writer and music critic; his novel "Pigs" and story collection "Violence" are biting satires of Belarusian reality after 2020.
+- Sasha Filipenka — Belarusian novelist widely translated across Europe.
+- Tuteishyia — "the ones from here": the key word of this whole gallery (see the intro). "Tuteishyia princes" is the track's jab at those who rule the here-and-now.
+:::
 
 # Тэкст песьні / Lyrics
 
@@ -132,68 +151,65 @@ P.S. The lyrics hide more than the obvious nods to people, events, and history. 
 
 ## en
 
-[Verse]
-Hey, listen — this is your native flow,
-Haven’t you forgotten it, from forefathers since time immemorial?
-Do you hear our language? That’s truly stylish.
-And it’s a treasure we won’t lose under any circumstances.
+Hey, listen up — this is your native flow:
+Have you forgotten it? It's been yours from your great-grandfathers, from time out of mind.
+You hear our language? Now that is style.
+It's a treasure we won't lose — not on any terms.
 
-For honor, for truth, for the nook that is so dear to us,
-Which we’ve long had no power to forget.
-Kupala and Kolas have long flowed in our veins,
-So our spirit of galactic size will not vanish.
+For honour, for truth, for the native corner we hold so dear —
+The one we've long had no strength in us to forget.
+Kupala and Kolas have long been running in our veins,
+So this spirit of ours, galactic in scale, is not going anywhere.
 
-Listen, boy, I understand your pain —
-You say you shouldn’t dive into this headfirst.
-You may let love go up in smoke, neglect the path behind,
-But to love the Motherland — you must get down to the roots.
+Listen, kid, I understand your pain —
+You're thinking: no need to dive into all this head-first.
+Fine, you can let a love go up in smoke, drop a road once travelled,
+But to love the Homeland you've got to know your roots inside out.
 
-You must know who Karatkevich and Krapiva are,
-Radziwill, Skaryna, Vytautas, Euphrosyne of Polotsk,
-Rogvolod and Rogneda, how Vladimir lay with her,
-And why Iziaslav stood up for his mother.
+You need to know who they are: Karatkievich, Krapiva,
+Radzivil, Skaryna, Vitaut, Euphrosyne of Polatsk,
+Rahvalod and Rahnieda — and how Uladzimir slept with her,
+And why Iziaslau stood up to shield his mother.
 
-[Chorus]
-Hey, listen — this is your native flow,
-Haven’t you forgotten it, from forefathers since time immemorial?
-Do you hear our language? That’s truly stylish.
-And it’s a treasure we won’t lose under any circumstances.
+Hey, listen up — this is your native flow:
+Have you forgotten it? It's been yours from your great-grandfathers, from time out of mind.
+You hear our language? Now that is style.
+It's a treasure we won't lose — not on any terms.
 
-[Verse]
-And now let’s talk about contemporary art,
-Which you surely know — you’ve been steeped in it since youth.
-You probably respect Max Korzh’s rap motifs,
-But did you know he started from the Luninets underground?
+Now then, let's talk about the art of today —
+You've surely heard it: you've been hooked since your teens.
+Chances are you rate the rap vibes of Maks Korzh —
+But did you know he started out in the Luninets underground?
 
-Back then he rapped in the language and was proud of it,
-With the white-red-white flag he celebrated in style.
-And once he didn’t shy away from Belarusian-ness at all —
-If he hears this, let him remember the roots.
+Back then he rapped in the mova and took real pride in it,
+Partied in fine style with the white-red-white flag.
+Once upon a time he didn't shy away from his Belarusianness one bit —
+If he ever hears this, let him remember his roots.
 
-And now, I hope, you’ve understood my reproach:
-Who Belarusians are and why thyme smells,
-Who NRM, Bashlykevich, Khadanovich are,
-What the old-new Martynovich writes about in his works.
+And by now, I hope, you've caught my reproach:
+Who the Belarusians are, and why the wild thyme is fragrant;
+Who NRM are, and Bashlykevich, and Khadanovich,
+And what the old-new Martsinovich writes about in his books.
 
-Where that Vyraj is — the one no one else has;
-What that yellow little sand is and where the road leads.
-“Gvalt” (“Violence”) and “S’vinni” (“Pigs”) by Charnukha — that’s our reality;
-Filipenko has told the world well about our very essence.
+Where that vyraj lies — the one that nobody else has got;
+What that fine yellow sand is, and where the road is leading.
+"Violence" and "Pigs" by Charnukha — that is our reality,
+And Filipenka has told the world well what we truly are.
 
-[Chorus]
+Hey, listen up — this is your native flow:
+Have you forgotten it? It's been yours from your great-grandfathers, from time out of mind.
+You hear our language? Now that is style.
+It's a treasure we won't lose — not on any terms.
 
-[Bridge]
-Our language opens the roads to history for us,
-And a mighty oak cannot have small roots.
-Recall how our ancestors defended their threshold,
-Through suffering they gained the white flag of victories.
+Our language opens up the roads into our history —
+And no mighty oak was ever grown on shallow roots.
+Remember how our forebears defended their own doorstep,
+How through torment they won the white banner of victories.
 
-How red blood appeared upon the flag,
-And why to this day it frightens the local princes.
-Once you read of this in the native word,
-You’ll grasp what it is to be called a worthy Belarusian.
-
-[Chorus x 2]
+How the red of blood came to lie upon that banner,
+And why to this day it frightens the tuteishyia princes.
+And once you have read of all this in your own native word,
+You will understand what it means to bear the name of a worthy Belarusian.
 
 # Промпт стылю / Style prompt
 

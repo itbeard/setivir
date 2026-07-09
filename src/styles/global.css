@@ -224,6 +224,50 @@ a:not([class]):hover {
   margin-top: 0.7em;
 }
 
+/* Inline emphasis inside a quote. The quote itself is already italic, so
+   *italic* flips to upright (the typographic convention for italic-in-italic),
+   and **bold** uses 600 — the semibold-italic face actually loaded from
+   Google Fonts (font-synthesis is off, so an unloaded 700 would render as
+   regular). The element in the selectors out-specifies the screens' own
+   ".text em/strong" rules, which would otherwise re-italicize/re-bolden
+   these. */
+blockquote.md-quote strong {
+  font-weight: 600;
+}
+
+blockquote.md-quote em {
+  font-style: normal;
+}
+
+/* Bulleted lists ("- …" lines) — a short red dash as the marker instead of
+   the browser disc, echoing the quote's red rule. */
+.md-list {
+  margin: clamp(14px, 2.2vh, 22px) 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  text-align-last: auto;
+}
+
+.md-list li {
+  position: relative;
+  padding-left: clamp(20px, 2.2vw, 28px);
+}
+
+.md-list li + li {
+  margin-top: 0.55em;
+}
+
+.md-list li::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 0.75em;
+  width: 11px;
+  height: 1.5px;
+  background: var(--red);
+}
+
 :focus-visible {
   outline: 2px solid var(--red);
   outline-offset: 3px;

@@ -2,7 +2,7 @@
 
 ## be
 
-Рана-рана
+Рано-рано
 
 ## en
 
@@ -30,13 +30,23 @@ Folk song
 
 ## be
 
-Гэтая песьня паходзіць з беларускай народнай традыцыі «Ой, рана, рана» («Ой, рано-рано»). Яна распавядае пра маладога хлопца, надта беднага, каб ажаніцца зь дзяўчынай, якую кахае: у яго няма нічога, апрача вернага каня — сапраўднага таварыша і сымбалю свабоды. У роспачы ён заключае здзелку зь ведзьмай, мяняючы каня на золата, добры дом і прыгожую жонку. Але тое, што ён атрымлівае, ня можа загаіць страту: конь нёс ягоную душу, і безь яго ўсё багацьце здаецца пустым.
-Песьня перагукваецца са старымі беларускімі традыцыямі, дзе зямля і гаспадарка вызначалі лёс чалавека, а конь быў сьвятым сябрам, зьвязаным з годнасьцю, каханьнем і самім жыцьцём.
+> **«Ой, рана, рана»** — народная баляда ў новым гучаньні
+
+Пасьля «Ляцелі» — зноў народная песьня, але зусім іншага складу: ня ціхая лірыка разьвітаньня, а цёмная балада. Жыў сабе малады хлопец, такі бедны, што ажаніцца з каханай дзяўчынай ня меў за што. Усё ягонае багацьце — верны конь: і таварыш, і апора ў працы, і сама свабода. У роспачы хлопец ідзе на пагадненне зь ведзьмай: аддае каня, а наўзамен атрымлівае золата, добры дом і прыгожую жонку. Здавалася б, усё спраўдзілася. Але набытае не загойвае страты: конь нёс ягоную душу, быў сапраўдным сябрам — і безь яго ўсё багацьце здаецца пустым.
+
+Песьня вырастае са старога сялянскага сьвету, дзе зямля й гаспадарка вызначалі лёс чалавека, а конь быў ня проста жывёлай — сьвятым сябрам гаспадара, зьвязаным з годнасьцю, каханьнем і самім жыцьцём. Прадаць каня — усё адно што прадаць частку сябе. Таму здзелка зь ведзьмай тут ня проста казачны матыў, а сапраўдная трагедыя.
+
+Гэта адна з тых песьняў, што мы сьпявалі ў дзяцінстве, і яна надоўга засела ў маёй галаве. Цяпер я даў ёй новае гучаньне: dubstep. Так, вы не памыліліся — старая баляда пра каня й ведзьму, і басы. Спадзяюся, у такім выглядзе яна засядзе і ў вас 😎
 
 ## en
 
-This song comes from the Belarusian folk tradition “Oi, rana, rana” (“Oh, early, early”). It tells of a young man too poor to marry the girl he loves, owning nothing but his loyal horse — his true companion and symbol of freedom. In despair, he strikes a bargain with a witch, trading the horse for gold, a fine home, and a beautiful wife. Yet what he gains cannot heal the loss: the horse carried his soul, and without it all his riches feel hollow.
-The song echoes old Belarusian traditions, where land and household defined one’s fate, while the horse stood as a sacred friend, tied to dignity, love, and life itself.
+> **"Oj, rana, rana"** — a folk ballad in a new sound
+
+After "Liacieli," here is another folk song — but of an entirely different kind: not the quiet lyricism of parting, but a dark ballad. Once there lived a young lad, so poor that he had no means to marry the girl he loved. His entire wealth was one faithful horse: a companion, a helper in his labour, and freedom itself. In despair, the lad strikes a bargain with a witch — a Faustian deal, village edition: he gives up the horse, and in return receives gold, a fine house, and a beautiful wife. It would seem everything had come true. But what he has gained cannot heal what he has lost: the horse carried his soul, was a true friend — and without him, all the riches feel empty.
+
+The song grows out of the old peasant world, where land and household determined a person's fate. A horse there was never merely an animal: it pulled the plough and the cart — the difference between bread and hunger — and it was the master's sacred companion, bound up with dignity, with love, with life itself. To sell your horse was to sell a part of yourself. That is why the bargain with the witch here is not just a fairy-tale device — it is a genuine tragedy.
+
+This is one of the songs we used to sing in my childhood — back in the folk-ensemble days you may remember from the previous track's story — and it stayed lodged in my head for years. Now I have given it a new sound: dubstep. Yes, you read that right — an old ballad about a horse and a witch, and bass drops. I hope that in this form it will lodge itself in your head too 😎
 
 # Тэкст песьні / Lyrics
 
@@ -80,41 +90,39 @@ The song echoes old Belarusian traditions, where land and household defined one�
 ## en
 
 Oh, early, early,
-the sun has risen,
-the red sun has risen.
-The sun has risen —
-but in my eyes
-the dark night still lingers
-in the light of day.
+The sun came up,
+The sun came up so fair.
+The sun came up —
+But in my eyes
+The dark, dark night
+In broad daylight.
 
-Dark night,
-my dear girl
-won’t marry me.
-She won’t marry me,
-because I have
-neither a hut (simple peasant house)
-nor a yard of my own.
+The dark, dark night:
+My darling girl
+Will not marry me.
+She will not marry —
+Because I have
+Neither stake nor yard to my name.
 
-I have nothing,
-except for my horse,
-except for my faithful horse.
+Nothing at all,
+Nothing but a horse,
+Nothing but one faithful horse.
 
-I saddled the horse,
-and through the dark forest
+I saddled the horse
+And through the dark wood
 I rode to the old witch,
-to the old witch…
-And she said to me:
-“I’ll give you gold
-for your horse.”
+To the old witch...
+And she says to me:
+"Gold I will give you for your horse."
 
-Now I have
-the finest house in the village,
-a full yard of goods,
-a beautiful wife.
+And now I have
+The finest house in the village,
+A yard full of goods,
+A beautiful wife.
 A beautiful wife —
-yet no true wealth.
+And no good at all.
 My horse, oh my horse,
-I betrayed you, sold you…
+I sold you away...
 
 # Промпт стылю / Style prompt
 

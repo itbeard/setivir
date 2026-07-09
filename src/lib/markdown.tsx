@@ -1,5 +1,6 @@
 import { type CSSProperties, type ReactNode } from 'react'
 import { assetUrl } from './assets'
+import { cx } from './cx'
 import { useI18n } from '../i18n/I18nContext'
 
 /**
@@ -8,13 +9,18 @@ import { useI18n } from '../i18n/I18nContext'
  * Inline (deliberately minimal):
  *   - **bold**    — <strong>
  *   - *italic*    — <em>
- *   - [text](url) — <a> (opens in a new tab for external links)
+ *   - [text](url) — <a>; anchors (#…) stay in-page, everything else opens in
+ *                   a new tab. Relative urls resolve against /public, so
+ *                   [text](media/kupala/doc.pdf) links a bundled file.
  *
  * Blocks:
  *   - paragraphs  — a blank line starts a new <p>
  *   - > quote     — lines starting with ">" become a <blockquote>; a lone ">"
  *                   line splits the quote into paragraphs, and line breaks
  *                   inside a quote are preserved (verse-friendly)
+ *   - list        — consecutive lines starting with "- " (or "* ") become a
+ *                   <ul>; each line is one item, the first non-item line ends
+ *                   the list
  *   - media       — an image/video on its own line:
  *                       ![подпіс](media/kupala/photo.jpg)
  *                       ![подпіс](media/kupala/clip.mp4){width=70% align=left}
@@ -68,12 +74,15 @@ function renderInline(text: string, keyBase: string): ReactNode[] {
     } else {
       const label = match[3]
       const href = match[4]
-      const external = /^https?:\/\//i.test(href)
+      // Anchors stay in-page; everything else — external URLs and relative
+      // paths to files under /public (a PDF, an image) — opens in a new tab,
+      // relative paths resolved the same way as media sources.
+      const anchor = href.startsWith('#')
       out.push(
         <a
           key={key}
-          href={href}
-          {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          href={anchor ? href : mediaUrl(href)}
+          {...(anchor ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
         >
           {renderInline(label, key)}
         </a>,
@@ -91,12 +100,17 @@ function renderInline(text: string, keyBase: string): ReactNode[] {
 type Block =
   | { kind: 'p'; text: string }
   | { kind: 'quote'; paragraphs: string[][] }
+  | { kind: 'list'; items: string[] }
   | { kind: 'media'; alt: string; src: string; attrs: string }
   | { kind: 'cut'; label: string; blocks: Block[] }
 
 // ::: cut Адвольны подпіс   …   ::: (closing fence)
 const CUT_OPEN = /^:::\s*cut(?:\s+(.+?))?\s*$/
 const CUT_CLOSE = /^:::\s*$/
+
+// A list item is "- " or "* " at the start of a (trimmed) line. The space is
+// required, so a line opening with *italic* is not mistaken for a bullet.
+const LIST_ITEM = /^[-*]\s+(.+)$/
 
 // A media embed is a whole line of its own: ![alt](src) plus optional {attrs}.
 // The alt/caption is matched greedily so it may itself contain inline Markdown
@@ -109,6 +123,7 @@ function parseBlocks(text: string): Block[] {
   const blocks: Block[] = []
   let para: string[] = []
   let quote: string[][] | null = null
+  let list: string[] | null = null
 
   const flushPara = () => {
     const joined = para.join('\n').trim()
@@ -122,6 +137,12 @@ function parseBlocks(text: string): Block[] {
       quote = null
     }
   }
+  const flushList = () => {
+    if (list) {
+      blocks.push({ kind: 'list', items: list })
+      list = null
+    }
+  }
 
   const lines = text.split('\n')
   for (let i = 0; i < lines.length; i++) {
@@ -131,6 +152,7 @@ function parseBlocks(text: string): Block[] {
     if (cutOpen) {
       flushPara()
       flushQuote()
+      flushList()
       const inner: string[] = []
       // Collect up to the closing ":::"; an unterminated cut runs to the end.
       for (i++; i < lines.length && !CUT_CLOSE.test(lines[i].trim()); i++) {
@@ -142,6 +164,7 @@ function parseBlocks(text: string): Block[] {
 
     if (/^>/.test(line.trimStart())) {
       flushPara()
+      flushList()
       const inner = line.trimStart().replace(/^>\s?/, '')
       if (!quote) quote = [[]]
       if (inner.trim() === '') quote.push([])
@@ -153,15 +176,31 @@ function parseBlocks(text: string): Block[] {
     const media = MEDIA_LINE.exec(line.trim())
     if (media) {
       flushPara()
+      flushList()
       blocks.push({ kind: 'media', alt: media[1], src: media[2], attrs: media[3] ?? '' })
       continue
     }
 
-    if (line.trim() === '') flushPara()
-    else para.push(line)
+    const item = LIST_ITEM.exec(line.trim())
+    if (item) {
+      flushPara()
+      if (!list) list = []
+      list.push(item[1])
+      continue
+    }
+
+    // A blank line keeps an open list open (items are often spaced out in the
+    // source); any other non-item line ends it.
+    if (line.trim() === '') {
+      flushPara()
+      continue
+    }
+    flushList()
+    para.push(line)
   }
   flushPara()
   flushQuote()
+  flushList()
   return blocks
 }
 
@@ -293,6 +332,14 @@ function renderBlocks(
             ))}
           </blockquote>
         )
+      case 'list':
+        return (
+          <ul key={key} className={cx('md-list', paragraphClassName)}>
+            {block.items.map((item, j) => (
+              <li key={j}>{renderInline(item, `${key}-i${j}`)}</li>
+            ))}
+          </ul>
+        )
       case 'cut':
         return (
           <CutBlock
@@ -318,7 +365,7 @@ export function Markdown({
   paragraphClassName,
 }: {
   text: string
-  /** Class applied to every generated <p>. */
+  /** Class applied to every generated <p> and <ul> (typography carrier). */
   paragraphClassName?: string
 }) {
   return <>{renderBlocks(parseBlocks(text), paragraphClassName, 'b')}</>
