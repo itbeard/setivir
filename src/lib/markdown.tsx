@@ -1,13 +1,44 @@
-import { type ReactNode } from 'react'
+import { type CSSProperties, type ReactNode } from 'react'
+import { assetUrl } from './assets'
+import { useI18n } from '../i18n/I18nContext'
 
 /**
  * A tiny, dependency-free Markdown renderer for song descriptions.
  *
- * Supported (deliberately minimal):
- *   - paragraphs  — a blank line starts a new <p>
+ * Inline (deliberately minimal):
  *   - **bold**    — <strong>
  *   - *italic*    — <em>
  *   - [text](url) — <a> (opens in a new tab for external links)
+ *
+ * Blocks:
+ *   - paragraphs  — a blank line starts a new <p>
+ *   - > quote     — lines starting with ">" become a <blockquote>; a lone ">"
+ *                   line splits the quote into paragraphs, and line breaks
+ *                   inside a quote are preserved (verse-friendly)
+ *   - media       — an image/video on its own line:
+ *                       ![подпіс](media/kupala/photo.jpg)
+ *                       ![подпіс](media/kupala/clip.mp4){width=70% align=left}
+ *                   The extension picks the tag: .mp4/.webm/.mov → <video>,
+ *                   anything else → <img>. The alt text becomes a caption
+ *                   under the media (omit it for no caption); it supports the
+ *                   inline syntax above, including [links](…). Optional
+ *                   attributes in {…}:
+ *                       width=420 | width=70%   — bare numbers are pixels
+ *                       align=left|center|right — default center
+ *                       poster=media/…jpg       — video poster frame
+ *                       cut | cut="Глядзець"    — collapse behind a disclosure
+ *                                                 ("пад кат"); the label falls
+ *                                                 back to a localized default
+ *   - cut         — hide a whole run of blocks (text, quotes, media) behind
+ *                   one disclosure:
+ *                       ::: cut Што за кадрам
+ *                       Абзац, **разьмецены** як звычайна…
+ *                       ![](media/kupala/clip.mp4)
+ *                       :::
+ *                   The label after "cut" is optional (localized default).
+ *                   Cuts don't nest.
+ *                   Relative paths resolve against /public (like covers and
+ *                   audio); http(s) URLs are used as-is.
  *
  * Everything else is rendered verbatim, so plain text and unfilled
  * "[placeholder]" strings pass through untouched.
@@ -55,6 +86,233 @@ function renderInline(text: string, keyBase: string): ReactNode[] {
   return out
 }
 
+/* ── Block layer ─────────────────────────────────────────────────────── */
+
+type Block =
+  | { kind: 'p'; text: string }
+  | { kind: 'quote'; paragraphs: string[][] }
+  | { kind: 'media'; alt: string; src: string; attrs: string }
+  | { kind: 'cut'; label: string; blocks: Block[] }
+
+// ::: cut Адвольны подпіс   …   ::: (closing fence)
+const CUT_OPEN = /^:::\s*cut(?:\s+(.+?))?\s*$/
+const CUT_CLOSE = /^:::\s*$/
+
+// A media embed is a whole line of its own: ![alt](src) plus optional {attrs}.
+// The alt/caption is matched greedily so it may itself contain inline Markdown
+// links — `![Глядзі [кліп](https://…)](photo.jpg)` — the greedy `.*` makes
+// `](` bind to the media source, the last one on the line.
+const MEDIA_LINE = /^!\[(.*)\]\(([^)\s]+)\)(?:\s*\{([^}]*)\})?$/
+const VIDEO_EXT = /\.(mp4|webm|mov|m4v)(?:[?#]|$)/i
+
+function parseBlocks(text: string): Block[] {
+  const blocks: Block[] = []
+  let para: string[] = []
+  let quote: string[][] | null = null
+
+  const flushPara = () => {
+    const joined = para.join('\n').trim()
+    if (joined) blocks.push({ kind: 'p', text: joined })
+    para = []
+  }
+  const flushQuote = () => {
+    if (quote) {
+      const paragraphs = quote.filter((lines) => lines.some((l) => l.trim()))
+      if (paragraphs.length) blocks.push({ kind: 'quote', paragraphs })
+      quote = null
+    }
+  }
+
+  const lines = text.split('\n')
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+
+    const cutOpen = CUT_OPEN.exec(line.trim())
+    if (cutOpen) {
+      flushPara()
+      flushQuote()
+      const inner: string[] = []
+      // Collect up to the closing ":::"; an unterminated cut runs to the end.
+      for (i++; i < lines.length && !CUT_CLOSE.test(lines[i].trim()); i++) {
+        inner.push(lines[i])
+      }
+      blocks.push({ kind: 'cut', label: cutOpen[1] ?? '', blocks: parseBlocks(inner.join('\n')) })
+      continue
+    }
+
+    if (/^>/.test(line.trimStart())) {
+      flushPara()
+      const inner = line.trimStart().replace(/^>\s?/, '')
+      if (!quote) quote = [[]]
+      if (inner.trim() === '') quote.push([])
+      else quote[quote.length - 1].push(inner)
+      continue
+    }
+    flushQuote()
+
+    const media = MEDIA_LINE.exec(line.trim())
+    if (media) {
+      flushPara()
+      blocks.push({ kind: 'media', alt: media[1], src: media[2], attrs: media[3] ?? '' })
+      continue
+    }
+
+    if (line.trim() === '') flushPara()
+    else para.push(line)
+  }
+  flushPara()
+  flushQuote()
+  return blocks
+}
+
+interface MediaAttrs {
+  width?: string
+  align?: string
+  poster?: string
+  /** Present when the media is collapsed "пад кат"; '' means default label. */
+  cut?: string
+}
+
+/** Parse "{width=70% align=left poster=… cut="Глядзець кліп"}" attribute strings. */
+function parseAttrs(attrs: string): MediaAttrs {
+  const out: MediaAttrs = {}
+
+  // A quoted cut label may contain spaces — peel it off before splitting.
+  const quotedCut = /(?:^|\s)cut="([^"]*)"/.exec(attrs)
+  if (quotedCut) {
+    out.cut = quotedCut[1]
+    attrs = attrs.replace(quotedCut[0], ' ')
+  }
+
+  for (const part of attrs.split(/\s+/)) {
+    const [key, value] = part.split('=')
+    if (key === 'cut') {
+      out.cut ??= value ?? ''
+      continue
+    }
+    if (!value) continue
+    if (key === 'width' && /^\d+(%|px)?$/.test(value)) {
+      out.width = /^\d+$/.test(value) ? `${value}px` : value
+    } else if (key === 'align' && /^(left|center|right)$/.test(value)) {
+      out.align = value
+    } else if (key === 'poster') {
+      out.poster = value
+    }
+  }
+  return out
+}
+
+function mediaUrl(src: string): string {
+  return /^https?:\/\//i.test(src) ? src : assetUrl(src)
+}
+
+function MediaFigure({ alt, src, attrs }: { alt: string; src: string; attrs: string }) {
+  const { t } = useI18n()
+  const { width, align, poster, cut } = parseAttrs(attrs)
+  const url = mediaUrl(src)
+  const style: CSSProperties | undefined = width ? { width } : undefined
+  const isVideo = VIDEO_EXT.test(src)
+
+  const figure = (
+    <figure className="md-figure" data-align={align ?? 'center'} style={style}>
+      {isVideo ? (
+        <video
+          className="md-media"
+          src={url}
+          controls
+          playsInline
+          preload="metadata"
+          poster={poster ? mediaUrl(poster) : undefined}
+        />
+      ) : (
+        <img className="md-media" src={url} alt={alt} loading="lazy" decoding="async" />
+      )}
+      {alt && <figcaption className="md-caption">{renderInline(alt, 'cap')}</figcaption>}
+    </figure>
+  )
+
+  if (cut === undefined) return figure
+
+  return (
+    <details className="md-cut">
+      <summary className="md-cutSummary">
+        <span>{cut || t(isVideo ? 'md.showVideo' : 'md.showImage')}</span>
+        <span className="md-cutChevron" aria-hidden="true" />
+      </summary>
+      {figure}
+    </details>
+  )
+}
+
+/** A quote paragraph keeps its source line breaks (quotes are often verse). */
+function quoteLines(lines: string[], keyBase: string): ReactNode[] {
+  return lines.flatMap((line, i) => {
+    const rendered = renderInline(line, `${keyBase}-l${i}`)
+    return i === 0 ? rendered : [<br key={`${keyBase}-br${i}`} />, ...rendered]
+  })
+}
+
+function CutBlock({
+  label,
+  blocks,
+  paragraphClassName,
+  keyBase,
+}: {
+  label: string
+  blocks: Block[]
+  paragraphClassName?: string
+  keyBase: string
+}) {
+  const { t } = useI18n()
+  return (
+    <details className="md-cut">
+      <summary className="md-cutSummary">
+        <span>{label ? renderInline(label, `${keyBase}-label`) : t('md.showMore')}</span>
+        <span className="md-cutChevron" aria-hidden="true" />
+      </summary>
+      <div className="md-cutBody">{renderBlocks(blocks, paragraphClassName, keyBase)}</div>
+    </details>
+  )
+}
+
+function renderBlocks(
+  blocks: Block[],
+  paragraphClassName: string | undefined,
+  keyBase: string,
+): ReactNode[] {
+  return blocks.map((block, i) => {
+    const key = `${keyBase}-${i}`
+    switch (block.kind) {
+      case 'media':
+        return <MediaFigure key={key} alt={block.alt} src={block.src} attrs={block.attrs} />
+      case 'quote':
+        return (
+          <blockquote key={key} className="md-quote">
+            {block.paragraphs.map((lines, j) => (
+              <p key={j}>{quoteLines(lines, `${key}-q${j}`)}</p>
+            ))}
+          </blockquote>
+        )
+      case 'cut':
+        return (
+          <CutBlock
+            key={key}
+            label={block.label}
+            blocks={block.blocks}
+            paragraphClassName={paragraphClassName}
+            keyBase={key}
+          />
+        )
+      default:
+        return (
+          <p key={key} className={paragraphClassName}>
+            {renderInline(block.text, key)}
+          </p>
+        )
+    }
+  })
+}
+
 export function Markdown({
   text,
   paragraphClassName,
@@ -63,18 +321,5 @@ export function Markdown({
   /** Class applied to every generated <p>. */
   paragraphClassName?: string
 }) {
-  const paragraphs = text
-    .split(/\n\s*\n/)
-    .map((p) => p.trim())
-    .filter((p) => p.length > 0)
-
-  return (
-    <>
-      {paragraphs.map((para, i) => (
-        <p key={i} className={paragraphClassName}>
-          {renderInline(para, `p${i}`)}
-        </p>
-      ))}
-    </>
-  )
+  return <>{renderBlocks(parseBlocks(text), paragraphClassName, 'b')}</>
 }

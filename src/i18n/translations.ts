@@ -65,6 +65,18 @@ export const ui = {
     be: 'Песьня',
     en: 'Song',
   },
+  'md.showMore': {
+    be: 'Паказаць больш',
+    en: 'Show more',
+  },
+  'md.showVideo': {
+    be: 'Паказаць відэа',
+    en: 'Show video',
+  },
+  'md.showImage': {
+    be: 'Паказаць відарыс',
+    en: 'Show image',
+  },
   'prompt.style': {
     be: 'Промпт стылю',
     en: 'Style prompt',
