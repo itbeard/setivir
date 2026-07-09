@@ -40,7 +40,9 @@ Folk song
 
 ## en
 
-> **"Oj, rana, rana"** — a folk ballad in a new sound
+**"Oj, rana, rana"** — a folk ballad in a new sound
+
+> "Rana-rana" means "early, early in the morning" — a classic opening formula of Belarusian folk songs.
 
 After "Liacieli," here is another folk song — but of an entirely different kind: not the quiet lyricism of parting, but a dark ballad. Once there lived a young lad, so poor that he had no means to marry the girl he loved. His entire wealth was one faithful horse: a companion, a helper in his labour, and freedom itself. In despair, the lad strikes a bargain with a witch — a Faustian deal, village edition: he gives up the horse, and in return receives gold, a fine house, and a beautiful wife. It would seem everything had come true. But what he has gained cannot heal what he has lost: the horse carried his soul, was a true friend — and without him, all the riches feel empty.
 

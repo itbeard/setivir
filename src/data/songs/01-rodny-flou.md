@@ -48,9 +48,9 @@ P.S. У тэксьце схаваныя ня толькі відавочныя �
 
 ## en
 
-> **"Rodny Flow"** — the track that started Setivir
+**"Rodny Flow"** — the track that started Setivir
 
-*("Rodny" is Belarusian for "native" — the same word used in "rodnaja mova" (native tongue), and "rodny kraj" (native land). So the title reads, roughly, as Native Flow.)*
+> "Rodny" is Belarusian for "native" — the same word used in "rodnaja mova" (native tongue), and "rodny kraj" (native land). So the title reads, roughly, as Native Flow.
 
 In the beginning, there was heavy music in German. Within my project [DunkelSaga](https://www.youtube.com/@dunkelsaga/), I had long been generating tracks about the most striking events of the *Lord of the Rings* universe. But alongside it, a very different desire was ripening in me: to write a rap track of my own in Belarusian (rap has been a long and sincere love of mine) and to perform it myself.
 
