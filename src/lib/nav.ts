@@ -17,21 +17,16 @@ export function getSections(): HTMLElement[] {
   return Array.from(document.querySelectorAll<HTMLElement>(SELECTOR))
 }
 
-/** Index of the section whose top is closest to the current scroll position. */
+/** Index of the section containing the probe line (34% down the viewport). */
 export function currentIndex(): number {
   const sections = getSections()
   if (sections.length === 0) return 0
-  // Use a probe line a third of the way down the viewport.
   const probe = window.innerHeight * 0.34
+  // Last section whose top is at or above the probe — a tall section stays
+  // active until the next one actually reaches the probe line.
   let best = 0
-  let bestDist = Infinity
   sections.forEach((el, i) => {
-    const top = el.getBoundingClientRect().top
-    const dist = Math.abs(top - probe)
-    if (dist < bestDist) {
-      bestDist = dist
-      best = i
-    }
+    if (el.getBoundingClientRect().top <= probe) best = i
   })
   return best
 }
