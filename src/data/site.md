@@ -4,6 +4,12 @@
 
 Вітаю вас! Мяне клічуць [*Аляксеем Картыннікам*](https://itbeard.com), і **Setivir** — гэта мой эксперыментальны музычны праект, які я ствараю ў суаўтарстве са штучным інтэлектам *(ШІ)*. Гэта ня проста набор ШІ-трэкаў, а пасьлядоўны арт-праект: спроба паглядзець на беларускую культурную спадчыну як на нешта жывое — тое, што можа ня толькі захоўвацца ў кнігах і калектыўнай памяці, але і гучаць па-новаму, у сучасных формах, у дыялогу з тэхналогіямі.
 
+::: cut Што значыць назва Setivir?
+**Setivir** — гэта гульня словаў. «Сеціва» — слова адначасова прыроднае і тэхналагічнае: гэта і павуціньне, і сетка, што злучае людзей, і сеціва нейрасеткі — само яе ядро. А «вір» — гэта завіхрэньне, сумесь, нестрыманая стыхія. Разам атрымліваецца вір сеціва: месца, дзе традыцыя і тэхналогія закручваюцца ў адну плынь.
+
+Ёсьць у назьве і яшчэ адзін пласт: **SETI** — так завецца знакамітая праграма пошуку пазаземнага розуму, [*Search for Extraterrestrial Intelligence*](https://www.seti.org/). Мой праект — таксама пра сустрэчу з іншым розумам, толькі розум гэты — не з далёкіх зорак, а створаны тут, на Зямлі. Можна сказаць — супраца з *Intraterrestrial New Intelligence (новым зямным розумам)*.
+:::
+
 Дзевяць гадоў свайго дзяцінства я правёў у народных калектывах «Вянок» і «Гасьцінец» мястэчка [Ракаў](https://be.wikipedia.org/wiki/%D0%A0%D0%B0%D0%BA%D0%B0%D1%9E), што пад Мінскам. Менавіта там ува мне нарадзілася прага пашыраць беларушчыну і беларускую культуру праз музыку. Таксама на гэта паўплывалі і беларускамоўная школа, і мае бацькі, бабулі й дзядулі, якія размаўлялі хай і па-рознаму, не заўсёды ідэальна, але на роднай беларускай мове. Беларуская культура — гэта ня толькі нешта вывучанае, але і тое, у чым я вырас.
 
 Я называю *Setivir* **музыкай Тутэйшых**. **Тутэйшыя** — гэта людзі нашае зямлі: тыя, хто гаварыў і сьпяваў па-беларуску, хто жыў паміж вёскай і мястэчкам, паміж памяцьцю продкаў і сучасным сьветам, паміж традыцыяй і новымі формамі жыцьця. У гэтым слове няма нічога зьневажальнага. Наадварот — у ім ёсьць адчуваньне прыналежнасьці: да мовы, да культуры, да месца, зь якога ты вырастаеш і якое працягваеш несьці ў сабе.
@@ -17,6 +23,12 @@
 ## en
 
 Hello and welcome! My name is [*Aliaksei Kartynnik*](https://itbeard.com), and **Setivir** is my experimental music project, which I create in co-authorship with artificial intelligence *(AI)*. It is not just a collection of AI-generated tracks, but a coherent art project: an attempt to look at the cultural heritage of Belarus as something alive — something that can not only be preserved in books and collective memory, but also sound anew, in modern forms, in dialogue with technology.
+
+::: cut What does the name Setivir mean?
+**Setivir** is a play on words, built from two Belarusian ones. *Сеціва* (sieciva) means a web or a net — something natural and technological at once: a spider's web, the Net that connects people, and the mesh of a neural network — the very core of AI. *Вір* (vir) is a whirlpool: a swirl, a blend, an untamed current. Put together, Setivir is a whirlpool of the web — a place where tradition and technology spin into a single stream.
+
+And there is one more layer: **SETI** stands for the [*Search for Extraterrestrial Intelligence*](https://www.seti.org/). This project, too, is about meeting another intelligence — except this one didn't arrive from distant stars: it was created here on Earth. Call it a collaboration with *Intraterrestrial New Intelligence*.
+:::
 
 I spent nine years of my childhood in the folk ensembles "Vianok" and "Hascinets" of [Rakaŭ](https://en.wikipedia.org/wiki/Rakaw), a small village near Minsk, Belarus. That is where my desire to promote the Belarusian language and culture through music was born. It was also shaped by my Belarusian-language school and by my parents and grandparents, who spoke our native Belarusian — each in their own way, not always perfectly, but they spoke it. Belarusian culture, for me, is not just something I have studied — it is something I grew up inside.
 
