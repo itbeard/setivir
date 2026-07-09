@@ -70,6 +70,39 @@
   transition: transform 0.2s var(--ease), margin 0.2s var(--ease);
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2.4vw, 22px);
+}
+
+/* Track-order toggle: reads as "01→20" (chronological) or "20→01" (newest). */
+.sort {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 2px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+  transition: color 0.15s var(--ease);
+}
+
+.sort:hover {
+  color: var(--ink);
+}
+
+.sortArrow {
+  margin: 0 3px;
+  color: var(--red);
+  transition: transform 0.25s var(--ease);
+}
+
+.sort:hover .sortArrow {
+  transform: translateX(2px);
+}
+
 .langs {
   display: flex;
   align-items: center;
@@ -109,6 +142,14 @@
   }
 }
 
+/* Narrow phones: the bar gets tight with wordmark + counter + langs, so the
+   order toggle lives in the song sheet instead (same control, more room). */
+@media (max-width: 560px) {
+  .sort {
+    display: none;
+  }
+}
+
 /* ≥44px touch targets on touch devices */
 @media (pointer: coarse) {
   .lang {
@@ -116,5 +157,8 @@
   }
   .counter {
     padding: 12px 10px;
+  }
+  .sort {
+    padding: 12px 6px;
   }
 }

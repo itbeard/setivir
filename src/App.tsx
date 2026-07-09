@@ -1,10 +1,12 @@
-import { Fragment, useEffect, useRef } from 'react'
+import { Fragment, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
+import type { Song } from './types'
 import { songs } from './data/songs'
 import { I18nProvider, useI18n } from './i18n/I18nContext'
 import { PlayerProvider, usePlayer } from './audio/PlayerContext'
 import { useActiveSection } from './hooks/useActiveSection'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
 import { useRevealSections } from './hooks/useRevealSections'
+import { useTrackOrder, type TrackOrder } from './hooks/useTrackOrder'
 import { getSections, scrollToId } from './lib/nav'
 import { settings } from './settings'
 import { TopBar } from './components/TopBar'
@@ -17,11 +19,15 @@ import { SongScreen } from './components/SongScreen'
 import { Outro } from './components/Outro'
 import { MiniPlayer } from './components/MiniPlayer'
 
-// The data file stays in chronological order (id 1 = oldest); the page shows
-// newest first, so render a recency-sorted copy.
-const displaySongs = [...songs].sort((a, b) => b.id - a.id)
-
-function Shell() {
+function Shell({
+  displaySongs,
+  order,
+  onToggleOrder,
+}: {
+  displaySongs: Song[]
+  order: TrackOrder
+  onToggleOrder: () => void
+}) {
   const { lang, t, loc } = useI18n()
   const { current, isPlaying } = usePlayer()
   useKeyboardNav()
@@ -29,10 +35,31 @@ function Shell() {
   const animOn = useRevealSections(settings.entranceAnim)
   const total = songs.length
 
-  // Songs occupy section indices 1..total (intro is 0, outro is last). The page
-  // is newest-first, so map the active section back to its track number.
+  // Songs occupy section indices 1..total (intro is 0, outro is last); map the
+  // active section back to its track number via the current page order.
   const activeSong =
     activeIndex >= 1 && activeIndex <= total ? displaySongs[activeIndex - 1].id : null
+
+  // Flipping the sort order reshuffles the sections under the visitor's feet;
+  // remember the song they were on and snap back to it after the reorder.
+  const keepSlugRef = useRef<string | null>(null)
+  const toggleOrder = () => {
+    keepSlugRef.current =
+      activeIndex >= 1 && activeIndex <= total
+        ? displaySongs[activeIndex - 1].slug
+        : null
+    onToggleOrder()
+  }
+  useLayoutEffect(() => {
+    const slug = keepSlugRef.current
+    if (!slug) return
+    keepSlugRef.current = null
+    // 'instant', not 'auto': html has scroll-behavior:smooth, which 'auto'
+    // would inherit — animating through the whole reshuffled page.
+    document
+      .getElementById(`song-${slug}`)
+      ?.scrollIntoView({ behavior: 'instant', block: 'start' })
+  }, [displaySongs])
 
   // Tab title: base site title, or "▶ {track} — Setivir" while playing.
   useEffect(() => {
@@ -92,7 +119,13 @@ function Shell() {
       </a>
       <ScrollProgress />
       {settings.paperGrain && <PaperGrain />}
-      <TopBar activeSong={activeSong} total={total} songs={displaySongs} />
+      <TopBar
+        activeSong={activeSong}
+        total={total}
+        songs={displaySongs}
+        order={order}
+        onToggleOrder={toggleOrder}
+      />
       <ProgressNav songs={displaySongs} activeIndex={activeIndex} />
       <main id="main-content" data-anim={animOn ? 'on' : undefined}>
         <Hero />
@@ -115,10 +148,19 @@ function Shell() {
 }
 
 export default function App() {
+  // The data file stays in chronological order (id 1 = oldest). By default the
+  // page follows it (01 → NN); the TopBar / song-sheet toggle flips to
+  // newest-first, and the choice persists in localStorage.
+  const [order, toggleOrder] = useTrackOrder()
+  const displaySongs = useMemo(
+    () => (order === 'newest' ? [...songs].reverse() : songs),
+    [order],
+  )
+
   return (
     <I18nProvider>
       <PlayerProvider playlist={displaySongs}>
-        <Shell />
+        <Shell displaySongs={displaySongs} order={order} onToggleOrder={toggleOrder} />
       </PlayerProvider>
     </I18nProvider>
   )

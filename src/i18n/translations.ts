@@ -125,6 +125,18 @@ export const ui = {
     be: 'Павялічыць вокладку',
     en: 'Enlarge cover',
   },
+  'sort.label': {
+    be: 'Парадак трэкаў',
+    en: 'Track order',
+  },
+  'sort.chrono': {
+    be: 'ад першага да апошняга',
+    en: 'first to last',
+  },
+  'sort.newest': {
+    be: 'ад новых да старых',
+    en: 'newest first',
+  },
   'sheet.intro': {
     be: 'Уступ',
     en: 'Intro',

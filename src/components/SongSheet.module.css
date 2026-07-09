@@ -104,11 +104,29 @@
 
 .head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
   padding: 0 10px 10px;
   border-bottom: 1px solid var(--line);
+}
+
+/* Track-order toggle, mirroring the TopBar one ("01→20" / "20→01"). */
+.sort {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+
+.sort:hover {
+  color: var(--red);
+  border-color: var(--red);
 }
 
 .headTitle {

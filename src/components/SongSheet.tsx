@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { Song } from '../types'
+import type { TrackOrder } from '../hooks/useTrackOrder'
 import { getSections, scrollToId, scrollToIndex } from '../lib/nav'
 import { useI18n } from '../i18n/I18nContext'
 import { usePlayer } from '../audio/PlayerContext'
@@ -23,14 +24,19 @@ export function SongSheet({
   songs,
   activeSong,
   total,
+  order,
+  onToggleOrder,
   onClose,
 }: {
   songs: Song[]
   activeSong: number | null
   total: number
+  order: TrackOrder
+  onToggleOrder: () => void
   onClose: () => void
 }) {
   const { t, loc } = useI18n()
+  const sortTitle = `${t('sort.label')}: ${order === 'chrono' ? t('sort.chrono') : t('sort.newest')}`
   const { current, isPlaying } = usePlayer()
   const panelRef = useRef<HTMLDivElement | null>(null)
   const [closing, setClosing] = useState(false)
@@ -77,6 +83,17 @@ export function SongSheet({
 
         <div className={styles.head}>
           <span className={styles.headTitle}>{t('a11y.openMenu')}</span>
+          <button
+            type="button"
+            className={styles.sort}
+            onClick={onToggleOrder}
+            aria-label={sortTitle}
+            title={sortTitle}
+          >
+            {order === 'chrono'
+              ? `01→${pad2(total)}`
+              : `${pad2(total)}→01`}
+          </button>
           <span className={styles.headCounter}>
             {activeSong !== null ? pad2(activeSong) : '··'} / {pad2(total)}
           </span>
