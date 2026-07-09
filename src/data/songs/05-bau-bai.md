@@ -47,7 +47,7 @@ Dubstep-інтэрпрэтацыя ператварае яе ў нешта мо�
 
 **"Baju-baj"** — a kalykhanka in a new sound
 
-> "Baju-baj" is the hushing refrain Belarusians sing over cradles — our "rock-a-bye" or "hushabye."
+> "Baju-baj" is the hushing refrain Belarusians sing over cradles — our "hush-a-bye" or "rock-a-bye."
 
 After the dark ballad — a **kalykhanka**: the Belarusian word for a lullaby, from kalykhać, "to rock a cradle." My explorations of Belarusianness could not pass this genre by: lullabies are a matter of principle for any Belarusian, man or woman. We absorb them in earliest childhood — from parents, grandmothers, and grandfathers — the same way we absorb the meaning of the word **buśka** (a word we insist translates into no other language; the closest I can offer is "the softest little cheek kiss").
 
@@ -111,50 +111,49 @@ The dubstep interpretation turns it into something powerful and modern — yes, 
 
 ## en
 
-A long day,
-A warm day
-Sails away behind the clouds.
-A blue shade,
-A sleepy shade
+The long day,
+The warm day
+Sails away beyond the clouds.
+A blue shadow,
+A sleepy shadow
 Crawls away into a distant corner.
-All the bunnies ran into the woods,
-All the bird songs have gone quiet,
-And the storks have hidden
+All the bunnies ran off to the woods,
+All the birdsong went quiet,
+And the storks hid
 Their long beaks in the nest.
 
-[Chorus]
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 
 Bit by bit,
-On the dew,
-The sleepy stars go out.
-All the cooings,
+In the dew,
+The sleepyhead stars go out.
+All the games,
 All the tales
 Are tucked away beneath the pillows.
 Mice are sleeping, swifts are sleeping,
-Cars are resting in the garage.
-You as well,
+Cars are sleeping in the garage.
+You too,
 Close to mama,
-Lie down quietly, so softly.
+Lie there quiet, oh so quiet.
 
-[Chorus]
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 
 Mice are sleeping, swifts are sleeping,
-Cars are resting in the garage.
-You as well,
+Cars are sleeping in the garage.
+You too,
 Close to mama,
-Lie down quietly, so softly.
+Lie there quiet, oh so quiet.
 
-[Chorus]
 Hush-a-bye, hush-a-bye,
-Close your little eyes. (x2)
+Close your little eyes.
+Hush-a-bye, hush-a-bye,
+Close your little eyes.
 
 # Промпт стылю / Style prompt
 
