@@ -122,6 +122,12 @@ a:not([class]):hover {
   background: var(--card);
 }
 
+/* YouTube iframes have no intrinsic size — pin the player to 16:9. */
+.md-youtube {
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
 .md-caption {
   margin-top: 10px;
   font-size: var(--fs-meta);

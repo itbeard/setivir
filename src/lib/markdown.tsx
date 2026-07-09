@@ -24,8 +24,11 @@ import { useI18n } from '../i18n/I18nContext'
  *   - media       — an image/video on its own line:
  *                       ![подпіс](media/kupala/photo.jpg)
  *                       ![подпіс](media/kupala/clip.mp4){width=70% align=left}
+ *                       ![подпіс](https://www.youtube.com/watch?v=XXXX){cut}
  *                   The extension picks the tag: .mp4/.webm/.mov → <video>,
- *                   anything else → <img>. The alt text becomes a caption
+ *                   a YouTube link (watch/youtu.be/shorts/embed/live) → an
+ *                   <iframe> player, anything else → <img>. The alt text
+ *                   becomes a caption
  *                   under the media (omit it for no caption); it supports the
  *                   inline syntax above, including [links](…). Optional
  *                   attributes in {…}:
@@ -118,6 +121,20 @@ const LIST_ITEM = /^[-*]\s+(.+)$/
 // `](` bind to the media source, the last one on the line.
 const MEDIA_LINE = /^!\[(.*)\]\(([^)\s]+)\)(?:\s*\{([^}]*)\})?$/
 const VIDEO_EXT = /\.(mp4|webm|mov|m4v)(?:[?#]|$)/i
+
+// Any of the usual YouTube URL shapes; captures the 11-char video id.
+const YOUTUBE =
+  /^https?:\/\/(?:www\.|m\.)?(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:[^#]*&)?v=|(?:embed|shorts|live)\/)|youtu\.be\/)([\w-]{11})/i
+
+/** Privacy-friendly embed URL for a YouTube link, or null if it isn't one. */
+function youTubeEmbedUrl(src: string): string | null {
+  const match = YOUTUBE.exec(src)
+  if (!match) return null
+  // Carry over a start time (?t=90 / &start=90); other params are dropped.
+  const time = /[?&](?:t|start)=(\d+)/.exec(src)
+  const query = time ? `?start=${time[1]}` : ''
+  return `https://www.youtube-nocookie.com/embed/${match[1]}${query}`
+}
 
 function parseBlocks(text: string): Block[] {
   const blocks: Block[] = []
@@ -250,11 +267,22 @@ function MediaFigure({ alt, src, attrs }: { alt: string; src: string; attrs: str
   const { width, align, poster, cut } = parseAttrs(attrs)
   const url = mediaUrl(src)
   const style: CSSProperties | undefined = width ? { width } : undefined
-  const isVideo = VIDEO_EXT.test(src)
+  const youTube = youTubeEmbedUrl(src)
+  const isVideo = youTube !== null || VIDEO_EXT.test(src)
 
   const figure = (
     <figure className="md-figure" data-align={align ?? 'center'} style={style}>
-      {isVideo ? (
+      {youTube ? (
+        <iframe
+          className="md-media md-youtube"
+          src={youTube}
+          title={alt || 'YouTube'}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          loading="lazy"
+        />
+      ) : isVideo ? (
         <video
           className="md-media"
           src={url}

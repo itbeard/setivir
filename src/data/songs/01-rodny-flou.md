@@ -40,7 +40,11 @@ Aliaksei Kartynnik
 
 Перапісаўшы тэкст, аднаго вечара я падумаў: «А раптам нейрасеткі ўжо дастаткова добра ўмеюць  сьпяваць па-беларуску?» Раней я ні раз спрабаваў генэраваць беларускамоўныя трэкі паралельна з DunkelSaga, і вынікі ня радавалі. Дый акурат тады выйшла новая вэрсія Suno — **4.5+**. Я скарміў ёй свой тэкст і ўжо з першай генэрацыі зразумеў: цяпер — можа. Гэта была чыстая асалода. Недзе на 55-й генэрацыі знайшлася тая самая вэрсія: з гучаньнем, якое мне падабалася, і зь нешматлікімі агрэхамі, якія потым выправіліся перагенэрацыяй асобных кавалкаў дый дробнай дапрацоўкай на мантажы.
 
-Тады ж Google выпусьціў **Veo 3** — першую годную мадэль для генэрацыі відэа. Зь яе дапамогай дый парай іншых недарагіх сэрвісаў я зрабіў [кліп](https://www.youtube.com/watch?v=NhXtu1ftRSA). Сёньня ён выглядае, шчыра кажучы, так сабе; але тады, улічваючы, колькі часу й грошай на яго пайшло (мала), гэта было падобна да цуду. А пра тое, як рабіліся песьня й кліп, ёсьць асобнае [тэхнічнае відэа](https://www.youtube.com/watch?v=1vvA4KQhCdo&list=PLtx7QasAY_-byAKwitnOw8FDKkyOqR8E5&index=4) (па-беларуску).
+Тады ж Google выпусьціў **Veo 3** — першую годную мадэль для генэрацыі відэа. Зь яе дапамогай дый парай іншых недарагіх сэрвісаў я зрабіў кліп. Сёньня ён выглядае, шчыра кажучы, так сабе; але тады, улічваючы, колькі часу й грошай на яго пайшло (мала), гэта было падобна да цуду. А пра тое, як рабіліся песьня й кліп, ёсьць асобнае [тэхнічнае відэа](https://www.youtube.com/watch?v=1vvA4KQhCdo&list=PLtx7QasAY_-byAKwitnOw8FDKkyOqR8E5&index=4) (па-беларуску).
+
+::: cut Паглядзець кліп
+![Кліп «Родны Флоў», згенераваны з дапамогай Veo 3, Nano Banana і Sync.so ](https://www.youtube.com/watch?v=NhXtu1ftRSA)
+:::
 
 Так нарадзіўся «Родны Флоў» — з жаданьня даць жыцьцё ўласнаму аўтарскаму тэксту, калі не маеш уласнага добрага голасу, а грошай на прафэсіяналаў няма. Канешне, гэта зусім не бездакорны твор: хутчэй за ўсё, вы пачуеце ў ім ШІ. Але тады я проста ня мог паверыць, што такое ўвогуле магчыма па-беларуску. І, як на мяне, трэк дагэтуль гучыць даволі годна — дакладна лепш за палову «класічнай» беларускай эстрады 😁
 
@@ -60,7 +64,11 @@ That first version of the song was a dialogue between two Belarusians — one sp
 
 With the lyrics rewritten, one evening I thought: "What if AI has finally learned to sing in Belarusian?" I had tried more than once to generate Belarusian-language tracks alongside DunkelSaga, and the results were nothing to celebrate — Belarusian is hardly a priority language for AI companies, and you could hear it. But just then a new version of Suno came out — **4.5+**. I fed it my lyrics, and from the very first generation I understood: *now* it could. It was pure delight. Somewhere around generation 55, I found *the one*: a version whose sound I loved, with only a handful of rough spots — later fixed by regenerating individual sections and a bit of light post-production.
 
-Around the same time, Google released **Veo 3** — the first genuinely decent video-generation model. With its help, plus a couple of other inexpensive services, I made a [music video](https://www.youtube.com/watch?v=NhXtu1ftRSA). Today, frankly, it looks rather dated; but back then, considering how much time and money had gone into it (not much), it felt like a small miracle. There is also a separate [behind-the-scenes video](https://www.youtube.com/watch?v=1vvA4KQhCdo&list=PLtx7QasAY_-byAKwitnOw8FDKkyOqR8E5&index=4) about how the song and the clip were made (in Belarusian).
+Around the same time, Google released **Veo 3** — the first genuinely decent video-generation model. With its help, plus a couple of other inexpensive services, I made a music video. Today, frankly, it looks rather dated; but back then, considering how much time and money had gone into it (not much), it felt like a small miracle. There is also a separate [behind-the-scenes video](https://www.youtube.com/watch?v=1vvA4KQhCdo&list=PLtx7QasAY_-byAKwitnOw8FDKkyOqR8E5&index=4) about how the song and the clip were made (in Belarusian).
+
+::: cut Watch the music video
+![Music video "Rodny Flow", generated using Veo 3, Nano Banana and Sync.so ](https://www.youtube.com/watch?v=NhXtu1ftRSA)
+:::
 
 That is how "Rodny Flow" was born — out of the desire to give life to lyrics of your own when you don't have a decent voice of your own, and there's no money for professionals. Of course, it's far from a flawless piece: most likely, you will hear the AI in it. But back then, I simply couldn't believe this was possible in Belarusian at all. And if you ask me, the track still holds up — certainly better than half of Belarus's "classic" estrada, the glossy Soviet-rooted variety pop that has ruled the official stage for decades 😁
 
