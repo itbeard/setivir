@@ -24,17 +24,27 @@ Suno v4.5+
 
 ## en
 
-Henadz Buraukin
+Henadz Buraŭkin
 
 # Апісаньне / Description
 
 ## be
 
-«Калыханка» заснаваная на традыцыйнай беларускай калыханцы. Для беларусаў гэтыя песьні — нешта большае за проста калыханкі на ноч: яны нясуць цеплыню дзяцінства, галасы маці і бабуль, ціхі рытм вясковага жыцьця. Яны — частка нашай культурнай памяці, што злучае нас зь зямлёй і з пакаленьнямі, якія былі да нас. У гэтым трэку таксама можна пачуць лёгкія ноты традыцыйнага сьпеву і харавога гучаньня, якія адгукаюцца фальклорным карэньнем калыханкі. Гэтая дабстэп-інтэрпрэтацыя ператварае пяшчотную калыханку ў нешта моцнае і сучаснае, але душа песьні — утульнасьць, клопат і адчуваньне прыналежнасьці — застаецца некранутай.
+> **«Калыханка»** — той самы верш, зусім іншае гучаньне
+
+Так, вачам можна верыць: гэта літаральна тый самы твор, што я выкарыстаў і ў «Баю-бай», — «Калыханка» Генадзя Бураўкіна, слова ў слова. А здарылася вось што. Сярод генэрацый знайшліся дзьве, і абедзьве выйшлі настолькі крутымі, і настолькі па-свойму рознымі, што выбраць адну я проста ня змог. Іронія: у «Родным Флове» я перабраў 55 вэрсій у пошуках адзінай, а тут спатыкнуўся аб адваротную праблему. Вырашыў сумленна: сьвет павінны пабачыць абедзьве.
+
+Гэтая вэрсія гучыць інакш: у ёй добра сутны ноты традыцыйнага беларускага сьпеву й харавога гучаньня — водгук фальклёрных каранёў жанру, бо калыханка Бураўкіна хоць і аўтарская, дый даўно жыве як народная. Dubstep і тут ператварае пяшчотную песьню ў нешта моцнае й сучаснае. А пра тое, чым калыханкі ёсьць для беларусаў — цеплыня дзяцінства, галасы маці й бабуль, ціхі рытм вясковага жыцьця — і пра душу песьні, якая застаецца некранутай, я ўжо ўсё сказаў на старонцы «Баю-бай»: кожнае слова адтуль дзейнічае й тут. Паслухайце абедзьве вэрсіі запар — цікава, якую абераце вы.
 
 ## en
 
-“Kałychanka” is based on a traditional Belarusian kalykhanka (lullaby). For Belarusians, these songs are more than bedtime tunes — they carry the warmth of childhood, the voice of mothers and grandmothers, and the quiet rhythm of village life. They are part of our cultural memory, connecting us to the land and to generations before us. In this track, you can also hear subtle notes of traditional vocals and choral singing, echoing the folk roots of the lullaby. This dubstep interpretation transforms the gentle lullaby into something powerful and modern, but the soul of the song — comfort, care, and belonging — remains untouched.
+**"Kalykhanka"** — the same poem, an entirely different sound
+
+> Kalykhanka simply means "lullaby." Yes, the word is everywhere here: it names the song, the TV programme from the previous page — and now this track.
+
+Yes, your eyes are not deceiving you: this is literally the same work I used in "Baju-baj" — Henadz Buraŭkin's "Kalykhanka," word for word. Here is what happened. Among the AI generations, two turned out so good — and so different, each in its own way — that I simply could not choose one. The irony: for "Rodny Flow" I went through 55 versions in search of the one, and here I ran into the opposite problem. So I made the honest call: both deserved to see the light of day.
+
+This version sounds different: you can clearly hear notes of traditional Belarusian singing and choral textures — an echo of the genre's folk roots, because Buraŭkin's lullaby may have an author, but it has long since lived as a folk song. The dubstep treatment once again turns a tender lullaby into something powerful and modern. And as for what lullabies mean to Belarusians — the warmth of childhood, the voices of mothers and grandmothers, the quiet rhythm of village life — and the soul of the song that remains untouched, I have already said it all on the "Baju-baj" page: every word of it holds true here. Listen to both versions back to back — I wonder which one you will choose.
 
 # Тэкст песьні / Lyrics
 
@@ -51,7 +61,6 @@ Henadz Buraukin
 І буслы ў гняздо схавалі
 Свае доўгія насы.
 
-[Прыпеў]
 Баю-бай, баю-бай,
 Вачаняты закрывай.
 Баю-бай, баю-бай,
@@ -69,7 +78,6 @@ Henadz Buraukin
 Каля мамы
 Ціха-ціхенька ляжы.
 
-[Прыпеў]
 Баю-бай, баю-бай,
 Вачаняты закрывай.
 Баю-бай, баю-бай,
@@ -81,45 +89,56 @@ Henadz Buraukin
 Каля мамы
 Ціха-ціхенька ляжы.
 
-[Прыпеў]
 Баю-бай, баю-бай,
-Вачаняты закрывай. (2 разы)
+Вачаняты закрывай.
+Баю-бай, баю-бай,
+Вачаняты закрывай.
 
 ## en
 
-[Chorus]
+The long day,
+The warm day
+Sails away beyond the clouds.
+A blue shadow,
+A sleepy shadow
+Crawls away into a distant corner.
+All the bunnies ran off to the woods,
+All the birdsong went quiet,
+And the storks hid
+Their long beaks in the nest.
+
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 
 Bit by bit,
-On the dew,
-The sleepy stars go out.
-All the cooings,
+In the dew,
+The sleepyhead stars go out.
+All the games,
 All the tales
 Are tucked away beneath the pillows.
 Mice are sleeping, swifts are sleeping,
-Cars are resting in the garage.
-You as well,
+Cars are sleeping in the garage.
+You too,
 Close to mama,
-Lie down quietly, so softly.
+Lie there quiet, oh so quiet.
 
-[Chorus]
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 
 Mice are sleeping, swifts are sleeping,
-Cars are resting in the garage.
-You as well,
+Cars are sleeping in the garage.
+You too,
 Close to mama,
-Lie down quietly, so softly.
+Lie there quiet, oh so quiet.
 
-[Chorus]
 Hush-a-bye, hush-a-bye,
-Close your little eyes. (x2)
+Close your little eyes.
+Hush-a-bye, hush-a-bye,
+Close your little eyes.
 
 # Промпт стылю / Style prompt
 
