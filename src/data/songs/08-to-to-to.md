@@ -30,109 +30,99 @@ Folk song
 
 ## be
 
-На словы беларускае народнае песьні «У нас сягодня Купала».
+«То-то-то» — гэта, па праўдзе, тая самая песьня, што і «Купала». Літаральна тая самая: адзін і той жа тэкст, адныя і тыя ж промпты стылю і тэксту — літара ў літару. Проста так склалася, што дзьве розныя генерацыі загучалі даволі па-рознаму, і з доўгага сьпісу варыянтаў я зноў вырашыў пакінуць два.
+
+Калі ў «Купале» пераважаюць традыцыйны харавы сьпеў і жорсткі дабстэп, то тут галоўную ролю бярэ поп-вакал — хоць і з добрай доляй хору, — а музыка мякчэйшая і бліжэйшая да традыцыйнага гучаньня: у прыпеве нават зьяўляецца дудка. Назву доўга шукаць не давялося — яе падказаў сам прыпеў.
+
+Аднолькавы промпт зусім не гарантуе аднолькавага выніку — і ў гэтым, як ні дзіўна, ёсьць нешта вельмі фальклёрнае. Народная песьня ніколі ня мела адзінай кананічнай вэрсіі: у кожнай вёсцы, у кожным гурце яна жыла сваім варыянтам. Дык чаму б ёй і ў Setivir'а не існаваць у двух? 😊
 
 ## en
 
-Based on the Belarusian folk song «U nas siahodnia Kupała» («we have Kupala day today»).
+Truth be told, "To-to-to" is the very same song as "Kupala". Literally the same: the same lyrics, the same prompts for style and text — letter for letter. It just so happened that two different generations came out sounding quite different, and out of a long list of variants I once again decided to keep two.
 
-Kupala Night (“Kupalle”) is an East Slavic midsummer celebration of bonfires, wreaths, and rites of purification and fertility; the lines “It wasn’t a maiden who laid the fire—God Himself set the fire” raise the flame from a folk act to a sacred gift, while the repeated appeal to Ilya (the Prophet Elijah—long syncretized with a pre-Christian thunder god) asks for rain, protection, and a blessing on the harvest. The song fuses pagan and Christian layers (“He was calling all the saints to Himself”) yet keeps an agrarian focus: staying awake through this “little night” to guard the rye and ward off the “serpent,” both literal field pests and a mythic destroyer of crops. The recurring onomatopoeic “to-to-to” works as an incantatory refrain that drives the rhythm, and modern section labels like Pre-Chorus and Bass Drop signal an EDM/dubstep arrangement framing an old ritual text in a contemporary club form.
+While "Kupala" is dominated by traditional choral singing and hard dubstep, here the lead is taken by a pop vocal — though still with a good share of the choir — and the music is softer and closer to a traditional sound: the chorus even features a *dudka*, a traditional Belarusian folk pipe. As for the title, I didn't have to search long — the song's own refrain offered it up: "to-to-to" is the chant that answers almost every line.
+
+An identical prompt is no guarantee of an identical result — and, oddly enough, there is something very folkloric about that. A folk song never had a single canonical version: in every village, in every singing circle, it lived in a variant of its own. So why shouldn't it live in two versions here in Setivir as well? 😊
 
 # Тэкст песьні / Lyrics
 
 ## be
 
-[Куплет]
+## be
+
 У нас сягодня Купала, то-то-то
 Ня дзеўка агонь клала, то-то-то
 Сам Бог агонь раскладаў, то-то-то
 Усіх сьвятых да сябе зваў, то-то-то
 
-[Pre-Chorus]
 Звала Купала Іллю, то-то-то
 Ты прыдзі да нас Ілля, то-то-то
 Ты прыйдзі на купалля
 
-[Прыпеў]
 У нас сёння Купала, то-то-то
 Ты прыдзі да нас Ілля, то-то-то
 Ты прыйдзі на купалля, то-то-то
 У нас сёння Купала...
 
-[Bass Drop]
 У нас сёння Купала, то-то-то
 Ты прыйдзі на купалля, то-то-то
 
-[Куплет]
 Не магу я, Купала, то-то-то
 Гэту ночку мне ня спаць, то-то-то
 Трэба жыта пільнаваць, то-то-то
 
-[Bridge]
 Каб зьмяя не ламала, то-то-то
 Карэння не капала, то-то-то
 
-[Pre-Chorus]
 Звала Купала Іллю, то-то-то
 Ты прыдзі да нас Ілля, то-то-то
 Ты прыйдзі на купалля
 
-[Прыпеў]
 У нас сёння Купала, то-то-то
 Ты прыйдзі на купалля, то-то-то
 У нас сёння Купала, то-то-то
 Ты прыдзі да нас Ілля...
 
-[Bass Drop]
 У нас сёння Купала, то-то-то
 Усіх сьвятых да сябе зваў, то-то-то
 
 ## en
 
-[Verse 1]
-It’s Kupala tonight, to-to-to
-It wasn’t a maiden who laid the fire, to-to-to
-God Himself set the fire, to-to-to
-He was calling all the saints to Himself, to-to-to
+Kupala has come to us today, to-to-to
+It was no maiden who laid the fire, to-to-to
+God Himself kindled the fire, to-to-to
+He called all the saints to His side, to-to-to
 
-[Pre-Chorus]
-Kupala called Elijah, to-to-to
-Come to us, Ilya (Elijah), to-to-to
-Come to the Kupala feast
+Kupala called out to Illia, to-to-to
+Come to us, Illia, to-to-to
+Come to the Kupalle feast
 
-[Chorus]
-It’s Kupala tonight, to-to-to
-Come to us, Ilya, to-to-to
-Come to the Kupala feast, to-to-to
-It’s Kupala tonight…
+Kupala has come to us today, to-to-to
+Come to us, Illia, to-to-to
+Come to the Kupalle feast, to-to-to
+Kupala has come to us today...
 
-[Bass Drop]
-It’s Kupala tonight, to-to-to
-Come to the Kupala feast, to-to-to
+Kupala has come to us today, to-to-to
+Come to the Kupalle feast, to-to-to
 
-[Verse 2]
-I can’t, Kupala, to-to-to
-I mustn’t sleep this little night, to-to-to
-I have to keep watch over the rye, to-to-to
+I cannot come, Kupala, to-to-to
+This night I must not sleep, to-to-to
+I must keep watch over the rye, to-to-to
 
-[Bridge]
-So that the serpent won’t break it, to-to-to
-Won’t dig up the roots, to-to-to
+Lest the serpent break it down, to-to-to
+Or dig up its roots, to-to-to
 
-[Pre-Chorus]
-Kupala called Elijah, to-to-to
-Come to us, Ilya, to-to-to
-Come to the Kupala feast
+Kupala called out to Illia, to-to-to
+Come to us, Illia, to-to-to
+Come to the Kupalle feast
 
-[Chorus]
-It’s Kupala tonight, to-to-to
-Come to the Kupala feast, to-to-to
-It’s Kupala tonight, to-to-to
-Come to us, Ilya…
+Kupala has come to us today, to-to-to
+Come to the Kupalle feast, to-to-to
+Kupala has come to us today, to-to-to
+Come to us, Illia...
 
-[Bass Drop]
-It’s Kupala tonight, to-to-to
-He was calling all the saints to Himself, to-to-to
+Kupala has come to us today, to-to-to
+He called all the saints to His side, to-to-to
 
 # Промпт стылю / Style prompt
 

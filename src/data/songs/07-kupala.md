@@ -30,109 +30,101 @@ Folk song
 
 ## be
 
-На словы беларускае народнае песьні «У нас сягодня Купала».
+Купальле ў нас традыцыйна сьвяткуюць у ноч з 23 на 24 чэрвеня. Але ў 2025 годзе так склалася, што я адзначыў ажно два Купальлі з розьніцай у тыдзень — абодва з вроцлаўскай суполкай сяброў. І, як заўсёды здараецца пасьля купальскай ночы, з галавы не выходзіла народная беларуская песьня «У нас сягоньня Купала» — тая, якую мы ня раз сьпявалі ноччу каля вогнішча і падчас пошукаў папараць-кветкі. Кветку, праўда, ніхто так і не знайшоў. А вось песьня знайшла мяне — і не адпускала.
+
+Урэшце я вырашыў, што трэба зноў брацца за Suno і рабіць дабстэп-адаптацыю, каб песьня была са мною ня толькі пасьля Купальля, але і ўвесь год. Асобна хацелася гэтым разам паспрабаваць сумясьціць народнае харавое шматгалосьсе і цяжкія электронныя рытмы — каб купальскі карагод закруціўся ў віры басоў. Вынік перад вамі — песьня «Купала». Падаецца, атрымалася даволі нядрэнна 😊
 
 ## en
 
-Based on the Belarusian folk song «U nas siahodnia Kupała» («we have Kupala day today»).
+> Kupálle, the Belarusian midsummer festival with roots deep in pagan times, is traditionally celebrated on the night of June 23–24: a night of bonfires, songs, and old rituals. It is from this festival that Janka Kupala, the national poet of Belarus, took his pen name. 
 
-Kupala Night (“Kupalle”) is an East Slavic midsummer celebration of bonfires, wreaths, and rites of purification and fertility; the lines “It wasn’t a maiden who laid the fire—God Himself set the fire” raise the flame from a folk act to a sacred gift, while the repeated appeal to Ilya (the Prophet Elijah—long syncretized with a pre-Christian thunder god) asks for rain, protection, and a blessing on the harvest. The song fuses pagan and Christian layers (“He was calling all the saints to Himself”) yet keeps an agrarian focus: staying awake through this “little night” to guard the rye and ward off the “serpent,” both literal field pests and a mythic destroyer of crops.
+In 2025 it so happened that I celebrated two Kupalles just a week apart, both with my community of belarussian friends from Wrocław, Poland. And, as always happens to me after a Kupalle night, one folk song refused to leave my head: «У нас сягоньня Купала» (*U nas siahonnia Kupala* — "Kupala Has Come to Us Today"), the one we sang more than once by the bonfire and while out searching for the fern flower — *paparats-kvetka*. Legend says this mythical bloom appears for one brief instant on Kupalle night only, and whoever finds it is promised fortune. Ferns, of course, never bloom at all — so no one has ever found it, which is rather the point. This year was no exception: nobody found the flower. But the song found me — and wouldn't let go.
+
+In the end I decided it was time to fire up Suno, the AI music generator, once again — and make a dubstep adaptation, so the song would stay with me not only after Kupalle but all year round. This time I especially wanted to try fusing traditional Belarusian choral polyphony with heavy electronic rhythms — to set the Kupalle round dance spinning in a whirlpool of bass. The result is in front of you: the track "Kupala". Not bad at all, I'd say 😊
+
+::: cut A few notes related to lyric for readers from outside Belarus
+
+- Illia is the prophet Elijah, whose feast day follows midsummer in the Belarusian folk calendar. The song is a dialogue: Kupala — personified here as a female figure — invites Elijah to the feast, and he refuses: he must stand guard over the ripening rye all night, so that the serpent does not trample the stalks or dig up their roots.
+- "To-to-to" is a traditional refrain vocable with no lexical meaning, kept as in the original.
+:::
 
 # Тэкст песьні / Lyrics
 
 ## be
 
-[Куплет]
 У нас сягодня Купала, то-то-то
 Ня дзеўка агонь клала, то-то-то
 Сам Бог агонь раскладаў, то-то-то
 Усіх сьвятых да сябе зваў, то-то-то
 
-[Pre-Chorus]
 Звала Купала Іллю, то-то-то
 Ты прыдзі да нас Ілля, то-то-то
 Ты прыйдзі на купалля
 
-[Прыпеў]
 У нас сёння Купала, то-то-то
 Ты прыдзі да нас Ілля, то-то-то
 Ты прыйдзі на купалля, то-то-то
 У нас сёння Купала...
 
-[Bass Drop]
 У нас сёння Купала, то-то-то
 Ты прыйдзі на купалля, то-то-то
 
-[Куплет]
 Не магу я, Купала, то-то-то
 Гэту ночку мне ня спаць, то-то-то
 Трэба жыта пільнаваць, то-то-то
 
-[Bridge]
 Каб зьмяя не ламала, то-то-то
 Карэння не капала, то-то-то
 
-[Pre-Chorus]
 Звала Купала Іллю, то-то-то
 Ты прыдзі да нас Ілля, то-то-то
 Ты прыйдзі на купалля
 
-[Прыпеў]
 У нас сёння Купала, то-то-то
 Ты прыйдзі на купалля, то-то-то
 У нас сёння Купала, то-то-то
 Ты прыдзі да нас Ілля...
 
-[Bass Drop]
 У нас сёння Купала, то-то-то
 Усіх сьвятых да сябе зваў, то-то-то
 
 ## en
 
-[Verse 1]
-It’s Kupala tonight, to-to-to
-It wasn’t a maiden who laid the fire, to-to-to
-God Himself set the fire, to-to-to
-He was calling all the saints to Himself, to-to-to
+Kupala has come to us today, to-to-to
+It was no maiden who laid the fire, to-to-to
+God Himself kindled the fire, to-to-to
+He called all the saints to His side, to-to-to
 
-[Pre-Chorus]
-Kupala called Elijah, to-to-to
-Come to us, Ilya (Elijah), to-to-to
-Come to the Kupala feast
+Kupala called out to Illia, to-to-to
+Come to us, Illia, to-to-to
+Come to the Kupalle feast
 
-[Chorus]
-It’s Kupala tonight, to-to-to
-Come to us, Ilya, to-to-to
-Come to the Kupala feast, to-to-to
-It’s Kupala tonight…
+Kupala has come to us today, to-to-to
+Come to us, Illia, to-to-to
+Come to the Kupalle feast, to-to-to
+Kupala has come to us today...
 
-[Bass Drop]
-It’s Kupala tonight, to-to-to
-Come to the Kupala feast, to-to-to
+Kupala has come to us today, to-to-to
+Come to the Kupalle feast, to-to-to
 
-[Verse 2]
-I can’t, Kupala, to-to-to
-I mustn’t sleep this little night, to-to-to
-I have to keep watch over the rye, to-to-to
+I cannot come, Kupala, to-to-to
+This night I must not sleep, to-to-to
+I must keep watch over the rye, to-to-to
 
-[Bridge]
-So that the serpent won’t break it, to-to-to
-Won’t dig up the roots, to-to-to
+Lest the serpent break it down, to-to-to
+Or dig up its roots, to-to-to
 
-[Pre-Chorus]
-Kupala called Elijah, to-to-to
-Come to us, Ilya, to-to-to
-Come to the Kupala feast
+Kupala called out to Illia, to-to-to
+Come to us, Illia, to-to-to
+Come to the Kupalle feast
 
-[Chorus]
-It’s Kupala tonight, to-to-to
-Come to the Kupala feast, to-to-to
-It’s Kupala tonight, to-to-to
-Come to us, Ilya…
+Kupala has come to us today, to-to-to
+Come to the Kupalle feast, to-to-to
+Kupala has come to us today, to-to-to
+Come to us, Illia...
 
-[Bass Drop]
-It’s Kupala tonight, to-to-to
-He was calling all the saints to Himself, to-to-to
+Kupala has come to us today, to-to-to
+He called all the saints to His side, to-to-to
 
 # Промпт стылю / Style prompt
 
