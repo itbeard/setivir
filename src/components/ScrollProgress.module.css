@@ -9,6 +9,13 @@
   pointer-events: none;
 }
 
+/* Hidden on desktop whenever the right-side ProgressNav rail is visible. */
+@media (min-width: 1025px) and (min-height: 761px) {
+  .track {
+    display: none;
+  }
+}
+
 .fill {
   height: 100%;
   width: 100%;
