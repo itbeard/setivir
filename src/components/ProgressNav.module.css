@@ -1,21 +1,27 @@
 .rail {
   position: fixed;
   right: clamp(14px, 1.8vw, 26px);
-  top: 50%;
-  transform: translateY(-50%);
+  /* Centred in the space below the top bar, never crossing it. */
+  top: var(--topbar-h);
+  bottom: 0;
   z-index: 40;
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  /* If the list ever outgrows the space, pin it below the bar instead of
+     letting the centring push it under (browsers without `safe` keep center). */
+  justify-content: safe center;
 }
 
 /* Desktop only — the mobile counter in the top bar covers small screens. */
 @media (min-width: 1025px) {
   .rail {
-    display: block;
+    display: flex;
   }
 }
 
-/* Hide if the list would be taller than the viewport. */
-@media (max-height: 760px) {
+/* Hide only when even the tightened list (see below) can't fit under the bar. */
+@media (max-height: 700px) {
   .rail {
     display: none;
   }
@@ -28,6 +34,13 @@
   display: flex;
   flex-direction: column;
   gap: 9px;
+}
+
+/* Shorter windows: tighten the ticks before giving up on the rail. */
+@media (max-height: 880px) {
+  .list {
+    gap: 6px;
+  }
 }
 
 .tick {
@@ -83,6 +96,10 @@
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   color: var(--ink-faint);
+  /* Fixed slot so every line's right edge lands at the same x, whatever the
+     hidden label is ("01" digits vs the intro/outro diamond). */
+  min-width: 15px;
+  text-align: right;
   opacity: 0;
   transform: translateX(4px);
   transition: opacity 0.2s var(--ease), transform 0.2s var(--ease),
@@ -109,6 +126,19 @@
   opacity: 1;
   transform: none;
   color: var(--red);
+}
+
+/* Intro/outro ticks: same lines as the songs, set slightly apart from them. */
+.edge:first-child {
+  margin-bottom: 5px;
+}
+
+.edge:last-child {
+  margin-top: 5px;
+}
+
+.edgeTick .num {
+  font-size: 0.55rem;
 }
 
 /* Now-playing pulse on the tick line. */

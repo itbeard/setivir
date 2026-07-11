@@ -83,6 +83,10 @@ export function SongSheet({
         </div>
 
         <div className={styles.list}>
+          <button type="button" className={cx(styles.row, styles.rowEdge)} onClick={goIntro}>
+            <span className={styles.num} aria-hidden="true">↑</span>
+            <span className={styles.edgeTitle}>{t('sheet.intro')}</span>
+          </button>
           {songs.map((s) => {
             const active = s.id === activeSong
             const playing = current?.id === s.id && isPlaying
@@ -105,14 +109,9 @@ export function SongSheet({
               </button>
             )
           })}
-        </div>
-
-        <div className={styles.foot}>
-          <button type="button" className={styles.jump} onClick={goIntro}>
-            ↑ {t('sheet.intro')}
-          </button>
-          <button type="button" className={styles.jump} onClick={goOutro}>
-            {t('sheet.outro')} ↓
+          <button type="button" className={cx(styles.row, styles.rowEdge)} onClick={goOutro}>
+            <span className={styles.num} aria-hidden="true">↓</span>
+            <span className={styles.edgeTitle}>{t('sheet.outro')}</span>
           </button>
         </div>
       </div>

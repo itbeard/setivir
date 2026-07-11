@@ -1,5 +1,5 @@
 import type { Song } from '../types'
-import { scrollToId } from '../lib/nav'
+import { getSections, scrollToId, scrollToIndex } from '../lib/nav'
 import { useI18n } from '../i18n/I18nContext'
 import { usePlayer } from '../audio/PlayerContext'
 import { cx } from '../lib/cx'
@@ -18,10 +18,25 @@ export function ProgressNav({
 }) {
   const { t, loc } = useI18n()
   const { current, isPlaying } = usePlayer()
+  // Sections are intro (0), songs (1..N), outro (N+1).
+  const outroActive = activeIndex === songs.length + 1
 
   return (
     <nav className={styles.rail} aria-label={t('a11y.openMenu')}>
       <ul className={styles.list}>
+        <li className={styles.edge}>
+          <button
+            type="button"
+            className={cx(styles.tick, styles.edgeTick, activeIndex === 0 && styles.active)}
+            onClick={() => scrollToIndex(0)}
+            aria-current={activeIndex === 0 ? 'true' : undefined}
+            aria-label={t('sheet.intro')}
+            title={t('sheet.intro')}
+          >
+            <span className={styles.line} />
+            <span className={styles.num}>◆</span>
+          </button>
+        </li>
         {songs.map((s, i) => {
           // Songs occupy section indices 1..N (intro is 0), in render order.
           const active = activeIndex === i + 1
@@ -42,6 +57,19 @@ export function ProgressNav({
             </li>
           )
         })}
+        <li className={styles.edge}>
+          <button
+            type="button"
+            className={cx(styles.tick, styles.edgeTick, outroActive && styles.active)}
+            onClick={() => scrollToIndex(getSections().length - 1)}
+            aria-current={outroActive ? 'true' : undefined}
+            aria-label={t('sheet.outro')}
+            title={t('sheet.outro')}
+          >
+            <span className={styles.line} />
+            <span className={styles.num}>◆</span>
+          </button>
+        </li>
       </ul>
     </nav>
   )

@@ -60,6 +60,13 @@
   color: var(--ink-faint);
 }
 
+/* "Уступ"/"Фінал" label standing in for the numbers on the bookend screens. */
+.counterLabel {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
 .caret {
   width: 5px;
   height: 5px;
@@ -108,8 +115,10 @@
   color: var(--line-strong);
 }
 
-/* The right-hand dot rail covers navigation on wide screens. */
-@media (min-width: 1025px) {
+/* The right-hand dot rail covers navigation on wide screens — but on windows
+   too short for the rail (it hides ≤700px, see ProgressNav.module.css) the
+   counter steps back in. Keep the 700px threshold in sync between the files. */
+@media (min-width: 1025px) and (min-height: 701px) {
   .counterWrap {
     display: none;
   }

@@ -129,7 +129,12 @@ function Shell({
       </a>
       <ScrollProgress />
       {settings.paperGrain && <PaperGrain />}
-      <TopBar activeSong={activeSong} total={total} songs={displaySongs} />
+      <TopBar
+        activeSong={activeSong}
+        total={total}
+        songs={displaySongs}
+        edge={activeIndex === 0 ? 'intro' : activeIndex === total + 1 ? 'outro' : null}
+      />
       <ProgressNav songs={displaySongs} activeIndex={activeIndex} />
       <main id="main-content" data-anim={animOn ? 'on' : undefined}>
         <Hero />

@@ -14,19 +14,25 @@ export function TopBar({
   activeSong,
   total,
   songs,
+  edge,
 }: {
   activeSong: number | null
   total: number
   songs: Song[]
+  /** Which bookend screen is active, when not on a song. */
+  edge: 'intro' | 'outro' | null
 }) {
   const { lang, setLang, t } = useI18n()
   // The counter opens a full-width bottom sheet (the counter itself only
-  // renders on ≤1024px screens — the dot rail covers wide viewports).
+  // renders on ≤1024px screens — the dot rail covers wide viewports). On the
+  // intro/outro it reads "Уступ"/"Фінал" instead of the track numbers, so the
+  // menu stays reachable on every screen.
   const [sheetOpen, setSheetOpen] = useState(false)
+  const counterShown = activeSong !== null || edge !== null
 
   useEffect(() => {
-    if (activeSong === null) setSheetOpen(false)
-  }, [activeSong])
+    if (activeSong === null && edge === null) setSheetOpen(false)
+  }, [activeSong, edge])
 
   return (
     <header className={styles.bar}>
@@ -39,7 +45,7 @@ export function TopBar({
         SETIVIR
       </button>
 
-      {activeSong !== null && (
+      {counterShown && (
         <div className={styles.counterWrap}>
           <button
             type="button"
@@ -49,8 +55,16 @@ export function TopBar({
             aria-expanded={sheetOpen}
             aria-label={t('a11y.openMenu')}
           >
-            {pad2(activeSong)}
-            <i className={styles.counterTotal}> / {pad2(total)}</i>
+            {activeSong !== null ? (
+              <>
+                {pad2(activeSong)}
+                <i className={styles.counterTotal}> / {pad2(total)}</i>
+              </>
+            ) : (
+              <span className={styles.counterLabel}>
+                {t(edge === 'intro' ? 'sheet.intro' : 'sheet.outro')}
+              </span>
+            )}
             <span className={styles.caret} aria-hidden="true" />
           </button>
         </div>
