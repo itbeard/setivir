@@ -129,13 +129,7 @@ function Shell({
       </a>
       <ScrollProgress />
       {settings.paperGrain && <PaperGrain />}
-      <TopBar
-        activeSong={activeSong}
-        total={total}
-        songs={displaySongs}
-        order={order}
-        onToggleOrder={toggleOrder}
-      />
+      <TopBar activeSong={activeSong} total={total} songs={displaySongs} />
       <ProgressNav songs={displaySongs} activeIndex={activeIndex} />
       <main id="main-content" data-anim={animOn ? 'on' : undefined}>
         <Hero />
@@ -150,7 +144,7 @@ function Shell({
           </Fragment>
         ))}
         {settings.ornamentDividers && <OrnamentDivider />}
-        <Outro />
+        <Outro total={total} order={order} onToggleOrder={toggleOrder} />
       </main>
       <MiniPlayer />
     </>
@@ -159,8 +153,8 @@ function Shell({
 
 export default function App() {
   // The data file stays in chronological order (id 1 = oldest). By default the
-  // page follows it (01 → NN); the TopBar / song-sheet toggle flips to
-  // newest-first, and the choice persists in localStorage.
+  // page follows it (01 → NN); the Outro toggle flips to newest-first, and the
+  // choice persists in localStorage.
   const [order, toggleOrder] = useTrackOrder()
   const displaySongs = useMemo(
     () => (order === 'newest' ? [...songs].reverse() : songs),

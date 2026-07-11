@@ -149,6 +149,18 @@ export const ui = {
     be: 'ад новых да старых',
     en: 'newest first',
   },
+  'outro.orderChrono': {
+    be: 'Вы прайшлі ўвесь шлях — ад першай песьні да апошняй. Калі хочаце, каб наступнае наведваньне пачыналася з найноўшых трэкаў, перакуліце парадак. А калі захочаце вярнуць усё як было — проста вярніцеся сюды.',
+    en: 'You have walked the whole path — from the first song to the last. If you would like your next visit to begin with the newest tracks, flip the order. And whenever you want it back the way it was — just return here.',
+  },
+  'outro.orderNewest': {
+    be: 'Цяпер гісторыя разгортваецца ад найноўшых трэкаў да самых першых. Калі захочаце зноў пачаць яе з пачатку — перакуліце парадак назад.',
+    en: 'The story now unfolds from the newest tracks back to the very first. If you would like to start it from the beginning again — flip the order back.',
+  },
+  'outro.orderFlip': {
+    be: 'Перакуліць парадак',
+    en: 'Flip the order',
+  },
   'sheet.intro': {
     be: 'Уступ',
     en: 'Intro',
