@@ -72,41 +72,61 @@ Artur Volski
 
 Хто я? Дзед-Барадзед,
 Абышоў белы свет,
-
 А цяпер у ціхі час
 Завітаў да вас.
 
 ## en
 
-[Verse 1]
-I walk around the wide world,
-And I watch how you all live.
-If you need it – I will help,
-Because I can do anything.
+I wander the wide white world
+and watch how you are living.
+If help is needed — I will help,
+for I can do anything.
 
-[Chorus]
-Who am I? I’m Grandpa Long-Beard,
-I have walked around the wide world,
-And now, in this quiet hour,
-I have come to you.
+I'll be beside you everywhere:
+need a miracle — we'll make miracles,
+need a fairy tale — one, two, three —
+here's your fairy tale, my friends!
 
-[Verse 2]
-I’ll be beside you everywhere,
-Need miracles? — we’ll make miracles,
-Need a fairy tale? — one, two, three —
-Here’s a fairy tale for you, my friends!
+Who am I? Dzied-Baradzied:
+I've walked all round the white world,
+and now, in the quiet hour,
+I've come calling on you.
 
-[Verse 3]
-I walk around the wide world —
-I’m your best friend, children.
+I wander the wide white world —
+your very best friend, children.
 And I even know
-What you see inside your dreams.
+what you see in your dreams.
 
-[Verse 4]
-I walk around the wide world,
-And I watch how you all live.
-If you need it — I will help,
-Because I can do anything.
+Who am I? Dzied-Baradzied:
+I've walked all round the white world,
+and now, in the quiet hour,
+I've come calling on you.
+
+I wander the wide white world
+and watch how you are living.
+If help is needed — I will help,
+for I can do anything.
+
+Who am I? Dzied-Baradzied:
+I've walked all round the white world,
+and now, in the quiet hour,
+I've come calling on you.
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
+- **What this is.** The signature song of Dzied-Baradzied, a puppet host of "Kalychanka" ("Lullaby") — the nightly bedtime program of Belarusian television, on air since January 1981. Words by children's poet Artur Volski, music by Leanid Zachleŭny. Functionally the Belarusian counterpart of the East German Sandmännchen or the Soviet "Spokoynoy nochi, malyshi!" — though its creators deliberately set out to make something distinctly national rather than a copy.
+
+- **Dzied-Baradzied.** *Dzied* means "grandfather, old man"; *Baradzied* is a playful coinage on *barada* ("beard") made to rhyme with *dzied* — roughly "Grandpa Beard-o-Beard." A large foam puppet with a long beard, operated by three actors at once, he joined the show in the mid-1980s and became its most beloved figure. For anyone who grew up in Belarus in the late Soviet decades and the 1990s this song is pure childhood; the original puppet later vanished without a trace, which only added to its legend.
+
+- **"The white world" (biely sviet).** A common East Slavic idiom for "the whole wide world": *abyšoŭ biely sviet* = "went all round the world." The "white" connotes the bright, daylight world of the living, not a color.
+
+- **"The quiet hour" (cichi čas).** Bedtime; the same phrase is also the standard term for nap time in kindergartens. The show airs right before children's bedtime, so the character arrives precisely "in the quiet hour."
+
+- **"Come calling on you" (zavitaŭ da vas).** The verb *zavitać* means to drop in as a welcome guest — the same warm word as in the third stanza of the Belarusian "Silent Night." A visit that brings joy, not an intrusion.
 
 # Промпт стылю / Style prompt
 

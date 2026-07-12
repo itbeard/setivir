@@ -129,6 +129,12 @@ He called all the saints to His side, to-to-to
 - Illia is the prophet Elijah, whose feast day follows midsummer in the Belarusian folk calendar. The song is a dialogue: Kupala — personified here as a female figure — invites Elijah to the feast, and he refuses: he must stand guard over the ripening rye all night, so that the serpent does not trample the stalks or dig up their roots.
 - "To-to-to" is a traditional refrain vocable with no lexical meaning, kept as in the original.
 
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
 # Промпт стылю / Style prompt
 
 A dark, hard and deep dubstep foundation anchors the track with a powerful low and slow beat, Sparse, minimal drums punctuate the openness, creating an expansive rhythmic pulse, with powerful saws on bass drops, A traditional folk female choral singing with solo vocal parts floats above in melodic phrases, weaving folk inflections into the spacious mix

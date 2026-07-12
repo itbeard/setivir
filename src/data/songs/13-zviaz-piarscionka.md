@@ -2,7 +2,7 @@
 
 ## be
 
-Зьвяз пярсьцёнка
+Зьвяз Пярсьцёнка
 
 ## en
 
@@ -84,17 +84,53 @@ This is the ideal recap of the first book of The Lord of the Rings: from a cozy 
 
 ## en
 
-History became legend, legend faded into myth. Over the cozy Bag End under the Hill, a Mordor glyph hung. In the fire of Bilbo's home, where ale had been drunk for ages, A fiery script emerged from oblivion upon the Ring. This is not just gold — this is the blood and doom of kings. Isildur's Bane demands new sacrificial heads. Pack your bags, nephew! Leave your quiet corner. The "Simple Adventure" is over. The time of suffering approaches.
+History became legend, legend smoldered away into myth.
+Over the cosy Bag End beneath the Hill a glyph of Mordor loomed.
+In the hearth-fire of Bilbo's home, where ale had been drunk since forever,
+a fiery monogram rose out of the void upon the ring.
+This is not mere gold — it is the blood and the ruin of kings.
+The curse of Isildur demands fresh sacrificial heads.
+Pack up, nephew! Leave your quiet corner behind.
+The "Mere Adventure" is over. The time of torments has come.
 
-The One Ring, the Master — a noose around the Universe's neck. The Black Sun rises according to an ancient covenant. It pulls the soul into the wraith-world, where there is neither shadow nor day. Only the Eye... The Lidless Eye... and eternal turmoil. The One Ring...
+The One Master-Ring — a noose on the neck of the Universe.
+A black sun is rising according to an ancient covenant.
+It drags the soul into the wraith-world, where there is neither shadow nor day —
+only the Eye... the Sleepless Eye... and endless scuffling.
+The One Ring...
 
-On Amon Sûl, a broken stone recorded our pain. A Morgul blade rubbed grave salt into the wound. Athelas drew out the poison, but did not cure the horror. Now every rustle is the Enemy, every shadow is ruin. We have known the temper of Caradhras, fierce since the beginning of ages, But worse than the frost are the shadows of betrayal in the eyes of friends.
+On Amon Sûl the shattered stone recorded our pain.
+The Morgul blade ground grave-salt into the wound.
+Athelas drew out the poison, but did not cure the terror.
+Now every rustle is the Enemy, every shadow is ruin.
+We came to know the temper of Caradhras, savage since the dawn of ages,
+but worse than the frost are the shadows of betrayal in the eyes of friends.
 
-Moria... Khazad-dûm! The silence of dead dwarves! Here the darkness is older than the echo of heavenly thunder. A Nameless Terror rose from the accursed depths, Flame of Udûn! The Balrog’s scourge! Hellish heat! You shall not pass! You shall not pass! Shadow and Flame merged into an abyssal roar! And vanished forever into the dark.
+Moria... Khazad-dûm! The silence of the dead Dwarves!
+Here the darkness is older than the echo of heaven's thunders.
+A Nameless Dread rose up from the accursed deep —
+Fire of Udûn! The Balrog's scourge! Infernal heat!
+You shall not pass! You shall not pass!
+Shadow and Flame fused into a roar in the abyss —
+and in the darkness he vanished forever.
 
-Lothlórien washed away the dirt, but not the sorrow of the soul. The Seeress's Mirror showed fire in the silence. And now the Great Anduin rushes to the falls of Rauros. The Broken Fellowship... Chaos... The will of a cruel fate. The Cloven Horn. Its sound died away in the mist, The Son of Denethor has fallen. The black boat disappeared into the water.
+Lothlórien washed away the grime, but not the sorrow of the soul.
+The Mirror of the Seeress showed a blaze amid the silence.
+And now the Great Anduin races toward the rapids of Rauros.
+The Fellowship broken... Chaos... The will of a cruel fate.
+The Horn is cloven. Its call has died away in the mist.
+The son of Denethor has fallen. The black boat vanished into the water.
 
-Frodo is alone... Faithful Sam follows relentlessly... Ahead lies Mordor — a stony, insane world. The Ring grows heavier... It squeezes the heart like a hook... "Ash nazg durbatulûk..." — echoes back in sound.
+Frodo is alone... Faithful Sam — close behind, never leaving...
+Ahead lies Mordor — a stone-bound, madman's world.
+The Ring grows heavier... It grips the heart like a hook...
+"Ash nazg durbatulûk..." — it answers in echo and sound.
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
 
 # Промпт стылю / Style prompt
 

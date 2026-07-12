@@ -140,6 +140,12 @@ Close your little eyes.
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
 # Промпт стылю / Style prompt
 
 At 90 BPM halftime in C minor, deep dubstep sub and minimal, sparse drums create a spacious pulse, Ethereal strong opera-like Belarusian female vocal floats above wide reverb and airy pads, Cymbaly and zhaleika weave delicate folk motifs, Intimate cinematic mood, soft vinyl hiss, textures drift through

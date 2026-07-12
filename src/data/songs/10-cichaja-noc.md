@@ -2,11 +2,11 @@
 
 ## be
 
-Ціхая ноч
+Ціхая Ноч
 
 ## en
 
-Cichaja noč
+Cichaja Noč
 
 # Дата / Date
 
@@ -37,6 +37,9 @@ Natallia Arsenneva
 Electronic adaptation of the song “Silent Night…” (German “Stille Nacht…”) in the Belarusian translation by Natallia Arsenneva.
 
 "Cichaja noč" is a Belarusian version of the classic Christmas carol “Silent Night”, centred on the peaceful night of Christ’s birth, the tenderness of Mary by the manger, the angels’ song to the shepherds, and a plea that sorrow and longing be driven away so people can rejoice. In the electronic adaptation, this Christmas motif is interwoven with subtle notes of religious Eastern chant laid over deep dubstep and shimmering electro textures.
+
+The base text is by Natallia Arsiennieva (1903–1997), one of the foremost Belarusian poets of the 20th century, who spent the second half of her life in exile in the US. She is also the author of "Mahutny Boža" ("O God Almighty"), the unofficial spiritual anthem of Belarus. Her "Cichaja noč" is the standard Belarusian version of the carol.
+
 
 # Тэкст песьні / Lyrics
 
@@ -69,28 +72,44 @@ Electronic adaptation of the song “Silent Night…” (German “Stille Nacht�
 ## en
 
 Silent night, holy night!
-All is asleep, long since in dreams.
+All is asleep, long since dreaming.
 Only the Holy Mother still
-Softly rocks the Child in the manger:
+softly cradles the Child in the manger:
 
-“Sleep, my little Son,
-Luli, luli, sleep!”
+"Sleep, my little Son —
+luli, luli, sleep!"
 
-High above everything shines
-With the silver of starry ice.
-Choirs of angels sing to the shepherds
-Of the Child who will be the Christ,
+And up above, all is ablaze
+with the silver of starry ice-floes.
+A choir of angels sings to the shepherds
+of the Child who will be the Christ;
 
-With a bright song of praise
-They glorify the Savior of the Earth.
+with a radiant song of praise
+they glorify the Savior of the Earth.
 
-Silent night, holy night,
-Come into our native land,
-Drive away people’s sorrow and grief,
-Let them rejoice in these days,
+Silent night, holy night —
+come, visit our native land,
+dispel the people's sorrow and longing,
+let them rejoice in these days,
 
-On this quiet, holy night,
-On this quiet, holy night!
+in the silent, holy night,
+in the silent, holy night!
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
+- **The third stanza has no counterpart in the German or English original.** Where the familiar carol continues about the Son of God and redeeming grace, here the holy night itself is asked to "visit the native land" and drive away the people's sorrow — the carol becomes a prayer for Belarus. Written by an émigré and sung today by a new wave of exiles, this verse carries a national resonance on top of the religious one.
+
+- ***Rodny kraj* ("native land").** A set phrase that in Belarusian poetry effectively means Belarus itself; emotionally closer to "homeland" than to a neutral "country."
+
+- ***Tuha* (here "longing").** An aching, unfocused yearning, most often for home — roughly *saudade* or *hiraeth*. Paired with *sum* ("sorrow"), it forms a traditional formula of folk laments.
+
+- **"Luli, luli".** Stock lullaby vocables of Belarusian (and wider Slavic) folk song, the equivalent of "lullay" or "hush-a-bye." Together with the tender diminutive *Synočak* ("little Son"), it recasts the Nativity in the intimate register of a village lullaby.
+
+- **"The silver of starry ice-floes".** *Kryha* is a floe of river ice; the stars are imagined as silver ice drifting overhead — a wintry, northern image of the Belarusian text's own, absent from the original.
 
 # Промпт стылю / Style prompt
 

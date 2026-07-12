@@ -2,7 +2,7 @@
 
 ## be
 
-Што каштуе
+Што Каштуе
 
 ## en
 
@@ -38,6 +38,8 @@ Folk song
 
 “Što Kaštuje” (“What Does It Cost”) is a modern electronic adaptation of a playful Belarusian folk song about love and choice. A down-to-earth, practical father asks his son “what that girl costs,” and the son answers that a beloved is worth any price: what matters is not what people say, but that he has someone to love and someone to live with.
 
+A short humorous folk lyric built on a single rhyme — *lučyna* ("splint-wood") / *dziaŭčyna* ("girl") — the kind of couplet song sung at village gatherings and weddings; variants of it are preserved in Belarusian folklore archives, recorded from village singers. The English inevitably loses the rhyme, and the whole joke of the original rides on it.
+
 In this version the old song sounds like a dark ritual: deep sub-bass, a half-time beat, whispers, a slow cello solo, and folktronic textures turn a wedding scene into a solemn, almost ceremonial rite. The dubstep drop “Whatever she costs — we must give it” lands like a vow.
 
 # Тэкст песьні / Lyrics
@@ -64,23 +66,29 @@ In this version the old song sounds like a dark ritual: deep sub-bass, a half-ti
 
 ## en
 
-Father rides for kindling wood,
-And the son rides for a girl.
-Father rides with the kindling,
-And the son rides with the girl.
+Father rides out for splint-wood,
+and the son rides out for a girl.
+Father rides home with splint-wood,
+and the son rides home with a girl.
 
 The father asks the son:
-"What does that girl cost?"
+what does that girl cost?
 
-Whatever she costs — we must give it,
-A mistress of the house will be at home!
+What she costs — it must be given:
+there'll be a mistress in the house!
 
-People have things to say,
-But I have someone to love.
-People have things to do,
-And I have someone to live with.
+People have something to say —
+I have someone to love.
+People have something to do —
+and I have someone to live with.
 
-Father rides for kindling wood...
+Father rides out for splint-wood...
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
 
 # Промпт стылю / Style prompt
 

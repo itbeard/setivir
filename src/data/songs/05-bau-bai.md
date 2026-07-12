@@ -155,6 +155,12 @@ Close your little eyes.
 Hush-a-bye, hush-a-bye,
 Close your little eyes.
 
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
 # Промпт стылю / Style prompt
 
 deep dubstep sub and minimal, sparse drums create a spacious pulse

@@ -126,6 +126,12 @@ And no good at all.
 My horse, oh my horse,
 I sold you away...
 
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
 # Промпт стылю / Style prompt
 
 This Belarussian dubstep track opens with distant industrial noises and faint vinyl crackle, laying a stark, wintry atmosphere, The beat drops—a slow, heavy kick, crisp snare, and deep, resonant sub-bass drive the rhythm, Sparse, icy synths punctuate the minimalism, weaving between restrained, monotone rap verses, their delivery cold and detached, Occasional eerie samples and distorted textures reinforce the sense of grit and despair, The arrangement remains stripped-back throughout, letting the cinematic storytelling and bleak urban feel take center stage

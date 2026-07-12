@@ -2,7 +2,7 @@
 
 ## be
 
-Дзед-барадзед
+Дзед-Барадзед
 
 ## en
 
@@ -80,35 +80,46 @@ Artur Volski
 
 ## en
 
-[Verse 1]
-I walk around the wide world,
-And I watch how you all live.
-If you need it – I will help,
-Because I can do anything.
+I wander the wide white world
+and watch how you are living.
+If help is needed — I will help,
+for I can do anything.
 
-[Chorus]
-Who am I? I’m Grandpa Long-Beard,
-I have walked around the wide world,
-And now, in this quiet hour,
-I have come to you.
+I'll be beside you everywhere:
+need a miracle — we'll make miracles,
+need a fairy tale — one, two, three —
+here's your fairy tale, my friends!
 
-[Verse 2]
-I’ll be beside you everywhere,
-Need miracles? — we’ll make miracles,
-Need a fairy tale? — one, two, three —
-Here’s a fairy tale for you, my friends!
+Who am I? Dzied-Baradzied:
+I've walked all round the white world,
+and now, in the quiet hour,
+I've come calling on you.
 
-[Verse 3]
-I walk around the wide world —
-I’m your best friend, children.
+I wander the wide white world —
+your very best friend, children.
 And I even know
-What you see inside your dreams.
+what you see in your dreams.
 
-[Verse 4]
-I walk around the wide world,
-And I watch how you all live.
-If you need it — I will help,
-Because I can do anything.
+Who am I? Dzied-Baradzied:
+I've walked all round the white world,
+and now, in the quiet hour,
+I've come calling on you.
+
+I wander the wide white world
+and watch how you are living.
+If help is needed — I will help,
+for I can do anything.
+
+Who am I? Dzied-Baradzied:
+I've walked all round the white world,
+and now, in the quiet hour,
+I've come calling on you.
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
 
 # Промпт стылю / Style prompt
 

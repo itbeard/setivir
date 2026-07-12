@@ -36,6 +36,8 @@ Yanka Kupala
 
 This song reinterprets Yanka Kupala’s iconic poem “A chto tam idzie” as a brutal digital attack, where the weight of historical grievance is amplified by distorted bass and aggressive electro rhythms. Track available on all streaming platforms.
 
+"A chto tam idzie?" ("And who goes there?") by Janka Kupala (1882–1942), the national poet of Belarus, written around 1905–1907 in the wake of the first Russian revolution. It is the closest thing Belarusians have to a national poem: Maxim Gorky translated it into Russian and saw in it something like a Belarusian anthem; set to music by the Polish composer Ludomir Rogowski in 1910, it was sung as the unofficial anthem — in Western Belarus right up to the Second World War. Collected editions of its translations run past a hundred languages.
+
 # Тэкст песьні / Lyrics
 
 ## be
@@ -62,25 +64,41 @@ This song reinterprets Yanka Kupala’s iconic poem “A chto tam idzie” as a 
 
 ## en
 
-And who goes there, and who goes there,
-In such a vast and massive throng?
+And who goes there, and who goes there
+in such an enormous throng?
 — Belarusians.
 
-And what do they carry on their thin shoulders,
-In their bloodied hands, on their feet in bast shoes?
+And what do they carry on their gaunt shoulders,
+on hands all in blood, on feet in bast shoes?
 — Their grievance.
 
-And where are they carrying all this grievance,
-And where are they carrying it to show it to the world?
+And where do they carry this grievance entire,
+where do they carry it to show?
 — To the whole world.
 
-And who was it that taught them, millions of them,
-To bear this grievance, who woke them from their sleep?
-— Misery and sorrow.
+And who was it taught them — not a mere million —
+to bear the grievance, who woke them from sleep?
+— Woe, grief.
 
-And what is it, what is it they have come to desire,
-They, despised for ages, they, the blind and the deaf?
-— To be called human.
+And what, oh what have they come to desire,
+they, scorned for ages — the blind, the deaf?
+— To be called people.
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
+- **The form.** A question-and-answer structure, like a folk call-and-response or a catechism: an outside voice asks, and the marching crowd answers in terse replies. The poem stages the moment a nameless peasant mass names itself — "Belarusians" — before the world.
+
+- **Kryŭda ("grievance").** The wrong one has suffered, an injustice borne. Carrying it "to show the whole world" means testimony rather than revenge — a demand that the wrong be recognized. It is the poem's central concept word.
+
+- **Bast shoes (lapci).** Footwear woven from lime-tree bark, the mark of the poorest peasants. Belarusians were then an overwhelmingly peasant people; gaunt shoulders, bloodied hands and bast shoes compress that condition into a single line.
+
+- **Hramada ("throng").** A great crowd, but also a community or assembly — and the name of the first Belarusian political organizations (the Belarusian Socialist Hramada was active exactly when the poem was written), so for contemporaries the word carried a political ring: the people gathering as one body.
+
+- **"To be called people" (liudźmi zvacca).** The poem's last two words became the foundational formula of Belarusian self-assertion — a demand not for power or privilege but for elementary human and national dignity. Liudzi means both "people" and "human beings," so the phrase claims humanity and peoplehood in one breath; it has been quoted for over a century, up to the protest banners of 2020.
 
 # Промпт стылю / Style prompt
 

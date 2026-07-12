@@ -48,27 +48,26 @@ This is an attempt to hear familiar lines in a different space: somewhere betwee
 
 ## be
 
-Немінуча... Гаюча... Нанова...
+Inevitably... Healingly... Anew...
+the heartfelt word unfolds.
+The mother tongue — a holy wellspring —
+turns our intentions back to the headwaters.
 
-Раскрываецца шчырае слова.
-Мова маці — Крыніца святая —
-Да вытокаў намеры вяртае.
+Like lofty daydreams, the clouds...
+the sky's thoughts rescue us from the swelter...
 
-Як высокія мроі, аблокі...
-Думкі неба ратуюць ад спёкі...
+We in this world are duty-bound:
+to nurture the language of our native Fatherland!
+Inevitably, Healingly, Anew —
+the heartfelt word unfolds!
 
-Мы на гэтым свеце павінны!
-Гадаваць мову роднай Айчыны!
-Немінуча, Гаюча, Нанова —
-Раскрываецца шчырае слова!
+We in this world are duty-bound:
+to nurture the language of our native Fatherland!
+Inevitably, Healingly, Anew —
+the heartfelt word unfolds!
 
-Мы на гэтым свеце павінны!
-Гадаваць мову роднай Айчыны!
-Немінуча, Гаюча, Нанова —
-Раскрываецца шчырае слова!
-
-Мова маці... Крыніца святая...
-Мова Нанова...
+The mother tongue... A holy wellspring...
+Mova Nanova...
 
 ## en
 
@@ -93,6 +92,12 @@ The sincere word opens up wide!
 
 Mother’s tongue... A sacred spring...
 The Tongue Anew...
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
 
 # Промпт стылю / Style prompt
 

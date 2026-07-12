@@ -48,8 +48,6 @@ An identical prompt is no guarantee of an identical result — and, oddly enough
 
 ## be
 
-## be
-
 У нас сягодня Купала, то-то-то
 Ня дзеўка агонь клала, то-то-то
 Сам Бог агонь раскладаў, то-то-то
@@ -123,6 +121,12 @@ Come to us, Illia...
 
 Kupala has come to us today, to-to-to
 He called all the saints to His side, to-to-to
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
 
 # Промпт стылю / Style prompt
 

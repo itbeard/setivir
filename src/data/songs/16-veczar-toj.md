@@ -2,7 +2,7 @@
 
 ## be
 
-Вечар той
+Вечар Той
 
 ## en
 
@@ -38,6 +38,8 @@ Viečar toj — гэта яе сучасная адаптацыя ў праст�
 ## en
 
 “Kali kalina ne cvila” (“When the Guelder-Rose Did Not Bloom”) — the original bearing this title is a Belarusian folk song about love, parting, and memory.
+
+- **The song.** A lyrical recruit song — a vast folk genre born of conscription, when a village lad was taken "for a soldier" for years at a time and the girl rarely waited. This particular song lives on both sides of the Belarusian–Ukrainian borderland: nearly identical Ukrainian variants are widely sung, with the same kalina opening, the same kerchief refrain, and even the son named Vasil. Polesia, the marshland spanning the two countries, shares one song stock, and many songs exist in both languages at once.
 
 “Viečar toj” is its modern adaptation in the space of melodic dubstep / future garage: a sad and heavy electronic ballad about a boy and a girl, about an evening that will not let go, and a heart that “now languished, now ached.”
 In the town of Rakaŭ, this song was traditionally sung from the boy’s point of view — and it is precisely this male perspective on lost love that became the emotional heart of the track.
@@ -87,44 +89,60 @@ In the town of Rakaŭ, this song was traditionally sung from the boy’s point o
 
 ## en
 
-If the guelder-rose (kalina) does not bloom,
-Then do not break the guelder-rose.
-If you have not been in the army,
-Then do not love a girl.
-I remember that evening when you were with me,
-In farewell, time after time, you waved your kerchief.
+If the kalina is not in bloom,
+then do not break the kalina.
+If you have not been to the army,
+then do not love a girl.
+I remember that evening when you were with me:
+at parting, time after time, you waved your kerchief.
 
-Waved your kerchief...
-Waved your kerchief...
+You waved your kerchief...
+You waved your kerchief...
 I remember that evening!
 
-I remember that evening when you were with me,
-In farewell, time after time, you waved your kerchief!
-I remember that evening when you were with me,
-In farewell, time after time, you waved your kerchief!
+I remember that evening when you were with me:
+at parting, time after time, you waved your kerchief!
+I remember that evening when you were with me:
+at parting, time after time, you waved your kerchief!
 
-Vasilyok came to me
-And sat down by the bed:
-"Goodbye, dear girl, goodbye,
-For I am going to be a soldier."
+Vasiliok came to me
+and sat down by the bed:
+"Farewell, dear lassie, farewell,
+for I am going for a soldier."
 
 For I am going...
-For I am going to be a soldier!
+For I am going for a soldier!
 
-I remember that evening when you were with me,
-In farewell, time after time, you waved your kerchief!
-I remember that evening when you were with me,
-In farewell, time after time, you waved your kerchief!
+I remember that evening when you were with me:
+at parting, time after time, you waved your kerchief!
+I remember that evening when you were with me:
+at parting, time after time, you waved your kerchief!
 
-When I went to the army,
-You were an unmarried girl.
-When I returned from the army —
-You were rocking a son.
+When I was leaving for the army,
+you were still a maiden.
+When I came back from the army —
+you were rocking a son.
 I remember that evening when the village was burning,
-And my heart for you now languished, now ached.
+and my heart for you would swoon, then ache.
 
-Now languished... now ached...
+It swooned... it ached...
 The village was burning...
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
+- **Kalina (guelder rose).** The central flower of East Slavic folk lyric: the blooming kalina stands for a young girl and her maidenhood, and "breaking the kalina" means taking a bride — or her innocence. Hence the opening parallelism: an unblooming kalina must not be broken :: a girl must not be courted before army service. Nature image first, human meaning second — the classic device of folk poetics.
+
+- **The kerchief.** Waving a kerchief (chuscina) is the canonical farewell gesture of these songs; a kerchief was also the keepsake a girl gave her departing recruit. The refrain loops on that single image the way memory itself does.
+
+- **Vasiliok.** A diminutive of the name Vasil (Basil) — and, as a common noun, the Belarusian word for "cornflower." Folk songs love lads with flower names; the pun keeps him half boy, half flower of the field.
+
+- **Alternating voices.** The verses switch speakers: the lad's rueful advice; then the girl's memory of his farewell at her bedside; then the lad again, back from service to find her rocking a son (whose — the song pointedly does not say). Songs of this type grew by accretion of couplets, so the "plot" is a braid of two voices rather than a single story.
+
+- **"The village was burning."** Folk hyperbole and dark humor in one line: the night is memorable because the village burned — and because his heart "swooned, then ached." Fires were the calendar of village catastrophe, and setting heartbreak beside one both mocks the feeling and magnifies it.
 
 # Промпт стылю / Style prompt
 

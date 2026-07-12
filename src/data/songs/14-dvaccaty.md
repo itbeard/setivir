@@ -36,12 +36,8 @@ Nasta Kudasava
 
 The song "Dvaccaty" (The Twentieth) is a soulful encounter between music and the poignant words of the outstanding Belarusian poet Nasta Kudasava. Her poetry is a profound journey into the world of emotions, where every line resonates like an echo in the soul. Nasta is one of the most penetrating voices in contemporary Belarusian literature. Her creative path is marked by landmark collections that have become significant events for readers: "Leaves of my hands" (2006), "Fishes" (2013), "My nievymaŭlja" (2016), "Spring. The mouth is tight" (2021), "Nearby", (2022), "I’m continuing", (2023). Nasta's works have been translated into Ukrainian, English, Polish, Czech, and Bulgarian, reaching hearts across borders.
 
-Contextual Notes for International Readers:
-- "Thirty-seven" (1937) and the Night of the Executed Poets: While 1937 was the peak of the Great Purge across the USSR, in Belarus, it holds a specific, agonizing meaning. On the night of October 29–30, 1937, the Soviet secret police (NKVD) executed more than 100 representatives of the Belarusian intellectual elite — poets, writers, scientists, and public figures — in a single night. This "Night of the Executed Poets" was an attempt to decapitate the Belarusian nation. By mentioning "37," the poem speaks of a historical trauma that was never fully healed or even publicly mourned for decades.
+**The poem.** By Nasta Kudasava (b. 1984), one of the most widely read Belarusian poets of the 2020 protest wave; this is among her best-known poems of that time, shared and quoted far beyond literary circles.
 
-- Kurapaty: A wooded area on the outskirts of Minsk where the Soviet secret police (NKVD) executed and buried tens of thousands of people between 1937 and 1941. In modern Belarus, it is a symbol of suppressed memory and state terror. The "howling of Kurapaty" refers to the uneasy conscience of a society trying to ignore its bloody past.
-
-- Twenty (2020): Refers to the year 2020 in Belarus, when peaceful protests against election fraud were met with unprecedented violence, mass arrests, and torture. The poem suggests that because the crimes of 1937 were never fully reckoned with, they "knocked again" in 2020.
 
 # Тэкст песьні / Lyrics
 
@@ -51,10 +47,12 @@ Contextual Notes for International Readers:
 каб не чуць выццё Курапатаў.
 мы не верылі ў трыццаць сёмы –
 і да нас пагрукаў дваццаты.
+
 гэта вусціш сапрэлым лісцем
 набіваецца ў торбы целаў.
 я б хацела прачнуцца, выйсці,
 выплыць, вылецець я б хацела…
+
 мы не верылі ў трыццаць сёмы,
 не глядзелі ў твар Курапатам,
 мы, стаіўшыся, спалі дома –
@@ -62,20 +60,36 @@ Contextual Notes for International Readers:
 
 ## en
 
-We loved to lock ourselves at home,
-so as not to hear the howling of Kurapaty.
-We didn't believe in thirty-seven —
-and then twenty knocked at our door.
+we liked to lock ourselves in at home
+so as not to hear the howl of Kurapaty.
+we did not believe in thirty-seven —
+and twenty came knocking at our door.
 
-This horror, like rotted leaves,
-is stuffed into the sacks of our bodies.
-I would like to wake up, to step out,
-to swim out, to fly away, I’d like to...
+this dread, like moldered leaves,
+packs itself into the sacks of our bodies.
+i would like to wake up, to walk out,
+to swim out, to fly out i would like…
 
-We didn't believe in thirty-seven,
-never looked Kurapaty in the eye,
-we lay low and slept at home —
-and then twenty knocked at our door.
+we did not believe in thirty-seven,
+we did not look Kurapaty in the face,
+we, lying low, slept at home —
+and twenty came knocking at our door.
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
+- **Kurapaty.** A pine wood on the northeastern edge of Minsk where the NKVD shot and buried its victims in 1937–1941; estimates run from tens of thousands to well over a hundred thousand people. The mass graves were publicly revealed in 1988, at the dawn of the Belarusian national revival, and the site became the country's central place of memory of Stalinist terror — never properly acknowledged by the state, its memorial crosses repeatedly bulldozed. The city has grown right up to the wood: people drive past it every day, close enough to "hear the howl."
+
+- **"Thirty-seven."** 1937 — across the former USSR, shorthand for the peak of Stalin's Great Terror. "We did not believe in thirty-seven" means treating it as something distant and unrepeatable.
+
+- **"Twenty."** 2020 — the falsified presidential election in Belarus and the mass protests that followed, crushed with beatings, torture in detention centers (the Akrestsina jail in Minsk became their symbol), and tens of thousands of arrests. The poem's hinge is the rhyme of the two dates: the terror people refused to look at returned to their own doors.
+
+- **The knock.** In Soviet memory, the night-time knock on the door is the emblem of arrest. In 2020–2021 it came back literally, as security forces knocked on — or broke down — the doors of protesters. Hence "twenty came knocking."
+
+- **The feminine voice.** The verb form *я б хацела* ("i would like") marks the speaker as a woman — a nuance English grammar cannot carry, and a resonant one in a year when women became the visible face of the Belarusian protests.
 
 # Промпт стылю / Style prompt
 
