@@ -107,7 +107,7 @@ export const ui = {
   },
   'lyrics.notes': {
     be: 'Заўвагі да тэксту',
-    en: 'A few notes on the lyrics',
+    en: 'Notes on the lyrics',
   },
   'lyrics.translationNote': {
     be: 'Пераклад, набліжаны па сэнсе да арыгіналу.',
