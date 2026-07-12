@@ -33,7 +33,7 @@ Artur Volski
 Усе беларускія дзеці майго пакаленьня (і ня толькі) ведаюць, хто такі Дзед Барадзед: лялька-вядоўца «Калыханкі» на Беларускім тэлебачаньні майго дзяцінства. Прыдумаў дабрадушнага дзеда — і песеньку для яго — паэт Артур Вольскі ў 1987 годзе, а музыку напісаў кампазытар Леанід Захлеўны, пазьней народны артыст Беларусі і заснавальнік ансамбля «Бяседа». З гэтай знакамітай песенькі «Калыханка» і пачыналася.
 
 ::: cut Паслухаць арыгінальнага «Дзеда Барадзеда»
-![«Дзед Барадзед»](https://www.youtube.com/watch?v=zeLiiPDT73Q)
+![«Дзед Барадзед»](https://www.youtube.com/watch?v=HWbTO1f3uNE)
 :::
 
 «Дзеда Барадзеда» перасьпявалі ня раз — чаго вартая адна толькі [метал-вэрсія](https://www.youtube.com/watch?v=uedjqVPfU_o) ад UltraВожыка! — таму было няпроста прыдумаць, што тут яшчэ можна зрабіць. Але ідэя прыйшла сама сабой пры чарговым перачытваньні тэксту. Прыслухайцеся: ён абышоў белы сьвет, можа ўсё, будзе з вамі побач усюды і нават ведае, што вы бачыце ўва сьне. Уявіце сабе такога касьмічнага вандроўніка — магутнага і памяркоўнага, шчырага іншапланетніка, добрага «дзеда зораў», адвечнага апекуна чалавецтва, які прыглядае за кожным з нас. Гэты вобраз моцна засеў у галаве, і я вырашыў зрабіць для такога героя песьню адпаведнага настрою і гучаньня.
@@ -45,7 +45,7 @@ Artur Volski
 Every Belarusian child of my generation (and not only mine) knows who Dzied Baradzied is (*Дзед Барадзед* — roughly "Old Man Beardybeard," a playful blend of the Belarusian words for "beard" and "grandpa"): the puppet host of «Калыханка» (*Kalykhanka*, "The Lullaby"), the bedtime show on Belarusian television in the days of my childhood. The show's famous closing lullaby has already sounded in this gallery — and it opened with the little song of Dzied Baradzied himself. Both the good-natured old man and his song were dreamed up in 1987 by the poet Artur Volski; the music was written by the composer Leanid Zakhleuny, later a People's Artist of Belarus and the founder of the folk-music ensemble Biasieda.
 
 ::: cut Listen to the original Dzied Baradzied
-![Dzied Baradzied](https://www.youtube.com/watch?v=zeLiiPDT73Q)
+![Dzied Baradzied](https://www.youtube.com/watch?v=HWbTO1f3uNE)
 :::
 
 Dzied Baradzied has been covered more than once — the [metal version](https://www.youtube.com/watch?v=uedjqVPfU_o) by UltraVozhyk (literally "UltraHedgehog") alone is worth hearing! — so it was not easy to think of anything new to do here. But the idea arrived on its own during yet another rereading of the lyrics. Listen closely: he has walked the whole wide world, he can do anything, he will be by your side everywhere, and he even knows what you see in your dreams. Now imagine such a cosmic wanderer — mighty yet *pamiarkoŭny* (a famously untranslatable Belarusian word for a mild, patient, easygoing temper, which Belarusians half-jokingly consider their defining national trait), a sincere extraterrestrial, a kind "grandfather of the stars," the eternal guardian of humanity who watches over each of us. The image stuck in my head, and I decided this character deserved a song to match his mood and sound.
