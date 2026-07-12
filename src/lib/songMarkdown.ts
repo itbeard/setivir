@@ -25,6 +25,7 @@ export interface ParsedSong {
   lyricsAuthor: Localized
   description: Localized
   lyrics: Localized
+  lyricsNotes: Localized
   stylePrompt: string
   lyricsPrompt: string
 }
@@ -36,6 +37,7 @@ type FieldKey =
   | 'lyricsAuthor'
   | 'description'
   | 'lyrics'
+  | 'lyricsNotes'
   | 'stylePrompt'
   | 'lyricsPrompt'
 
@@ -60,6 +62,10 @@ const LABEL_TO_FIELD: Record<string, FieldKey> = {
   'тэкст песні': 'lyrics',
   'тэкст': 'lyrics',
   'lyrics': 'lyrics',
+  'заўвагі да тэксту': 'lyricsNotes',
+  'заувагі да тэксту': 'lyricsNotes',
+  'notes on the lyrics': 'lyricsNotes',
+  'lyrics notes': 'lyricsNotes',
   'промпт стылю': 'stylePrompt',
   'style prompt': 'stylePrompt',
   'промпт тэксту': 'lyricsPrompt',
@@ -71,6 +77,7 @@ const BILINGUAL: ReadonlySet<FieldKey> = new Set<FieldKey>([
   'lyricsAuthor',
   'description',
   'lyrics',
+  'lyricsNotes',
 ])
 
 /** Collapse collected lines into a trimmed block, preserving inner newlines. */
@@ -164,6 +171,7 @@ export function parseSongMarkdown(raw: string): ParsedSong {
     lyricsAuthor: bi('lyricsAuthor'),
     description: bi('description'),
     lyrics: bi('lyrics'),
+    lyricsNotes: bi('lyricsNotes'),
     stylePrompt: sc('stylePrompt'),
     lyricsPrompt: sc('lyricsPrompt'),
   }

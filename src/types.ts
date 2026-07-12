@@ -44,6 +44,13 @@ export interface Song {
    */
   lyrics: Localized
   /**
+   * Optional commentary on the lyrics (references, translation notes …),
+   * shown as its own disclosure between the lyrics and the style prompt.
+   * Supports the description's Markdown. An empty language side is simply
+   * not rendered for that language.
+   */
+  lyricsNotes: Localized
+  /**
    * Cover visualizer for this song while it plays — a key of VISUALIZERS in
    * components/visualizers/registry.ts. Omit for the default (embers).
    */

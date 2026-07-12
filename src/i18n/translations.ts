@@ -105,6 +105,10 @@ export const ui = {
     be: 'Тэкст песьні',
     en: 'Lyrics',
   },
+  'lyrics.notes': {
+    be: 'Заўвагі да тэксту',
+    en: 'A few notes on the lyrics',
+  },
   'lyrics.translationNote': {
     be: 'Пераклад, набліжаны па сэнсе да арыгіналу.',
     en: 'A translation that conveys the approximate meaning of the original.',

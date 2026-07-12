@@ -74,25 +74,6 @@ That is how "Rodny Flow" was born — out of the desire to give life to lyrics o
 
 P.S. The lyrics hide more than the obvious nods to people, events, and history. There are also references to specific works by Yanka Kupala and Yakub Kolas (the founding classics of modern Belarusian literature), Uladzimir Karatkievich (the novelist who gave Belarusians a romantic vision of their own past), Vasil Bykaŭ (the unflinching chronicler of World War II, and internationally the best-known Belarusian writer), and Siarhei Hrakhouski (a poet who survived Stalin's camps and lived to write about them).
 
-::: cut A few notes on the lyrics
-
-- The chorus line "from your great-grandfathers, from time out of mind" quotes the opening of Yanka Kupala's "Spadchyna" ("Heritage") — the very poem behind the guslee.bel video on the second track's page.
-- "The native corner… no strength to forget" reworks the famous opening of Yakub Kolas's verse novel "Novaja Ziamlia" ("The New Land").
-- Uladzimir Karatkievich — the beloved historical novelist; Kandrat Krapiva — classic satirist and fabulist; the Radzivils (Radziwiłł) — the mightiest magnate dynasty of the Grand Duchy of Lithuania; Francysk Skaryna — the first East Slavic book printer (1517); Vitaut — the Grand Duke at the height of the Grand Duchy of Lithuania, the medieval state Belarusians claim as their own; Euphrosyne of Polatsk — 12th-century abbess and enlightener, patron saint of Belarus.
-- Rahvalod, Rahnieda, Uladzimir, Iziaslau — a 10th-century Polatsk drama: Prince Uladzimir of Kyiv killed Rahvalod of Polatsk and took his daughter Rahnieda by force; years later, after Rahnieda tried to avenge herself, their young son Iziaslau raised a sword to shield his mother — and from him the Polatsk princely line descends.
-- Maks Korzh — the most famoust stadium-scale rapper from Luninets, Belarus, who performs in Russian.
-- The mova — literally "the language": how Belarusians refer to Belarusian when speaking it is a statement.
-- The white-red-white flag — the historical national flag of Belarus and the symbol of its democratic movement; displaying it at home today can get you arrested. One legend traces the red stripe to a wounded warrior's blood-soaked bandage raised as a banner.
-- "Why the wild thyme is fragrant" nods to "Pakhnie Chabor," a much-loved poem by Piatrus Broŭka.
-- NRM — legendary Belarusian rock band (the name stands for "Independent Republic of Dreams"); Siarhei Bashlykevich — singer-songwriter, frontman of the band Leibonik; Andrej Khadanovich — poet and translator.
-- Viktar Martsinovich — novelist ("Mova", "Paranoia").
-- Vyraj — an untranslatable Belarusian word: the mythical warm land where the birds fly away for winter. In some way it is a bit similar to "paradise" concept.
-- The "fine yellow sand" points to Vasil Bykaŭ's story "The Yellow Sand," where the road leads to the NKVD execution pits.
-- Aliaksandr Charnukha — writer and music critic; his novel "Pigs" and story collection "Violence" are biting satires of Belarusian reality after 2020.
-- Sasha Filipenka — Belarusian novelist widely translated across Europe.
-- Tuteishyia — "the ones from here": the key word of this whole gallery (see the intro). "Tuteishyia princes" is the track's jab at those who rule the here-and-now.
-:::
-
 # Тэкст песьні / Lyrics
 
 ## be
@@ -218,6 +199,28 @@ How the red of blood came to lie upon that banner,
 And why to this day it frightens the tuteishyia princes.
 And once you have read of all this in your own native word,
 You will understand what it means to bear the name of a worthy Belarusian.
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
+- The chorus line "from your great-grandfathers, from time out of mind" quotes the opening of Yanka Kupala's "Spadchyna" ("Heritage") — the very poem behind the guslee.bel video on the second track's page.
+- "The native corner… no strength to forget" reworks the famous opening of Yakub Kolas's verse novel "Novaja Ziamlia" ("The New Land").
+- Uladzimir Karatkievich — the beloved historical novelist; Kandrat Krapiva — classic satirist and fabulist; the Radzivils (Radziwiłł) — the mightiest magnate dynasty of the Grand Duchy of Lithuania; Francysk Skaryna — the first East Slavic book printer (1517); Vitaut — the Grand Duke at the height of the Grand Duchy of Lithuania, the medieval state Belarusians claim as their own; Euphrosyne of Polatsk — 12th-century abbess and enlightener, patron saint of Belarus.
+- Rahvalod, Rahnieda, Uladzimir, Iziaslau — a 10th-century Polatsk drama: Prince Uladzimir of Kyiv killed Rahvalod of Polatsk and took his daughter Rahnieda by force; years later, after Rahnieda tried to avenge herself, their young son Iziaslau raised a sword to shield his mother — and from him the Polatsk princely line descends.
+- Maks Korzh — the most famoust stadium-scale rapper from Luninets, Belarus, who performs in Russian.
+- The mova — literally "the language": how Belarusians refer to Belarusian when speaking it is a statement.
+- The white-red-white flag — the historical national flag of Belarus and the symbol of its democratic movement; displaying it at home today can get you arrested. One legend traces the red stripe to a wounded warrior's blood-soaked bandage raised as a banner.
+- "Why the wild thyme is fragrant" nods to "Pakhnie Chabor," a much-loved poem by Piatrus Broŭka.
+- NRM — legendary Belarusian rock band (the name stands for "Independent Republic of Dreams"); Siarhei Bashlykevich — singer-songwriter, frontman of the band Leibonik; Andrej Khadanovich — poet and translator.
+- Viktar Martsinovich — novelist ("Mova", "Paranoia").
+- Vyraj — an untranslatable Belarusian word: the mythical warm land where the birds fly away for winter. In some way it is a bit similar to "paradise" concept.
+- The "fine yellow sand" points to Vasil Bykaŭ's story "The Yellow Sand," where the road leads to the NKVD execution pits.
+- Aliaksandr Charnukha — writer and music critic; his novel "Pigs" and story collection "Violence" are biting satires of Belarusian reality after 2020.
+- Sasha Filipenka — Belarusian novelist widely translated across Europe.
+- Tuteishyia — "the ones from here": the key word of this whole gallery (see the intro). "Tuteishyia princes" is the track's jab at those who rule the here-and-now.
 
 # Промпт стылю / Style prompt
 

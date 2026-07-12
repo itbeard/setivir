@@ -90,6 +90,7 @@ function buildSongs(): Song[] {
       lyricsAuthor: f.lyricsAuthor,
       description: f.description,
       lyrics: f.lyrics,
+      lyricsNotes: f.lyricsNotes,
       visualizer: asset.viz,
       stylePrompt: f.stylePrompt,
       lyricsPrompt: f.lyricsPrompt,

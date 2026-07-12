@@ -48,6 +48,7 @@ export function SongScreen({
   const description = loc(song.description)
   const descPlaceholder = isPlaceholder(description)
   const lyrics = loc(song.lyrics)
+  const lyricsNotes = loc(song.lyricsNotes).trim()
 
   return (
     <section
@@ -133,6 +134,9 @@ export function SongScreen({
                 : undefined
             }
           />
+          {lyricsNotes && (
+            <PromptDisclosure label={t('lyrics.notes')} content={lyricsNotes} markdown />
+          )}
           <PromptDisclosure label={t('prompt.style')} content={song.stylePrompt} />
           <PromptDisclosure label={t('prompt.lyrics')} content={song.lyricsPrompt} />
         </div>

@@ -42,12 +42,6 @@ In 2025 it so happened that I celebrated two Kupalles just a week apart, both wi
 
 In the end I decided it was time to fire up Suno, the AI music generator, once again — and make a dubstep adaptation, so the song would stay with me not only after Kupalle but all year round. This time I especially wanted to try fusing traditional Belarusian choral polyphony with heavy electronic rhythms — to set the Kupalle round dance spinning in a whirlpool of bass. The result is in front of you: the track "Kupala". Not bad at all, I'd say 😊
 
-::: cut A few notes on the lyrics
-
-- Illia is the prophet Elijah, whose feast day follows midsummer in the Belarusian folk calendar. The song is a dialogue: Kupala — personified here as a female figure — invites Elijah to the feast, and he refuses: he must stand guard over the ripening rye all night, so that the serpent does not trample the stalks or dig up their roots.
-- "To-to-to" is a traditional refrain vocable with no lexical meaning, kept as in the original.
-:::
-
 # Тэкст песьні / Lyrics
 
 ## be
@@ -125,6 +119,15 @@ Come to us, Illia...
 
 Kupala has come to us today, to-to-to
 He called all the saints to His side, to-to-to
+
+# Заўвагі да тэксту / Notes on the lyrics
+
+## be
+
+## en
+
+- Illia is the prophet Elijah, whose feast day follows midsummer in the Belarusian folk calendar. The song is a dialogue: Kupala — personified here as a female figure — invites Elijah to the feast, and he refuses: he must stand guard over the ripening rye all night, so that the serpent does not trample the stalks or dig up their roots.
+- "To-to-to" is a traditional refrain vocable with no lexical meaning, kept as in the original.
 
 # Промпт стылю / Style prompt
 

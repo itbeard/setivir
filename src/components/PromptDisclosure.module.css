@@ -65,6 +65,49 @@
   overflow-wrap: anywhere;
 }
 
+/* Markdown body (the lyrics-notes panel) — description-voice prose instead of
+   the mono <pre>: same size/leading as .description, left-ragged. */
+.prose {
+  margin: 0 0 12px;
+  padding: 2px 2px 4px;
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--ink);
+  text-align: left;
+  text-align-last: auto;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose p + p {
+  margin-top: clamp(12px, 1.8vh, 20px);
+}
+
+.prose strong {
+  font-weight: 700;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.prose a:hover {
+  color: var(--red-deep);
+}
+
 /* ≥44px touch target on touch devices */
 @media (pointer: coarse) {
   .summary {
