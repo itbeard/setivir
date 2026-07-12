@@ -30,16 +30,19 @@ Natallia Arsenneva
 
 ## be
 
-Электронная адаптацыя песьні «Ціхая ноч...» (ням. «Stille Nacht...») у перакладзе Наталлі Арсенневай.
+**«Ціхая ноч»** — з тых песень, што нараджаюцца ня з гучнасьці, а зь цішыні. Упершыню калядка «Stille Nacht» прагучала ў 1818 годзе ў касьцёле маленькага аўстрыйскага мястэчка Обэрндорф пад Зальцбургам — проста, пад гітару, у ноч перад Калядамі. З таго часу яна абляцела ўвесь сьвет і загучала больш чым на сотню моваў, а ў 2011 годзе ЮНЭСКО абвясьціла яе нематэрыяльнай культурнай спадчынай. Беларуская вэрсія прыйшла праз рукі Наталлі Арсенневай — паэткі, якая ўмела чуць цішыню.
+
+[Наталля Арсеннева](https://be.wikipedia.org/wiki/%D0%9D%D0%B0%D1%82%D0%B0%D0%BB%D0%BB%D1%8F_%D0%90%D0%BB%D1%8F%D0%BA%D1%81%D0%B5%D0%B5%D1%9E%D0%BD%D0%B0_%D0%90%D1%80%D1%81%D0%B5%D0%BD%D0%BD%D0%B5%D0%B2%D0%B0) (1903–1997) — адна з найвыдатнейшых беларускіх паэтак мінулага стагодзьдзя. Другую палову жыцьця яна правяла ў выгнаньні, за акіянам, і адтуль — праз адлегласьць і тугу па радзіме — усё роўна пісала па-беларуску. З-пад яе пяра выйшаў і «[Магутны Божа](https://be.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B3%D1%83%D1%82%D0%BD%D1%8B_%D0%91%D0%BE%D0%B6%D0%B0)» (верш «Малітва», пакладзены на музыку [Міколам Равенскім](https://be.wikipedia.org/wiki/%D0%9C%D1%96%D0%BA%D0%BE%D0%BB%D0%B0_%D0%A0%D0%B0%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D1%96)) — неафіцыйны духоўны гімн Беларусі, словы, якія беларусы сьпяваюць у самыя важныя моманты. А ейная «Ціхая ноч» стала самай вядомай беларускай вэрсіяй калядкі — той, якую перадаюць з голасу ў голас.
+
+Таму, калі мяне папрасілі зрабіць калядны трэк ад Setivir, я не думаў доўга: адразу ў галаве ўсплыла «Ціхая ноч» Наталлі Аляксееўны. У гэтай адаптацыі тонкія ноты ўсходняга царкоўнага сьпеву кладуцца на глыбокі дабстэп і зіхоткія электратэкстуры — быццам старая калядка гучыць адначасова і зь мінуўшчыны, і з будучыні.
 
 ## en
 
-Electronic adaptation of the song “Silent Night…” (German “Stille Nacht…”) in the Belarusian translation by Natallia Arsenneva.
+«Ціхая ноч» (*Tsikhaia noch*) is the Belarusian "Silent Night" — one of those songs that are born not of loudness, but of silence. "Stille Nacht" was first performed in 1818 in the church of Oberndorf, a small Austrian town near Salzburg — simply, to a guitar, on Christmas Eve. Since then it has travelled the whole world and been sung in more than a hundred languages, and in 2011 UNESCO declared it an intangible cultural heritage. The Belarusian version came through the hands of Natallia Arsiennieva — a poet who knew how to hear silence.
 
-"Cichaja noč" is a Belarusian version of the classic Christmas carol “Silent Night”, centred on the peaceful night of Christ’s birth, the tenderness of Mary by the manger, the angels’ song to the shepherds, and a plea that sorrow and longing be driven away so people can rejoice. In the electronic adaptation, this Christmas motif is interwoven with subtle notes of religious Eastern chant laid over deep dubstep and shimmering electro textures.
+[Natallia Arsiennieva](https://en.wikipedia.org/wiki/Natallia_Arsiennieva) (1903–1997) was one of the finest Belarusian poets of the twentieth century. She spent the second half of her life in exile, across the ocean in the United States, and from there — through distance and longing for her homeland — she kept writing in Belarusian. It was her pen that also gave Belarus «[Магутны Божа](https://en.wikipedia.org/wiki/Mahutny_Bozha)» (*Mahutny Bozha*, "Almighty God") — a poem called "Malitva" ("A Prayer") that, set to music by the composer [Mikola Ravenski](https://en.wikipedia.org/wiki/Mikola_Ravienski), became the unofficial spiritual anthem of Belarus: the words Belarusians sing at their most important moments, from church services to the streets of the peaceful protests of 2020. And her "Tsikhaia noch" became the best-known Belarusian version of the carol — the one passed on from voice to voice.
 
-The base text is by Natallia Arsiennieva (1903–1997), one of the foremost Belarusian poets of the 20th century, who spent the second half of her life in exile in the US. She is also the author of "Mahutny Boža" ("O God Almighty"), the unofficial spiritual anthem of Belarus. Her "Cichaja noč" is the standard Belarusian version of the carol.
-
+So when I was asked to make a Christmas track for Setivir, I didn't have to think long: Arsiennieva's "Tsikhaia noch" surfaced in my mind at once. In this adaptation, delicate notes of Eastern church chant are laid over deep dubstep and shimmering electro textures — as if the old carol were sounding at once from the past and from the future.
 
 # Тэкст песьні / Lyrics
 
