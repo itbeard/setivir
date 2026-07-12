@@ -74,7 +74,7 @@ That is how "Rodny Flow" was born — out of the desire to give life to lyrics o
 
 P.S. The lyrics hide more than the obvious nods to people, events, and history. There are also references to specific works by Yanka Kupala and Yakub Kolas (the founding classics of modern Belarusian literature), Uladzimir Karatkievich (the novelist who gave Belarusians a romantic vision of their own past), Vasil Bykaŭ (the unflinching chronicler of World War II, and internationally the best-known Belarusian writer), and Siarhei Hrakhouski (a poet who survived Stalin's camps and lived to write about them).
 
-::: cut A few keys for readers from outside Belarus
+::: cut Notes for readers outside the Belarusian context
 
 - The chorus line "from your great-grandfathers, from time out of mind" quotes the opening of Yanka Kupala's "Spadchyna" ("Heritage") — the very poem behind the guslee.bel video on the second track's page.
 - "The native corner… no strength to forget" reworks the famous opening of Yakub Kolas's verse novel "Novaja Ziamlia" ("The New Land").
