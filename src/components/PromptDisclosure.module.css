@@ -51,6 +51,37 @@
   color: var(--ink-faint);
 }
 
+/* Hosts the copy button in the block's top-right corner. */
+.bodyWrap {
+  position: relative;
+}
+
+.copyBtn {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  color: var(--ink-faint);
+  /* Opaque backdrop so long first lines don't collide with the icon. */
+  background: var(--block-bg, var(--paper-2));
+  transition: color 0.15s var(--ease);
+}
+
+.copyBtn:hover {
+  color: var(--red);
+}
+
+.copyBtnDone,
+.copyBtnDone:hover {
+  color: var(--red);
+}
+
 /* Caption between the translation and the appended original-lyrics block */
 .originalLabel {
   display: flex;

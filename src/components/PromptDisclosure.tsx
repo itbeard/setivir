@@ -1,7 +1,42 @@
 import { isPlaceholder } from '../data/songs'
 import { cx } from '../lib/cx'
 import { Markdown } from '../lib/markdown'
+import { useCopyText } from '../hooks/useCopyText'
+import { useI18n } from '../i18n/I18nContext'
+import { CheckIcon, CopyIcon } from './icons'
 import styles from './PromptDisclosure.module.css'
+
+/** Preformatted text block with an optional copy button in its top-right corner. */
+function TextBlock({
+  content,
+  label,
+  copyable,
+}: {
+  content: string
+  /** Names the block in the copy button's aria-label. */
+  label: string
+  copyable: boolean
+}) {
+  const { t } = useI18n()
+  const { copied, copy } = useCopyText()
+  const placeholder = isPlaceholder(content)
+  return (
+    <div className={styles.bodyWrap}>
+      <pre className={cx(styles.body, placeholder && 'is-placeholder')}>{content}</pre>
+      {copyable && !placeholder && (
+        <button
+          type="button"
+          className={cx(styles.copyBtn, copied && styles.copyBtnDone)}
+          onClick={() => copy(content)}
+          aria-label={`${t('prompt.copy')} — ${label}`}
+          title={copied ? t('prompt.copied') : t('prompt.copy')}
+        >
+          {copied ? <CheckIcon /> : <CopyIcon />}
+        </button>
+      )}
+    </div>
+  )
+}
 
 export function PromptDisclosure({
   label,
@@ -9,6 +44,7 @@ export function PromptDisclosure({
   note,
   original,
   markdown = false,
+  copyable = false,
 }: {
   label: string
   content: string
@@ -19,6 +55,8 @@ export function PromptDisclosure({
   original?: { label: string; content: string }
   /** Render the content as Markdown prose instead of preformatted text. */
   markdown?: boolean
+  /** Show copy-to-clipboard buttons on the text blocks. */
+  copyable?: boolean
 }) {
   const placeholder = isPlaceholder(content)
   return (
@@ -33,12 +71,12 @@ export function PromptDisclosure({
           <Markdown text={content} />
         </div>
       ) : (
-        <pre className={cx(styles.body, placeholder && 'is-placeholder')}>{content}</pre>
+        <TextBlock content={content} label={label} copyable={copyable} />
       )}
       {original && (
         <>
           <p className={styles.originalLabel}>{original.label}</p>
-          <pre className={styles.body}>{original.content}</pre>
+          <TextBlock content={original.content} label={original.label} copyable={copyable} />
         </>
       )}
     </details>

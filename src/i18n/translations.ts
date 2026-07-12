@@ -101,6 +101,14 @@ export const ui = {
     be: 'Промпт тэксту',
     en: 'Lyrics prompt',
   },
+  'prompt.copy': {
+    be: 'Скапіяваць',
+    en: 'Copy',
+  },
+  'prompt.copied': {
+    be: 'Скапіявана',
+    en: 'Copied',
+  },
   'lyrics.label': {
     be: 'Тэкст песьні',
     en: 'Lyrics',

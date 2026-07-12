@@ -70,6 +70,45 @@ export function LinkIcon() {
   )
 }
 
+export function CopyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">
+      <rect
+        x="9"
+        y="9"
+        width="11.5"
+        height="11.5"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+      />
+      <path
+        d="M5.8 14.7H5.5a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2h7.2a2 2 0 0 1 2 2v.3"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+      />
+    </svg>
+  )
+}
+
+export function CheckIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">
+      <path
+        d="m5 12.8 4.7 4.7L19 7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  )
+}
+
 export function CloseIcon() {
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">

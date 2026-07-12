@@ -143,12 +143,13 @@ export function SongScreen({
                 ? { label: t('lyrics.original'), content: originalLyrics }
                 : undefined
             }
+            copyable
           />
           {lyricsNotes && (
             <PromptDisclosure label={t('lyrics.notes')} content={lyricsNotes} markdown />
           )}
-          <PromptDisclosure label={t('prompt.style')} content={song.stylePrompt} />
-          <PromptDisclosure label={t('prompt.lyrics')} content={song.lyricsPrompt} />
+          <PromptDisclosure label={t('prompt.style')} content={song.stylePrompt} copyable />
+          <PromptDisclosure label={t('prompt.lyrics')} content={song.lyricsPrompt} copyable />
         </div>
       </article>
 

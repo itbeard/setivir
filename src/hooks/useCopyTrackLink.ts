@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCopyText } from './useCopyText'
 
 /**
  * Copy a deep link to a song (the same #song-<slug> hash App.tsx honors).
@@ -6,35 +6,11 @@ import { useEffect, useRef, useState } from 'react'
  * "link copied" notice with it.
  */
 export function useCopyTrackLink(slug: string) {
-  const [copied, setCopied] = useState(false)
-  const timer = useRef<number | null>(null)
+  const { copied, copy: copyText } = useCopyText()
 
-  useEffect(
-    () => () => {
-      if (timer.current !== null) window.clearTimeout(timer.current)
-    },
-    [],
-  )
-
-  const copy = async () => {
+  const copy = () => {
     const { origin, pathname, search } = window.location
-    const url = `${origin}${pathname}${search}#song-${slug}`
-    try {
-      await navigator.clipboard.writeText(url)
-    } catch {
-      const ta = document.createElement('textarea')
-      ta.value = url
-      ta.setAttribute('readonly', '')
-      ta.style.position = 'fixed'
-      ta.style.opacity = '0'
-      document.body.appendChild(ta)
-      ta.select()
-      document.execCommand('copy')
-      ta.remove()
-    }
-    setCopied(true)
-    if (timer.current !== null) window.clearTimeout(timer.current)
-    timer.current = window.setTimeout(() => setCopied(false), 2200)
+    return copyText(`${origin}${pathname}${search}#song-${slug}`)
   }
 
   return { copied, copy }
