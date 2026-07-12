@@ -122,6 +122,25 @@ a:not([class]):hover {
   background: var(--card);
 }
 
+/* Photos open in a zoomable lightbox; the wrapping button keeps them
+   keyboard-reachable. Videos/YouTube keep their own controls instead. */
+.md-mediaButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border-radius: var(--radius);
+  cursor: zoom-in;
+  transition: transform 0.25s var(--ease);
+}
+
+.md-mediaButton:hover {
+  transform: scale(1.004);
+}
+
+.md-mediaButton:hover .md-media {
+  outline-color: var(--ink-faint);
+}
+
 /* YouTube iframes have no intrinsic size — pin the player to 16:9. */
 .md-youtube {
   aspect-ratio: 16 / 9;

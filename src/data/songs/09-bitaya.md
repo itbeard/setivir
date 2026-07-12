@@ -72,7 +72,7 @@ And then one day in 2008, when I was already studying in Minsk, Yelizaveta Stani
 
 Back then I did not yet fully understand who that "president" was, nor what consequences his "presidency" would bring in 2020 — for the country, and for me personally. But, as the Belarusian saying goes, you cannot throw a word out of a song — and the same holds for history: it was that very performance of "Bitaia darozhanka," with the long, piercing spoken introduction by Yelizaveta Stanislavauna, that stayed deep in my heart. And this is how Setivir's adaptation of the same name came into the world — one in which a mournful, touching female vocal, Belarusian folk singing, and my beloved dubstep came together in a strange and beautiful mixture. Like the original, this version sounds sorrowful — it is steeped in loneliness and the grief of parting — while the powerful electronic foundation only underlines the lyricism of the piece.
 
-::: cut Notes for readers outside the Belarusian context
+::: cut A few notes on the lyrics
 
 - The opening four lines are a declaimed call to arms that precedes the folk text in this arrangement — a different, almost epic register before the lyrical song begins. The "road of struggle" renders *daroha zmaharnaia*: *zmahar* is the Belarusian word for a fighter, one who struggles for freedom.
 - **Turaŭ** is one of the oldest cities of Belarus, first mentioned in the chronicles in 980 and once the seat of a medieval principality in the Palessie region. To see one's beloved off "as far as Turaŭ" is to walk beside the departing army for a long, long way.

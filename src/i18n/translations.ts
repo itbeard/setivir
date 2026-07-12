@@ -77,6 +77,22 @@ export const ui = {
     be: 'Паказаць відарыс',
     en: 'Show image',
   },
+  'md.enlarge': {
+    be: 'Павялічыць відарыс',
+    en: 'Enlarge image',
+  },
+  'lightbox.zoomIn': {
+    be: 'Наблізіць',
+    en: 'Zoom in',
+  },
+  'lightbox.zoomOut': {
+    be: 'Аддаліць',
+    en: 'Zoom out',
+  },
+  'lightbox.zoomReset': {
+    be: 'Зыходны маштаб',
+    en: 'Reset zoom',
+  },
   'prompt.style': {
     be: 'Промпт стылю',
     en: 'Style prompt',

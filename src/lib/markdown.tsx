@@ -1,7 +1,8 @@
-import { type CSSProperties, type ReactNode } from 'react'
+import { type CSSProperties, type ReactNode, useState } from 'react'
 import { assetUrl } from './assets'
 import { cx } from './cx'
 import { useI18n } from '../i18n/I18nContext'
+import { ImageLightbox } from '../components/ImageLightbox'
 
 /**
  * A tiny, dependency-free Markdown renderer for song descriptions.
@@ -27,7 +28,8 @@ import { useI18n } from '../i18n/I18nContext'
  *                       ![подпіс](https://www.youtube.com/watch?v=XXXX){cut}
  *                   The extension picks the tag: .mp4/.webm/.mov → <video>,
  *                   a YouTube link (watch/youtu.be/shorts/embed/live) → an
- *                   <iframe> player, anything else → <img>. The alt text
+ *                   <iframe> player, anything else → <img>. Images open in a
+ *                   zoomable lightbox on click. The alt text
  *                   becomes a caption
  *                   under the media (omit it for no caption); it supports the
  *                   inline syntax above, including [links](…). Optional
@@ -264,6 +266,7 @@ function mediaUrl(src: string): string {
 
 function MediaFigure({ alt, src, attrs }: { alt: string; src: string; attrs: string }) {
   const { t } = useI18n()
+  const [enlarged, setEnlarged] = useState(false)
   const { width, align, poster, cut } = parseAttrs(attrs)
   const url = mediaUrl(src)
   const style: CSSProperties | undefined = width ? { width } : undefined
@@ -292,9 +295,25 @@ function MediaFigure({ alt, src, attrs }: { alt: string; src: string; attrs: str
           poster={poster ? mediaUrl(poster) : undefined}
         />
       ) : (
-        <img className="md-media" src={url} alt={alt} loading="lazy" decoding="async" />
+        <button
+          type="button"
+          className="md-mediaButton"
+          onClick={() => setEnlarged(true)}
+          aria-label={alt ? `${t('md.enlarge')} — ${alt}` : t('md.enlarge')}
+          title={t('md.enlarge')}
+        >
+          <img className="md-media" src={url} alt={alt} loading="lazy" decoding="async" />
+        </button>
       )}
       {alt && <figcaption className="md-caption">{renderInline(alt, 'cap')}</figcaption>}
+      {enlarged && (
+        <ImageLightbox
+          src={url}
+          alt={alt}
+          caption={alt ? renderInline(alt, 'lb-cap') : undefined}
+          onClose={() => setEnlarged(false)}
+        />
+      )}
     </figure>
   )
 
