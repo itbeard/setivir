@@ -49,6 +49,11 @@ export function SongScreen({
   const descPlaceholder = isPlaceholder(description)
   const lyrics = loc(song.lyrics)
   const lyricsNotes = loc(song.lyricsNotes).trim()
+  // On the English version the Belarusian original follows the translation
+  // inside the same Lyrics disclosure.
+  const originalLyrics = song.lyrics.be
+  const showOriginal =
+    lang === 'en' && !isPlaceholder(originalLyrics) && originalLyrics !== lyrics
 
   return (
     <section
@@ -131,6 +136,11 @@ export function SongScreen({
             note={
               lang === 'en' && !isPlaceholder(lyrics)
                 ? t('lyrics.translationNote')
+                : undefined
+            }
+            original={
+              showOriginal
+                ? { label: t('lyrics.original'), content: originalLyrics }
                 : undefined
             }
           />

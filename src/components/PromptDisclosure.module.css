@@ -51,10 +51,31 @@
   color: var(--ink-faint);
 }
 
+/* Caption between the translation and the appended original-lyrics block */
+.originalLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 0 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.originalLabel::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--line);
+}
+
 .body {
   margin: 0 0 12px;
   padding: 12px 14px;
-  background: var(--paper-2);
+  /* --block-bg lets the host section flip the block color so it always
+     contrasts with the row background (see .altRow in SongScreen). */
+  background: var(--block-bg, var(--paper-2));
   border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: var(--fs-meta);

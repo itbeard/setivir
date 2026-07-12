@@ -110,8 +110,12 @@ export const ui = {
     en: 'Notes on the lyrics',
   },
   'lyrics.translationNote': {
-    be: 'Пераклад, набліжаны па сэнсе да арыгіналу.',
-    en: 'A translation that conveys the approximate meaning of the original.',
+    be: 'Пераклад, набліжаны па сэнсе да арыгіналу. Ніжэй — беларускі арыгінал.',
+    en: 'A translation that conveys the approximate meaning of the original. The Belarusian original follows below.',
+  },
+  'lyrics.original': {
+    be: 'Арыгінал',
+    en: 'Original (Belarusian)',
   },
   'a11y.skip': {
     be: 'Перайсьці да зьместу',

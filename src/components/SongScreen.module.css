@@ -4,9 +4,11 @@
   isolation: isolate;
 }
 
-/* Gallery rhythm: every 2nd song sits on --paper-2 (set via the alt prop). */
+/* Gallery rhythm: every 2nd song sits on --paper-2 (set via the alt prop).
+   Text blocks flip to --paper there so they keep contrast with the row. */
 .altRow {
   background: var(--paper-2);
+  --block-bg: var(--paper);
 }
 
 .card {
