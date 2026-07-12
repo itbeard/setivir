@@ -3,13 +3,18 @@
 A creative landing page for **Setivir** — an experimental AI-music project promoting
 Belarusian culture. The site is a one-screen-per-song scroll experience: an intro, then
 every song (oldest first) on its own full screen with its cover, story, description, the
-AI model used, the lyrics author, generation prompts (under a cut), the creation date, and
-a player. A persistent mini-player keeps the music going while you read.
+AI model used, the lyrics author, notes on the lyrics, generation prompts (under a cut),
+the creation date, and a player — followed by an outro. A persistent mini-player keeps
+the music going while you read, auto-advancing through the playlist.
 
 - **Bilingual** — Belarusian (тарашкевіца / classical orthography) and English, auto-detected
   from the browser with a manual toggle (remembered between visits).
 - **Minimalist gallery** aesthetic — warm paper, framed covers, an elegant serif, a single
   restrained Belarusian-red accent and a subtle вышыванка ornament.
+- **Audio-reactive cover visualizers** — ember sparks by default, with per-song alternatives
+  (bars, Orion constellation, lightning) driven by a shared spectral-flux beat tracker.
+- **Track order toggle** — chronological or newest-first, switched in the outro section and
+  remembered in `localStorage`.
 - **Responsive** — desktop and mobile.
 - Built with **React + TypeScript + Vite**.
 
@@ -25,13 +30,13 @@ npm run preview  # serve the built site locally
 ## Where the media lives
 
 - Audio: [`songs/`](songs/) — `*.mp3`
-- Covers: [`thumbnails/`](thumbnails/) — `1.jpg … 20.png`
+- Covers: [`thumbnails/`](thumbnails/) — `<id>.jpg|png` originals, plus generated
+  lightweight copies in `thumbnails/small/` (used in the feed; the originals are shown in
+  the image lightbox). Regenerate the small copies with `npm run thumbs` after adding a cover.
 
-Vite only serves/copies what lives under `public/`, so these two folders are **linked into
+Vite only serves/copies what lives under `public/`, so these folders are **linked into
 `public/`** automatically before every `dev` and `build` (by `scripts/link-assets.mjs`, run
-via the `predev` / `prebuild` npm hooks). No manual step and no duplication — just drop new
-files into `songs/` / `thumbnails/`, name the cover `<id>.jpg|png`, and add the entry in
-`src/data/songs.ts`.
+via the `predev` / `prebuild` npm hooks). No manual step and no duplication.
 
 > Note: there is a stale, *different* recording `songs/14. Dvaccaty.mp3` (the site uses the
 > newer `14. Setivir - Dvaccaty.mp3`). It's currently shipped in the build as ~5.5 MB of dead
@@ -39,31 +44,42 @@ files into `songs/` / `thumbnails/`, name the cover `<id>.jpg|png`, and add the 
 
 ## Editing songs
 
-All song content lives in **[`src/data/songs.ts`](src/data/songs.ts)**. Each entry has its
-title pre-filled; everything else starts as a clearly-marked `[…]` placeholder (shown muted
-on the site) for you to fill. Add fields via the `overrides` object:
+The text content of every song lives in its own Markdown file under
+**[`src/data/songs/`](src/data/songs/)**, named `NN-slug.md` (NN = track number). Fields are
+marked by `# Heading` sections, languages by `## be` / `## en` subheadings:
 
-```ts
-song(7, 'kupala', 'Купала', 'Kupala', 'jpg', '7. Setivir - Kupala.mp3', {
-  date: 'Сакавік 2025 / March 2025',
-  model: 'Suno v4',
-  lyricsAuthor: { be: 'Янка Купала', en: 'Yanka Kupala' },
-  description: { be: '…', en: '…' },   // from Instagram
-  history:     { be: '…', en: '…' },   // the story behind the song
-  stylePrompt:  'ethnic belarusian folk, female vocal, …',
-  lyricsPrompt: '…',
-}),
+```md
+# Назва / Title          # Дата / Date            # Мадэль / Model
+# Аўтар тэксту / Lyrics author
+# Апісаньне / Description
+# Тэкст песьні / Lyrics
+# Заўвагі да тэксту / Notes on the lyrics
+# Промпт стылю / Style prompt
+# Промпт тэксту / Lyrics prompt
 ```
 
-The array order is the page order (1 = oldest, shown first). A couple of titles are marked
-with `⚠` in the file — please verify the Cyrillic spelling/translation.
+The prose fields support Markdown: **bold**, *italic*, links, lists, quotes, images (opened
+in a zoomable lightbox), embedded YouTube videos, and `::: cut Title … :::` collapsible
+sections (see [`src/lib/markdown.tsx`](src/lib/markdown.tsx)).
+
+**[`src/data/songs.ts`](src/data/songs.ts)** keeps only the technical plumbing — the `ASSETS`
+map with each song's cover extension, audio filename, and optional `viz` visualizer key
+(from [`src/components/visualizers/registry.ts`](src/components/visualizers/registry.ts)).
+
+To add a song:
+
+1. Create `src/data/songs/NN-slug.md` (copy the structure of an existing file).
+2. Add a line to `ASSETS` in `src/data/songs.ts` with the cover extension and mp3 name.
+3. Drop the audio into `songs/`, the cover into `thumbnails/NN.jpg|png`, and run
+   `npm run thumbs`.
 
 ## Customizing
 
+- **Intro / outro text** — [`src/data/site.md`](src/data/site.md), same field-under-heading
+  format as the song files.
 - **Colors / fonts / spacing** — design tokens in [`src/styles/theme.css`](src/styles/theme.css)
   (including a dark-mode block).
 - **UI strings** — [`src/i18n/translations.ts`](src/i18n/translations.ts).
-- **Project intro text** — the `hero.*` keys in the same file.
 
 ## Deploying
 
