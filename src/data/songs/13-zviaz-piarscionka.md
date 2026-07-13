@@ -20,21 +20,159 @@ Suno v5
 
 ## be
 
-Аляксей Картыннік
+Gemini / Аляксей Картыннік
 
 ## en
 
-Aliaksei Kartynnik
+Gemini / Aliaksei Kartynnik
 
 # Апісаньне / Description
 
 ## be
 
-Гэта ідэальны рэкап першай кнігі «Уладара Пярсьцёнкаў»: ад утульнага шынка ў Шыры і савета ў Рывендэле праз цемру Морыі і полымя Балрага да трагічнага распаду Брацтва. Калі вы збіраліся пераглядаць трылогію або проста сумуеце па Міжзем’і — гэты кліп абавязковы да прагляду.
+«Зьвяз Пярсьцёнка» — гэта ідэальны рэкап першай кнігі «Ўладара пярсьцёнкаў»: ад утульнага шынка ў Шыры і рады ў Рывэндэле, праз цемру Морыі і полымя Балрага — да трагічнага распаду самога Зьвязу. Калі вы зьбіраліся пераглядаць трылогію або проста сумуеце па Міжзем'і — абавязкова паглядзіце кліп да гэтага трэка: я зрабіў яго з нарэзак фільма, і выйшла даволі добра!
+
+::: cut Паглядзець кліп
+![Кліп «Зьвяз Пярсьцёнка»](https://www.youtube.com/watch?v=TulkTzgy4SM)
+:::
+
+А цяпер раскажу гісторыю зьяўленьня гэтага трэка. Так склалася, што ў нас, беларусаў, вельмі мала фільмаў і сэрыялаў, агучаных па-беларуску. І як заўсёды бывае зь беларускім кантэнтам — знаходзяцца руплівыя аматары, якія бяруцца латаць дзіркі. Так і з агучкай: сёньня ў нас ёсьць некалькі крутых студый, і ўсе яны аматарскія — хоць і робяць прафэсійную справу, ды не за вялікія грошы, на жаль. Так і жывём, добра, што так 😊 Дык вось, студыя агучкі «[Мой родны гук](https://t.me/moj_rodny_huk)» (Ягор, прывітаньне!) агучыла першую і другую часткі «Ўладара пярсьцёнкаў», і я ўпісаўся дапамагчы арганізаваць кінапрагляд другой часткі для нашай вроцлаўскай суполкі. Яшчэ на першым кінапраглядзе я хацеў быў прэзентаваць перад самім фільмам свой праект [DunkelSaga](https://www.youtube.com/@dunkelsaga/) (я ўжо распавядаў пра яго ў першым трэку «Родны Флоў») — ён акурат ствараўся вакол адметных падзей першай кнігі, — але тады пасаромеўся: падавалася, што і мова не тая (нямецкая), дый гэта ШІ-музыка, а на вуліцы быў пачатак-сярэдзіна 2025 году, і стаўленьне да ШІ было ня вельмі добрым. І вось паміж першым і другім паказамі зьяўляецца Setivir. Тады я і пастанавіў: падчас другога кінапаказу абавязкова прэзентую штосьці тэматычнае ад Setivir — па-беларуску і вакол першай часткі «Ўладара». Так нарадзілася ідэя зрабіць ШІ-трэк і кліп да яго з кароткім зьместам першай кнігі: каб і асьвяжыць памяць гледачоў, і прадставіць праект Setivir нашай суполцы.
+
+![Кінапрагляды ў нас у Вроцлаве традыцыйна касьцюмаваныя](media/13/valadar.jpg){width=70% align=center}
+
+Тэхнічная задача была ня самай простай. Па-першае, я разумеў, што трэк будзе доўгі — а значыць, хутчэй за ўсё, какафоній не пазьбегнуць: досьвед генерацыі доўгіх трэкаў на прыкладзе «Дзеда-Барадзеда» ў мяне ўжо быў. Па-другое, я дакладна ведаў, што ШІ ня зробіць дасканалы і цікавы тэкст, ды яшчэ й рыфмаваны. Тут трэба адзначыць, што паралельна з музыкай я раз-пораз правяраю, як ШІ спраўляецца з творчымі тэкстамі і вершамі. На той момант лідэрам была нейрасетка ад Google — Gemini: яна лепш за ўсіх падбірала рыфмы і рабіла «чалавечыя» тэксты, нешта больш-менш падобнае да паэзіі. Але, вядома, гэта было далёка ад чалавечага ўзроўню — нават майго, аматарскага. Таму я ўзяў .pdf з перакладам першай кнігі «Ўладара пярсьцёнкаў» 2008 году — мой улюбёны пераклад Дзьмітрыя Магілеўцава і Крысьціны Курчанковай, дарэчы, выдадзены класічным правапісам, амаль тым самым, якім напісаны і гэты сайт 😁 (ведаю-ведаю, тут ракаўская дзеясловіца!). Менавіта адтуль трэк узяў сваё імя: «Зьвяз Пярсьцёнка» — так у гэтым перакладзе называецца першы том.
+
+::: cut Хто пераклаў Толкіна на тарашкевіцу
+Асобнай гісторыі варты сам перакладчык. Дзьмітры Магілеўцаў — фізік-тэарэтык, доктар фізіка-матэматычных навук, член-карэспандэнт Нацыянальнай акадэміі навук Беларусі. Удзень ён займаецца квантавай оптыкай і інфарматыкай у Інстытуце фізікі імя Сьцяпанава, а ў вольны час разам з Крысьцінай Курчанковай падарыў беларусам «Хобіта» і ўсяго «Ўладара пярсьцёнкаў». Квантавая механіка і Міжзем'е — калі падумаць, цалкам сумежныя дысцыпліны: і там, і там трэба верыць у сусьветы, якіх не ўбачыш няўзброеным вокам 😊
+:::
+
+Дык вось, я закінуў кнігу ў Gemini і папрасіў зрабіць тэкст песьні паводле асноўных падзей. Трэба сказаць, што падзеі і таймлайн у выніковым тэксьце былі абраныя добра і давалі паступова ўвайсьці ў сутнасьць першай кнігі. Але лірыка і рыфма мне не спадабаліся — і давялося правесьці некалькі вечароў з нататнікам, каб самастойна давесьці тэкст да фінальнай вэрсіі. Напэўна, аўтары тэксту тут — і Толкін, і перакладчыкі, і ШІ, і я. Лічу, гэта прыклад сапраўднай супрацы чалавека з ШІ.
+
+::: cut Першая вэрсія тэксту і промпт да яе
+> Уяві сябе беларускім паэтам талкіністам і графаманам, які вельмі пільна сочыць за адсылкамі глыбінёй зместа нестандартнымі прыемамі. Зрабі тэкст да песьні, апісваючай падзеі першай часткі Уладара пярсцёнкаў. Песьня бузде у стылі касьмічнага прагрэсіў року у стылі Пінк Флойд. Тэкст на беларускай мове, прыкладаю .pdf з беларускім перакладам.
+
+**Выніковы тэкст:**
+
+*Гісторыя стала легендай, легенда зтлела ў міф
+Над утульнай Шыраўскай норкай навіс фатальны грыф
+У полымі хатнім, дзе смажыўся бекон і піўся эль
+Раптам праступіў з нябыту вогненны хмель
+Гэта не проста золата — гэта кроў і згуба каралёў
+Праклён Ісільдура патрабуе новых ахвярных галоў
+Зьбірайся, пляменнік! Пакінь свой спакойны кут
+Цябе чакае не прыгода... Цябе чакае пакут.
+
+Адзін Пярсцёнак Усяўладдзя — пятля на шыі сусвету
+Чорнае сонца ўзыходзіць паводле старажытнага запавету
+Ён цягне душу ў прывідны свет, дзе няма ні ценю, ні дня
+Толькі Вока... Бяссоннае Вока... і вечная валтузня
+Адзін Пярсцёнак...
+
+На Амон Сул разбіты камень памятае боль
+Моргульскі клінок пакінуў у сэрцы ледзяную соль
+Эльфійскія лекі спынілі яд, але не спынілі страх
+Цяпер кожны шолах — гэта Вораг, кожны цень — гэта крах
+Мы прайшлі праз снег Карадраса, дзе горы маюць свой нораў
+Але горш за сцюжу — здрада ў вачах сваіх жа партнёраў.
+
+Марыя... Кхазад-Дум! Бездань прагных гномаў!
+Тут цемра старэйшая за святло зорак і громаў
+Глыбінны Жах прачнуўся ад грукату вядра
+Полымя Удуна! Біч Балрога! Пякельная жара!
+Ты не пройдзеш!
+Ты не пройдзеш!
+Цень і Агонь зліліся ў адзін крык...
+І шэры пілігрым у бездань знік.
+
+Латлорыен змыў бруд, але не змыў смутак душы
+Люстэрка Галадрыэлі паказала пажар у цішы
+І вось Андуін Вялікі нясе нас да вадаспадаў Рэрас
+Расколатае Брацтва... Зламаны гонар... Хаос...
+Рог Гондара кліча, але рэха памірае ў лесе
+Барамір упаў, і спадчына сцерлася ў прэсе.
+
+Фрода адзін... Сэм ідзе ўслед...
+Наперадзе Мордар... Наперадзе трызненне і тлусты брэд...
+Пярсцёнак цяжэе...
+Пярсцёнак шэпча...
+Ash nazg durbatulûk...*
+:::
+
+Далей было некалькі дзясяткаў генерацый. Какафоній сапраўды хапала, але адзін з варыянтаў атрымаўся файным і з даволі малой колькасьцю памылак. Падчас працы давялося адмовіцца ад перагенерацыі кавалкамі (на доўгіх трэках Suno амаль не дазваляе рабіць яе праз недасканалы інтэрфэйс і праграмныя памылкі) і нават запісаць колькі фрагмэнтаў уласным голасам: напрыклад, шэпт у канцы — цалкам мой, бо ШІ згенераваў яго зусім няправільна. І вось праз некалькі дзён постапрацоўкі і выпраўленьня хібаў сьвет пабачыў трэк «Зьвяз Пярсьцёнка». Кліп да яго я рабіў цалкам самастойна яшчэ адзін дзень: дзякуй васьмі гадам працы зь відэа для YouTube — досьвед мантажу ў мяне быў 😊
 
 ## en
 
-This is the ideal recap of the first book of The Lord of the Rings: from a cozy inn in the Shire and the Council in Rivendell, through the darkness of Moria and the flame of the Balrog, to the tragic breaking of the Fellowship. If you were planning to re-watch the trilogy or just miss Middle-earth, this music video is a must-watch.
+«Зьвяз Пярсьцёнка» (*Zviaz Piarscionka*) is Belarusian for "The Fellowship of the Ring" — and this track is an ideal recap of the first book: from the cozy inn in the Shire and the Council in Rivendell, through the darkness of Moria and the Balrog's flame, to the tragic Breaking of the Fellowship itself. If you've been meaning to rewatch the trilogy, or simply miss Middle-earth — do watch the video for this track: I cut it together from scenes of the film, and it came out rather well!
+
+::: cut Watch the video
+![The "Zviaz Piarscionka" video](https://www.youtube.com/watch?v=TulkTzgy4SM)
+:::
+
+And now, the story of how this track came to be. It so happens that we Belarusians have very few films and series dubbed into Belarusian: our screens have long been dominated by Russian. And, as always with Belarusian-language content, dedicated amateurs step in to fill the gaps. So it is with dubbing: today there are several excellent studios, and all of them are amateur — doing thoroughly professional work, though for next to no money, alas. And so it goes — thank goodness it goes at all 😊 One of these studios, "[Мой родны гук](https://t.me/moj_rodny_huk)" ("My Native Sound" — hi, Yahor!), dubbed the first and second parts of The Lord of the Rings, and I signed up to help organize a screening of the second part for our community in Wrocław. Back at the first screening I had wanted to present my project [DunkelSaga](https://www.youtube.com/@dunkelsaga/) before the film — it was built precisely around the landmark events of the first book — but I got shy: the language felt wrong (the project is in German), and it was AI music; this was early-to-mid 2025, and attitudes toward AI were not exactly warm. And then, between the first and the second screenings, Setivir appears. That's when I resolved: at the second screening I would present something thematic from Setivir — in Belarusian, and built around the first part of The Lord of the Rings. So the idea was born: an AI track and a video with a condensed retelling of the first book — both to refresh the audience's memory and to introduce Setivir to our community.
+
+![Our film screenings in Wrocław are traditionally costumed](media/13/valadar.jpg){width=70% align=center}
+
+The technical task was not the simplest. First, I knew the track would be long — which meant, most likely, plenty of cacophony: I had already been through long-track generation with "Dzied-Baradzied". Second, I knew for certain that AI could not produce a polished, engaging text — let alone a rhymed one. I should mention that alongside the music I regularly test how AI handles creative writing and verse. At that moment the leader was Google's Gemini: it was the best at finding rhymes and producing "human" texts, something more or less resembling poetry. But it was, of course, far from human level — even from my own, amateur one. So I took a .pdf of the 2008 Belarusian translation of the first book — my favourite translation, by Dzmitry Mahileutsau and Kryscina Kurchankova, published, incidentally, in the classical Belarusian orthography (*Taraškievica*), the very one the Belarusian pages of this site are written in. That is where the track takes its name: "Zviaz Piarscionka" is what the first volume is called in this translation.
+
+::: cut The man who translated Tolkien into Taraškievica
+The translator deserves a story of his own. Dzmitry Mahileutsau is a theoretical physicist — Doctor of Physics and Mathematics, corresponding member of the National Academy of Sciences of Belarus. By day he works on quantum optics and quantum informatics at the Stepanov Institute of Physics; in his free time, together with Kryscina Kurchankova, he gave Belarusians "The Hobbit" and the whole of "The Lord of the Rings". Quantum mechanics and Middle-earth are, if you think about it, neighbouring disciplines: both require believing in worlds you cannot see with the naked eye 😊
+:::
+
+So: I fed the book to Gemini and asked it to write song lyrics based on the main events. To be fair, the events and the timeline in the resulting text were chosen well and eased the listener into the essence of the first book. But I didn't like the lyricism or the rhymes — and it took several evenings with a notebook to bring the text to its final version myself. The authors of these lyrics, I suppose, are Tolkien, the Belarusian translators, the AI, and me. I consider it an example of genuine human–AI collaboration.
+
+::: cut The first version of the lyrics and its prompt
+> Imagine yourself a Belarusian poet — a Tolkienist and a graphomaniac — who keeps a very close eye on references, depth of meaning, and unconventional devices. Write lyrics for a song describing the events of the first part of The Lord of the Rings. The song will be in the style of cosmic progressive rock, in the manner of Pink Floyd. The lyrics are to be in Belarusian; I attach a .pdf with the Belarusian translation.
+
+*(The prompt above is translated from Belarusian. The first draft below is kept in the original Belarusian — typos and all — as a document of the process.)*
+
+**The resulting text:**
+
+*Гісторыя стала легендай, легенда зтлела ў міф
+Над утульнай Шыраўскай норкай навіс фатальны грыф
+У полымі хатнім, дзе смажыўся бекон і піўся эль
+Раптам праступіў з нябыту вогненны хмель
+Гэта не проста золата — гэта кроў і згуба каралёў
+Праклён Ісільдура патрабуе новых ахвярных галоў
+Зьбірайся, пляменнік! Пакінь свой спакойны кут
+Цябе чакае не прыгода... Цябе чакае пакут.
+
+Адзін Пярсцёнак Усяўладдзя — пятля на шыі сусвету
+Чорнае сонца ўзыходзіць паводле старажытнага запавету
+Ён цягне душу ў прывідны свет, дзе няма ні ценю, ні дня
+Толькі Вока... Бяссоннае Вока... і вечная валтузня
+Адзін Пярсцёнак...
+
+На Амон Сул разбіты камень памятае боль
+Моргульскі клінок пакінуў у сэрцы ледзяную соль
+Эльфійскія лекі спынілі яд, але не спынілі страх
+Цяпер кожны шолах — гэта Вораг, кожны цень — гэта крах
+Мы прайшлі праз снег Карадраса, дзе горы маюць свой нораў
+Але горш за сцюжу — здрада ў вачах сваіх жа партнёраў.
+
+Марыя... Кхазад-Дум! Бездань прагных гномаў!
+Тут цемра старэйшая за святло зорак і громаў
+Глыбінны Жах прачнуўся ад грукату вядра
+Полымя Удуна! Біч Балрога! Пякельная жара!
+Ты не пройдзеш!
+Ты не пройдзеш!
+Цень і Агонь зліліся ў адзін крык...
+І шэры пілігрым у бездань знік.
+
+Латлорыен змыў бруд, але не змыў смутак душы
+Люстэрка Галадрыэлі паказала пажар у цішы
+І вось Андуін Вялікі нясе нас да вадаспадаў Рэрас
+Расколатае Брацтва... Зламаны гонар... Хаос...
+Рог Гондара кліча, але рэха памірае ў лесе
+Барамір упаў, і спадчына сцерлася ў прэсе.
+
+Фрода адзін... Сэм ідзе ўслед...
+Наперадзе Мордар... Наперадзе трызненне і тлусты брэд...
+Пярсцёнак цяжэе...
+Пярсцёнак шэпча...
+Ash nazg durbatulûk...*
+:::
+
+Then came several dozen generations. There was plenty of cacophony indeed, but one variant came out fine, with remarkably few errors. Along the way I had to give up on regenerating the track piece by piece (for long tracks, Suno's glitchy interface barely allows it) and even record a few fragments with my own voice: the whisper at the end, for instance, is entirely mine, because the AI kept generating it completely wrong. And so, after several days of post-production and flaw-fixing, the world met the track "Zviaz Piarscionka". The video I made entirely on my own in one more day — thanks to eight years of editing videos for YouTube, the montage experience was there 😊
 
 # Тэкст песьні / Lyrics
 
