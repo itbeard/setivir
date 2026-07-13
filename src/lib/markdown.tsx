@@ -15,7 +15,8 @@ import { ImageLightbox } from '../components/ImageLightbox'
  *                   [text](media/kupala/doc.pdf) links a bundled file.
  *
  * Blocks:
- *   - paragraphs  — a blank line starts a new <p>
+ *   - paragraphs  — a blank line starts a new <p>; single line breaks inside
+ *                   a paragraph are preserved as <br> (verse-friendly)
  *   - > quote     — lines starting with ">" become a <blockquote>; a lone ">"
  *                   line splits the quote into paragraphs, and line breaks
  *                   inside a quote are preserved (verse-friendly)
@@ -330,8 +331,8 @@ function MediaFigure({ alt, src, attrs }: { alt: string; src: string; attrs: str
   )
 }
 
-/** A quote paragraph keeps its source line breaks (quotes are often verse). */
-function quoteLines(lines: string[], keyBase: string): ReactNode[] {
+/** A paragraph keeps its source line breaks (text is often verse). */
+function paragraphLines(lines: string[], keyBase: string): ReactNode[] {
   return lines.flatMap((line, i) => {
     const rendered = renderInline(line, `${keyBase}-l${i}`)
     return i === 0 ? rendered : [<br key={`${keyBase}-br${i}`} />, ...rendered]
@@ -375,7 +376,7 @@ function renderBlocks(
         return (
           <blockquote key={key} className="md-quote">
             {block.paragraphs.map((lines, j) => (
-              <p key={j}>{quoteLines(lines, `${key}-q${j}`)}</p>
+              <p key={j}>{paragraphLines(lines, `${key}-q${j}`)}</p>
             ))}
           </blockquote>
         )
@@ -400,7 +401,7 @@ function renderBlocks(
       default:
         return (
           <p key={key} className={paragraphClassName}>
-            {renderInline(block.text, key)}
+            {paragraphLines(block.text.split('\n'), key)}
           </p>
         )
     }
