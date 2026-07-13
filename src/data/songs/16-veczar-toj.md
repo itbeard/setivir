@@ -33,7 +33,7 @@ Folk song
 **«Калі каліна не цвіце»** — беларуская народная песьня пра каханьне, разьвітаньне і сустрэчу нанова. Яна з таго самага рэкруцкага пласта фальклёру, што і *«Бітая дарожанька»*: хлопец ідзе ў салдаты, дзяўчына махае хусьцінаю на разьвітаньне — а сустрэча пасьля арміі выходзіць зусім ня той, пра якую марылася. Пачынаецца песьня класічным фальклёрным паралелізмам: не ламай каліну, пакуль не цьвіце, — не кахай дзяўчыну, пакуль ня быў у арміі. А каліна ў беларускім фальклёры — спрадвечны дзявочы сімвал, так што правіла тут, вядома, не пра дрэва. **«Вечар той»** — сучасная адаптацыя гэтай песьні ў прасторы melodic dubstep і future garage: сумная, цяжкая электронная балада пра хлопца і дзяўчыну, пра вечар, які не адпускае, і моцнае каханьне.
 
 ::: cut Арыгінальны ракаўскі тэкст
-![](media/16/orig.jpg){width=90% align=center}
+![Дзякуй маёй сястры Майцы за фота!](media/16/orig.jpg){width=90% align=center}
 :::
 
 Традыцыйна гэтую песьню выконвалі ад імя дзяўчыны, але ў нас у Ракаве яе сьпявалі ад імя хлопца — і, на маю думку, так яна робіцца яшчэ больш чулай, кранальнай і журботнай. Прыслухайцеся, дарэчы: у сярэднім куплеце дагэтуль гучыць дзявочы голас — гэта Васілёк прыходзіць разьвітацца менавіта да яе. Так у адной песьні захаваліся абодва галасы, ягоны і ейны. На жаль, арыгінальнага шматгалосага і вельмі прыгожага ракаўскага выкананьня ў мяне не засталося. Але цяпер вы можаце паслухаць адаптацыю Setivir — яна таксама вельмі годная! Сапраўдная балада пра сапраўднае каханьне.
@@ -43,7 +43,7 @@ Folk song
 **«Калі каліна не цвіце»** (*Kali kalina ne tsvitse* — "When the Kalina Is Not in Bloom") is a Belarusian folk song about love, parting, and meeting anew. It comes from the same layer of recruit folklore as "Bitaia darozhanka": a young man leaves for the army, a girl waves her kerchief in farewell — and the reunion after his service turns out to be nothing like the one they dreamed of. The song opens with a classic folk parallelism: do not break the kalina before it blooms — do not love a girl before you have served. The kalina — the guelder rose, or viburnum — is an age-old symbol of maidenhood in Belarusian folklore, so the rule here, of course, is not about the tree. **"Veczar Toj"** ("That Evening") is a modern adaptation of this song in the space of melodic dubstep and future garage: a sad, heavy electronic ballad about a boy and a girl, about an evening that will not let go, and about a strong love.
 
 ::: cut The original lyrics from Rakaŭ
-![](media/16/orig.jpg){width=90% align=center}
+![Thanks to my sister Majka for the photos!](media/16/orig.jpg){width=90% align=center}
 :::
 
 Traditionally this song was performed in the girl's voice, but in our Rakaŭ it was sung in the young man's — and to my mind that makes it even more tender, touching, and mournful. Listen closely, by the way: the middle verse still speaks in the girl's voice — it is to *her* that Vasilyok comes to say farewell (Vasilyok is a tender diminutive of the name Vasil — and, fittingly for this song, also the Belarusian word for "cornflower"). And so both voices, his and hers, survive within a single song. Sadly, no recording remains of the original polyphonic — and very beautiful — Rakaŭ performance. But now you can listen to the Setivir adaptation, and it holds its own! A true ballad about true love.
