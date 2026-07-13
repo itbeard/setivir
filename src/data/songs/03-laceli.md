@@ -38,7 +38,7 @@ Folk song
 ::: cut Берагіня-2006
 У свой час я нават заняў першае месца сярод юных салістаў на [«Берагіні»](media/3/berahinia-file.pdf) — рэспубліканскім фэстывалі фальклёрнага мастацтва, які раз на два гады зьбірае носьбітаў традыцыі з усёй Беларусі. Першае месца — разам з маёй аднакласьніцай Таняй, а «Вянок» тым часам узяў гран-пры! Здаецца, тады я й праўда крыху ўмеў сьпяваць — але неўзабаве голас зламаўся, таму цяпер выкарыстоўваю ШІ (жартую!)
 ![[Крыніца](http://beraginya.gomel.by/index19_winners_2006.html)](media/3/berahinia.jpg)
-> "Kartynnik Aliaksei, a member of the children's folklore ensemble 'Vianok' — 1st place, Rakau village, Valozhany district, Minsk region (I Republican Tournament of Soloists, children);"
+> "Kartynnik Aliaksei, a member of the children's folklore ensemble 'Vianok' — 1st place, Rakaŭ village, Valozhany district, Minsk region (I Republican Tournament of Soloists, children);"
 :::
 
 Ужо ў сталым узросьце я часьцяком узгадваў тыя песьні, што мы сьпявалі ў дзяцінстве. Часам чуў некаторыя зь іх ужывую — на сьвяткаваньні Купальля, на гуканьні вясны, на іншых народных беларускіх сьвятах. Але далёка не ўсе. У нейкі момант мне захацелася аднавіць іх у галаве й надаць ім новае гучаньне — такое, каб можна было дадаць у плэйліст на Spotify — і слухаць з задавальненьнем штодня. Так зьявілася мая першая адаптацыя беларускай народнай творчасьці — трэк «Ляцелі».
