@@ -149,16 +149,7 @@
   font-style: italic;
 }
 
-.prose a {
-  color: var(--red);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: color 0.15s ease;
-}
-
-.prose a:hover {
-  color: var(--red-deep);
-}
+/* [links](…) take the global prose-link style from global.css. */
 
 /* ≥44px touch target on touch devices */
 @media (pointer: coarse) {
