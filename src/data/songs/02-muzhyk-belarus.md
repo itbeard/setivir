@@ -38,14 +38,14 @@ Yanka Kupala
 
 Мне падаецца, верш вельмі дакладна паказвае, як жылося беларускаму селяніну на пачатку мінулага стагодзьдзя. Прыгон на тый час быў скасаваны ўжо амаль паўстагодзьдзя — а жыцьцё, як бачым, зьмянілася ня надта. Хтосьці знойдзе паралелі й з цяперашнім часам (вокладка адпаведная).
 
-А цяпер — адкуль узялася сама песьня. Натхненьне прыйшло праз захапленьне праектам [guslee.bel](https://t.me/guslee1) — на мой густ, гэта найлепшы рэп на беларускія вершы 😎
+А цяпер — адкуль узялася сама песьня. Натхненьне прыйшло праз захапленьне праектам [guslee.bel](https://telegram.me/guslee1) — на мой густ, гэта найлепшы рэп на беларускія вершы 😎
 
 ::: cut Трэк guslee.bel на верш Янкі Купалы «Спадчына»
 ![крыніца: [TikTok праекту guslee.bel](https://www.tiktok.com/@guslee.bel/video/7168386934618737926)](media/2/guslee_bel-spadchyna.mp4){width=70% align=center}
 Ну вау жа!
 :::
 
-Наслухаўшыся guslee.bel, я натрапіў на [кавалачак](https://t.me/guslee1/29), дзе ён чытае некалькі радкоў з «Я мужык-беларус...». Кавалачку на тый момант было ўжо два гады, а поўная вэрсія так і не зьявілася. Я напісаў аўтару, спытаў, ці варта яе чакаць, — і тый самай ноччу вырашыў паспрабаваць згенераваць трэк самастойна. На маё зьдзіўленьне, фінальная версія атрымалася літаральна за некалькі генерацый — і выйшла даволі нядрэннай. Нават guslee.bel ацаніў!
+Наслухаўшыся guslee.bel, я натрапіў на [кавалачак](https://telegram.me/guslee1/29), дзе ён чытае некалькі радкоў з «Я мужык-беларус...». Кавалачку на тый момант было ўжо два гады, а поўная вэрсія так і не зьявілася. Я напісаў аўтару, спытаў, ці варта яе чакаць, — і тый самай ноччу вырашыў паспрабаваць згенераваць трэк самастойна. На маё зьдзіўленьне, фінальная версія атрымалася літаральна за некалькі генерацый — і выйшла даволі нядрэннай. Нават guslee.bel ацаніў!
 
 ::: cut Маё пытаньне й адказ guslee.bel
 ![](media/2/question.jpg)
@@ -65,14 +65,14 @@ The imagery speaks for itself. Hunger is the hero's "father," misery his "mother
 
 To my mind, the poem paints a very precise picture of how the Belarusian peasant lived in the early twentieth century, when Belarus was part of the Russian Empire. Serfdom had been abolished almost half a century earlier, in 1861 — and yet, as you can see, life had barely changed. Some will find parallels with the present day, too (hence the cover art).
 
-Now, where the song itself came from. The inspiration arrived through my admiration for the [guslee.bel](https://t.me/guslee1) project — to my taste, the best rap ever made on Belarusian poems 😎
+Now, where the song itself came from. The inspiration arrived through my admiration for the [guslee.bel](https://telegram.me/guslee1) project — to my taste, the best rap ever made on Belarusian poems 😎
 
 ::: cut guslee.bel's track set to Yanka Kupala's poem "Spadchyna" ("Heritage")
 ![source: [guslee.bel on TikTok](https://www.tiktok.com/@guslee.bel/video/7168386934618737926)](media/2/guslee_bel-spadchyna.mp4){width=70% align=center}
 I mean — wow!
 :::
 
-After listening to guslee.bel on repeat, I stumbled upon a [snippet](https://t.me/guslee1/29) where he recites a few lines from "Ja muzhyk-bielarus...". The snippet was already two years old by then, and no full version had ever appeared. I wrote to the author asking whether it was worth waiting for one — and that same night decided to try generating the track myself. To my surprise, the final version came together in literally a few generations — and turned out rather decent. Even guslee.bel approved!
+After listening to guslee.bel on repeat, I stumbled upon a [snippet](https://telegram.me/guslee1/29) where he recites a few lines from "Ja muzhyk-bielarus...". The snippet was already two years old by then, and no full version had ever appeared. I wrote to the author asking whether it was worth waiting for one — and that same night decided to try generating the track myself. To my surprise, the final version came together in literally a few generations — and turned out rather decent. Even guslee.bel approved!
 
 ::: cut My question and guslee.bel's answer
 ![in Belarusian](media/2/question.jpg)
