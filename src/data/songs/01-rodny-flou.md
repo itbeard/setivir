@@ -42,7 +42,7 @@ Aliaksei Kartynnik
 
 Тады ж Google выпусьціў **Veo 3** — першую годную мадэль для генэрацыі відэа. Зь яе дапамогай дый парай іншых недарагіх сэрвісаў я зрабіў кліп. Сёньня ён выглядае, шчыра кажучы, так сабе; але тады, улічваючы, колькі часу й грошай на яго пайшло (мала), гэта было падобна да цуду. А пра тое, як рабіліся песьня й кліп, ёсьць асобнае [тэхнічнае відэа](https://www.youtube.com/watch?v=1vvA4KQhCdo&list=PLtx7QasAY_-byAKwitnOw8FDKkyOqR8E5&index=4) (па-беларуску).
 
-::: cut Паглядзець кліп
+::: cut Паглядзець кліп {no-line}
 ![Кліп «Родны Флоў», згенераваны з дапамогай Veo 3, Nano Banana і Sync.so ](https://www.youtube.com/watch?v=NhXtu1ftRSA)
 :::
 
@@ -66,7 +66,7 @@ With the lyrics rewritten, one evening I thought: "What if AI has finally learne
 
 Around the same time, Google released **Veo 3** — the first genuinely decent video-generation model. With its help, plus a couple of other inexpensive services, I made a music video. Today, frankly, it looks rather dated; but back then, considering how much time and money had gone into it (not much), it felt like a small miracle. There is also a separate [behind-the-scenes video](https://www.youtube.com/watch?v=1vvA4KQhCdo&list=PLtx7QasAY_-byAKwitnOw8FDKkyOqR8E5&index=4) about how the song and the clip were made (in Belarusian).
 
-::: cut Watch the music video
+::: cut Watch the music video {no-line}
 ![Music video "Rodny Fłoŭ", generated using Veo 3, Nano Banana and Sync.so ](https://www.youtube.com/watch?v=NhXtu1ftRSA)
 :::
 

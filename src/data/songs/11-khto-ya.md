@@ -32,7 +32,7 @@ Artur Volski
 
 Усе беларускія дзеці майго пакаленьня (і ня толькі) ведаюць, хто такі Дзед Барадзед: лялька-вядоўца «Калыханкі» на Беларускім тэлебачаньні майго дзяцінства. Прыдумаў дабрадушнага дзеда — і песеньку для яго — паэт Артур Вольскі ў 1987 годзе, а музыку напісаў кампазытар Леанід Захлеўны, пазьней народны артыст Беларусі і заснавальнік ансамбля «Бяседа». З гэтай знакамітай песенькі «Калыханка» і пачыналася.
 
-::: cut Паслухаць арыгінальнага «Дзеда Барадзеда»
+::: cut Паслухаць арыгінальнага «Дзеда Барадзеда» {no-line}
 ![«Дзед Барадзед»](https://www.youtube.com/watch?v=HWbTO1f3uNE)
 :::
 
@@ -44,7 +44,7 @@ Artur Volski
 
 Every Belarusian child of my generation (and not only mine) knows who Dzied Baradzied is (*Дзед Барадзед* — roughly "Old Man Beardybeard," a playful blend of the Belarusian words for "beard" and "grandpa"): the puppet host of «Калыханка» (*Kalykhanka*, "The Lullaby"), the bedtime show on Belarusian television in the days of my childhood. The show's famous closing lullaby has already sounded in this gallery — and it opened with the little song of Dzied Baradzied himself. Both the good-natured old man and his song were dreamed up in 1987 by the poet Artur Volski; the music was written by the composer Leanid Zakhleuny, later a People's Artist of Belarus and the founder of the folk-music ensemble Biasieda.
 
-::: cut Listen to the original Dzied Baradzied
+::: cut Listen to the original Dzied Baradzied {no-line}
 ![Dzied Baradzied](https://www.youtube.com/watch?v=HWbTO1f3uNE)
 :::
 

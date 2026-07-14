@@ -32,7 +32,7 @@ Gemini / Aliaksei Kartynnik
 
 «Зьвяз Пярсьцёнка» — гэта ідэальны рэкап першай кнігі «Ўладара пярсьцёнкаў»: ад утульнага шынка ў Шыры і рады ў Рывэндэле, праз цемру Морыі і полымя Балрага — да трагічнага распаду самога Зьвязу. Калі вы зьбіраліся пераглядаць трылогію або проста сумуеце па Міжзем'і — абавязкова паглядзіце кліп да гэтага трэка: я зрабіў яго з нарэзак фільма, і выйшла даволі добра!
 
-::: cut Паглядзець кліп
+::: cut Паглядзець кліп {no-line}
 ![Кліп «Зьвяз Пярсьцёнка»](https://www.youtube.com/watch?v=TulkTzgy4SM)
 :::
 
@@ -104,7 +104,7 @@ Gemini / Aliaksei Kartynnik
 
 «Źviaz Piarścionka» is Belarusian for "The Fellowship of the Ring" — and this track is an ideal recap of the first book: from the cozy inn in the Shire and the Council in Rivendell, through the darkness of Moria and the Balrog's flame, to the tragic Breaking of the Fellowship itself. If you've been meaning to rewatch the trilogy, or simply miss Middle-earth — do watch the video for this track: I cut it together from scenes of the film, and it came out rather well!
 
-::: cut Watch the video
+::: cut Watch the video {no-line}
 ![The "Źviaz Piarścionka" video](https://www.youtube.com/watch?v=TulkTzgy4SM)
 :::
 

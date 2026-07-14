@@ -41,9 +41,9 @@ import { ImageLightbox } from '../components/ImageLightbox'
  *                       cut | cut="Глядзець"    — collapse behind a disclosure
  *                                                 ("пад кат"); the label falls
  *                                                 back to a localized default
- *                       line                    — with cut: draw the dotted
- *                                                 left thread + indent on the
- *                                                 revealed body
+ *                       no-line                 — with cut: drop the dotted
+ *                                                 left thread + indent the
+ *                                                 revealed body gets by default
  *   - cut         — hide a whole run of blocks (text, quotes, media) behind
  *                   one disclosure:
  *                       ::: cut Што за кадрам
@@ -51,9 +51,9 @@ import { ImageLightbox } from '../components/ImageLightbox'
  *                       ![](media/kupala/clip.mp4)
  *                       :::
  *                   The label after "cut" is optional (localized default).
- *                   A trailing {line} on the opening fence draws the dotted
- *                   left thread + indent on the revealed body:
- *                       ::: cut Што за кадрам {line}
+ *                   The revealed body gets a dotted left thread + indent; a
+ *                   trailing {no-line} on the opening fence drops them:
+ *                       ::: cut Што за кадрам {no-line}
  *                   Cuts don't nest.
  *                   Relative paths resolve against /public (like covers and
  *                   audio); http(s) URLs are used as-is.
@@ -114,9 +114,9 @@ type Block =
   | { kind: 'quote'; paragraphs: string[][] }
   | { kind: 'list'; items: string[] }
   | { kind: 'media'; alt: string; src: string; attrs: string }
-  | { kind: 'cut'; label: string; line: boolean; blocks: Block[] }
+  | { kind: 'cut'; label: string; noLine: boolean; blocks: Block[] }
 
-// ::: cut Адвольны подпіс {line}   …   ::: (closing fence; {line} optional)
+// ::: cut Адвольны подпіс {no-line}   …   ::: (closing fence; {no-line} optional)
 const CUT_OPEN = /^:::\s*cut(?:\s+(.+?))?\s*(?:\{([^}]*)\})?\s*$/
 const CUT_CLOSE = /^:::\s*$/
 
@@ -187,7 +187,7 @@ function parseBlocks(text: string): Block[] {
       blocks.push({
         kind: 'cut',
         label: cutOpen[1] ?? '',
-        line: /\bline\b/.test(cutOpen[2] ?? ''),
+        noLine: /(?:^|\s)no-line(?:\s|$)/.test(cutOpen[2] ?? ''),
         blocks: parseBlocks(inner.join('\n')),
       })
       continue
@@ -241,8 +241,8 @@ interface MediaAttrs {
   poster?: string
   /** Present when the media is collapsed "пад кат"; '' means default label. */
   cut?: string
-  /** With cut: draw the dotted left thread + indent on the revealed body. */
-  line?: boolean
+  /** With cut: drop the default dotted left thread + indent on the body. */
+  noLine?: boolean
 }
 
 /** Parse "{width=70% align=left poster=… cut="Глядзець кліп"}" attribute strings. */
@@ -262,8 +262,8 @@ function parseAttrs(attrs: string): MediaAttrs {
       out.cut ??= value ?? ''
       continue
     }
-    if (key === 'line') {
-      out.line = true
+    if (key === 'no-line') {
+      out.noLine = true
       continue
     }
     if (!value) continue
@@ -285,7 +285,7 @@ function mediaUrl(src: string): string {
 function MediaFigure({ alt, src, attrs }: { alt: string; src: string; attrs: string }) {
   const { t } = useI18n()
   const [enlarged, setEnlarged] = useState(false)
-  const { width, align, poster, cut, line } = parseAttrs(attrs)
+  const { width, align, poster, cut, noLine } = parseAttrs(attrs)
   const url = mediaUrl(src)
   const style: CSSProperties | undefined = width ? { width } : undefined
   const youTube = youTubeEmbedUrl(src)
@@ -343,7 +343,7 @@ function MediaFigure({ alt, src, attrs }: { alt: string; src: string; attrs: str
         <span>{cut || t(isVideo ? 'md.showVideo' : 'md.showImage')}</span>
         <span className="md-cutChevron" aria-hidden="true" />
       </summary>
-      <div className={cx('md-cutBody', line && 'is-lined')}>{figure}</div>
+      <div className={cx('md-cutBody', noLine && 'no-line')}>{figure}</div>
     </details>
   )
 }
@@ -358,13 +358,13 @@ function paragraphLines(lines: string[], keyBase: string): ReactNode[] {
 
 function CutBlock({
   label,
-  line,
+  noLine,
   blocks,
   paragraphClassName,
   keyBase,
 }: {
   label: string
-  line: boolean
+  noLine: boolean
   blocks: Block[]
   paragraphClassName?: string
   keyBase: string
@@ -376,7 +376,7 @@ function CutBlock({
         <span>{label ? renderInline(label, `${keyBase}-label`) : t('md.showMore')}</span>
         <span className="md-cutChevron" aria-hidden="true" />
       </summary>
-      <div className={cx('md-cutBody', line && 'is-lined')}>
+      <div className={cx('md-cutBody', noLine && 'no-line')}>
         {renderBlocks(blocks, paragraphClassName, keyBase)}
       </div>
     </details>
@@ -414,7 +414,7 @@ function renderBlocks(
           <CutBlock
             key={key}
             label={block.label}
-            line={block.line}
+            noLine={block.noLine}
             blocks={block.blocks}
             paragraphClassName={paragraphClassName}
             keyBase={key}

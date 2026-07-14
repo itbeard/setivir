@@ -44,7 +44,7 @@ Folk song
 
 І вось аднойчы ў 2008 годзе, калі я ўжо вучыўся ў Менску, Елізавета Станіславаўна патэлефанавала мне і прапанавала паўдзельнічаць у пастаноўцы гэтай песьні: «Гасьцінец» якраз атрымаў Дыплом спецыяльнай прэміі Прэзідэнта Рэспублікі Беларусь у намінацыі «Аматарская творчасць» і меў выступаць у Палацы Рэспублікі — перад самім прэзідэнтам дый іншымі высокімі чынамі. Так я на адзін вечар зноў вярнуўся ў «Гасьцінец»: танцаваць рыцарскі танец на галоўнай сцэне краіны.
 
-::: cut Паглядзець запіс таго выступу
+::: cut Паглядзець запіс таго выступу {no-line}
 ![«Бітая дарожанька» — «Гасьцінец», 2008 год](https://youtu.be/PtVhBEfNu-A)
 :::
 
@@ -66,7 +66,7 @@ Since 2011, Hascinets has held the honorary state title of "Merited Amateur Ense
 
 And then one day in 2008, when I was already studying in Minsk, Yelizaveta Stanislavauna — addressing elders by first name and patronymic is our respectful custom — called me and invited me to take part in a staging of this very song: Hascinets had just received the Diploma of the Special Prize of the President of the Republic of Belarus in the "Amateur Art" category and was to perform at the Palace of the Republic, the country's main state concert hall in Minsk, before the president himself and other high officials. And so, for one evening, I returned to Hascinets: to dance a knight's folk dance on the main stage of the country.
 
-::: cut Watch a recording of that performance
+::: cut Watch a recording of that performance {no-line}
 !["Bitaja Darožańka" — Hascinets, 2008](https://youtu.be/PtVhBEfNu-A)
 :::
 

@@ -37,7 +37,7 @@ Henadz Buraŭkin
 
 А для трэку я ўзяў самую знакамітую зь іх — «Калыханку» на верш Генадзя Бураўкіна з музыкай Васіля Раінчыка. Тую самую: «Доўгі дзень, цёплы дзень адплывае за аблокі...» — што дзесяцігодзьдзямі гучала напрыканцы перадачы «Калыханка», якая выходзіць на беларускім тэлебачаньні з 1981 году, і ўкалыхала ўжо некалькі пакаленьняў. Калі ў 2008-м яе паспрабавалі замяніць іншай песьняй, гледачы дамагліся вяртаньня «Доўгага дня» ў эфір. Назва майго трэку — зь ягонага прыпеву, таго самага «баю-бай», які ведае кожнае беларускае дзіця.
 
-::: cut Паслухаць арыгінал
+::: cut Паслухаць арыгінал {no-line}
 ![«Калыханка» Бураўкіна і Раінчыка — арыгінал](https://www.youtube.com/watch?v=1zSqiTLcYEs)
 :::
 
@@ -55,7 +55,7 @@ For Belarusians, a kalykhanka is something more than just a bedtime song. It car
 
 For this track I took the most famous of them all: "Kalykhanka," a poem by Henadz Buraŭkin set to music by Vasil Rainchyk. The one that begins "The long day, the warm day drifts away beyond the clouds..." For decades it closed the nightly children's bedtime programme of the same name — every country in this part of Europe has one of those bedtime-TV institutions, and Kalykhanka, on Belarusian television since 1981, is ours — and it lulled several generations to sleep. When in 2008 the song was replaced with another one, viewers demanded its return, and won. The title of my track comes from the refrain — that very "baju-baj" that every Belarusian child knows.
 
-::: cut Listen to the original
+::: cut Listen to the original {no-line}
 ![Buraŭkin and Rainchyk's "Kalykhanka" — the original](https://www.youtube.com/watch?v=1zSqiTLcYEs)
 :::
 
