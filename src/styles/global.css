@@ -215,14 +215,26 @@ a:not([class]):hover {
   margin-bottom: clamp(14px, 2vh, 20px);
 }
 
-/* Body of a cut (::: cut … ::: and {cut} media) — a dotted thread down the
-   left edge marks the revealed run as belonging to the summary above. The
-   breathing room around the body is margin, not padding, so the thread runs
-   exactly the height of the content; the text is inset equally on both sides. */
+/* Body of a cut (::: cut … ::: and {cut} media). The breathing room around
+   the body is margin, not padding, so the optional thread (below) runs exactly
+   the height of the content. */
 .md-cutBody {
   margin: 4px 0 clamp(14px, 2vh, 20px);
-  padding: 0 0 0 20px;
+  /* A step quieter than the surrounding prose. */
+  font-size: calc(var(--fs-lead) * 0.93);
+}
+
+/* Opt-in via {line} in the source — a dotted thread down the left edge marks
+   the revealed run as belonging to the summary above, with the body inset. */
+.md-cutBody.is-lined {
+  padding-left: 20px;
   border-left: 2px dotted var(--line);
+}
+
+/* Paragraphs and lists carry their own font-size class (e.g. .description) —
+   inside a cut they follow the cut's slightly smaller voice instead. */
+.md-cutBody :is(p, ul) {
+  font-size: inherit;
 }
 
 .md-cutBody> :first-child {
