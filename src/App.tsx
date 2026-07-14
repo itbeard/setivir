@@ -145,10 +145,10 @@ function Shell({
               song={song}
               total={total}
               alt={settings.altSongBg && i % 2 === 1}
+              isLast={i === displaySongs.length - 1}
             />
           </Fragment>
         ))}
-        {settings.ornamentDividers && <OrnamentDivider />}
         <Outro total={total} order={order} onToggleOrder={toggleOrder} />
       </main>
       <MiniPlayer />

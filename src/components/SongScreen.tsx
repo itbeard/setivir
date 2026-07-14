@@ -32,11 +32,14 @@ export function SongScreen({
   song,
   total,
   alt = false,
+  isLast = false,
 }: {
   song: Song
   total: number
   /** Gallery rhythm: every 2nd rendered song sits on --paper-2. */
   alt?: boolean
+  /** Last song on the page: the "next" chevron leads to the outro, not a song. */
+  isLast?: boolean
 }) {
   const { t, loc, lang } = useI18n()
   const { current, isCurrent, isPlaying } = usePlayer()
@@ -157,8 +160,8 @@ export function SongScreen({
         type="button"
         className={cx(styles.next, trackActive && styles.nextLifted)}
         onClick={(e) => goNextFrom(e.currentTarget)}
-        aria-label={t('card.nextSong')}
-        title={t('card.nextSong')}
+        aria-label={isLast ? t('card.finale') : t('card.nextSong')}
+        title={isLast ? t('card.finale') : t('card.nextSong')}
       >
         <span className={styles.nextChevron} aria-hidden="true" />
       </button>

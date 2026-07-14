@@ -25,6 +25,10 @@ export const ui = {
     be: 'Наступная песьня',
     en: 'Next song',
   },
+  'card.finale': {
+    be: 'Да фіналу',
+    en: 'To the finale',
+  },
   'player.play': {
     be: 'Граць',
     en: 'Play',
