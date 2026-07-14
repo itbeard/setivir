@@ -88,16 +88,6 @@ Father rides out for splint-wood...
 
 ## en
 
-- **Lučyna (splint-wood).** Thin slivers of resinous pine or birch, burned one by one in an iron holder to light the peasant house in the age before kerosene lamps — the poor man's candle. Fetching lučyna from the forest was the most routine of chores, which is exactly why it is paired with wooing: the father goes for the humblest thing imaginable, the son for the biggest.
-
-- **The parallelism.** The father brings home light for the house; the son brings home a bride — the house's other light and warmth. The classic folk device: an everyday image set beside the human event so that each explains the other.
-
-- **"What does that girl cost?"** An echo both of marriage economics and of the wedding rite itself: mock bargaining and the "ransom" of the bride (vykup) is a fixed, playful part of the Belarusian wedding, and a match was reckoned in dowry and working hands. The son's answer flips the ledger: whatever the price, pay it.
-
-- **Haspadynia ("mistress in the house").** Not "housewife" in the diminished modern sense: the haspadynia ran the household economy — food, cloth, garden, animals — as the full counterpart of the haspadar, the master. "There'll be a haspadynia in the house" is the strongest practical argument a peasant son can make for his choice.
-
-- **"People have something to say."** "Liudzi" — the folks, the village — is the communal chorus: public opinion was the great regulator of peasant life ("what will people say"). The singer's retort — let people talk, I have someone to love — is a small, cheerful declaration of independence from it.
-
 # Промпт стылю / Style prompt
 
 dark techno, industrial minimal, 132 BPM, syncopated kick pattern, off-grid percussion, driving bassline, distorted sub-bass, metallic synth stabs, resonant acid line, raw male vocals, Belarusian chant cadence, call-and-response refrain, tape saturation, plate reverb, stereo delay, bleak winter mood, ritual defiance, minimal dubstep drops
