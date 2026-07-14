@@ -3,7 +3,7 @@ import type { Localized } from '../types'
 export const ui = {
   'site.tagline': {
     be: 'Музыка Тутэйшых',
-    en: 'Songs of the Tuteyshya',
+    en: 'Songs of the Tutejšyja',
   },
   'social.aria': {
     be: 'Слухаць і сачыць за Setivir',
@@ -138,8 +138,8 @@ export const ui = {
     en: 'English',
   },
   'outro.heading': {
-    be: 'Дзякуй, што слухаеце',
-    en: 'Thank you for listening',
+    be: 'Дзякуй, што даслухалі, даражэнькія!',
+    en: 'Thank you for listening, dear friends!',
   },
   'outro.follow': {
     be: 'Сачыць у Instagram',
@@ -147,7 +147,7 @@ export const ui = {
   },
   'outro.backTop': {
     be: 'Угару',
-    en: 'Back to top',
+    en: 'To the top',
   },
   'a11y.openMenu': {
     be: 'Сьпіс песень',
@@ -182,16 +182,32 @@ export const ui = {
     en: 'newest first',
   },
   'outro.orderChrono': {
-    be: 'Вы прайшлі ўвесь шлях — ад першай песьні да апошняй. Калі хочаце, каб наступнае наведваньне пачыналася з найноўшых трэкаў, перакуліце парадак. А калі захочаце вярнуць усё як было — проста вярніцеся сюды.',
-    en: 'You have walked the whole path — from the first song to the last. If you would like your next visit to begin with the newest tracks, flip the order. And whenever you want it back the way it was — just return here.',
+    be: 'Вы прайшлі ўвесь шлях — ад першай песьні да апошняй. Хочаце, каб наступнае наведваньне пачыналася з найноўшых трэкаў? Закруціце вір — і парадак перакуліцца. А каб вярнуць усё як было, проста вярніцеся сюды.',
+    en: 'You have come the whole way — from the first song to the last. Want your next visit to start with the newest tracks? Spin the whirlpool — and the order will flip. To put everything back the way it was, just return here.',
   },
   'outro.orderNewest': {
-    be: 'Цяпер гісторыя разгортваецца ад найноўшых трэкаў да самых першых. Калі захочаце зноў пачаць яе з пачатку — перакуліце парадак назад.',
-    en: 'The story now unfolds from the newest tracks back to the very first. If you would like to start it from the beginning again — flip the order back.',
+    be: 'Вір закручаны: цяпер гісторыя разгортваецца ад найноўшых трэкаў да самых першых. Калі захочаце зноў пачаць яе з пачатку — раскруціце вір назад.',
+    en: 'The whirlpool is spinning: the story now unfolds from the newest tracks back to the very first. To start it from the beginning again, just spin it back.',
   },
-  'outro.orderFlip': {
-    be: 'Перакуліць парадак',
-    en: 'Flip the order',
+  'outro.orderSpin': {
+    be: 'Закруціць вір:',
+    en: 'Spin the whirlpool:',
+  },
+  'outro.orderSpinBack': {
+    be: 'Раскруціць назад:',
+    en: 'Spin it back:',
+  },
+  'outro.orderSpinAria': {
+    be: 'Закруціць вір: паказаць трэкі ад найноўшага да першага',
+    en: 'Spin the whirlpool: show tracks from newest to first',
+  },
+  'outro.orderSpinBackAria': {
+    be: 'Раскруціць вір назад: паказаць трэкі ад першага да найноўшага',
+    en: 'Spin it back: show tracks from first to newest',
+  },
+  'outro.creditTagline': {
+    be: 'музыка Тутэйшых',
+    en: 'Songs of the Tutejšyja',
   },
   'sheet.intro': {
     be: 'Уступ',

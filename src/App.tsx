@@ -76,7 +76,7 @@ function Shell({
     const base =
       lang === 'be'
         ? 'Setivir — Музыка Тутэйшых'
-        : 'Setivir — Songs of the Tuteyshya'
+        : 'Setivir — Songs of the Tutejšyja'
     document.title =
       isPlaying && current ? `▶ ${loc(current.title)} — Setivir` : base
   }, [lang, isPlaying, current, loc])

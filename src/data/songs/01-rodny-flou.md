@@ -196,7 +196,7 @@ Remember how our forebears defended their own doorstep,
 How through torment they won the white banner of victories.
 
 How the red of blood came to lie upon that banner,
-And why to this day it frightens the tuteishyia princes.
+And why to this day it frightens the tutejšyja princes.
 And once you have read of all this in your own native word,
 You will understand what it means to bear the name of a worthy Belarusian.
 
@@ -220,7 +220,7 @@ You will understand what it means to bear the name of a worthy Belarusian.
 - The "fine yellow sand" points to Vasil Bykaŭ's story "The Yellow Sand," where the road leads to the NKVD execution pits.
 - Aliaksandr Charnukha — writer and music critic; his novel "Pigs" and story collection "Violence" are biting satires of Belarusian reality after 2020.
 - Sasha Filipenka — Belarusian novelist widely translated across Europe.
-- Tuteishyia — "the ones from here": the key word of this whole gallery (see the intro). "Tuteishyia princes" is the track's jab at those who rule the here-and-now.
+- Tutejšyja — "the ones from here": the key word of this whole gallery (see the intro). "Tutejšyja princes" is the track's jab at those who rule the here-and-now.
 
 # Промпт стылю / Style prompt
 

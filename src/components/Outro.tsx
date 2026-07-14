@@ -22,7 +22,7 @@ export function Outro({
 }) {
   const { t, loc } = useI18n()
   const year = new Date().getFullYear()
-  const sortTitle = `${t('sort.label')}: ${order === 'chrono' ? t('sort.chrono') : t('sort.newest')}`
+  const sortTitle = order === 'chrono' ? t('outro.orderSpinAria') : t('outro.orderSpinBackAria')
 
   return (
     <section id="outro" data-section data-kind="outro" className={cx('section', styles.outro)}>
@@ -54,7 +54,7 @@ export function Outro({
             aria-label={sortTitle}
             title={sortTitle}
           >
-            {t('outro.orderFlip')}
+            {order === 'chrono' ? t('outro.orderSpin') : t('outro.orderSpinBack')}
             <span className={styles.orderNums} aria-hidden="true">
               {order === 'chrono' ? `${pad2(total)} → 01` : `01 → ${pad2(total)}`}
             </span>
@@ -65,7 +65,7 @@ export function Outro({
           ↑ {t('outro.backTop')}
         </button>
 
-        <p className={styles.credit}>© {year} Setivir</p>
+        <p className={styles.credit}>© {year} Setivir · {t('outro.creditTagline')}</p>
       </div>
     </section>
   )
