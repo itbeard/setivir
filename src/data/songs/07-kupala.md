@@ -40,7 +40,7 @@ Folk song
 
 In 2025 it so happened that I celebrated two Kupalles just a week apart, both with my community of belarussian friends from Wrocław, Poland. And, as always happens to me after a Kupalle night, one folk song refused to leave my head: «У нас сягоньня Купала» (*U nas siahonnia Kupala* — "Kupala Has Come to Us Today"), the one we sang more than once by the bonfire and while out searching for the fern flower — *paparats-kvetka*. Legend says this mythical bloom appears for one brief instant on Kupalle night only, and whoever finds it is promised fortune. Ferns, of course, never bloom at all — so no one has ever found it, which is rather the point. This year was no exception: nobody found the flower. But the song found me — and wouldn't let go.
 
-In the end I decided it was time to fire up Suno, the AI music generator, once again — and make a dubstep adaptation, so the song would stay with me not only after Kupalle but all year round. This time I especially wanted to try fusing traditional Belarusian choral polyphony with heavy electronic rhythms — to set the Kupalle round dance spinning in a whirlpool of bass. The result is in front of you: the track "Kupala". Not bad at all, I'd say 😊
+In the end I decided it was time to fire up Suno, the AI music generator, once again — and make a dubstep adaptation, so the song would stay with me not only after Kupalle but all year round. This time I especially wanted to try fusing traditional Belarusian choral polyphony with heavy electronic rhythms — to set the Kupalle round dance spinning in a whirlpool of bass. The result is in front of you: the track "Kupała". Not bad at all, I'd say 😊
 
 # Тэкст песьні / Lyrics
 

@@ -45,9 +45,9 @@ Folk song
 
 ## en
 
-**"Liacieli"** — a track based on the Belarusian folk song "Oj, liacieli husi" ("Oh, Geese Were Flying")
+**"Lacieli"** — a track based on the Belarusian folk song "Oj, liacieli husi" ("Oh, Geese Were Flying")
 
-> "Liacieli" simply means "(they) were flying" — the geese of the song's opening line.
+> "Lacieli" simply means "(they) were flying" — the geese of the song's opening line.
 
 After lyrics of my own and after Kupala, this is a step deeper still — down to the bedrock: a folk song. "Oj, liacieli husi" runs on age-old Slavic imagery. Geese arrive from a faraway land, and the "quiet Danube" is not a literal setting but an archetype: the border river, the boundary between one's own world and the other one. (Belarus, for the record, is nowhere near the actual Danube — which is exactly the point: in East Slavic folk songs, "Danube" names the mythic river, wherever the singer happens to live.) A dark cloud and a fine drizzle stand for sorrow and the long afterglow of parting; the mother who "doesn't know yet" hints at a secret courtship. The lovers are close "like swallows u strese" — which to a modern eye reads as swallows having a nervous breakdown, but no bird is stressed here: a strecha is a thatched roof, and swallows nest under its eaves — an old image of warm domestic intimacy. An intimacy that will later dissolve "like fog in the forest." The song is performed as an intimate duet: female and male vocals alternate, turning the piece into a dialogue between two lovers — whose story does not end well.
 
@@ -59,7 +59,7 @@ At one point I even took first place among young soloists at [**Berahinia**](med
 > "Kartynnik Aliaksei, a member of the children's folklore ensemble 'Vianok' — 1st place, Rakaŭ village, Valozhyn district, Minsk region (1st Republican Tournament of Soloists, children);"
 :::
 
-Well into adulthood, I kept recalling the songs we sang as kids. Some of them I would still hear live — at Kupalle (the midsummer-night festival, with bonfires and wreaths set afloat on the river), at the spring-calling rite of hukannie viasny (when spring is quite literally sung into coming), at other Belarusian folk holidays. But far from all of them. At some point I wanted to bring them back — first into my own head, and then into a new sound: the kind you could drop into a Spotify playlist and enjoy every single day. That is how my first adaptation of Belarusian folk art came to be — the track "Liacieli."
+Well into adulthood, I kept recalling the songs we sang as kids. Some of them I would still hear live — at Kupalle (the midsummer-night festival, with bonfires and wreaths set afloat on the river), at the spring-calling rite of hukannie viasny (when spring is quite literally sung into coming), at other Belarusian folk holidays. But far from all of them. At some point I wanted to bring them back — first into my own head, and then into a new sound: the kind you could drop into a Spotify playlist and enjoy every single day. That is how my first adaptation of Belarusian folk art came to be — the track "Lacieli."
 
 # Тэкст песьні / Lyrics
 

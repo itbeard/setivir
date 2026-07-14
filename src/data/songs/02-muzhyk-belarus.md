@@ -55,7 +55,7 @@ P.S. У промпце стылю вы можаце заўважыць слов�
 
 ## en
 
-**"Muzhyk-Bielarus"** — a song set to Yanka Kupala's poem "Ja muzhyk-bielarus..."
+**"Mužyk-Biełarus"** — a song set to Yanka Kupala's poem "Ja muzhyk-bielarus..."
 
 > A "muzhyk" is a peasant man — more on that word in a moment. The poem's opening line, which gives the song its name, says: "I am a muzhyk, a Belarusian." And Yanka Kupala (1882–1942) is the national poet of Belarus — roughly what Shevchenko is to Ukrainians or Burns to Scots.
 

@@ -38,11 +38,11 @@ Henadz Buraŭkin
 
 ## en
 
-**"Kalykhanka"** — the same poem, an entirely different sound
+**"Kałychanka"** — the same poem, an entirely different sound
 
-> Kalykhanka simply means "lullaby." Yes, the word is everywhere here: it names the song, the TV programme from the previous page — and now this track.
+> Kałychanka simply means "lullaby." Yes, the word is everywhere here: it names the song, the TV programme from the previous page — and now this track.
 
-Yes, your eyes are not deceiving you: this is literally the same work I used in "Baju-baj" — Henadz Buraŭkin's "Kalykhanka," word for word. Here is what happened. Among the AI generations, two turned out so good — and so different, each in its own way — that I simply could not choose one. The irony: for "Rodny Flow" I went through 55 versions in search of the one, and here I ran into the opposite problem. So I made the honest call: both deserved to see the light of day.
+Yes, your eyes are not deceiving you: this is literally the same work I used in "Baju-baj" — Henadz Buraŭkin's "Kałychanka," word for word. Here is what happened. Among the AI generations, two turned out so good — and so different, each in its own way — that I simply could not choose one. The irony: for "Rodny Flow" I went through 55 versions in search of the one, and here I ran into the opposite problem. So I made the honest call: both deserved to see the light of day.
 
 This version sounds different: you can clearly hear notes of traditional Belarusian singing and choral textures — an echo of the genre's folk roots, because Buraŭkin's lullaby may have an author, but it has long since lived as a folk song. The dubstep treatment once again turns a tender lullaby into something powerful and modern. And as for what lullabies mean to Belarusians — the warmth of childhood, the voices of mothers and grandmothers, the quiet rhythm of village life — and the soul of the song that remains untouched, I have already said it all on the "Baju-baj" page: every word of it holds true here. Listen to both versions back to back — I wonder which one you will choose.
 

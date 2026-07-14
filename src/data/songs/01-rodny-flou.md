@@ -52,7 +52,7 @@ P.S. У тэксьце схаваныя ня толькі відавочныя �
 
 ## en
 
-**"Rodny Flow"** — the track that started Setivir
+**"Rodny Fłoŭ"** — the track that started Setivir
 
 > "Rodny" is Belarusian for "native" — the same word used in "rodnaja mova" (native tongue), and "rodny kraj" (native land). So the title reads, roughly, as Native Flow.
 
@@ -67,10 +67,10 @@ With the lyrics rewritten, one evening I thought: "What if AI has finally learne
 Around the same time, Google released **Veo 3** — the first genuinely decent video-generation model. With its help, plus a couple of other inexpensive services, I made a music video. Today, frankly, it looks rather dated; but back then, considering how much time and money had gone into it (not much), it felt like a small miracle. There is also a separate [behind-the-scenes video](https://www.youtube.com/watch?v=1vvA4KQhCdo&list=PLtx7QasAY_-byAKwitnOw8FDKkyOqR8E5&index=4) about how the song and the clip were made (in Belarusian).
 
 ::: cut Watch the music video
-![Music video "Rodny Flow", generated using Veo 3, Nano Banana and Sync.so ](https://www.youtube.com/watch?v=NhXtu1ftRSA)
+![Music video "Rodny Fłoŭ", generated using Veo 3, Nano Banana and Sync.so ](https://www.youtube.com/watch?v=NhXtu1ftRSA)
 :::
 
-That is how "Rodny Flow" was born — out of the desire to give life to lyrics of your own when you don't have a decent voice of your own, and there's no money for professionals. Of course, it's far from a flawless piece: most likely, you will hear the AI in it. But back then, I simply couldn't believe this was possible in Belarusian at all. And if you ask me, the track still holds up — certainly better than half of Belarus's "classic" estrada, the glossy Soviet-rooted variety pop that has ruled the official stage for decades 😁
+That is how "Rodny Fłoŭ" was born — out of the desire to give life to lyrics of your own when you don't have a decent voice of your own, and there's no money for professionals. Of course, it's far from a flawless piece: most likely, you will hear the AI in it. But back then, I simply couldn't believe this was possible in Belarusian at all. And if you ask me, the track still holds up — certainly better than half of Belarus's "classic" estrada, the glossy Soviet-rooted variety pop that has ruled the official stage for decades 😁
 
 P.S. The lyrics hide more than the obvious nods to people, events, and history. There are also references to specific works by Yanka Kupala and Yakub Kolas (the founding classics of modern Belarusian literature), Uladzimir Karatkievich (the novelist who gave Belarusians a romantic vision of their own past), Vasil Bykaŭ (the unflinching chronicler of World War II, and internationally the best-known Belarusian writer), and Siarhei Hrakhouski (a poet who survived Stalin's camps and lived to write about them).
 

@@ -30,15 +30,15 @@ Folk song
 
 ## be
 
-«Беларускі рэйв» — тэхна-вэрсія таго самага народнага твору, што і «Што каштуе»: жартоўная гісторыя пра бацьку, сына і дзяўчыну, за якую варта аддаць любы кошт. Практычны бацька пытаецца, «што каштуе тая дзяўчына», а сын адказвае, што галоўнае — не тое, што кажуць людзі, а тое, што ў яго ёсьць каго кахаць і з кім жыць.
+«Беларускі рэйв» — гэта тэхна-вэрсія таго самага народнага твору, што і «Што Каштуе»: «Бацька едзе па лучыну». Так, мая завядзёнка пакідаць дзьве генерацыі адной песьні ўжо, здаецца, афіцыйная традыцыя Setivir 😊 Я эксперыментаваў з жанрамі — і знянацку Suno прапанаваў мне яскравы тэхна-хаўс: жорсткі кік, драйвавы бас, кіслотная лінія і рэчытатыўны сьпеў. Так народная вясельная песьня ператвараецца ў начны танцпольны хіт!
 
-Тут фальклорны тэкст пакладзены на dark techno і industrial minimal: жорсткі кік, драйвавы бас, кіслотная лінія і речытатыўны, амаль заклінальны спеў з прыпевам «пытаньне–адказ». Народная показка ператвараецца ў начны танцпол, а «Што каштуе — трэба даць» гучыць ужо не як гандаль, а як калектыўны выкрык.
+І калі падумаць, нічога дзіўнага тут няма: беларускае вясельле спрадвеку гулялі па некалькі дзён, з музыкамі і скокамі да самай раніцы. Так што рэйв — не здрада традыцыі, а хутчэй яе працяг у новым стагодзьдзі. 
 
 ## en
 
-“Belarusian Rave” is the techno version of the same folk piece as “Što Kaštuje”: a playful tale of a father, a son, and a girl worth any price. A down-to-earth father asks “what that girl costs,” and the son replies that what matters is not what people say, but that he has someone to love and someone to live with.
+**«Belarusian Rave»** is a techno version of the same folk song as "Shto Kashtuie": "Father Rides for Kindling". Yes — my habit of keeping two generations of one song seems to have become an official Setivir tradition by now 😊 I was experimenting with genres, and out of the blue Suno offered me a vivid techno-house take: a hard kick, driving bass, an acid line, and chant-like vocals. And so a folk wedding song turns into a late-night dancefloor hit!
 
-Here the folk text is set to dark techno and industrial minimal: a hard kick, a driving bassline, an acid line, and a chant-like, almost incantatory delivery with a call-and-response refrain. The folk anecdote turns into a nocturnal dancefloor, and “Whatever she costs — we must give it” sounds no longer like bargaining but like a collective shout.
+Come to think of it, there is nothing blasphemous about that: a Belarusian wedding was traditionally celebrated for several days on end, with musicians playing and dancing till dawn. So the rave is not a betrayal of the tradition — rather its continuation into a new century.
 
 # Тэкст песьні / Lyrics
 
