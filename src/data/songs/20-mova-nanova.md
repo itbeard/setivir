@@ -30,44 +30,53 @@ Ryhor Baradulin
 
 ## be
 
-«Мова Нанова» — музычная адаптацыя верша Рыгора Барадуліна, які паэт адмыслова напісаў да адкрыцця курсаў беларускай мовы «Мова Нанова». З часам гэты верш стаў неафіцыйным гімнам курсаў — цёплым, шчырым і вельмі пазнавальным тэкстам пра вяртаньне да роднай мовы, да сябе і да сваіх вытокаў.
+**«Мова Нанова»** — яшчэ адна музычная адаптацыя верша «Нанова!» Рыгора Барадуліна, але пераасэнсаваная праз цёплую, інтымную і сучасную электронную эстэтыку: dark R&B, bedroom pop, slow industrial trip-hop і павольны trap-біт. Шэпт, глыбокі саб-бас, гіпнатычныя сінты і напружаная вакальная падача робяць тэкст больш цялесным, начным і эмацыйным — нібы мова не проста гучыць, а дыхае табою, пераплятаючыся з тваімі думкамі ў адное цэлае.
 
-У гэтай вэрсіі верш пераасэнсаваны праз цёплую, інтымную і сучасную электронную эстэтыку: dark R&B, bedroom pop, slow industrial trip-hop і павольны trap-біт. Шэпт, глыбокі саб-бас, гіпнатычныя сынты і напружаная вакальная падача робяць тэкст больш цялесным, начным і эмацыйным — нібы мова не проста гучыць, а дыхае, лечыць і раскрываецца нанова.
+Песьня выйшла даволі гарачай — настолькі, што я аднойчы нават падумаў: а ці ня будзе такое гучаньне абразай для імя беларускага класіка? Але ж і сам Рыгор Барадулін, як мы ведаем, быў вялікім гарэзай 😊 Думаю, трэк прыйшоўся б яму даспадобы.
 
-Гэта спроба пачуць вядомыя радкі ў іншай прасторы: паміж малітвай, пяшчотай, целам і электронным пульсам.
+::: cut Пра гарэзьніцтва Барадуліна
+Каб вы разумелі маштаб. Яшчэ школьнікам Барадулін дражніў настаўнікаў, пісаў эпіграмы на аднакласьнікаў, а з уласнай урачыстасьці пасьвячэньня ў піянеры проста [ўцёк](https://budzma.org/news/10-faktau-pra-baradulina.html). Пазьней ягоныя [эпіграмы](https://kamunikat.org/usie_knihi.html?pubid=9868) з нумара ў нумар друкаваў сатырычны часопіс «Вожык»: ледзь хто з паважаных асобаў пачынаў бранзавець — адразу атрымліваў сваю, і ніякія званьні ды рэгаліі паэта не спынялі. А на Радыё Свабода выйшла цэлая кніга ягоных показак, эпіграмаў і адкрыта фрывольных твораў з красамоўнай назвай [«Дуліна ад Барадуліна»](https://www.svaboda.org/a/29060655.html) — уключна з эсэ пра тое, як беларусы сэксам займаюцца. Сам паэт тлумачыў проста: фрывольныя тэмы — «гэта не зубаскальства, а спробы завабіць чытачоў» у беларускае слова. Дык вось, здаецца, мы з ШІ заваблівалі цалкам у барадулінскім духу 😊
+:::
+
+Дарэчы, тэкст «Мова Нанова» крыху адрозьніваецца ад «Мовы-Маці»: у канцы тут пяецца «Мова нанова». Адсюль і назва трэка — і яшчэ адзін пласт сэнсу: песьня ў фінале літаральна сьпявае імя курсаў, для якіх Барадулін пісаў свой верш.
 
 ## en
 
-“Mova Nanova” is a musical adaptation of a poem by Ryhor Baradulin, which the poet wrote specifically for the opening of the Belarusian language courses “Mova Nanova.” Over time, this poem became the unofficial anthem of the courses — a warm, sincere, and deeply recognizable text about returning to one’s native language, to oneself, and to one’s roots.
+**«Mova Nanova»** ("Language Anew") is one more musical adaptation of Ryhor Baradulin's poem "Nanova!" — this time rethought through a warm, intimate, modern electronic aesthetic: dark R&B, bedroom pop, slow industrial trip-hop, and an unhurried trap beat. A whisper, deep sub-bass, hypnotic synths, and a tense vocal delivery make the text more bodily, nocturnal, and emotional — as if the language were not simply sounding, but breathing with you, weaving itself into your thoughts as a single whole.
 
-In this version, the poem is reimagined through a warm, intimate, and modern electronic aesthetic: dark R&B, bedroom pop, slow industrial trip-hop, and a slow trap beat. Whispered vocals, deep sub-bass, hypnotic synths, and an emotionally charged vocal delivery make the text feel more physical, nocturnal, and deeply emotional — as if the language does not simply sound, but breathes, heals, and opens itself anew.
+The song came out rather hot — so hot that at one point I even wondered: wouldn't such a sound be an insult to the name of a Belarusian classic? But then, as we know, Ryhor Baradulin himself was a great mischief-maker 😊 I think he would have liked this track.
 
-This is an attempt to hear familiar lines in a different space: somewhere between prayer, tenderness, the body, and an electronic pulse.
+::: cut On Baradulin's mischief
+Just so you understand the scale. As a schoolboy, Baradulin teased his teachers, wrote epigrams on his classmates, and simply [ran away](https://budzma.org/news/10-faktau-pra-baradulina.html) from his own initiation into the Young Pioneers (the Soviet children's organization). Later his [epigrams](https://kamunikat.org/usie_knihi.html?pubid=9868) were printed issue after issue by the satirical magazine Vozhyk ("The Hedgehog"): the moment any respected figure began turning into his own bronze monument, a Baradulin epigram was already on its way — and no titles or regalia could stop the poet. And Radio Svaboda published a whole book of his jokes, epigrams, and openly frivolous pieces under the eloquent rhyming title [«Дуліна ад Барадуліна»](https://www.svaboda.org/a/29060655.html) - *Dulina ad Baradulina* - "A Fig from Baradulin" (the *dulina* being the thumb-between-fingers gesture, that age-old sign of cheeky defiance) — including an essay on how Belarusians make love. The poet himself explained it simply: frivolous themes are "not mere mockery, but attempts to lure readers" into the Belarusian word. So it seems the AI and I have been doing our luring entirely in Baradulin's spirit 😊
+:::
+
+By the way, the lyrics of this version differ slightly from "Mova-Matsi": at the end, the words «Мова нанова» are sung. Hence the track's title — and one more layer of meaning: in its finale, the song literally sings the name of the courses for which Baradulin wrote his poem. Which is also, simply, "language anew."
 
 # Тэкст песьні / Lyrics
 
 ## be
 
-Inevitably... Healingly... Anew...
-the heartfelt word unfolds.
-The mother tongue — a holy wellspring —
-turns our intentions back to the headwaters.
+Немінуча... Гаюча... Нанова...
+Раскрываецца шчырае слова.
+Мова маці — Крыніца святая —
+Да вытокаў намеры вяртае.
 
-Like lofty daydreams, the clouds...
-the sky's thoughts rescue us from the swelter...
+Як высокія мроі, аблокі...
+Думкі неба ратуюць ад спёкі...
 
-We in this world are duty-bound:
-to nurture the language of our native Fatherland!
-Inevitably, Healingly, Anew —
-the heartfelt word unfolds!
+Мы на гэтым свеце павінны!
+Гадаваць мову роднай Айчыны!
+Немінуча, Гаюча, Нанова —
+Раскрываецца шчырае слова!
 
-We in this world are duty-bound:
-to nurture the language of our native Fatherland!
-Inevitably, Healingly, Anew —
-the heartfelt word unfolds!
+Мы на гэтым свеце павінны!
+Гадаваць мову роднай Айчыны!
+Немінуча, Гаюча, Нанова —
+Раскрываецца шчырае слова!
 
-The mother tongue... A holy wellspring...
-Mova Nanova...
+Мова маці...
+Крыніца святая...
+Мова Нанова...
 
 ## en
 
