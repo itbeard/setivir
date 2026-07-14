@@ -94,6 +94,10 @@
 .num {
   font-family: var(--font-mono);
   font-size: 0.7rem;
+  /* Integer line box: with `normal` the tick height comes out fractional, so
+     each 1.5px line lands on a different subpixel phase and renders with a
+     visibly different thickness. */
+  line-height: 14px;
   letter-spacing: 0.08em;
   color: var(--ink-faint);
   /* Fixed slot so every line's right edge lands at the same x, whatever the
