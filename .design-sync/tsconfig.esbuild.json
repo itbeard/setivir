@@ -5,7 +5,8 @@
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "paths": {
-      "../data/songs": ["./shims/songs.ts"]
+      "../data/songs": ["./shims/songs.ts"],
+      "./site.md?raw": ["./shims/site-raw.ts"]
     }
   }
 }

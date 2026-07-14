@@ -31,6 +31,17 @@ shipped package entry.
 - **JSX**: `cfg.tsconfig` sets `"jsx": "react-jsx"` so esbuild uses the
   automatic runtime (imports `react/jsx-runtime`, shimmed to `window.React`).
   Without it esbuild would emit classic `React.createElement` and break.
+- **`site.md?raw` shim (added 2026-07-14).** `src/data/site.ts` now loads the
+  Hero/Outro prose via Vite's `import raw from './site.md?raw'` — esbuild has
+  no `?raw` loader, so `cfg.tsconfig` paths alias the exact specifier
+  `"./site.md?raw"` → `.design-sync/shims/site-raw.ts`, a GENERATED module
+  holding the file's text. **Regenerate it before every build**:
+  `node .design-sync/gen-site-shim.mjs` — otherwise the Hero/Outro cards show
+  stale prose. (The tsconfig-paths plugin matches import specifiers verbatim,
+  including the `?raw` query, so the alias works despite being "relative".)
+- **Headless browser**: no ms-playwright cache on this machine anymore — the
+  validate/capture scripts honor `DS_CHROMIUM_PATH`; point it at the system
+  Chrome: `export DS_CHROMIUM_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`.
 
 ## CSS / fonts
 
@@ -87,6 +98,22 @@ shipped package entry.
 - ProgressNav is desktop-only: it's `display:none` below 1025px wide or ≤760px
   tall — its card needs `viewport ≥ 1025 × > 760` (set in cfg.overrides).
 
+## Visualizers (replaced CoverWave, 2026-07-14)
+
+- `CoverWave` was replaced in-source by a pluggable system: `CoverViz`
+  (dispatcher, `{song, playing}`) + `EmbersViz` / `LightningViz` / `BarsViz` /
+  `OrionViz` (each `{playing: boolean}`, registry in
+  `src/components/visualizers/registry.ts`, default `embers`). All five are
+  exported and synced (group `visualizers`).
+- All need `PlayerProvider` (they call `usePlayer().getAnalyser()`), a sized
+  `position:relative` TRANSPARENT container, and `playing={true}` — the `.aura`
+  is `opacity:0` otherwise (OrionViz renders nothing at all when not playing).
+- **Static (no-analyser) states**, which is what preview cards show:
+  Bars → resting radial bars; Orion → one still night-sky frame;
+  Embers/Lightning → only the soft red glow (sparks/strikes need live audio),
+  so their two cards look near-identical at rest — expected, documented in the
+  preview comments; the `.prompt.md`s describe the animated difference.
+
 ## Preview limitations
 
 - **Cover images don't resolve in previews.** Components call
@@ -110,7 +137,14 @@ shipped package entry.
   bundled component starts importing something else from `../data/songs`, extend
   the stub or the bundle will fail at runtime.
 - **`.design-sync/previews/_fixtures.ts`** inlines sample song content — cosmetic
-  only, but refresh it if you want the cards to show newer data.
+  only, but refresh it if you want the cards to show newer data. The `Song` type
+  now also has `coverFull`, `lyricsNotes`, `visualizer?` — if it grows again,
+  update BOTH `_fixtures.ts` and the inlined Song shape in `cfg.dtsPropsFor`
+  (5 entries share it: PlayButton, SongMeta, SongScreen, ProgressNav, TopBar,
+  plus CoverViz).
+- **`shims/site-raw.ts` is GENERATED** — run `node .design-sync/gen-site-shim.mjs`
+  before every build or the Hero/Outro cards carry stale prose from an old
+  `src/data/site.md`.
 - **Fonts**: Inter / Cormorant Garamond / JetBrains Mono / Iowan Old Style are
   unshipped fallbacks (previews use system fonts). Only Dobrozrachniy is bundled.
   If the site ever bundles the webfonts, add them via `cfg.extraFonts` and drop

@@ -12,17 +12,17 @@ import { SONGS } from './_fixtures'
 export function OnSong() {
   return (
     <div style={{ position: 'relative', transform: 'translateZ(0)', height: 120, width: '100%' }}>
-      <TopBar activeSong={1} total={20} songs={SONGS} />
+      <TopBar activeSong={1} total={20} songs={SONGS} edge={null} />
     </div>
   )
 }
 
-// Intro / landing state — no active song, so no counter: just the wordmark and
-// the BE·EN language toggles.
+// Intro / landing state — no active song: the counter reads "Уступ" (intro)
+// instead of track numbers, plus the wordmark and BE·EN language toggles.
 export function Intro() {
   return (
     <div style={{ position: 'relative', transform: 'translateZ(0)', height: 120, width: '100%' }}>
-      <TopBar activeSong={null} total={20} songs={SONGS} />
+      <TopBar activeSong={null} total={20} songs={SONGS} edge="intro" />
     </div>
   )
 }

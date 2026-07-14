@@ -3,8 +3,11 @@
 Setivir is a bilingual (Belarusian тарашкевіца / English) music-gallery landing
 page. These components are its real page sections and media controls — a Hero, a
 per-song `SongScreen`, a `TopBar`, a side `ProgressNav`, a bottom `MiniPlayer`,
-plus smaller parts (`PlayButton`, `SongMeta`, `PromptDisclosure`, `CoverWave`,
-`SocialLinks`, `Ornament`, `Outro`). Compose them; don't rebuild them.
+plus smaller parts (`PlayButton`, `SongMeta`, `PromptDisclosure`, `SocialLinks`,
+`Ornament`, `Outro`) and the beat-reactive cover visualizers (`CoverViz`
+dispatches per song; `EmbersViz`, `LightningViz`, `BarsViz`, `OrionViz` are the
+concrete looks — they render their resting state without live audio). Compose
+them; don't rebuild them.
 
 ## Wrapping is required
 
@@ -17,7 +20,7 @@ context. Wrap your tree in **both** providers or components throw
 const { I18nProvider, PlayerProvider, Hero, SongScreen } = window.Setivir;
 ReactDOM.createRoot(el).render(
   <I18nProvider>{/* be/en, auto-detected; drives TopBar's language toggle */}
-    <PlayerProvider>{/* owns one shared <audio>; PlayButton/MiniPlayer/CoverWave use it */}
+    <PlayerProvider>{/* owns one shared <audio>; PlayButton/MiniPlayer/visualizers use it */}
       <Hero />
       <SongScreen song={song} total={20} />
     </PlayerProvider>
@@ -55,7 +58,7 @@ text).
 
 - **`styles.css`** — the one stylesheet to link; it `@import`s `_ds_bundle.css`,
   which carries the tokens and every component's styles. Read it before styling.
-- **`components/general/<Name>/<Name>.d.ts`** — the prop contract, and
+- **`components/<group>/<Name>/<Name>.d.ts`** (groups: `general`, `visualizers`) — the prop contract, and
   **`<Name>.prompt.md`** — usage notes, for each component.
 
 ## Idiomatic example

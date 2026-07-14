@@ -28,6 +28,7 @@ function mk(
       en: 'A composition fusing Belarusian poetic heritage with the language of contemporary sound.',
     },
     lyrics: { be: '[Прыпеў]\n…', en: '[Chorus]\n…' },
+    lyricsNotes: { be: '', en: '' },
     stylePrompt: 'A Belarusian track with folk-inspired melodies and modern production.',
     lyricsPrompt: '[Куплет 1]\n…',
     ...extra,
@@ -47,6 +48,10 @@ export const RODNY: Song = mk(
     lyrics: {
       be: 'Гэй, паслухай, гэта твой родны флоў,\nЦі не забыўся ты яго, ад прадзедаў спакон вякоў.\nЧуеш нашу мову? То ж надта стылёва.\nДы гэта скарб, які не страцім ні пры якіх умовах.\n\n[Куплет]\nЗа гонар, за праўду, за кут, што нам так мілы,\nЗабыць які даўно не маем мы ніякай сілы.\nКупала ды Колас даўно цякуць у нашых венах,\nТаму не знікне наш дух галактычных памераў.',
       en: 'Hey, listen — this is your native flow,\nHaven’t you forgotten it, from forefathers since time immemorial?\nDo you hear our language? That’s truly stylish.\nAnd it’s a treasure we won’t lose under any circumstances.\n\n[Verse]\nFor honor, for truth, for the nook that is so dear to us,\nWhich we’ve long had no power to forget.\nKupala and Kolas have long flowed in our veins,\nSo our spirit of galactic size will not vanish.',
+    },
+    lyricsNotes: {
+      be: 'Купала і Колас — клясыкі беларускай літаратуры; «родны кут» — вобраз з паэмы Коласа «Новая зямля».',
+      en: 'Kupala and Kolas are classics of Belarusian literature; the “native nook” echoes Kolas’s poem “The New Land”.',
     },
     stylePrompt:
       'A Belarusian rap track features rapid-fire verses over dark, moody synths and punchy 808s, grounded by folk-inspired melodies sampled from traditional Belarusian instruments. The chorus layers melodic hooks and vocal harmonies, while bridging sections use sparse beats and atmospheric pads.',
