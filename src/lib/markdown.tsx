@@ -326,7 +326,7 @@ function MediaFigure({ alt, src, attrs }: { alt: string; src: string; attrs: str
         <span>{cut || t(isVideo ? 'md.showVideo' : 'md.showImage')}</span>
         <span className="md-cutChevron" aria-hidden="true" />
       </summary>
-      {figure}
+      <div className="md-cutBody">{figure}</div>
     </details>
   )
 }

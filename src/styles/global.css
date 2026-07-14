@@ -31,6 +31,7 @@ html {
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -214,13 +215,21 @@ a:not([class]):hover {
   margin-bottom: clamp(14px, 2vh, 20px);
 }
 
-/* Body of a block-level cut (::: cut … :::) — text, quotes and media keep
-   their own rhythm; just keep the last child clear of the bottom rule. */
+/* Body of a cut (::: cut … ::: and {cut} media) — a dotted thread down the
+   left edge marks the revealed run as belonging to the summary above. The
+   breathing room around the body is margin, not padding, so the thread runs
+   exactly the height of the content; the text is inset equally on both sides. */
 .md-cutBody {
-  padding: 4px 0 clamp(14px, 2vh, 20px);
+  margin: 4px 0 clamp(14px, 2vh, 20px);
+  padding: 0 0 0 20px;
+  border-left: 2px dotted var(--line);
 }
 
-.md-cutBody > :last-child {
+.md-cutBody> :first-child {
+  margin-top: 0;
+}
+
+.md-cutBody> :last-child {
   margin-bottom: 0;
 }
 
@@ -245,7 +254,7 @@ a:not([class]):hover {
   text-wrap: pretty;
 }
 
-.md-quote p + p {
+.md-quote p+p {
   margin-top: 0.7em;
 }
 
@@ -279,7 +288,7 @@ blockquote.md-quote em {
   padding-left: clamp(20px, 2.2vw, 28px);
 }
 
-.md-list li + li {
+.md-list li+li {
   margin-top: 0.55em;
 }
 
@@ -310,11 +319,13 @@ blockquote.md-quote em {
 ::-webkit-scrollbar {
   width: 9px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--line-strong);
   border-radius: 9px;
   border: 2px solid var(--paper);
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -324,9 +335,11 @@ blockquote.md-quote em {
 :root {
   --player-reserve: 0px;
 }
+
 html.has-track {
   --player-reserve: 104px;
 }
+
 @media (max-width: 540px) {
   html.has-track {
     --player-reserve: 108px;
@@ -342,8 +355,7 @@ html.has-track {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: calc(var(--topbar-h) + var(--pad-y)) var(--pad-x)
-    calc(var(--pad-y) + var(--player-reserve));
+  padding: calc(var(--topbar-h) + var(--pad-y)) var(--pad-x) calc(var(--pad-y) + var(--player-reserve));
   /* Bound the section's scroll overflow so the cover visualiser (absolutely
      positioned, animating every frame) can't grow the page and make the fixed
      mini-player drift on mobile. `clip` doesn't create a scroll container. */
@@ -391,29 +403,33 @@ html.has-track {
    Sections get `.is-in` from useRevealSections as they first scroll into view;
    main[data-anim="on"] is only set when the observer is actually running
    (with a fallback timer), so content can never be stuck invisible. */
-main[data-anim='on'] [data-section] [data-anim-stack] > * {
+main[data-anim='on'] [data-section] [data-anim-stack]>* {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
-main[data-anim='on'] [data-section].is-in [data-anim-stack] > * {
+main[data-anim='on'] [data-section].is-in [data-anim-stack]>* {
   opacity: 1;
   transform: none;
 }
 
-main[data-anim='on'] [data-section].is-in [data-anim-stack] > *:nth-child(2) {
+main[data-anim='on'] [data-section].is-in [data-anim-stack]>*:nth-child(2) {
   transition-delay: 0.07s;
 }
-main[data-anim='on'] [data-section].is-in [data-anim-stack] > *:nth-child(3) {
+
+main[data-anim='on'] [data-section].is-in [data-anim-stack]>*:nth-child(3) {
   transition-delay: 0.14s;
 }
-main[data-anim='on'] [data-section].is-in [data-anim-stack] > *:nth-child(4) {
+
+main[data-anim='on'] [data-section].is-in [data-anim-stack]>*:nth-child(4) {
   transition-delay: 0.21s;
 }
-main[data-anim='on'] [data-section].is-in [data-anim-stack] > *:nth-child(5) {
+
+main[data-anim='on'] [data-section].is-in [data-anim-stack]>*:nth-child(5) {
   transition-delay: 0.28s;
 }
-main[data-anim='on'] [data-section].is-in [data-anim-stack] > *:nth-child(6) {
+
+main[data-anim='on'] [data-section].is-in [data-anim-stack]>*:nth-child(6) {
   transition-delay: 0.35s;
 }
