@@ -33,7 +33,7 @@ export function Outro({
 
         <a
           className={styles.link}
-          href="https://www.instagram.com/iamsetivir/"
+          href="https://www.instagram.com/setivir.art/"
           target="_blank"
           rel="noreferrer noopener"
         >

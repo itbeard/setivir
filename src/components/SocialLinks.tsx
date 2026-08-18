@@ -16,7 +16,7 @@ import styles from './SocialLinks.module.css'
  *   profile URLs once you have them.
  */
 const LINKS = [
-  { label: 'Instagram', href: 'https://www.instagram.com/iamsetivir/', Icon: InstagramIcon },
+  { label: 'Instagram', href: 'https://www.instagram.com/setivir.art/', Icon: InstagramIcon },
   { label: 'YouTube', href: 'https://www.youtube.com/@ciomnylos/releases', Icon: YouTubeIcon },
   { label: 'YouTube Music', href: 'https://music.youtube.com/@ciomnylos', Icon: YouTubeMusicIcon },
   { label: 'Spotify', href: 'https://open.spotify.com/artist/1sod93alm6QTbGrqQ0GzRj', Icon: SpotifyIcon },
