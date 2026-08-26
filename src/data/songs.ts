@@ -53,6 +53,7 @@ const ASSETS: Record<string, { ext: string; audio: string; viz?: string }> = {
   'mova-maci': { ext: 'png', audio: "19. Setivir - Mova-Maci.mp3" },
   'mova-nanova': { ext: 'png', audio: "20. Setivir - Mova Nanova.mp3", viz: 'lightning' },
   'kala-majho-cierama': { ext: 'jpg', audio: "21. Setivir - Kala majho cierama.mp3" },
+  'bielaruska': { ext: 'jpg', audio: "22. Setivir - Belaruska.mp3" },
 }
 
 // Raw markdown of every song, loaded at build time (Vite import.meta.glob).

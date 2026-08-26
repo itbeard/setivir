@@ -24,7 +24,7 @@ Suno v5.5
 
 ## en
 
-Belarusian folk
+Folk song
 
 # Апісаньне / Description
 
