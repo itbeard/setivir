@@ -12,9 +12,12 @@ function pad2(n: number): string {
 export function ProgressNav({
   songs,
   activeIndex,
+  newIds,
 }: {
   songs: Song[]
   activeIndex: number
+  /** Ids of songs added since the visitor's last visit (still unseen). */
+  newIds?: Set<number>
 }) {
   const { t, loc } = useI18n()
   const { current, isPlaying } = usePlayer()
@@ -41,18 +44,25 @@ export function ProgressNav({
           // Songs occupy section indices 1..N (intro is 0), in render order.
           const active = activeIndex === i + 1
           const playing = current?.id === s.id && isPlaying
+          const isNew = newIds?.has(s.id) ?? false
           return (
             <li key={s.id}>
               <button
                 type="button"
-                className={cx(styles.tick, active && styles.active, playing && styles.playing)}
+                className={cx(
+                  styles.tick,
+                  active && styles.active,
+                  playing && styles.playing,
+                  isNew && styles.isNew,
+                )}
                 onClick={() => scrollToId(`song-${s.slug}`)}
                 aria-current={active ? 'true' : undefined}
-                aria-label={`${s.id}. ${loc(s.title)}`}
+                aria-label={`${s.id}. ${loc(s.title)}${isNew ? ` — ${t('new.badge')}` : ''}`}
                 title={`${pad2(s.id)} · ${loc(s.title)}`}
               >
                 <span className={styles.line} />
                 <span className={styles.num}>{pad2(s.id)}</span>
+                {isNew && <span className={styles.ember} aria-hidden="true" />}
               </button>
             </li>
           )

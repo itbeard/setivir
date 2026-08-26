@@ -1,0 +1,97 @@
+.wrap {
+  position: fixed;
+  top: calc(var(--topbar-h) + env(safe-area-inset-top, 0px));
+  left: 0;
+  right: 0;
+  z-index: 49;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  animation: svNewIn 0.6s var(--ease) both;
+}
+
+.bar {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 7px 14px 7px 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.bar:hover {
+  border-color: var(--red);
+}
+
+.bar:hover .cta {
+  color: var(--red-deep);
+}
+
+.text {
+  white-space: nowrap;
+}
+
+.cta {
+  color: var(--red);
+  white-space: nowrap;
+  transition: color 0.2s var(--ease);
+}
+
+/* Glowing ember, shared look with the rail ticks (see ProgressNav.module.css). */
+.ember {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--red) 70%, transparent);
+  animation: svEmber 2.4s ease-in-out infinite;
+}
+
+@keyframes svEmber {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 6px 1px color-mix(in srgb, var(--red) 70%, transparent);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 2px 0 color-mix(in srgb, var(--red) 30%, transparent);
+  }
+}
+
+@keyframes svNewIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar {
+    gap: 8px;
+    padding: 6px 12px 6px 10px;
+    font-size: 0.72rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap,
+  .ember {
+    animation: none;
+  }
+}

@@ -7,10 +7,12 @@ import { useActiveSection } from './hooks/useActiveSection'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
 import { useRevealSections } from './hooks/useRevealSections'
 import { useTrackOrder, type TrackOrder } from './hooks/useTrackOrder'
+import { useNewSongs } from './hooks/useNewSongs'
 import { getSections, scrollToId } from './lib/nav'
 import { settings } from './settings'
 import { TopBar } from './components/TopBar'
 import { ProgressNav } from './components/ProgressNav'
+import { NewSongsBar } from './components/NewSongsBar'
 import { ScrollProgress } from './components/ScrollProgress'
 import { PaperGrain } from './components/PaperGrain'
 import { OrnamentDivider } from './components/OrnamentDivider'
@@ -39,6 +41,13 @@ function Shell({
   // active section back to its track number via the current page order.
   const activeSong =
     activeIndex >= 1 && activeIndex <= total ? displaySongs[activeIndex - 1].id : null
+
+  // Songs added since the visitor's last visit stay flagged (ember in the
+  // rail / counter, strip under the top bar) until each is scrolled into view.
+  const { newIds, markSeen } = useNewSongs(songs)
+  useEffect(() => {
+    if (activeSong !== null && newIds.has(activeSong)) markSeen(activeSong)
+  }, [activeSong, newIds, markSeen])
 
   // Flipping the sort order reshuffles the sections under the visitor's feet;
   // after the reorder jump straight to the first (topmost) track so the new
@@ -129,8 +138,10 @@ function Shell({
         total={total}
         songs={displaySongs}
         edge={activeIndex === 0 ? 'intro' : activeIndex === total + 1 ? 'outro' : null}
+        hasNew={newIds.size > 0}
       />
-      <ProgressNav songs={displaySongs} activeIndex={activeIndex} />
+      <NewSongsBar songs={displaySongs} newIds={newIds} />
+      <ProgressNav songs={displaySongs} activeIndex={activeIndex} newIds={newIds} />
       <main id="main-content" data-anim={animOn ? 'on' : undefined}>
         <Hero compact={order === 'newest'} />
         {displaySongs.map((song, i) => (

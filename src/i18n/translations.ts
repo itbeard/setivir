@@ -225,6 +225,14 @@ export const ui = {
     be: 'Фінал',
     en: 'Finale',
   },
+  'new.listen': {
+    be: 'Паслухаць',
+    en: 'Listen',
+  },
+  'new.badge': {
+    be: 'Новая песьня',
+    en: 'New song',
+  },
   'dialog.close': {
     be: 'Зачыніць',
     en: 'Close',

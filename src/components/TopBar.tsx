@@ -15,12 +15,15 @@ export function TopBar({
   total,
   songs,
   edge,
+  hasNew = false,
 }: {
   activeSong: number | null
   total: number
   songs: Song[]
   /** Which bookend screen is active, when not on a song. */
   edge: 'intro' | 'outro' | null
+  /** Any songs still unseen since the last visit — shows an ember on the counter. */
+  hasNew?: boolean
 }) {
   const { lang, setLang, t } = useI18n()
   // The counter opens a full-width bottom sheet (the counter itself only
@@ -66,6 +69,7 @@ export function TopBar({
               </span>
             )}
             <span className={styles.caret} aria-hidden="true" />
+            {hasNew && <span className={styles.ember} aria-hidden="true" />}
           </button>
         </div>
       )}

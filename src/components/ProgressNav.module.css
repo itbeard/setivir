@@ -160,3 +160,40 @@
     opacity: 0.3;
   }
 }
+
+/* Unseen-since-last-visit song: a small ember smoulders right of the line.
+   Removed once the visitor scrolls the song into view (see useNewSongs). */
+.ember {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 5px 1px color-mix(in srgb, var(--red) 70%, transparent);
+  animation: svEmber 2.4s ease-in-out infinite;
+}
+
+.isNew .line {
+  background: color-mix(in srgb, var(--red) 55%, var(--line-strong));
+}
+
+@keyframes svEmber {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 5px 1px color-mix(in srgb, var(--red) 70%, transparent);
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 1px 0 color-mix(in srgb, var(--red) 30%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ember {
+    animation: none;
+  }
+}

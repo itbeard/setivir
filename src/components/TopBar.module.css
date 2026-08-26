@@ -133,3 +133,36 @@
     padding: 12px 10px;
   }
 }
+
+/* Ember on the mobile counter while unseen new songs remain. */
+.counter {
+  position: relative;
+}
+
+.ember {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 5px 1px color-mix(in srgb, var(--red) 70%, transparent);
+  animation: svEmberBar 2.4s ease-in-out infinite;
+}
+
+@keyframes svEmberBar {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ember {
+    animation: none;
+  }
+}
