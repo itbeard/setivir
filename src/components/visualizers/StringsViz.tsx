@@ -43,13 +43,20 @@ interface StringDef {
   tone: number
 }
 
-// G is the outermost (thickest, slowest) string; E hugs the frame.
+// Three strings: G is the outermost (thickest, slowest), E hugs the frame.
+// Analyser fftSize is 256 → ≈172 Hz per bin.
 const STRINGS: StringDef[] = [
-  { rail: buildRail(FRAME + 8.2, 10.4), lo: 1, hi: 7, modes: [[2, 1.1], [3, 1.9]], pluckHz: 7, width: 0.62, tone: 0 },
-  { rail: buildRail(FRAME + 6.0, 8.4), lo: 7, hi: 18, modes: [[3, 1.6], [5, 2.5]], pluckHz: 9, width: 0.48, tone: 0.33 },
-  { rail: buildRail(FRAME + 3.9, 6.4), lo: 18, hi: 44, modes: [[4, 2.2], [7, 3.3]], pluckHz: 11, width: 0.36, tone: 0.66 },
-  { rail: buildRail(FRAME + 1.9, 4.6), lo: 44, hi: 110, modes: [[6, 3.0], [9, 4.4]], pluckHz: 14, width: 0.26, tone: 1 },
+  { rail: buildRail(FRAME + 7.0, 9.2), lo: 1, hi: 4, modes: [[2, 1.1], [3, 1.9]], pluckHz: 7, width: 0.6, tone: 0 },
+  { rail: buildRail(FRAME + 4.5, 7.0), lo: 4, hi: 12, modes: [[3, 1.6], [5, 2.5]], pluckHz: 10, width: 0.42, tone: 0.5 },
+  { rail: buildRail(FRAME + 2.0, 4.7), lo: 12, hi: 45, modes: [[5, 2.6], [8, 3.9]], pluckHz: 14, width: 0.28, tone: 1 },
 ]
+
+// "Bowed" detector: the band where violin fundamentals and their harmonics
+// live (≈1–7 kHz here). A bowed, sustained tone keeps this band loud with
+// little frame-to-frame change (low spectral flux); drums and plucks are the
+// opposite. The strings sway with the bow, not with the beat.
+const BOW_LO = 6
+const BOW_HI = 40
 
 function mix(a: [number, number, number], b: [number, number, number], t: number): string {
   return `rgb(${Math.round(a[0] + (b[0] - a[0]) * t)},${Math.round(a[1] + (b[1] - a[1]) * t)},${Math.round(a[2] + (b[2] - a[2]) * t)})`
@@ -124,6 +131,9 @@ export function StringsViz({ playing }: CoverVizProps) {
     const pluck = new Float32Array(STRINGS.length)
     const pluckT = new Float32Array(STRINGS.length)
     const phase = STRINGS.map((s) => s.modes.map(() => Math.random() * Math.PI * 2))
+    const bowPrev = new Uint8Array(BOW_HI) // last frame's bow-band bins
+    let bowFluxAvg = 0.3 // running typical flux in the bow band
+    let bowed = 0 // eased 0…1 "a bowed string is sounding"
 
     // Note pool — flat arrays, alive-prefix compaction.
     const X = new Float32Array(MAX_NOTES)
@@ -174,17 +184,21 @@ export function StringsViz({ playing }: CoverVizProps) {
       FLAG[i] = Math.random() < 0.7 ? 1 : 0
     }
 
-    /** A kick: pluck every string (the low ones hardest) and shake notes off. */
+    /** A kick: pluck every string (the low ones hardest). Notes are shaken
+     * off ONLY when there is real bass weight behind the hit — a snare or
+     * hi-hat accent plucks the strings but sheds nothing. */
     const strike = (bass: number, strength: number) => {
       for (let k = 0; k < STRINGS.length; k++) {
         const w = 1 - 0.45 * STRINGS[k].tone
-        pluck[k] = Math.max(pluck[k], Math.min(1, (0.5 + 0.9 * strength) * w))
+        pluck[k] = Math.max(pluck[k], Math.min(1, (0.35 + 0.65 * strength) * w))
         pluckT[k] = 0
       }
-      const count = Math.round((2 + 7 * strength) * (0.5 + 0.5 * bass))
+      if (bass < 0.55) return
+      const weight = (bass - 0.55) / 0.45 // 0…1 over the heavy-bass range
+      const count = Math.round((2 + 8 * strength) * (0.3 + 0.7 * weight))
       for (let n = 0; n < count; n++) {
         // Notes come mostly off the low strings — that is where the bass lives.
-        const k = Math.random() < 0.6 ? 0 : Math.random() < 0.6 ? 1 : 2 + Math.floor(Math.random() * 2)
+        const k = Math.random() < 0.65 ? 0 : Math.random() < 0.65 ? 1 : 2
         emit(k, Math.random() * STRINGS[k].rail.perim, strength)
       }
     }
@@ -206,6 +220,21 @@ export function StringsViz({ playing }: CoverVizProps) {
       root.style.setProperty('--level', level.toFixed(3))
       if (kick > 0) strike(bass, kick)
 
+      // Bowed-tone measure: loud, steady mid/high band → strings sway wide.
+      let bowSum = 0
+      let bowFlux = 0
+      for (let b = BOW_LO; b < BOW_HI; b++) {
+        bowSum += bins[b]
+        bowFlux += Math.abs(bins[b] - bowPrev[b])
+        bowPrev[b] = bins[b]
+      }
+      const bowLoud = Math.min(1, (bowSum / (BOW_HI - BOW_LO) / 255) * 2.2)
+      const fluxRate = bowFlux / ((BOW_HI - BOW_LO) * 255) / dt
+      bowFluxAvg += (fluxRate - bowFluxAvg) * (1 - Math.exp(-dt / 2))
+      const steady = Math.max(0, 1 - fluxRate / (bowFluxAvg * 1.6 + 0.05))
+      const bowRaw = bowLoud ** 1.2 * (0.35 + 0.65 * steady)
+      bowed += (bowRaw - bowed) * (bowRaw > bowed ? 1 - Math.exp(-dt / 0.12) : 1 - Math.exp(-dt / 0.45))
+
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       ctx.lineCap = 'round'
       ctx.lineJoin = 'round'
@@ -222,7 +251,9 @@ export function StringsViz({ playing }: CoverVizProps) {
         pluckT[k] += dt
         pluck[k] *= Math.exp(-dt / 0.38)
         const shiver = pluck[k] * Math.cos(pluckT[k] * s.pluckHz * Math.PI * 2)
-        const swayAmp = 0.08 + 1.15 * energy[k]
+        // A faint idle shimmer, a little from the string's own band, and the
+        // real swing from a bowed tone (the lower strings swing widest).
+        const swayAmp = 0.05 + 0.3 * energy[k] + 2.4 * bowed * (1 - 0.35 * s.tone)
         for (let m = 0; m < s.modes.length; m++) phase[k][m] += s.modes[m][1] * dt * (0.6 + 0.8 * level)
 
         const rail = s.rail
@@ -236,7 +267,7 @@ export function StringsViz({ playing }: CoverVizProps) {
             d += Math.sin(u * Math.PI * 2 * s.modes[m][0] + phase[k][m]) / (m + 1)
           }
           // Pluck: a fast, high-mode shiver with its own spatial pattern.
-          d = d * swayAmp + shiver * 1.1 * Math.sin(u * Math.PI * 2 * (s.modes[1][0] + 2) + phase[k][0] * 0.5)
+          d = d * swayAmp + shiver * 0.8 * Math.sin(u * Math.PI * 2 * (s.modes[1][0] + 2) + phase[k][0] * 0.5)
           d *= 0.35 + 0.65 * env
           const x = (rail.lut[o] + rail.lut[o + 2] * d) * ux
           const y = (rail.lut[o + 1] + rail.lut[o + 3] * d) * uy
