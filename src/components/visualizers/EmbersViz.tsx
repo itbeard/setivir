@@ -77,7 +77,7 @@ export function EmbersViz({ playing }: CoverVizProps) {
     // Ember colour ramp from the theme's red toward hot gold. In the dark
     // theme sparks blend additively (real fire glow); on light paper additive
     // washes out, so there they draw normally.
-    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const dark = true // the site is always dark (styles/theme.css)
     const [r0, g0, b0] = parseHex(getComputedStyle(root).getPropertyValue('--red'))
     const [r1, g1, b1] = [236, 170, 60]
     const sprites: HTMLCanvasElement[] = []

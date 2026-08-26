@@ -91,7 +91,7 @@ export function LightsViz({ playing }: CoverVizProps) {
 
     // In the dark the lamps add light (screen-like); on light paper they tint
     // it (multiply), so the same three colours read as coloured washes.
-    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const dark = true // the site is always dark (styles/theme.css)
     const palette: [number, number, number][] = dark
       ? [[214, 52, 44], [232, 168, 62], [96, 84, 214]]
       : [[228, 92, 82], [226, 176, 86], [132, 122, 222]]

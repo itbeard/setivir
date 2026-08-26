@@ -1,17 +1,19 @@
 :root {
-  /* ── Palette: warm paper gallery + a single Belarusian red accent ── */
-  --paper: #f6f4ef;
-  --paper-2: #efece4;
-  --card: #fcfbf8;
-  --ink: #1c1b18;
-  --ink-soft: #6d6a62;
-  --ink-faint: #6a675c; /* AA-compliant on paper / paper-2 / card */
-  --line: #e4dfd4;
-  --line-strong: #d6d0c2;
+  color-scheme: dark;
+  /* ── Palette: dark gallery + a single Belarusian red accent.
+     The site is always dark, regardless of the OS colour scheme. ── */
+  --paper: #181714;
+  --paper-2: #201e1a;
+  --card: #211f1b;
+  --ink: #f1ede4;
+  --ink-soft: #b3ada1;
+  --ink-faint: #9a9384; /* AA-compliant on paper / paper-2 / card */
+  --line: #322f29;
+  --line-strong: #423e36;
 
-  --red: #c8322b;
-  --red-deep: #9e211c;
-  --red-tint: #f3e2df;
+  --red: #e3554d;
+  --red-deep: #f0726b;
+  --red-tint: #3a2421;
 
   /* ── Typography ── */
   /* Brand face for the logo, hero title, and song titles (see global.css). */
@@ -37,31 +39,9 @@
 
   /* ── Motion & misc ── */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --shadow-cover: 0 24px 60px -28px rgba(28, 27, 24, 0.45),
-    0 2px 8px -2px rgba(28, 27, 24, 0.12);
-  --shadow-bar: 0 18px 50px -22px rgba(28, 27, 24, 0.55);
-  --shadow-btn: 0 6px 18px -8px rgba(28, 27, 24, 0.5);
-  --shadow-sm: 0 2px 8px -3px rgba(28, 27, 24, 0.4);
+  --shadow-cover: 0 24px 60px -28px rgba(0, 0, 0, 0.7), 0 2px 8px -2px rgba(0, 0, 0, 0.4);
+  --shadow-bar: 0 18px 50px -22px rgba(0, 0, 0, 0.72);
+  --shadow-btn: 0 6px 18px -8px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 2px 8px -3px rgba(0, 0, 0, 0.55);
   --topbar-h: 60px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #181714;
-    --paper-2: #201e1a;
-    --card: #211f1b;
-    --ink: #f1ede4;
-    --ink-soft: #b3ada1;
-    --ink-faint: #9a9384; /* AA-compliant on dark paper / card */
-    --line: #322f29;
-    --line-strong: #423e36;
-    --red: #e3554d;
-    --red-deep: #f0726b;
-    --red-tint: #3a2421;
-    --shadow-cover: 0 24px 60px -28px rgba(0, 0, 0, 0.7),
-      0 2px 8px -2px rgba(0, 0, 0, 0.4);
-    --shadow-bar: 0 18px 50px -22px rgba(0, 0, 0, 0.72);
-    --shadow-btn: 0 6px 18px -8px rgba(0, 0, 0, 0.6);
-    --shadow-sm: 0 2px 8px -3px rgba(0, 0, 0, 0.55);
-  }
 }

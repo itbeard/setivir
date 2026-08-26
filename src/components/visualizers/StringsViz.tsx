@@ -99,8 +99,8 @@ export function StringsViz({ playing }: CoverVizProps) {
       return
     }
 
-    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
     // Wound bronze for the low strings, pale steel for the high ones.
+    const dark = true // the site is always dark (styles/theme.css)
     const bronze: [number, number, number] = dark ? [214, 156, 82] : [168, 112, 46]
     const steel: [number, number, number] = dark ? [232, 228, 214] : [122, 118, 108]
     const stringColor = STRINGS.map((s) => mix(bronze, steel, s.tone))
