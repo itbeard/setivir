@@ -94,3 +94,44 @@
   transform: rotate(45deg);
   margin-top: -3px;
 }
+
+/* Newest-first order: intro folded away, hero shrinks so the first song is
+   one short scroll below the wordmark. */
+.hero[data-folded] {
+  min-height: auto;
+  padding-bottom: clamp(28px, 5vh, 56px);
+}
+
+.hero[data-folded] .wordmark {
+  font-size: calc(var(--fs-hero) * 0.72);
+}
+
+.hero[data-folded] .ornament {
+  margin-bottom: clamp(12px, 2vh, 20px);
+}
+
+.expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 6px 10px;
+  transition: color 0.2s var(--ease);
+}
+
+.expand:hover {
+  color: var(--ink);
+}
+
+.expandChevron {
+  width: 7px;
+  height: 7px;
+  border-right: 1.4px solid currentColor;
+  border-bottom: 1.4px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -4px;
+}

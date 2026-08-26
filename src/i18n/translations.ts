@@ -9,6 +9,10 @@ export const ui = {
     be: 'Слухаць і сачыць за Setivir',
     en: 'Listen to and follow Setivir',
   },
+  'hero.about': {
+    be: 'Пра праект',
+    en: 'About the project',
+  },
   'hero.enter': {
     be: 'Слухаць',
     en: 'Start listening',

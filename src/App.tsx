@@ -41,14 +41,12 @@ function Shell({
     activeIndex >= 1 && activeIndex <= total ? displaySongs[activeIndex - 1].id : null
 
   // Flipping the sort order reshuffles the sections under the visitor's feet;
-  // remember the song they were on and snap back to it after the reorder.
-  const keepSlugRef = useRef<string | null>(null)
+  // after the reorder jump straight to the first (topmost) track so the new
+  // order is visible at once.
+  const jumpToFirstRef = useRef(false)
   const revealedRef = useRef<Element[]>([])
   const toggleOrder = () => {
-    keepSlugRef.current =
-      activeIndex >= 1 && activeIndex <= total
-        ? displaySongs[activeIndex - 1].slug
-        : null
+    jumpToFirstRef.current = true
     revealedRef.current = Array.from(
       document.querySelectorAll('[data-section].is-in'),
     )
@@ -61,14 +59,11 @@ function Shell({
     revealedRef.current.forEach((el) => el.classList.add('is-in'))
     revealedRef.current = []
 
-    const slug = keepSlugRef.current
-    if (!slug) return
-    keepSlugRef.current = null
-    // 'instant', not 'auto': html has scroll-behavior:smooth, which 'auto'
-    // would inherit — animating through the whole reshuffled page.
-    document
-      .getElementById(`song-${slug}`)
-      ?.scrollIntoView({ behavior: 'instant', block: 'start' })
+    if (!jumpToFirstRef.current) return
+    jumpToFirstRef.current = false
+    const first = displaySongs[0]
+    if (!first) return
+    scrollToId(`song-${first.slug}`)
   }, [displaySongs])
 
   // Tab title: base site title, or "▶ {track} — Setivir" while playing.
@@ -137,7 +132,7 @@ function Shell({
       />
       <ProgressNav songs={displaySongs} activeIndex={activeIndex} />
       <main id="main-content" data-anim={animOn ? 'on' : undefined}>
-        <Hero />
+        <Hero compact={order === 'newest'} />
         {displaySongs.map((song, i) => (
           <Fragment key={song.id}>
             {settings.ornamentDividers && <OrnamentDivider />}

@@ -30,13 +30,21 @@ Folk song
 
 ## be
 
-**«Каля майго церама»** — беларуская народная лірычная песьня, якую сьпявалі ў вёсках і якую выконваў наш [ракаўскі Гасьцінец](https://www.youtube.com/watch?v=Zjwp_sWPx5g). Дзяўчына сядзіць у цераме, шые кашульку — і чуе, як вуліцай ідуць хлопцы з гусьлямі ды сьпяваюць. Сэрца разьбіваецца не ад гора, а ад тугі: яна просіць маці пусьціць яе паслухаць і навучыцца песьням.
+**«Каля майго церама»** — беларуская народная лірычная песьня, якую сьпявалі ў вёсках і якую выконваў у тым ліку наш ракаўскі Гасьцінец. Дзяўчына сядзіць у цераме, шые кашульку — і чуе, як вуліцай ідуць хлопцы з гусьлямі ды сьпяваюць. Сэрца разьбіваецца не ад гора, а ад тугі: яна просіць маці пусьціць яе паслухаць і навучыцца песьням.
+
+::: cut Паслухаць арыгінал {no-line}
+![«Каля майго церама» — народная песьня ў традыцыйным выкананьні](https://www.youtube.com/watch?v=Zjwp_sWPx5g)
+:::
 
 Тут старая песьня апранута ў сучаснае электроннае гучаньне: avant-pop, future bass і павольны халфтайм-дабстэп, блізкі шэпт, фолькавыя мэлізмы, фэтравае піяніна і аксамітны вобл-бас.
 
 ## en
 
-**«Kala majho cierama»** ("By My Terem") is a Belarusian folk lyric song, sung in villages and also performed by our [Rakaŭski Haściniec](https://www.youtube.com/watch?v=Zjwp_sWPx5g) ensemble. A girl sits in the terem sewing a shirt — and hears young lads walking down the street with gusli, singing. Her heart breaks not from grief but from longing: she begs her mother to let her go out to listen and learn the songs.
+**«Kala majho cierama»** ("By My Terem") is a Belarusian folk lyric song, sung in villages and performed, among others, by our Rakaŭski Haściniec ensemble. A girl sits in the terem sewing a shirt — and hears young lads walking down the street with gusli, singing. Her heart breaks not from grief but from longing: she begs her mother to let her go out to listen and learn the songs.
+
+::: cut Listen to the original {no-line}
+![«Kala majho cierama» — the folk song in a traditional performance](https://www.youtube.com/watch?v=Zjwp_sWPx5g)
+:::
 
 Here the old song is dressed in a modern electronic sound: avant-pop, future bass and slow halftime dubstep, close-mic whisper, folk melisma, felt piano and velvet wobble bass.
 
