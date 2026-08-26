@@ -1,0 +1,32 @@
+/* Sits behind the cover frame; the light spills out from behind its edges. */
+.aura {
+  --level: 0;
+  position: absolute;
+  inset: 0;
+  /* Behind the cover *and* behind the song text (which is non-positioned, so a
+     positioned sibling would otherwise paint on top of it). */
+  z-index: -1;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease);
+}
+
+.aura.playing {
+  opacity: 1;
+}
+
+/* Light canvas — larger than the cover so the pools of colour halo it. The
+   container is left untransformed so its box never changes size (a per-frame
+   box transform here was jittering the fixed mini-player on mobile). */
+.viz {
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  /* A canvas is a replaced element: `inset` alone does not stretch it — its
+     display size must be set explicitly (the backing store tracks it in JS). */
+  width: 180%;
+  height: 180%;
+  filter: blur(6px);
+}

@@ -4,6 +4,7 @@ import { LightningViz } from './LightningViz'
 import { BarsViz } from './BarsViz'
 import { OrionViz } from './OrionViz'
 import { StringsViz } from './StringsViz'
+import { LightsViz } from './LightsViz'
 
 /**
  * Рэестр візуалізатараў вокладкі / cover visualizer registry.
@@ -19,6 +20,7 @@ export const VISUALIZERS: Record<string, CoverVizComponent> = {
   bars: BarsViz,
   orion: OrionViz,
   strings: StringsViz,
+  lights: LightsViz,
 }
 
 export const DEFAULT_VISUALIZER = 'embers'

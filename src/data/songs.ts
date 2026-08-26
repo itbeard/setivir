@@ -52,7 +52,7 @@ const ASSETS: Record<string, { ext: string; audio: string; viz?: string }> = {
   'belarusian-rave': { ext: 'jpg', audio: "18. Setivir - Belarusian rave.mp3" },
   'mova-maci': { ext: 'png', audio: "19. Setivir - Mova-Maci.mp3" },
   'mova-nanova': { ext: 'png', audio: "20. Setivir - Mova Nanova.mp3", viz: 'lightning' },
-  'kala-majho-cierama': { ext: 'jpg', audio: "21. Setivir - Kala majho cierama.mp3" },
+  'kala-majho-cierama': { ext: 'jpg', audio: "21. Setivir - Kala majho cierama.mp3", viz: 'lights' },
   'bielaruska': { ext: 'jpg', audio: "22. Setivir - Belaruska.mp3", viz: 'strings' },
 }
 
